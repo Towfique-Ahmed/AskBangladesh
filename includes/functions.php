@@ -6,6 +6,8 @@
 
 declare(strict_types=1);
 
+defined('APP_ROOT') || exit('Direct access is not permitted.');
+
 /* ------------------------------------------------------------------ data */
 
 function bd_data(string $set): array

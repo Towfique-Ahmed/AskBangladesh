@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Currency converter for the Bangladeshi Taka. */
 
 $data       = bd_exchange_rates();

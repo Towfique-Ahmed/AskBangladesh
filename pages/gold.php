@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Gold and silver price board plus a bhori / gram / ana converter. */
 
 $prices = bd_gold_prices();

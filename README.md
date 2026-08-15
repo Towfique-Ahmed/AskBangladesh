@@ -54,9 +54,45 @@ php -S localhost:8000
 
 Open <http://localhost:8000>.
 
-For Apache or Nginx, point the document root at the project directory — `index.php` is the
-only entry point. The app needs write access to `storage/cache/` for the live-rate cache; if
-it cannot write there, everything still works, it just re-fetches each time.
+## Deployment
+
+**Point the document root at the folder that contains `index.php`.** The application is not
+nested in a `public/` subfolder — the repository root *is* the web root.
+
+```
+/var/www/askbangladesh/     <-- document root goes here
+├── index.php               <-- the only entry point
+├── api/
+├── assets/
+├── includes/
+├── pages/
+└── storage/cache/          <-- must be writable
+```
+
+- **Apache / LiteSpeed** — the bundled `.htaccess` sets `DirectoryIndex index.php` and blocks
+  the internal directories. Ensure `AllowOverride All` is set for the vhost, or copy the
+  directives into the vhost itself.
+- **Nginx** — `.htaccess` is ignored. Use `deploy/nginx.conf.example` as the server block.
+- **PHP-FPM** — PHP 8.0+, no extensions required.
+- **Permissions** — `storage/cache/` needs to be writable by the PHP user. If it is not,
+  everything still works; the app simply re-fetches the rate feeds each request.
+
+### Troubleshooting
+
+**A bare `File not found.` for `/`** — this is the *web server's* 404, not the app's (the
+app's 404 is a styled page). PHP was never reached. In order of likelihood:
+
+1. The document root does not contain `index.php` — it points one level too high, or at a
+   `public_html/` that the repository was cloned *beside* rather than *into*.
+2. The app was deployed into a subfolder, so it lives at `/AskBangladesh/` rather than `/`.
+3. The vhost's directory index list has no `index.php` entry. The bundled `.htaccess` fixes
+   this on Apache and LiteSpeed; on Nginx set `index index.php;`.
+4. The deploy pulled a branch that does not contain the app.
+
+Confirm with `ls /path/to/docroot` — you should see `index.php` at the top level.
+
+**A blank white page** — PHP failed. Check the PHP-FPM error log, and confirm the PHP version
+is 8.0 or newer (`php -v`).
 
 ## Project layout
 

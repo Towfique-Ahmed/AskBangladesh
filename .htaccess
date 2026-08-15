@@ -1,0 +1,50 @@
+# AskBangladesh — Apache / LiteSpeed configuration.
+#
+# Every directive is wrapped in an <IfModule> guard so that a server missing
+# the module skips the block instead of failing the whole request with a 500.
+
+# ---------------------------------------------------------------- entry point
+# The single most common deployment failure is a server whose directory index
+# list does not include index.php, which answers "File not found." for "/".
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+# Never expose a browsable file listing.
+Options -Indexes
+
+# ------------------------------------------------------------------ internals
+# Only index.php and the api/ endpoints are meant to be requested directly.
+# These directories are require()d from the front controller, so a direct hit
+# would run them without the bootstrap and surface a PHP fatal error.
+RedirectMatch 404 ^/(includes|pages|storage)(/|$)
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "^(README\.md|\.gitignore|composer\.(json|lock))$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------ transport
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css             "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/svg+xml        "access plus 30 days"
+    # HTML is generated per request and carries live clock and rate data.
+    ExpiresByType text/html            "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ------------------------------------------------------------------- encoding
+AddDefaultCharset UTF-8

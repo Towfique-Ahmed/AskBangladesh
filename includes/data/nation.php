@@ -1,4 +1,6 @@
 <?php
+
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /**
  * National profile: government, symbols, economy, religions, festivals,
  * emergency services and general facts about Bangladesh.

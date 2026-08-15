@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Not found. */
 
 $pageTitle       = 'Page not found';

@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+defined('APP_ROOT') || exit('Direct access is not permitted.');
+
 /* ------------------------------------------------------------- currency */
 
 /** Currencies offered in the converter, in display order. */

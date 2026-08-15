@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Government structure, online services and emergency hotlines. */
 
 $profile   = bd_nation('profile');

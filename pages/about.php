@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** National profile: identity, symbols, history, food and facts. */
 
 $profile  = bd_nation('profile');

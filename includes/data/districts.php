@@ -1,4 +1,6 @@
 <?php
+
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /**
  * All 64 districts of Bangladesh grouped by the 8 administrative divisions.
  * Coordinates are district-headquarter centroids, used by the SVG map projection.
