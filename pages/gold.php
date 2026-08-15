@@ -5,8 +5,12 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 $prices = bd_gold_prices();
 $units  = bd_weight_units();
 
-$pageTitle       = 'Gold price in Bangladesh today, with converter';
-$pageDescription = 'Today’s 22K, 21K, 18K and traditional gold and silver rates in Bangladesh per bhori, gram and ana, with an instant weight-to-price converter.';
+$seo = bd_seo(bd_page_seo('gold') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Gold Price'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 

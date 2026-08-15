@@ -13,6 +13,21 @@
 # Never expose a browsable file listing.
 Options -Indexes
 
+# ------------------------------------------------------------------- routing
+# Clean URLs: send anything that is not a real file or directory to the front
+# controller, which resolves it with bd_route().
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Strip a trailing slash so /districts/ and /districts are not two URLs.
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
 # ------------------------------------------------------------------ internals
 # Only index.php and the api/ endpoints are meant to be requested directly.
 # These directories are require()d from the front controller, so a direct hit

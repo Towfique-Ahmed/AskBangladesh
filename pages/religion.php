@@ -5,8 +5,12 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 $religions = bd_nation('religions');
 $festivals = bd_nation('festivals');
 
-$pageTitle       = 'Religions and festivals of Bangladesh';
-$pageDescription = 'Islam, Hinduism, Buddhism, Christianity and indigenous beliefs in Bangladesh, their major sites, and the festivals the whole country celebrates.';
+$seo = bd_seo(bd_page_seo('religion') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Religions'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>

@@ -8,8 +8,12 @@ $airports  = bd_places('airports');
 $ports     = bd_places('ports');
 $projects  = bd_places('megaprojects');
 
-$pageTitle       = 'Roads, transport and travel logistics in Bangladesh';
-$pageDescription = 'National highways, bus and train fares, rickshaws and CNGs, launches, the metro, airports, seaports and the country’s biggest infrastructure projects.';
+$seo = bd_seo(bd_page_seo('transport') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Transport'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 

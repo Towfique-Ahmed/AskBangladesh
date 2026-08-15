@@ -2,8 +2,7 @@
 defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Not found. */
 
-$pageTitle       = 'Page not found';
-$pageDescription = 'That page does not exist on AskBangladesh.';
+$seo = bd_seo(bd_page_seo('404'));
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>
@@ -16,7 +15,7 @@ require APP_ROOT . '/includes/layout/header.php';
     search box above, or start again from the front page.
   </p>
   <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
-    <a class="btn btn--primary" href="<?= e(bd_url('home')) ?>">🏠 Back to the front page</a>
+    <a class="btn btn--primary" href="<?= e(bd_url()) ?>">🏠 Back to the front page</a>
     <a class="btn" href="<?= e(bd_url('search')) ?>">🔍 Search everything</a>
     <a class="btn" href="<?= e(bd_url('map')) ?>">🗺️ Open the map</a>
   </div>

@@ -2,21 +2,71 @@
 defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Prayer times for any Bangladeshi district, with a live next-prayer timer. */
 
-$districts    = bd_districts();
-$meta         = bd_prayer_meta();
-$selectedName = trim((string) ($_GET['district'] ?? 'Dhaka'));
-$school       = ($_GET['school'] ?? 'hanafi') === 'shafi' ? 'shafi' : 'hanafi';
+$districts = bd_districts();
+$meta      = bd_prayer_meta();
+$school    = ($_GET['school'] ?? 'hanafi') === 'shafi' ? 'shafi' : 'hanafi';
 
-$selected = null;
-foreach ($districts as $district) {
-    if (strcasecmp($district['name'], $selectedName) === 0) { $selected = $district; break; }
+/*
+ * The district selector submits ?district=<slug> to /prayer. Redirect that to
+ * the canonical /prayer/<slug> so only one URL per district is ever indexed.
+ */
+if (($route['slug'] ?? '') === '' && isset($_GET['district'])) {
+    $wanted = bd_find_district(bd_slug((string) $_GET['district']));
+    if ($wanted !== null) {
+        $target = bd_prayer_url($wanted) . ($school === 'shafi' ? '?school=shafi' : '');
+        header('Location: ' . $target, true, 301);
+        exit;
+    }
 }
-$selected ??= $districts[0];
+
+// /prayer/<district-slug> selects a district; bare /prayer defaults to Dhaka.
+$slug     = $route['slug'] ?? '';
+$selected = $slug !== '' ? bd_find_district($slug) : null;
+
+if ($slug !== '' && $selected === null) {
+    http_response_code(404);
+    require APP_ROOT . '/pages/404.php';
+    return;
+}
+
+$isDistrictPage = $selected !== null;
+$selected ??= bd_find_district('dhaka') ?? $districts[0];
 
 $today = bd_prayer_times((float) $selected['lat'], (float) $selected['lon'], time(), $school);
 
-$pageTitle       = 'Prayer times in ' . $selected['name'] . ', Bangladesh';
-$pageDescription = 'Today’s Fajr, Dhuhr, Asr, Maghrib and Isha times for ' . $selected['name'] . ' and every district of Bangladesh, with a live countdown to the next prayer.';
+if ($isDistrictPage) {
+    $seo = bd_seo([
+        'title'       => $selected['name'] . ' Prayer Times Today — Namaz Schedule',
+        'description' => 'Today’s namaz times in ' . $selected['name'] . ', Bangladesh: Fajr '
+            . $today['Fajr'] . ', Dhuhr ' . $today['Dhuhr'] . ', Asr ' . $today['Asr']
+            . ', Maghrib ' . $today['Maghrib'] . ', Isha ' . $today['Isha']
+            . '. With sehri and iftar times.',
+        'keywords'    => $selected['name'] . ' prayer time, ' . $selected['name'] . ' namaz time, '
+            . $selected['name'] . ' sehri iftar time',
+        'path'        => 'prayer/' . bd_slug($selected['name']),
+        'breadcrumbs' => [
+            ['name' => 'Home',         'url' => bd_url()],
+            ['name' => 'Prayer Times', 'url' => bd_url('prayer')],
+            ['name' => $selected['name']],
+        ],
+        'jsonld' => [bd_jsonld_faq([
+            'What time is Fajr in ' . $selected['name'] . ' today?'
+                => 'Fajr begins at ' . $today['Fajr'] . ' today in ' . $selected['name']
+                   . ', Bangladesh Standard Time.',
+            'What time is iftar in ' . $selected['name'] . ' today?'
+                => 'Iftar begins at Maghrib, ' . $today['Maghrib'] . ', in ' . $selected['name'] . ' today.',
+            'What time does sehri end in ' . $selected['name'] . '?'
+                => 'Sehri ends at the start of Fajr, ' . $today['Fajr'] . ', in ' . $selected['name'] . '.',
+        ])],
+    ]);
+} else {
+    $seo = bd_seo(bd_page_seo('prayer') + [
+        'breadcrumbs' => [
+            ['name' => 'Home', 'url' => bd_url()],
+            ['name' => 'Prayer Times'],
+        ],
+    ]);
+}
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>
@@ -33,14 +83,13 @@ require APP_ROOT . '/includes/layout/header.php';
 </div>
 
 <!-- ------------------------------------------------------------- selector -->
-<form class="card" data-reveal method="get" action="index.php" style="margin-bottom:1.6rem">
-  <input type="hidden" name="p" value="prayer">
+<form class="card" data-reveal method="get" action="<?= e(bd_url('prayer')) ?>" style="margin-bottom:1.6rem">
   <div class="converter__row" style="grid-template-columns:1fr 1fr auto">
     <div class="field">
       <label for="prayer-district">District</label>
       <select class="input" id="prayer-district" name="district">
         <?php foreach ($districts as $district): ?>
-          <option value="<?= e($district['name']) ?>"<?= $district['name'] === $selected['name'] ? ' selected' : '' ?>>
+          <option value="<?= e(bd_slug($district['name'])) ?>"<?= $district['name'] === $selected['name'] ? ' selected' : '' ?>>
             <?= e($district['name']) ?> — <?= e($district['bn']) ?>
           </option>
         <?php endforeach; ?>
@@ -110,7 +159,7 @@ require APP_ROOT . '/includes/layout/header.php';
                 $times = bd_prayer_times((float) $district['lat'], (float) $district['lon'], time(), $school);
         ?>
           <tr>
-            <td><a href="<?= e(bd_url('prayer', ['district' => $district['name'], 'school' => $school])) ?>"><strong><?= e($district['name']) ?></strong></a></td>
+            <td><a href="<?= e(bd_prayer_url($district) . ($school === 'shafi' ? '?school=shafi' : '')) ?>"><strong><?= e($district['name']) ?></strong></a></td>
             <?php foreach (['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'] as $key): ?>
               <td class="num"><?= e($times[$key]) ?></td>
             <?php endforeach; ?>
@@ -139,6 +188,20 @@ require APP_ROOT . '/includes/layout/header.php';
       <p>The fast opens at Maghrib, just after sunset — traditionally with a date, then chhola,
       piyaju, beguni and a glass of lemon sharbat.</p>
     </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------- every district page -->
+<section class="section">
+  <div class="section__head">
+    <h2>Prayer times by district</h2>
+    <p>All 64 districts, each with its own daily schedule.</p>
+  </div>
+  <div class="chips">
+    <?php foreach ($districts as $district): ?>
+      <a class="chip<?= $district['name'] === $selected['name'] ? ' is-active' : '' ?>"
+         href="<?= e(bd_prayer_url($district)) ?>"><?= e($district['name']) ?></a>
+    <?php endforeach; ?>
   </div>
 </section>
 

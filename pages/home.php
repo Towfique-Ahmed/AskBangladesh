@@ -10,8 +10,7 @@ $countdown = bd_countdowns();
 $next      = $countdown[0];
 $symbols   = array_slice(bd_nation('symbols'), 0, 6);
 
-$pageTitle       = 'Everything about Bangladesh';
-$pageDescription = 'Maps, districts, prayer times, gold rates, currency conversion, government services and travel — one place for everything about Bangladesh.';
+$seo = bd_seo(bd_page_seo('home'));
 
 $typer = json_encode([
     'the world’s largest river delta.',
@@ -158,7 +157,7 @@ require APP_ROOT . '/includes/layout/header.php';
 
   <div class="grid grid--3">
     <?php foreach ($travel as $i => $place): ?>
-      <a class="card" href="<?= e(bd_url('travel', ['q' => $place['name']])) ?>" data-reveal="<?= $i * 50 ?>">
+      <a class="card" href="<?= e(bd_travel_url($place)) ?>" data-reveal="<?= $i * 50 ?>">
         <div style="font-size:2rem"><?= $place['emoji'] ?></div>
         <h3><?= e($place['name']) ?></h3>
         <p style="margin-bottom:.6rem"><?= e($place['desc']) ?></p>

@@ -11,8 +11,23 @@ foreach ($results as $result) {
     $grouped[$result['category']][] = $result;
 }
 
-$pageTitle       = $query !== '' ? 'Search: ' . $query : 'Search everything about Bangladesh';
-$pageDescription = 'Search districts, travel places, rivers, mountains, government services, gold rates, prayer times and facts about Bangladesh from one box.';
+$searchSeo = bd_page_seo('search');
+
+if ($query !== '') {
+    // Result pages are thin and effectively infinite. Keep them out of the
+    // index while still letting crawlers follow the links they contain.
+    $searchSeo['title']       = 'Search results for “' . $query . '”';
+    $searchSeo['description'] = count($results) . ' results for “' . $query
+        . '” across districts, travel places, government services and facts about Bangladesh.';
+    $searchSeo['noindex']     = true;
+}
+
+$searchSeo['breadcrumbs'] = [
+    ['name' => 'Home', 'url' => bd_url()],
+    ['name' => 'Search'],
+];
+
+$seo = bd_seo($searchSeo);
 
 require APP_ROOT . '/includes/layout/header.php';
 

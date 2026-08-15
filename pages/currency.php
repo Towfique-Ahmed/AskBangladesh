@@ -6,8 +6,12 @@ $data       = bd_exchange_rates();
 $rates      = $data['rates'];
 $currencies = bd_currencies();
 
-$pageTitle       = 'Currency converter — Bangladeshi Taka (BDT)';
-$pageDescription = 'Convert the Bangladeshi Taka against the US dollar, euro, pound, riyal, dirham, ringgit and 25 more currencies, with a live rate table.';
+$seo = bd_seo(bd_page_seo('currency') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Currency Converter'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 

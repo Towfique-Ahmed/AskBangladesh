@@ -47,20 +47,174 @@ function bd_compact(float|int $n): string
     return (string) round($n);
 }
 
-function bd_url(string $page, array $params = []): string
+/* ------------------------------------------------------- urls & routing */
+
+/** URL-safe slug: "Cox's Bazar" -> "coxs-bazar", "ঢাকা" -> transliterated away. */
+function bd_slug(string $text): string
 {
-    return '?' . http_build_query(['p' => $page] + $params);
+    $text = str_replace(['’', "'", '`'], '', $text);
+    $text = preg_replace('/[^\p{L}\p{N}]+/u', '-', $text) ?? '';
+    $text = trim($text, '-');
+    return mb_strtolower($text) ?: 'item';
 }
 
-function bd_active(string $page): string
+/**
+ * Build a site-relative URL from a clean path.
+ *   bd_url()                       -> /
+ *   bd_url('districts')            -> /districts
+ *   bd_url('district/dhaka')       -> /district/dhaka
+ *   bd_url('search', ['q' => 'x']) -> /search?q=x
+ */
+function bd_url(string $path = '', array $query = []): string
 {
-    return (bd_current_page() === $page) ? ' is-active' : '';
+    $path = trim($path, '/');
+    $url  = BASE_PATH . '/' . $path;
+    if ($query !== []) {
+        $url .= '?' . http_build_query($query);
+    }
+    return $url;
+}
+
+/** Absolute URL, for canonical tags, Open Graph and the sitemap. */
+function bd_abs_url(string $path = '', array $query = []): string
+{
+    return SITE_URL . bd_url($path, $query);
+}
+
+/* Canonical detail-page URLs for each entity type. */
+function bd_district_url(array $d): string { return bd_url('district/' . bd_slug($d['name'])); }
+function bd_division_url(string $name): string { return bd_url('division/' . bd_slug($name)); }
+function bd_travel_url(array $t): string { return bd_url('travel/' . bd_slug($t['name'])); }
+function bd_prayer_url(array $d): string { return bd_url('prayer/' . bd_slug($d['name'])); }
+
+/** The request path with the base directory and surrounding slashes removed. */
+function bd_request_path(): string
+{
+    $uri  = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH);
+    $uri  = is_string($uri) ? rawurldecode($uri) : '/';
+    $base = BASE_PATH;
+
+    if ($base !== '' && str_starts_with($uri, $base)) {
+        $uri = substr($uri, strlen($base));
+    }
+    return trim($uri, '/');
+}
+
+/**
+ * Resolve the request into a page name plus its parameters.
+ * @return array{page: string, slug: string, path: string}
+ */
+function bd_route(): array
+{
+    static $route = null;
+    if ($route !== null) {
+        return $route;
+    }
+
+    $path     = bd_request_path();
+    $segments = $path === '' ? [] : explode('/', $path);
+    $first    = strtolower($segments[0] ?? '');
+    $second   = isset($segments[1]) ? strtolower($segments[1]) : '';
+
+    // Single-segment pages.
+    $simple = [
+        ''           => 'home',
+        'map'        => 'map',
+        'districts'  => 'districts',
+        'divisions'  => 'districts',
+        'geography'  => 'geography',
+        'mountains'  => 'mountains',
+        'rivers'     => 'rivers',
+        'travel'     => 'travel',
+        'transport'  => 'transport',
+        'time'       => 'time',
+        'currency'   => 'currency',
+        'gold'       => 'gold',
+        'prayer'     => 'prayer',
+        'religion'   => 'religion',
+        'government' => 'government',
+        'about'      => 'about',
+        'search'     => 'search',
+        'sitemap.xml'=> 'sitemap',
+        'robots.txt' => 'robots',
+    ];
+
+    // Two-segment detail pages: /district/dhaka, /travel/kuakata-sea-beach, …
+    $detail = [
+        'district' => 'district',
+        'division' => 'division',
+        'travel'   => 'travel-detail',
+        'prayer'   => 'prayer',
+    ];
+
+    if ($second !== '' && isset($detail[$first])) {
+        $route = ['page' => $detail[$first], 'slug' => $second, 'path' => $path];
+    } elseif (isset($simple[$first]) && count($segments) <= 1) {
+        $route = ['page' => $simple[$first], 'slug' => '', 'path' => $path];
+    } else {
+        $route = ['page' => '404', 'slug' => '', 'path' => $path];
+    }
+
+    return $route;
 }
 
 function bd_current_page(): string
 {
-    $page = isset($_GET['p']) ? preg_replace('/[^a-z0-9_-]/', '', strtolower((string) $_GET['p'])) : 'home';
-    return $page === '' ? 'home' : $page;
+    return bd_route()['page'];
+}
+
+/** Mark a nav item active, including on that section's detail pages. */
+function bd_active(string $page): string
+{
+    $current = bd_current_page();
+    $family  = [
+        'districts' => ['districts', 'district', 'division'],
+        'travel'    => ['travel', 'travel-detail'],
+        'geography' => ['geography', 'mountains', 'rivers'],
+    ];
+    $group = $family[$page] ?? [$page];
+    return in_array($current, $group, true) ? ' is-active' : '';
+}
+
+/* --------------------------------------------------------- slug lookups */
+
+function bd_find_district(string $slug): ?array
+{
+    foreach (bd_districts() as $district) {
+        if (bd_slug($district['name']) === $slug) {
+            return $district;
+        }
+    }
+    return null;
+}
+
+function bd_find_division(string $slug): ?array
+{
+    foreach (bd_divisions() as $name => $division) {
+        if (bd_slug($name) === $slug) {
+            return ['name' => $name] + $division;
+        }
+    }
+    return null;
+}
+
+function bd_find_travel(string $slug): ?array
+{
+    foreach (bd_places('travel') as $place) {
+        if (bd_slug($place['name']) === $slug) {
+            return $place;
+        }
+    }
+    return null;
+}
+
+/** Districts belonging to a division, in data order. */
+function bd_division_districts(string $division): array
+{
+    return array_values(array_filter(
+        bd_districts(),
+        static fn (array $d): bool => $d['division'] === $division
+    ));
 }
 
 /* ------------------------------------------------------- map projection */
@@ -140,7 +294,7 @@ function bd_search_index(): array
 
     $index = [];
     $add = static function (array $row) use (&$index): void {
-        $row += ['subtitle' => '', 'body' => '', 'icon' => '📌', 'url' => bd_url('home')];
+        $row += ['subtitle' => '', 'body' => '', 'icon' => '📌', 'url' => bd_url()];
         $row['haystack'] = mb_strtolower(
             $row['title'] . ' ' . $row['subtitle'] . ' ' . $row['body'] . ' ' . $row['category']
         );
@@ -154,7 +308,7 @@ function bd_search_index(): array
             'body'     => $d['famous'] . ' Area ' . $d['area'] . ' km². Population ' . bd_num($d['population']) . '.',
             'category' => 'District',
             'icon'     => '📍',
-            'url'      => bd_url('districts', ['q' => $d['name']]),
+            'url'      => bd_district_url($d),
         ]);
     }
 
@@ -165,7 +319,7 @@ function bd_search_index(): array
             'body'     => 'Area ' . bd_num($div['area']) . ' km², population about ' . bd_compact($div['population']) . '.',
             'category' => 'Division',
             'icon'     => '🗺️',
-            'url'      => bd_url('districts', ['division' => $name]),
+            'url'      => bd_division_url($name),
         ]);
     }
 
@@ -176,7 +330,7 @@ function bd_search_index(): array
             'body'     => $t['desc'],
             'category' => 'Travel',
             'icon'     => $t['emoji'],
-            'url'      => bd_url('travel', ['q' => $t['name']]),
+            'url'      => bd_travel_url($t),
         ]);
     }
 
@@ -187,7 +341,7 @@ function bd_search_index(): array
             'body'     => $m['note'] . ' ' . $m['alt'],
             'category' => 'Mountain',
             'icon'     => '⛰️',
-            'url'      => bd_url('geography', ['q' => $m['name']]),
+            'url'      => bd_url('mountains'),
         ]);
     }
 
@@ -198,7 +352,7 @@ function bd_search_index(): array
             'body'     => $r['note'],
             'category' => 'River',
             'icon'     => '🌊',
-            'url'      => bd_url('geography', ['q' => $r['name']]),
+            'url'      => bd_url('rivers'),
         ]);
     }
 
@@ -209,7 +363,7 @@ function bd_search_index(): array
             'body'     => $r['note'],
             'category' => 'Road',
             'icon'     => '🛣️',
-            'url'      => bd_url('transport', ['q' => $r['code']]),
+            'url'      => bd_url('transport'),
         ]);
     }
 
@@ -220,7 +374,7 @@ function bd_search_index(): array
             'body'     => $m['note'],
             'category' => 'Infrastructure',
             'icon'     => '🏗️',
-            'url'      => bd_url('transport', ['q' => $m['name']]),
+            'url'      => bd_url('transport'),
         ]);
     }
 
@@ -231,7 +385,7 @@ function bd_search_index(): array
             'body'     => $t['tip'] . ' Available: ' . $t['where'],
             'category' => 'Transport',
             'icon'     => $t['emoji'],
-            'url'      => bd_url('transport', ['q' => $t['mode']]),
+            'url'      => bd_url('transport'),
         ]);
     }
 
@@ -242,7 +396,7 @@ function bd_search_index(): array
             'body'     => 'Airport serving ' . $a['city'] . '.',
             'category' => 'Airport',
             'icon'     => '✈️',
-            'url'      => bd_url('transport', ['q' => $a['code']]),
+            'url'      => bd_url('transport'),
         ]);
     }
 
@@ -253,7 +407,7 @@ function bd_search_index(): array
             'body'     => $p['note'],
             'category' => 'Port',
             'icon'     => '⚓',
-            'url'      => bd_url('transport', ['q' => $p['name']]),
+            'url'      => bd_url('transport'),
         ]);
     }
 
@@ -264,7 +418,7 @@ function bd_search_index(): array
             'body'     => $r['note'] . ' ' . implode(', ', $r['sites']),
             'category' => 'Religion',
             'icon'     => $r['emoji'],
-            'url'      => bd_url('religion', ['q' => $r['name']]),
+            'url'      => bd_url('religion'),
         ]);
     }
 
@@ -275,7 +429,7 @@ function bd_search_index(): array
             'body'     => $f['desc'],
             'category' => 'Festival',
             'icon'     => $f['emoji'],
-            'url'      => bd_url('religion', ['q' => $f['name']]),
+            'url'      => bd_url('religion'),
         ]);
     }
 
@@ -286,7 +440,7 @@ function bd_search_index(): array
             'body'     => $g['role'] . ' ' . $g['web'],
             'category' => 'Government',
             'icon'     => '🏛️',
-            'url'      => bd_url('government', ['q' => $g['office']]),
+            'url'      => bd_url('government'),
         ]);
     }
 
@@ -297,7 +451,7 @@ function bd_search_index(): array
             'body'     => $s['desc'] . ' ' . $s['url'],
             'category' => 'e-Service',
             'icon'     => $s['emoji'],
-            'url'      => bd_url('government', ['q' => $s['name']]),
+            'url'      => bd_url('government'),
         ]);
     }
 
@@ -308,7 +462,7 @@ function bd_search_index(): array
             'body'     => 'Call ' . $s['number'] . ' for ' . $s['service'] . '.',
             'category' => 'Emergency',
             'icon'     => $s['emoji'],
-            'url'      => bd_url('government', ['q' => 'emergency']),
+            'url'      => bd_url('government'),
         ]);
     }
 
@@ -319,7 +473,7 @@ function bd_search_index(): array
             'body'     => $s['value'],
             'category' => 'Symbol',
             'icon'     => $s['emoji'],
-            'url'      => bd_url('about', ['q' => $s['item']]),
+            'url'      => bd_url('about'),
         ]);
     }
 
@@ -330,7 +484,7 @@ function bd_search_index(): array
             'body'     => $f['desc'],
             'category' => 'Food',
             'icon'     => $f['emoji'],
-            'url'      => bd_url('about', ['q' => $f['name']]),
+            'url'      => bd_url('about'),
         ]);
     }
 
@@ -341,7 +495,7 @@ function bd_search_index(): array
             'body'     => $t['event'],
             'category' => 'History',
             'icon'     => '📜',
-            'url'      => bd_url('about', ['q' => 'history']),
+            'url'      => bd_url('about'),
         ]);
     }
 
@@ -352,7 +506,7 @@ function bd_search_index(): array
             'body'     => $fact,
             'category' => 'Fact',
             'icon'     => '💡',
-            'url'      => bd_url('about', ['q' => 'facts']),
+            'url'      => bd_url('about'),
         ]);
     }
 

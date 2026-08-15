@@ -6,8 +6,12 @@ $geo       = bd_places('geography');
 $mountains = bd_places('mountains');
 $rivers    = bd_places('rivers');
 
-$pageTitle       = 'Geography, mountains and rivers of Bangladesh';
-$pageDescription = 'Which continent Bangladesh is on, the largest delta on Earth, its highest peaks, longest rivers, six seasons and four extreme points.';
+$seo = bd_seo(bd_page_seo('geography') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Geography'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 

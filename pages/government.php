@@ -7,8 +7,12 @@ $offices   = bd_nation('government');
 $services  = bd_nation('eservices');
 $emergency = bd_nation('emergency');
 
-$pageTitle       = 'Bangladesh government, e-services and hotlines';
-$pageDescription = 'How the Bangladesh government is structured, every major online service — NID, e-passport, e-TIN, BRTA, land records — and the national emergency numbers.';
+$seo = bd_seo(bd_page_seo('government') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Government'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>
