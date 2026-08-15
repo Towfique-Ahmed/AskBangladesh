@@ -75,6 +75,31 @@ if (!defined('BASE_PATH')) {
         ? '' : rtrim(str_replace('\\', '/', $scriptDir), '/'));
 }
 
+/*
+ * Google Analytics 4 measurement ID. Override with the GA_MEASUREMENT_ID
+ * environment variable, or set it to an empty string to drop the tag.
+ */
+if (!defined('GA_MEASUREMENT_ID')) {
+    $gaEnv = getenv('GA_MEASUREMENT_ID');
+    define('GA_MEASUREMENT_ID', $gaEnv === false ? 'G-CMKB98X676' : trim($gaEnv));
+}
+
+/*
+ * Local and preview hosts are excluded so development traffic never lands in
+ * the production property. Set GA_FORCE=1 to tag them anyway.
+ */
+if (!defined('GA_ENABLED')) {
+    $gaHost  = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    $gaLocal = $gaHost === ''
+        || str_starts_with($gaHost, 'localhost')
+        || str_starts_with($gaHost, '127.0.0.1')
+        || str_starts_with($gaHost, '[::1]')
+        || str_ends_with(explode(':', $gaHost)[0], '.local')
+        || str_ends_with(explode(':', $gaHost)[0], '.test');
+
+    define('GA_ENABLED', GA_MEASUREMENT_ID !== '' && (!$gaLocal || getenv('GA_FORCE') === '1'));
+}
+
 if (!is_dir(CACHE_DIR)) {
     @mkdir(CACHE_DIR, 0775, true);
 }
