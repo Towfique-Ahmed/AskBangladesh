@@ -4,20 +4,17 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 
 $districts = bd_districts();
 $divisions = bd_divisions();
-$focus     = trim((string) ($_GET['q'] ?? ''));
 $division  = trim((string) ($_GET['division'] ?? ''));
 
-$pageTitle       = 'All 64 districts of Bangladesh';
-$pageDescription = 'Every district of Bangladesh with its division, Bangla name, area, population and what it is known for.';
+$seo = bd_seo(bd_page_seo('districts') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Districts'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 
-$highlight = null;
-if ($focus !== '') {
-    foreach ($districts as $district) {
-        if (strcasecmp($district['name'], $focus) === 0) { $highlight = $district; break; }
-    }
-}
 ?>
 
 <div class="pagehead">
@@ -30,24 +27,6 @@ if ($focus !== '') {
   </p>
 </div>
 
-<?php if ($highlight !== null): ?>
-  <div class="card" data-reveal style="border-color:var(--green-500);margin-bottom:2rem">
-    <span class="badge"><?= e($highlight['division']) ?> Division</span>
-    <h2 style="margin:.6rem 0 .1rem"><?= e($highlight['name']) ?></h2>
-    <div style="color:var(--green-300);font-size:1.1rem;margin-bottom:.8rem"><?= e($highlight['bn']) ?></div>
-    <p><?= e($highlight['famous']) ?></p>
-    <div class="statgrid" style="margin-top:1rem">
-      <div class="stat"><div class="stat__value"><?= bd_num($highlight['area'], 1) ?></div><div class="stat__label">km² area</div></div>
-      <div class="stat"><div class="stat__value"><?= bd_compact($highlight['population']) ?></div><div class="stat__label">People</div></div>
-      <div class="stat"><div class="stat__value"><?= number_format((float) $highlight['lat'], 3) ?>°N</div><div class="stat__label">Latitude</div></div>
-      <div class="stat"><div class="stat__value"><?= number_format((float) $highlight['lon'], 3) ?>°E</div><div class="stat__label">Longitude</div></div>
-    </div>
-    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
-      <a class="btn btn--ghost" href="<?= e(bd_url('map')) ?>">See it on the map →</a>
-      <a class="btn btn--ghost" href="<?= e(bd_url('prayer', ['district' => $highlight['name']])) ?>">Prayer times here →</a>
-    </div>
-  </div>
-<?php endif; ?>
 
 <div class="card" data-reveal style="margin-bottom:1.4rem">
   <div class="field" style="margin-bottom:.9rem">
@@ -74,7 +53,7 @@ if ($focus !== '') {
       $color = $divisions[$district['division']]['color'] ?? '#00a651';
       $needle = $district['name'] . ' ' . $district['bn'] . ' ' . $district['division'] . ' ' . $district['famous'];
   ?>
-    <article class="card" data-reveal="<?= ($i % 9) * 30 ?>"
+    <a class="card" href="<?= e(bd_district_url($district)) ?>" data-reveal="<?= ($i % 9) * 30 ?>"
              data-filter-item="<?= e($needle) ?>"
              data-filter-group="<?= e($district['division']) ?>">
       <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem">
@@ -88,11 +67,8 @@ if ($focus !== '') {
         <span class="badge badge--gold"><?= bd_num($district['area'], 0) ?> km²</span>
         <span class="badge badge--red"><?= bd_compact($district['population']) ?> people</span>
       </div>
-      <div style="margin-top:.9rem;display:flex;gap:.8rem;font-size:.82rem">
-        <a href="<?= e(bd_url('prayer', ['district' => $district['name']])) ?>" style="color:var(--green-300)">🕌 Prayer times</a>
-        <a href="<?= e(bd_url('map')) ?>" style="color:var(--green-300)">🗺️ On the map</a>
-      </div>
-    </article>
+      <span class="tile__arrow">Open <?= e($district['name']) ?> →</span>
+    </a>
   <?php endforeach; ?>
 </div>
 
@@ -115,7 +91,7 @@ if ($focus !== '') {
           <tr>
             <td>
               <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:<?= e($meta['color']) ?>;margin-right:.5rem"></span>
-              <a href="<?= e(bd_url('districts', ['division' => $name])) ?>"><?= e($name) ?></a>
+              <a href="<?= e(bd_division_url($name)) ?>"><?= e($name) ?></a>
             </td>
             <td><?= $meta['established'] ?></td>
             <td class="num"><?= bd_num($meta['area']) ?></td>

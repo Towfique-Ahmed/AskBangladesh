@@ -9,6 +9,9 @@
   const $  = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Clean URLs nest arbitrarily deep (/district/dhaka), so every request
+  // must resolve against the app root rather than the current path.
+  const BASE = (document.body && document.body.dataset.base) || '/';
 
   /* ------------------------------------------------------------- theme */
 
@@ -274,7 +277,7 @@
     }
 
     function search(query) {
-      fetch('api/search.php?q=' + encodeURIComponent(query) + '&limit=8')
+      fetch(BASE + 'api/search.php?q=' + encodeURIComponent(query) + '&limit=8')
         .then(function (r) { return r.json(); })
         .then(function (data) {
           if (input.value.trim() === query) { render(data.results || [], query); }

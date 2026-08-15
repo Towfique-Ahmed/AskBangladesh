@@ -3,24 +3,21 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Travel destinations, filterable by type. */
 
 $travel = bd_places('travel');
-$focus  = trim((string) ($_GET['q'] ?? ''));
 
 $types = [];
 foreach ($travel as $place) { $types[$place['type']] = true; }
 $types = array_keys($types);
 sort($types);
 
-$pageTitle       = 'Best places to visit in Bangladesh';
-$pageDescription = 'Beaches, hills, mangrove forests, tea gardens, wetlands and UNESCO heritage sites across Bangladesh, with the best season for each.';
+$seo = bd_seo(bd_page_seo('travel') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Travel'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 
-$highlight = null;
-if ($focus !== '') {
-    foreach ($travel as $place) {
-        if (strcasecmp($place['name'], $focus) === 0) { $highlight = $place; break; }
-    }
-}
 ?>
 
 <div class="pagehead">
@@ -33,19 +30,6 @@ if ($focus !== '') {
   </p>
 </div>
 
-<?php if ($highlight !== null): ?>
-  <div class="card" data-reveal style="border-color:var(--gold-500);margin-bottom:2rem">
-    <div style="font-size:2.4rem"><?= $highlight['emoji'] ?></div>
-    <h2 style="margin:.3rem 0"><?= e($highlight['name']) ?></h2>
-    <p style="font-size:1.02rem"><?= e($highlight['desc']) ?></p>
-    <div style="display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.8rem">
-      <span class="badge"><?= e($highlight['type']) ?></span>
-      <span class="badge badge--red"><?= e($highlight['district']) ?> district</span>
-      <span class="badge badge--gold">Best season: <?= e($highlight['best']) ?></span>
-    </div>
-    <a class="btn btn--ghost" style="margin-top:1rem" href="<?= e(bd_url('map')) ?>">Find it on the map →</a>
-  </div>
-<?php endif; ?>
 
 <div class="card" data-reveal style="margin-bottom:1.4rem">
   <div class="field" style="margin-bottom:.9rem">
@@ -66,7 +50,7 @@ if ($focus !== '') {
 
 <div class="grid grid--3">
   <?php foreach ($travel as $i => $place): ?>
-    <article class="tile" data-reveal="<?= ($i % 9) * 35 ?>"
+    <a class="tile" href="<?= e(bd_travel_url($place)) ?>" data-reveal="<?= ($i % 9) * 35 ?>"
              data-filter-item="<?= e($place['name'] . ' ' . $place['type'] . ' ' . $place['district'] . ' ' . $place['desc'] . ' ' . $place['best']) ?>"
              data-filter-group="<?= e($place['type']) ?>">
       <span class="tile__icon" aria-hidden="true"><?= $place['emoji'] ?></span>
@@ -77,7 +61,7 @@ if ($focus !== '') {
         <span class="badge badge--red"><?= e($place['district']) ?></span>
         <span class="badge badge--gold"><?= e($place['best']) ?></span>
       </div>
-    </article>
+    </a>
   <?php endforeach; ?>
 </div>
 

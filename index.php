@@ -1,27 +1,52 @@
 <?php
 /**
  * AskBangladesh — front controller.
- * Everything is routed through ?p=<page>; unknown pages fall through to 404.
+ *
+ * Clean URLs are resolved by bd_route(); the web server rewrites anything
+ * that is not a real file onto this script.
  */
 
 declare(strict_types=1);
 
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/services.php';
+require_once __DIR__ . '/includes/seo.php';
 
-$routes = [
-    'home', 'map', 'districts', 'geography', 'travel', 'transport',
-    'time', 'currency', 'gold', 'prayer', 'religion', 'government',
-    'about', 'search',
+$route = bd_route();
+$page  = $route['page'];
+$slug  = $route['slug'];
+
+// Page name => file. Detail pages take a $slug.
+$files = [
+    'home'          => 'home',
+    'map'           => 'map',
+    'districts'     => 'districts',
+    'district'      => 'district',
+    'division'      => 'division',
+    'geography'     => 'geography',
+    'mountains'     => 'mountains',
+    'rivers'        => 'rivers',
+    'travel'        => 'travel',
+    'travel-detail' => 'travel-detail',
+    'transport'     => 'transport',
+    'time'          => 'time',
+    'currency'      => 'currency',
+    'gold'          => 'gold',
+    'prayer'        => 'prayer',
+    'religion'      => 'religion',
+    'government'    => 'government',
+    'about'         => 'about',
+    'search'        => 'search',
+    'sitemap'       => 'sitemap',
+    'robots'        => 'robots',
 ];
 
-$page = bd_current_page();
-$file = APP_ROOT . '/pages/' . $page . '.php';
+$file = isset($files[$page]) ? APP_ROOT . '/pages/' . $files[$page] . '.php' : null;
 
-if (!in_array($page, $routes, true) || !is_file($file)) {
+if ($file === null || !is_file($file)) {
     http_response_code(404);
-    $page = '404';
-    $file = APP_ROOT . '/pages/404.php';
+    require APP_ROOT . '/pages/404.php';
+    exit;
 }
 
 require $file;

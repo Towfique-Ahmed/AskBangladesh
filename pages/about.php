@@ -8,8 +8,12 @@ $timeline = bd_nation('timeline');
 $food     = bd_nation('food');
 $facts    = bd_nation('facts');
 
-$pageTitle       = 'About Bangladesh — national profile, symbols and history';
-$pageDescription = 'The official profile of Bangladesh: government, currency, language, national symbols, a history timeline from Pundranagara to the Padma Bridge, food and surprising facts.';
+$seo = bd_seo(bd_page_seo('about') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'About Bangladesh'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>

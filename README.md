@@ -102,16 +102,62 @@ includes/
   config.php            constants and bootstrap
   functions.php         data access, search index, map projection, HTTP client
   services.php          currency, gold and prayer-time services
+  seo.php               per-page metadata, JSON-LD and the sitemap URL list
   data/
     districts.php       8 divisions, 64 districts
     places.php          geography, mountains, rivers, travel, roads, transport
     nation.php          profile, symbols, government, religions, festivals, history
   layout/               header and footer
-pages/                  one file per route
+pages/                  one file per route, incl. sitemap.php and robots.php
 api/                    JSON endpoints
 assets/                 css and js
 storage/cache/          live-rate cache (gitignored)
 ```
+
+## URLs
+
+Clean, keyword-bearing paths throughout — no query strings on content pages.
+
+| Pattern | Example | Count |
+| --- | --- | --- |
+| `/` | the landing page | 1 |
+| `/{section}` | `/districts`, `/gold`, `/prayer` | 15 |
+| `/district/{slug}` | `/district/coxs-bazar` | 64 |
+| `/division/{slug}` | `/division/sylhet` | 8 |
+| `/travel/{slug}` | `/travel/sajek-valley` | 24 |
+| `/prayer/{slug}` | `/prayer/khulna` | 64 |
+
+175 indexable URLs in total, every one listed in `/sitemap.xml`.
+
+Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
+`deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,
+which resolves it with `bd_route()`.
+
+## SEO
+
+- **Unique title and meta description on every page** — titles kept under 60 characters and
+  descriptions under 160, so neither is truncated in results. The brand suffix is appended
+  only when it still fits, and `bd_trim_meta()` cuts long descriptions on a word boundary.
+- **Canonical URL** on every page, built from `SITE_URL`.
+- **Structured data** (JSON-LD): `WebSite` with `SearchAction` sitewide, `BreadcrumbList` on
+  every nested page, plus `AdministrativeArea` on districts and divisions,
+  `TouristAttraction` on destinations, `ItemList` on the ranked lists and `FAQPage` on the
+  pages that answer real questions.
+- **Open Graph and Twitter cards** with a generated `assets/og-image.svg` preview.
+- **`/sitemap.xml`** generated from the data files, with `lastmod`, `changefreq` and
+  `priority`; **`/robots.txt`** points at it.
+- **Search result pages are `noindex, follow`** — thin and effectively infinite — while the
+  links they contain are still crawled.
+- `?district=` on the prayer page **301-redirects** to its canonical `/prayer/{slug}`.
+
+Set `SITE_URL` in the environment so canonical tags and the sitemap emit your real origin:
+
+```
+SITE_URL=https://askbangladesh.towfique.com
+```
+
+Without it the origin is derived per-request from the `Host` header, which works but pins
+nothing if the site answers on more than one hostname.
 
 ## JSON API
 

@@ -5,8 +5,12 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 $clocks     = bd_world_clocks();
 $countdowns = bd_countdowns();
 
-$pageTitle       = 'Bangladesh time, world clocks and time converter';
-$pageDescription = 'Live Bangladesh Standard Time (UTC+6) with an analogue clock, 30+ world clocks, a two-way time-zone converter and countdowns to national days.';
+$seo = bd_seo(bd_page_seo('time') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Time'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>

@@ -31,8 +31,8 @@
         <a href="<?= e(bd_url('government')) ?>">Government &amp; e-services</a>
         <a href="<?= e(bd_url('religion')) ?>">Religions &amp; festivals</a>
         <a href="<?= e(bd_url('about')) ?>">National profile</a>
-        <a href="<?= e(bd_url('about', ['q' => 'history'])) ?>">History timeline</a>
-        <a href="<?= e(bd_url('about', ['q' => 'facts'])) ?>">Surprising facts</a>
+        <a href="<?= e(bd_url('about') . '#history') ?>">History timeline</a>
+        <a href="<?= e(bd_url('about') . '#facts') ?>">Surprising facts</a>
       </div>
       <div>
         <h4>Emergency</h4>
@@ -53,6 +53,6 @@
 
 <button type="button" class="totop" id="to-top" aria-label="Back to top">↑</button>
 
-<script src="assets/js/app.js?v=<?= e(APP_VERSION) ?>" defer></script>
+<script src="<?= e(bd_url('assets/js/app.js')) ?>?v=<?= e(APP_VERSION) ?>" defer></script>
 </body>
 </html>

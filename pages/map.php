@@ -10,8 +10,12 @@ $airports  = bd_places('airports');
 $ports     = bd_places('ports');
 $geography = bd_places('geography');
 
-$pageTitle       = 'Interactive map of Bangladesh';
-$pageDescription = 'Pan, zoom and explore all 64 districts, the highest peaks, top travel places, airports and ports of Bangladesh on one interactive map.';
+$seo = bd_seo(bd_page_seo('map') + [
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => bd_url()],
+        ['name' => 'Map'],
+    ],
+]);
 
 require APP_ROOT . '/includes/layout/header.php';
 
@@ -83,7 +87,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'area'       => $district['area'],
                 'population' => $district['population'],
                 'note'       => $district['famous'],
-                'link'       => bd_url('districts', ['q' => $district['name']]),
+                'link'       => bd_district_url($district),
             ], (float) $district['lat'], (float) $district['lon'], $color, 'district');
         }
 
@@ -95,7 +99,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'district' => $mountain['district'],
                 'height'   => $mountain['height'],
                 'note'     => $mountain['note'],
-                'link'     => bd_url('geography', ['q' => $mountain['name']]),
+                'link'     => bd_url('mountains'),
             ], (float) $mountain['lat'], (float) $mountain['lon'], '#c0392b', 'mountain');
         }
 
@@ -107,7 +111,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'district' => $place['district'],
                 'best'     => $place['best'],
                 'note'     => $place['desc'],
-                'link'     => bd_url('travel', ['q' => $place['name']]),
+                'link'     => bd_travel_url($place),
             ], (float) $place['lat'], (float) $place['lon'], '#f5b301', 'travel', true);
         }
 
@@ -117,7 +121,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'kind' => 'Airport (' . $airport['code'] . ')',
                 'name' => $airport['name'],
                 'note' => $airport['type'] . ' airport serving ' . $airport['city'] . '.',
-                'link' => bd_url('transport', ['q' => $airport['code']]),
+                'link' => bd_url('transport'),
             ], (float) $airport['lat'], (float) $airport['lon'], '#2980b9', 'airport');
         }
 
@@ -127,7 +131,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'kind' => $port['type'],
                 'name' => $port['name'],
                 'note' => $port['note'],
-                'link' => bd_url('transport', ['q' => $port['name']]),
+                'link' => bd_url('transport'),
             ], (float) $port['lat'], (float) $port['lon'], '#8e44ad', 'port');
         }
 
@@ -137,7 +141,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
                 'kind' => 'Extreme point — ' . $direction,
                 'name' => $point['name'],
                 'note' => 'The ' . strtolower($direction) . 'ernmost point of Bangladesh.',
-                'link' => bd_url('geography', ['q' => 'extreme']),
+                'link' => bd_url('geography'),
             ], (float) $point['lat'], (float) $point['lon'], '#ffffff', 'extreme');
         }
         ?>
@@ -182,7 +186,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
 
   <div class="grid grid--4">
     <?php $i = 0; foreach ($divisions as $name => $division): ?>
-      <a class="card" href="<?= e(bd_url('districts', ['division' => $name])) ?>" data-reveal="<?= $i * 45 ?>">
+      <a class="card" href="<?= e(bd_division_url($name)) ?>" data-reveal="<?= $i * 45 ?>">
         <div style="display:flex;align-items:center;gap:.55rem;margin-bottom:.4rem">
           <span style="width:12px;height:12px;border-radius:50%;background:<?= e($division['color']) ?>"></span>
           <h3 style="margin:0"><?= e($name) ?></h3>
