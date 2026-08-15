@@ -1,0 +1,16 @@
+# Runtime cache for live rate/price feeds
+storage/cache/*.json
+
+# Dependencies (none required, but keep them out if ever added)
+/vendor/
+/node_modules/
+
+# Local environment and editor noise
+.env
+.env.local
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
