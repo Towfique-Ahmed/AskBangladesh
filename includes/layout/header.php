@@ -29,6 +29,17 @@ $ogImage = bd_abs_url('assets/og-image.svg');
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<?php if (GA_ENABLED): ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= rawurlencode(GA_MEASUREMENT_ID) ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<?= e(GA_MEASUREMENT_ID) ?>');
+</script>
+<?php endif; ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

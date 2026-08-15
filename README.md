@@ -7,7 +7,7 @@ Bangladesh — an interactive map, all 64 districts, live clocks and converters,
 times, gold rates, government services, travel guides and geography — behind a single
 global search box.
 
-No framework, no build step, no database, no tracker. Drop it on any PHP 8 host and it runs.
+No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 
 ---
 
@@ -97,7 +97,7 @@ is 8.0 or newer (`php -v`).
 ## Project layout
 
 ```
-index.php               front controller — routes ?p=<page>
+index.php               front controller — resolves clean URLs via bd_route()
 includes/
   config.php            constants and bootstrap
   functions.php         data access, search index, map projection, HTTP client
@@ -158,6 +158,21 @@ SITE_URL=https://askbangladesh.towfique.com
 
 Without it the origin is derived per-request from the `Host` header, which works but pins
 nothing if the site answers on more than one hostname.
+
+## Analytics
+
+Google Analytics 4 (`gtag.js`) is emitted immediately after `<head>` on every HTML page,
+per Google's installation instructions. The measurement ID lives in `includes/config.php`
+and can be overridden per environment:
+
+```
+GA_MEASUREMENT_ID=G-XXXXXXXXXX    # override the ID
+GA_MEASUREMENT_ID=                # empty disables the tag entirely
+GA_FORCE=1                        # also tag localhost (off by default)
+```
+
+`localhost`, `127.0.0.1`, `.local` and `.test` hosts are skipped so development traffic does
+not land in the production property. `sitemap.xml` and `robots.txt` are never tagged.
 
 ## JSON API
 
