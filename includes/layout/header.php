@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** @var string $pageTitle */
 /** @var string $pageDescription */
 $pageTitle       = $pageTitle       ?? APP_NAME;

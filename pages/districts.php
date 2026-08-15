@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** All 64 districts, filterable by division and free text. */
 
 $districts = bd_districts();

@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Faiths of Bangladesh and the festival calendar. */
 
 $religions = bd_nation('religions');

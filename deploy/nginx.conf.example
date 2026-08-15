@@ -1,0 +1,59 @@
+# AskBangladesh — Nginx server block.
+#
+# Nginx ignores .htaccess entirely, so these rules must live in the site config.
+# Copy into /etc/nginx/sites-available/, adjust the three marked values, then:
+#   nginx -t && systemctl reload nginx
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name askbangladesh.example.com;          # <-- your domain
+
+    # The directory that CONTAINS index.php. The application is not nested in
+    # a public/ subfolder — point this at the repository root itself.
+    root /var/www/askbangladesh;                    # <-- your path
+
+    index index.php index.html;
+    charset utf-8;
+
+    access_log /var/log/nginx/askbangladesh.access.log;
+    error_log  /var/log/nginx/askbangladesh.error.log;
+
+    # ------------------------------------------------------------- routing
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;  # <-- your PHP-FPM socket
+        fastcgi_param HTTP_PROXY "";                 # mitigate httpoxy
+    }
+
+    # ----------------------------------------------------------- internals
+    # These are require()d by the front controller and must never be served
+    # or executed directly.
+    location ~ ^/(includes|pages|storage)/ {
+        deny all;
+        return 404;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+
+    # ----------------------------------------------------------- transport
+    location ~* \.(css|js|svg|woff2?)$ {
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    client_max_body_size 4m;
+}

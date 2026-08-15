@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Live Bangladesh clock, world clocks, time-zone converter and countdowns. */
 
 $clocks     = bd_world_clocks();

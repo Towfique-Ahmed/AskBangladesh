@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Continent, delta, mountains, rivers, climate and extreme points. */
 
 $geo       = bd_places('geography');

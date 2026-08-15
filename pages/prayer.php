@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Prayer times for any Bangladeshi district, with a live next-prayer timer. */
 
 $districts    = bd_districts();

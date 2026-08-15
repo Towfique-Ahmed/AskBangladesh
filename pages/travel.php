@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Travel destinations, filterable by type. */
 
 $travel = bd_places('travel');

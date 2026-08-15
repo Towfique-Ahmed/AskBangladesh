@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Landing page — the front door to every tool and dataset in the app. */
 
 $profile   = bd_nation('profile');

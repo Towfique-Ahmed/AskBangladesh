@@ -1,4 +1,6 @@
 <?php
+
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /**
  * Travel destinations, mountains, rivers, roads, transport and geography.
  * Every entry carries lat/lon so it can be pinned on the interactive map.

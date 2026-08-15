@@ -1,3 +1,4 @@
+<?php defined('APP_ROOT') || exit('Direct access is not permitted.'); ?>
 </main>
 
 <footer class="footer">

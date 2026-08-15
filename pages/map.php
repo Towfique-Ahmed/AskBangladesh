@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Interactive vector map of Bangladesh with pan, zoom and layered pins. */
 
 $districts = bd_districts();

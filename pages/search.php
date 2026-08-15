@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Full-page global search across every dataset in the app. */
 
 $query   = trim((string) ($_GET['q'] ?? ''));

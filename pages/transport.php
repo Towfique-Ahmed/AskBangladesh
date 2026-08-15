@@ -1,4 +1,5 @@
 <?php
+defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** Roads, transport modes, fares, airports, ports and megaprojects. */
 
 $roads     = bd_places('roads');
