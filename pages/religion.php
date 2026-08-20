@@ -92,11 +92,11 @@ require APP_ROOT . '/includes/layout/header.php';
 
 <section class="section">
   <div class="grid grid--2">
-    <a class="card" href="<?= e(bd_url('prayer')) ?>" data-reveal>
-      <h3>🕌 Prayer times by district</h3>
-      <p>Fajr through Isha for any of the 64 districts, with a live countdown to the next prayer and
-      the day’s sehri and iftar times.</p>
-      <span class="tile__arrow">Open the prayer page →</span>
+    <a class="card" href="<?= e(bd_url('sunrise-sunset')) ?>" data-reveal>
+      <h3>🌅 Sunrise &amp; sunset by district</h3>
+      <p>Daily sunrise, sunset, day length and golden hour for any of the 64 districts, calculated
+      from each district's own coordinates.</p>
+      <span class="tile__arrow">Open sunrise &amp; sunset →</span>
     </a>
     <a class="card" href="<?= e(bd_url('travel')) ?>" data-reveal="80">
       <h3>🛕 Visit the sites</h3>

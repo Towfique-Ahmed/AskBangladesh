@@ -18,7 +18,7 @@ $nav = [
     ['path' => 'time',       'page' => 'time',       'label' => 'Time',       'icon' => '🕰️'],
     ['path' => 'currency',   'page' => 'currency',   'label' => 'Currency',   'icon' => '💱'],
     ['path' => 'gold',       'page' => 'gold',       'label' => 'Gold',       'icon' => '🥇'],
-    ['path' => 'prayer',     'page' => 'prayer',     'label' => 'Prayer',     'icon' => '🕌'],
+    ['path' => 'sunrise-sunset', 'page' => 'sun',    'label' => 'Sun Times',  'icon' => '🌅'],
     ['path' => 'religion',   'page' => 'religion',   'label' => 'Religion',   'icon' => '🕊️'],
     ['path' => 'government', 'page' => 'government', 'label' => 'Government', 'icon' => '🏛️'],
     ['path' => 'about',      'page' => 'about',      'label' => 'About BD',   'icon' => '🇧🇩'],
@@ -133,7 +133,7 @@ $modified = bd_content_modified();
         id="global-search-input"
         name="q"
         class="globalsearch__input"
-        placeholder="Search anything — districts, gold, prayer times, visas, rivers…"
+        placeholder="Search anything — districts, gold, sunset times, visas, rivers…"
         value="<?= e($_GET['q'] ?? '') ?>"
         aria-label="Search everything about Bangladesh"
         aria-expanded="false"

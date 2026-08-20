@@ -3,9 +3,9 @@
 **Everything about Bangladesh, in one place.**
 
 A dependency-free PHP web app that gathers the things people actually look up about
-Bangladesh — an interactive map, all 64 districts, live clocks and converters, prayer
-times, gold rates, government services, travel guides and geography — behind a single
-global search box.
+Bangladesh — an interactive map, all 64 districts, live clocks and converters, sunrise
+and sunset times, gold rates, government services, travel guides and geography — behind a
+single global search box.
 
 No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 
@@ -24,7 +24,7 @@ No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 | 🕰️ **Time** | Live Bangladesh Standard Time (digital + analogue), 34 world clocks, a two-way time-zone converter and countdowns to national days. |
 | 💱 **Currency** | The Taka against 31 currencies, with an instant converter, remittance-corridor cards and a full rate table. |
 | 🥇 **Gold** | BAJUS-style 22K/21K/18K/traditional gold and silver board, plus a converter across bhori, ana, roti, gram, tola and troy ounce. |
-| 🕌 **Prayer times** | Astronomically calculated salah times for any district, with a live next-prayer countdown and sehri/iftar times. |
+| 🌅 **Sunrise & sunset** | Calculated sunrise, sunset, first and last light, solar noon, golden hours and day length for any district, plus tomorrow's figures. |
 | 🕊️ **Religion** | Population shares, major sites for each faith, and the national festival calendar. |
 | 🏛️ **Government** | Structure of the state, ten e-service portals and every national emergency hotline. |
 | 🇧🇩 **About** | National profile, symbols, a history timeline, food and facts. |
@@ -101,7 +101,7 @@ index.php               front controller — resolves clean URLs via bd_route()
 includes/
   config.php            constants and bootstrap
   functions.php         data access, search index, map projection, HTTP client
-  services.php          currency, gold and prayer-time services
+  services.php          currency, gold and sun-time services
   seo.php               per-page metadata, JSON-LD and the sitemap URL list
   data/
     districts.php       8 divisions, 64 districts
@@ -121,11 +121,11 @@ Clean, keyword-bearing paths throughout — no query strings on content pages.
 | Pattern | Example | Count |
 | --- | --- | --- |
 | `/` | the landing page | 1 |
-| `/{section}` | `/districts`, `/gold`, `/prayer` | 15 |
+| `/{section}` | `/districts`, `/gold`, `/sunrise-sunset` | 15 |
 | `/district/{slug}` | `/district/coxs-bazar` | 64 |
 | `/division/{slug}` | `/division/sylhet` | 8 |
 | `/travel/{slug}` | `/travel/sajek-valley` | 24 |
-| `/prayer/{slug}` | `/prayer/khulna` | 64 |
+| `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
 175 indexable URLs in total, every one listed in `/sitemap.xml`.
 
@@ -152,7 +152,9 @@ which resolves it with `bd_route()`.
   `priority`; **`/robots.txt`** points at it.
 - **Search result pages are `noindex, follow`** — thin and effectively infinite — while the
   links they contain are still crawled.
-- `?district=` on the prayer page **301-redirects** to its canonical `/prayer/{slug}`.
+- `?district=` on the sun page **301-redirects** to its canonical `/sunrise-sunset/{slug}`.
+- The retired `/prayer` and `/prayer/{slug}` URLs **301-redirect** to their sun equivalents
+  rather than 404ing, so nothing already indexed is dropped.
 
 ## Data currency
 
@@ -162,7 +164,7 @@ Figures carry different confidence levels, and the app says which is which:
 | --- | --- | --- |
 | Districts, divisions, area | 2022 BBS census | Stable |
 | National population, GDP | 2026 estimates | Projections, not counts |
-| Prayer times | Calculated | Exact for any date and district |
+| Sunrise & sunset | Calculated | Exact for any date and district |
 | Exchange rates, gold | Live feed, hourly cache | Falls back to bundled indicative values |
 
 The bundled currency and gold figures are a **fallback only**, used when the live feed is
@@ -201,18 +203,18 @@ Every dataset is also readable as JSON.
 | `api/search.php` | `?q=sylhet&limit=8` |
 | `api/rates.php` | `?amount=100&from=USD&to=BDT` |
 | `api/gold.php` | — |
-| `api/prayer.php` | `?district=Sylhet&school=hanafi&date=2026-03-20` |
+| `api/sun.php` | `?district=Sylhet&date=2026-03-20` |
 
 ```bash
-curl 'localhost:8000/api/prayer.php?district=Dhaka'
+curl 'localhost:8000/api/sun.php?district=Dhaka'
 ```
 
 ```json
 {
   "district": "Dhaka",
-  "method": "University of Islamic Sciences, Karachi (Fajr 18°, Isha 18°)",
-  "times": { "Fajr": "04:14", "Sunrise": "05:34", "Dhuhr": "12:05",
-             "Asr": "16:38", "Maghrib": "18:34", "Isha": "19:52" }
+  "method": "Solar position algorithm; sunrise and sunset at -0.833°…",
+  "times": { "First light": "05:12", "Sunrise": "05:35", "Solar noon": "12:05",
+             "Sunset": "18:34", "Last light": "18:57", "Day length": "12:59" }
 }
 ```
 
@@ -222,11 +224,11 @@ curl 'localhost:8000/api/prayer.php?district=Dhaka'
 live in plain PHP arrays under `includes/data/`. Editing them updates the pages, the map and
 the search index at once.
 
-**Prayer times** are computed, not fetched: `bd_prayer_times()` implements the standard solar
-position algorithm (Julian day → solar declination and equation of time → hour angles) using
-the University of Islamic Sciences, Karachi convention of 18° for Fajr and Isha, with a
-selectable Hanafi or Shafi Asr shadow ratio. This means they work offline for any district
-and any date.
+**Sun times** are computed, not fetched: `bd_sun_times()` implements the standard solar
+position algorithm (Julian day → solar declination and equation of time → hour angles).
+Sunrise and sunset use an altitude of −0.833° to allow for atmospheric refraction and the
+width of the solar disc; civil twilight uses −6° and the golden hours +6°. This means they
+work offline for any district and any date.
 
 **Currency and gold** try a live source first, cache the result for an hour, and fall back to
 bundled indicative figures when the network is unavailable. The UI always states which of the
@@ -234,7 +236,7 @@ two you are looking at.
 
 ## Accuracy
 
-Exchange rates, gold prices and prayer times are indicative and shown for reference. Confirm
+Exchange rates and gold prices are indicative and shown for reference. Confirm
 with Bangladesh Bank, BAJUS and your local mosque before acting on them. The map outline is a
 stylised projection built for exploration, not for navigation or any question of borders.
 

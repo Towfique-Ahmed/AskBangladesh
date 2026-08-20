@@ -652,26 +652,21 @@ select.input { appearance: none; cursor: pointer; background-image: none; }
 .countdown__num { font: 700 1.6rem/1 var(--mono); color: var(--green-300); }
 .countdown__lbl { font-size: .64rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-mute); }
 
-/* -------------------------------------------------------------- prayer */
+/* ----------------------------------------------------------- sun times */
 
-.prayercard {
+.suncard {
   position: relative; overflow: hidden;
   display: flex; align-items: center; gap: 1rem;
   padding: 1.1rem 1.3rem;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   transition: transform .3s var(--ease), border-color .3s;
 }
-.prayercard:hover { transform: translateX(5px); }
-.prayercard.is-next {
-  border-color: var(--green-500);
-  background: linear-gradient(120deg, color-mix(in srgb, var(--green-500) 15%, transparent), transparent);
-}
-.prayercard.is-past { opacity: .55; }
-.prayercard__emoji { font-size: 1.7rem; }
-.prayercard__name { font-weight: 650; font-size: 1rem; }
-.prayercard__bn { font-size: .8rem; color: var(--green-300); }
-.prayercard__time { margin-left: auto; font: 700 1.3rem/1 var(--mono); }
-.prayercard__tag {
+.suncard:hover { transform: translateX(5px); }
+.suncard__emoji { font-size: 1.7rem; }
+.suncard__name { font-weight: 650; font-size: 1rem; }
+.suncard__bn { font-size: .8rem; color: var(--green-300); }
+.suncard__time { margin-left: auto; font: 700 1.3rem/1 var(--mono); }
+.suncard__tag {
   position: absolute; top: .5rem; right: .6rem;
   font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--green-300);

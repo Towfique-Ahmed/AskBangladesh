@@ -1,8 +1,9 @@
 <?php
 /**
- * Live data services: currency rates, gold and silver prices, and prayer
- * times. Every service tries a live source first, caches the result, and
- * falls back to bundled values so the app still works without a network.
+ * Live data services: currency rates, gold and silver prices, and solar
+ * event times. The rate services try a live source first, cache the result,
+ * and fall back to bundled values so the app still works without a network.
+ * Sun times are always computed locally.
  */
 
 declare(strict_types=1);
@@ -205,17 +206,19 @@ function bd_gold_prices(): array
     return $result;
 }
 
-/* --------------------------------------------------------- prayer times */
+/* ----------------------------------------------------------- sun times */
 
 /**
- * Calculate the five daily prayer times plus sunrise, using the standard
- * solar position algorithm. Angles follow the University of Islamic
- * Sciences, Karachi convention (Fajr 18°, Isha 18°) commonly used in
- * Bangladesh, with the Hanafi Asr shadow ratio.
+ * Solar event times for a location, from the standard solar position
+ * algorithm: Julian day -> solar declination and equation of time ->
+ * hour angles for each sun altitude.
  *
- * @return array<string,string> prayer name => HH:MM in Bangladesh time
+ * Everything is computed locally, so any district and any date resolves
+ * without a network call.
+ *
+ * @return array<string,string> event => HH:MM in Bangladesh Standard Time
  */
-function bd_prayer_times(float $lat, float $lon, ?int $timestamp = null, string $asrSchool = 'hanafi'): array
+function bd_sun_times(float $lat, float $lon, ?int $timestamp = null): array
 {
     $timestamp ??= time();
     $tzOffset   = 6.0; // Bangladesh Standard Time, UTC+06:00, no DST.
@@ -230,70 +233,86 @@ function bd_prayer_times(float $lat, float $lon, ?int $timestamp = null, string 
     $b  = 2 - $a + intdiv($a, 4);
     $jd = floor(365.25 * ($y + 4716)) + floor(30.6001 * ($m + 1)) + $d + $b - 1524.5;
 
-    $n  = $jd - 2451545.0;
-    $g  = fmod(357.529 + 0.98560028 * $n, 360.0);          // mean anomaly
-    $q  = fmod(280.459 + 0.98564736 * $n, 360.0);          // mean longitude
-    $L  = fmod($q + 1.915 * sin(deg2rad($g)) + 0.020 * sin(deg2rad(2 * $g)), 360.0);
-    $eps = 23.439 - 0.00000036 * $n;                        // obliquity
+    $n   = $jd - 2451545.0;
+    $g   = fmod(357.529 + 0.98560028 * $n, 360.0);   // mean anomaly
+    $q   = fmod(280.459 + 0.98564736 * $n, 360.0);   // mean longitude
+    $L   = fmod($q + 1.915 * sin(deg2rad($g)) + 0.020 * sin(deg2rad(2 * $g)), 360.0);
+    $eps = 23.439 - 0.00000036 * $n;                 // obliquity
 
     $ra = rad2deg(atan2(cos(deg2rad($eps)) * sin(deg2rad($L)), cos(deg2rad($L))));
     $ra = fmod($ra + 360.0, 360.0) / 15.0;
     $decl = rad2deg(asin(sin(deg2rad($eps)) * sin(deg2rad($L))));
-    $eqt  = $q / 15.0 - $ra;                                // equation of time, hours
-    // Wrap into (-12, +12]; the raw difference can straddle the 0/24h seam.
-    $eqt  = fmod(fmod($eqt, 24.0) + 24.0, 24.0);
+
+    // Equation of time, wrapped into (-12, +12]; the raw difference can
+    // straddle the 0/24h seam.
+    $eqt = $q / 15.0 - $ra;
+    $eqt = fmod(fmod($eqt, 24.0) + 24.0, 24.0);
     if ($eqt > 12.0) { $eqt -= 24.0; }
 
-    $dhuhr = 12.0 + $tzOffset - $lon / 15.0 - $eqt;
+    $noon = 12.0 + $tzOffset - $lon / 15.0 - $eqt;
 
-    // Hour angle for a given sun altitude below the horizon.
+    /*
+     * Hour angle for a given sun altitude. Positive angles are below the
+     * horizon (twilight), negative ones above it (used for golden hour).
+     */
     $hourAngle = static function (float $angle) use ($lat, $decl): ?float {
         $cosH = (-sin(deg2rad($angle)) - sin(deg2rad($decl)) * sin(deg2rad($lat)))
               / (cos(deg2rad($decl)) * cos(deg2rad($lat)));
         if ($cosH < -1.0 || $cosH > 1.0) {
-            return null; // Sun never reaches this altitude at this latitude/date.
+            return null; // The sun never reaches this altitude here today.
         }
         return rad2deg(acos($cosH)) / 15.0;
     };
 
-    $shadow = $asrSchool === 'hanafi' ? 2.0 : 1.0;
-    $asrAngle = -rad2deg(atan(1.0 / ($shadow + tan(deg2rad(abs($lat - $decl))))));
-    $asrDelta = $hourAngle($asrAngle);
-
-    $sunAngle  = 0.833; // refraction + solar disc
-    $riseDelta = $hourAngle($sunAngle);
-    $fajrDelta = $hourAngle(18.0);
-    $ishaDelta = $hourAngle(18.0);
-
     $fmt = static function (?float $hours): string {
         if ($hours === null) { return '—'; }
         $hours = fmod($hours + 24.0, 24.0);
-        $h = (int) floor($hours);
+        $h  = (int) floor($hours);
         $mi = (int) round(($hours - $h) * 60);
         if ($mi === 60) { $mi = 0; $h = ($h + 1) % 24; }
         return sprintf('%02d:%02d', $h, $mi);
     };
 
+    $sunAngle    = 0.833;   // atmospheric refraction plus the solar disc
+    $riseDelta   = $hourAngle($sunAngle);
+    $civilDelta  = $hourAngle(6.0);
+    $goldenDelta = $hourAngle(-6.0);
+
+    $sunriseH = $riseDelta === null ? null : $noon - $riseDelta;
+    $sunsetH  = $riseDelta === null ? null : $noon + $riseDelta;
+
+    // Day length in whole minutes, from the same hour angle.
+    $dayLength = $riseDelta === null ? '—' : (function (float $hours): string {
+        $h = (int) floor($hours);
+        $m = (int) round(($hours - $h) * 60);
+        if ($m === 60) { $m = 0; $h++; }
+        return sprintf('%02d:%02d', $h, $m);
+    })($riseDelta * 2);
+
     return [
-        'Fajr'    => $fmt($fajrDelta === null ? null : $dhuhr - $fajrDelta),
-        'Sunrise' => $fmt($riseDelta === null ? null : $dhuhr - $riseDelta),
-        'Dhuhr'   => $fmt($dhuhr + 0.0334),                       // small safety offset
-        'Asr'     => $fmt($asrDelta === null ? null : $dhuhr + $asrDelta),
-        'Maghrib' => $fmt($riseDelta === null ? null : $dhuhr + $riseDelta + 0.0334),
-        'Isha'    => $fmt($ishaDelta === null ? null : $dhuhr + $ishaDelta),
+        'First light' => $fmt($civilDelta  === null ? null : $noon - $civilDelta),
+        'Sunrise'     => $fmt($sunriseH),
+        'Golden hour ends' => $fmt($goldenDelta === null ? null : $noon - $goldenDelta),
+        'Solar noon'  => $fmt($noon),
+        'Golden hour begins' => $fmt($goldenDelta === null ? null : $noon + $goldenDelta),
+        'Sunset'      => $fmt($sunsetH),
+        'Last light'  => $fmt($civilDelta  === null ? null : $noon + $civilDelta),
+        'Day length'  => $dayLength,
     ];
 }
 
-/** Icon and short description for each prayer, for the UI. */
-function bd_prayer_meta(): array
+/** Icon, Bangla name and a short explanation for each solar event. */
+function bd_sun_meta(): array
 {
     return [
-        'Fajr'    => ['bn' => 'ফজর',    'emoji' => '🌄', 'note' => 'Dawn, before sunrise'],
-        'Sunrise' => ['bn' => 'সূর্যোদয়','emoji' => '🌅', 'note' => 'End of Fajr time'],
-        'Dhuhr'   => ['bn' => 'যোহর',   'emoji' => '☀️', 'note' => 'After the sun passes its zenith'],
-        'Asr'     => ['bn' => 'আসর',    'emoji' => '🌤️', 'note' => 'Afternoon'],
-        'Maghrib' => ['bn' => 'মাগরিব',  'emoji' => '🌇', 'note' => 'Just after sunset — iftar time'],
-        'Isha'    => ['bn' => 'এশা',    'emoji' => '🌙', 'note' => 'Night'],
+        'First light'        => ['bn' => 'ভোরের আলো',  'emoji' => '🌆', 'note' => 'Civil dawn — the sky begins to lighten'],
+        'Sunrise'            => ['bn' => 'সূর্যোদয়',    'emoji' => '🌅', 'note' => 'The sun\'s upper edge clears the horizon'],
+        'Golden hour ends'   => ['bn' => 'সোনালি আলো',  'emoji' => '📸', 'note' => 'Warm, low light ends as the sun climbs'],
+        'Solar noon'         => ['bn' => 'মধ্যাহ্ন',     'emoji' => '☀️', 'note' => 'The sun is at its highest point'],
+        'Golden hour begins' => ['bn' => 'সোনালি আলো',  'emoji' => '🌇', 'note' => 'The best light of the afternoon returns'],
+        'Sunset'             => ['bn' => 'সূর্যাস্ত',    'emoji' => '🌆', 'note' => 'The sun drops below the horizon'],
+        'Last light'         => ['bn' => 'গোধূলি',      'emoji' => '🌌', 'note' => 'Civil dusk — daylight is gone'],
+        'Day length'         => ['bn' => 'দিনের দৈর্ঘ্য', 'emoji' => '⏳', 'note' => 'Hours between sunrise and sunset'],
     ];
 }
 
