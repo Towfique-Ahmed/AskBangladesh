@@ -179,6 +179,28 @@ function bd_page_seo(string $page): array
     return $meta[$page] ?? $meta['404'];
 }
 
+/**
+ * When the site's content last changed, as an ISO-8601 timestamp. Derived
+ * from the data files, which is what actually drives every page, so it
+ * moves only on a real content update rather than on every deploy.
+ */
+function bd_content_modified(): string
+{
+    static $stamp = null;
+    if ($stamp !== null) {
+        return $stamp;
+    }
+
+    $times = [];
+    foreach (glob(APP_ROOT . '/includes/data/*.php') ?: [] as $file) {
+        $mtime = @filemtime($file);
+        if ($mtime !== false) {
+            $times[] = $mtime;
+        }
+    }
+    return $stamp = date('c', $times === [] ? time() : max($times));
+}
+
 /* ------------------------------------------------------ structured data */
 
 /** Organisation and site-level JSON-LD, emitted on every page. */
@@ -242,6 +264,59 @@ function bd_jsonld_faq(array $pairs): array
         '@context'   => 'https://schema.org',
         '@type'      => 'FAQPage',
         'mainEntity' => $items,
+    ];
+}
+
+/**
+ * Render an FAQ block as visible page content.
+ *
+ * Google's structured-data guidelines require FAQPage markup to describe
+ * question-and-answer text that is actually visible to the reader, so this
+ * takes the same array passed to bd_jsonld_faq(). Driving both from one
+ * source is what stops the markup and the page drifting apart.
+ */
+function bd_render_faq(array $pairs, string $heading = 'Frequently asked questions'): string
+{
+    if ($pairs === []) {
+        return '';
+    }
+
+    $html = '<section class="section faq">'
+          . '<div class="section__head"><h2>' . e($heading) . '</h2></div>';
+
+    foreach ($pairs as $question => $answer) {
+        $html .= '<details class="faq__item">'
+               . '<summary class="faq__q">' . e((string) $question) . '</summary>'
+               . '<div class="faq__a"><p>' . e((string) $answer) . '</p></div>'
+               . '</details>';
+    }
+
+    return $html . '</section>';
+}
+
+/* --------------------------------------------------------- organisation */
+
+/** Publisher identity, emitted alongside the WebSite block. */
+function bd_jsonld_organization(): array
+{
+    return [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Organization',
+        '@id'         => bd_abs_url() . '#organization',
+        'name'        => APP_NAME,
+        'url'         => bd_abs_url(),
+        'description' => APP_TAGLINE,
+        'logo'        => [
+            '@type'  => 'ImageObject',
+            'url'    => bd_abs_url('assets/og-image.png'),
+            'width'  => 1200,
+            'height' => 630,
+        ],
+        'areaServed'  => ['@type' => 'Country', 'name' => 'Bangladesh'],
+        'knowsAbout'  => [
+            'Bangladesh', 'Districts of Bangladesh', 'Bangladesh travel',
+            'Prayer times', 'Gold price in Bangladesh', 'Bangladeshi Taka',
+        ],
     ];
 }
 

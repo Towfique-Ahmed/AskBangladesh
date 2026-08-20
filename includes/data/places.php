@@ -17,7 +17,7 @@ return [
         'water_km2'        => 18290,
         'coastline_km'     => 580,
         'land_border_km'   => 4413,
-        'borders'          => ['India' => 4156, 'Myanmar' => 271],
+        'borders'          => ['India' => 4142, 'Myanmar' => 271],
         'sea'              => 'Bay of Bengal',
         'highest_point'    => ['name' => 'Saka Haphong (Mowdok Mual)', 'height_m' => 1052],
         'lowest_point'     => ['name' => 'Bay of Bengal coast', 'height_m' => 0],
@@ -116,10 +116,10 @@ return [
     'megaprojects' => [
         ['name' => 'Padma Multipurpose Bridge', 'opened' => 2022, 'stat' => '6.15 km', 'note' => 'Self-financed road-and-rail bridge connecting 21 southern districts to the capital.'],
         ['name' => 'Bangabandhu Sheikh Mujibur Rahman Tunnel', 'opened' => 2023, 'stat' => '3.32 km', 'note' => 'South Asia’s first underwater road tunnel, beneath the Karnaphuli river.'],
-        ['name' => 'Dhaka Metro Rail (MRT Line 6)', 'opened' => 2022, 'stat' => '21.26 km', 'note' => 'The country’s first metro — Uttara North to Motijheel/Kamalapur.'],
+        ['name' => 'Dhaka Metro Rail (MRT Line 6)', 'opened' => 2022, 'stat' => '21.26 km', 'note' => 'The country’s first metro, opened in phases from December 2022 — Uttara North to Agargaon first, then on to Motijheel and Kamalapur.'],
         ['name' => 'Bangabandhu (Jamuna) Bridge', 'opened' => 1998, 'stat' => '4.8 km', 'note' => 'The bridge that first joined the north-west to the rest of the country.'],
         ['name' => 'Dhaka Elevated Expressway', 'opened' => 2023, 'stat' => '19.73 km', 'note' => 'Airport to Kutubkhali elevated corridor over the capital.'],
-        ['name' => 'Rooppur Nuclear Power Plant', 'opened' => 2025, 'stat' => '2,400 MW', 'note' => 'The country’s first nuclear power station, at Ishwardi, Pabna.'],
+        ['name' => 'Rooppur Nuclear Power Plant', 'opened' => 2026, 'stat' => '2,400 MW planned', 'note' => 'The country’s first nuclear power station, at Ishwardi in Pabna. Two VVER-1200 reactors; commissioning has slipped several times, so check the current status before quoting a date.'],
     ],
 
     // ----------------------------------------------------------- transport

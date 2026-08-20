@@ -16,7 +16,7 @@ $seo = bd_seo(bd_page_seo('currency') + [
 require APP_ROOT . '/includes/layout/header.php';
 
 // The corridors that matter most for remittances into Bangladesh.
-$corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SGD', 'INR', 'ITL'];
+$corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SGD', 'INR', 'CAD'];
 ?>
 
 <div class="pagehead">

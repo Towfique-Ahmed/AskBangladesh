@@ -34,6 +34,17 @@ $selected ??= bd_find_district('dhaka') ?? $districts[0];
 
 $today = bd_prayer_times((float) $selected['lat'], (float) $selected['lon'], time(), $school);
 
+// One source for both the FAQPage markup and the visible block below it.
+$faqs = [
+    'What time is Fajr in ' . $selected['name'] . ' today?'
+        => 'Fajr begins at ' . $today['Fajr'] . ' today in ' . $selected['name']
+           . ', Bangladesh Standard Time.',
+    'What time is iftar in ' . $selected['name'] . ' today?'
+        => 'Iftar begins at Maghrib, ' . $today['Maghrib'] . ', in ' . $selected['name'] . ' today.',
+    'What time does sehri end in ' . $selected['name'] . '?'
+        => 'Sehri ends at the start of Fajr, ' . $today['Fajr'] . ', in ' . $selected['name'] . '.',
+];
+
 if ($isDistrictPage) {
     $seo = bd_seo([
         'title'       => $selected['name'] . ' Prayer Times Today — Namaz Schedule',
@@ -49,15 +60,7 @@ if ($isDistrictPage) {
             ['name' => 'Prayer Times', 'url' => bd_url('prayer')],
             ['name' => $selected['name']],
         ],
-        'jsonld' => [bd_jsonld_faq([
-            'What time is Fajr in ' . $selected['name'] . ' today?'
-                => 'Fajr begins at ' . $today['Fajr'] . ' today in ' . $selected['name']
-                   . ', Bangladesh Standard Time.',
-            'What time is iftar in ' . $selected['name'] . ' today?'
-                => 'Iftar begins at Maghrib, ' . $today['Maghrib'] . ', in ' . $selected['name'] . ' today.',
-            'What time does sehri end in ' . $selected['name'] . '?'
-                => 'Sehri ends at the start of Fajr, ' . $today['Fajr'] . ', in ' . $selected['name'] . '.',
-        ])],
+        'jsonld' => [bd_jsonld_faq($faqs)],
     ]);
 } else {
     $seo = bd_seo(bd_page_seo('prayer') + [
@@ -204,6 +207,8 @@ require APP_ROOT . '/includes/layout/header.php';
     <?php endforeach; ?>
   </div>
 </section>
+
+<?= bd_render_faq($faqs, 'Prayer time questions for ' . $selected['name']) ?>
 
 <div class="notice" data-reveal>
   <span>ℹ️</span>
