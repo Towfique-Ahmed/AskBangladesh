@@ -6,6 +6,17 @@ $mountains = bd_places('mountains');
 usort($mountains, static fn (array $a, array $b): int => $b['height'] <=> $a['height']);
 $tallest = $mountains[0] ?? null;
 
+// One source for both the FAQPage markup and the visible block below it.
+$faqs = [
+    'What is the highest mountain in Bangladesh?'
+        => ($tallest['name'] ?? 'Saka Haphong') . ' is the highest peak in Bangladesh at '
+           . bd_num($tallest['height'] ?? 1052) . ' metres, in Bandarban district near the Myanmar border.',
+    'Where are the mountains of Bangladesh?'
+        => 'Almost every peak in Bangladesh stands in the Chittagong Hill Tracts — the districts of Bandarban, Rangamati and Khagrachhari in the south-east.',
+    'Is Keokradong the highest peak of Bangladesh?'
+        => 'No. Keokradong at 986 m was long believed to be the highest, but later surveys established Saka Haphong (Mowdok Mual) at 1,052 m as the true summit.',
+];
+
 $seo = bd_seo(bd_page_seo('mountains') + [
     'breadcrumbs' => [
         ['name' => 'Home',      'url' => bd_url()],
@@ -35,15 +46,7 @@ $seo['jsonld'] = [
             $mountains
         ),
     ],
-    bd_jsonld_faq([
-        'What is the highest mountain in Bangladesh?'
-            => ($tallest['name'] ?? 'Saka Haphong') . ' is the highest peak in Bangladesh at '
-               . bd_num($tallest['height'] ?? 1052) . ' metres, in Bandarban district near the Myanmar border.',
-        'Where are the mountains of Bangladesh?'
-            => 'Almost every peak in Bangladesh stands in the Chittagong Hill Tracts — the districts of Bandarban, Rangamati and Khagrachhari in the south-east.',
-        'Is Keokradong the highest peak of Bangladesh?'
-            => 'No. Keokradong at 986 m was long believed to be the highest, but later surveys established Saka Haphong (Mowdok Mual) at 1,052 m as the true summit.',
-    ]),
+    bd_jsonld_faq($faqs),
 ];
 
 require APP_ROOT . '/includes/layout/header.php';
@@ -107,5 +110,7 @@ require APP_ROOT . '/includes/layout/header.php';
     </a>
   </div>
 </section>
+
+<?= bd_render_faq($faqs, 'Questions about the mountains of Bangladesh') ?>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

@@ -833,3 +833,34 @@ select.input { appearance: none; cursor: pointer; background-image: none; }
 .breadcrumbs a { color: var(--text-dim); transition: color .2s; }
 .breadcrumbs a:hover { color: var(--green-300); }
 .breadcrumbs [aria-current="page"] { color: var(--text); font-weight: 600; }
+
+/* ----------------------------------------------------------------- faq */
+
+.faq__item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: .6rem;
+  transition: border-color .25s, background .25s;
+}
+.faq__item[open] { border-color: var(--border-2); background: var(--surface-2); }
+.faq__item:hover { border-color: var(--border-2); }
+
+.faq__q {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .95rem 1.15rem;
+  font-size: .95rem; font-weight: 600;
+  cursor: pointer; list-style: none;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after {
+  content: "+";
+  flex-shrink: 0;
+  font: 400 1.3rem/1 var(--mono);
+  color: var(--green-300);
+  transition: transform .25s var(--ease);
+}
+.faq__item[open] .faq__q::after { transform: rotate(45deg); }
+
+.faq__a { padding: 0 1.15rem 1.05rem; }
+.faq__a p { margin: 0; font-size: .9rem; color: var(--text-dim); }

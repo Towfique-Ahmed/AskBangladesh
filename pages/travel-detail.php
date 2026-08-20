@@ -27,6 +27,18 @@ $sameType = array_values(array_filter(
 ));
 $related = array_slice(array_merge($sameDistrict, $sameType), 0, 6);
 
+// One source for both the FAQPage markup and the visible block below it.
+$faqs = [
+    'Where is ' . $place['name'] . '?'
+        => $place['name'] . ' is in ' . $districtName . ' district, Bangladesh, at '
+           . number_format((float) $place['lat'], 4) . '°N, '
+           . number_format((float) $place['lon'], 4) . '°E.',
+    'When is the best time to visit ' . $place['name'] . '?'
+        => 'The best season to visit ' . $place['name'] . ' is ' . $place['best'] . '.',
+    'What is ' . $place['name'] . ' known for?'
+        => $place['desc'],
+];
+
 $seo = bd_seo([
     'title'       => $place['name'] . ' — Bangladesh Travel Guide',
     'description' => rtrim($place['desc'], '.') . '. Located in ' . $districtName
@@ -61,16 +73,7 @@ $seo = bd_seo([
             'touristType'          => $place['type'],
             'publicAccess'         => true,
         ],
-        bd_jsonld_faq([
-            'Where is ' . $place['name'] . '?'
-                => $place['name'] . ' is in ' . $districtName . ' district, Bangladesh, at '
-                   . number_format((float) $place['lat'], 4) . '°N, '
-                   . number_format((float) $place['lon'], 4) . '°E.',
-            'When is the best time to visit ' . $place['name'] . '?'
-                => 'The best season to visit ' . $place['name'] . ' is ' . $place['best'] . '.',
-            'What is ' . $place['name'] . ' known for?'
-                => $place['desc'],
-        ]),
+        bd_jsonld_faq($faqs),
     ],
 ]);
 
@@ -163,6 +166,7 @@ require APP_ROOT . '/includes/layout/header.php';
       </div>
     </section>
   <?php endif; ?>
+  <?= bd_render_faq($faqs, 'Frequently asked questions about ' . $place['name']) ?>
 </article>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

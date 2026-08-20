@@ -142,13 +142,31 @@ which resolves it with `bd_route()`.
 - **Structured data** (JSON-LD): `WebSite` with `SearchAction` sitewide, `BreadcrumbList` on
   every nested page, plus `AdministrativeArea` on districts and divisions,
   `TouristAttraction` on destinations, `ItemList` on the ranked lists and `FAQPage` on the
-  pages that answer real questions.
-- **Open Graph and Twitter cards** with a generated `assets/og-image.svg` preview.
+  pages that answer real questions. Every FAQ is rendered as a **visible** accordion from the
+  same array that produces the markup, which is what Google's guidelines require — see
+  `bd_render_faq()`.
+- **`Organization`** identity and a `dateModified` derived from the data files
+  (`bd_content_modified()`), shared by the pages and the sitemap's `lastmod`.
+- **Open Graph and Twitter cards** with a generated `assets/og-image.png` preview (1200×630).
 - **`/sitemap.xml`** generated from the data files, with `lastmod`, `changefreq` and
   `priority`; **`/robots.txt`** points at it.
 - **Search result pages are `noindex, follow`** — thin and effectively infinite — while the
   links they contain are still crawled.
 - `?district=` on the prayer page **301-redirects** to its canonical `/prayer/{slug}`.
+
+## Data currency
+
+Figures carry different confidence levels, and the app says which is which:
+
+| Data | Source | Note |
+| --- | --- | --- |
+| Districts, divisions, area | 2022 BBS census | Stable |
+| National population, GDP | 2026 estimates | Projections, not counts |
+| Prayer times | Calculated | Exact for any date and district |
+| Exchange rates, gold | Live feed, hourly cache | Falls back to bundled indicative values |
+
+The bundled currency and gold figures are a **fallback only**, used when the live feed is
+unreachable. The UI always states which of the two is being shown.
 
 Set `SITE_URL` in the environment so canonical tags and the sitemap emit your real origin:
 

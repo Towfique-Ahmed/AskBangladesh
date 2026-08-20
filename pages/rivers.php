@@ -7,6 +7,16 @@ $geo    = bd_places('geography');
 usort($rivers, static fn (array $a, array $b): int => $b['length'] <=> $a['length']);
 $longest = $rivers[0]['length'] ?? 1;
 
+// One source for both the FAQPage markup and the visible block below it.
+$faqs = [
+    'How many rivers are there in Bangladesh?'
+        => 'Bangladesh has about ' . bd_num($geo['rivers_count']) . ' rivers, which is why it is often called the land of rivers.',
+    'What are the three main rivers of Bangladesh?'
+        => 'The Padma, the Jamuna and the Meghna. Together they form the Ganges–Brahmaputra–Meghna delta, the largest river delta in the world.',
+    'Which is the longest river in Bangladesh?'
+        => ($rivers[0]['name'] ?? 'The Padma') . ' runs about ' . bd_num($longest) . ' km inside Bangladesh.',
+];
+
 $seo = bd_seo(bd_page_seo('rivers') + [
     'breadcrumbs' => [
         ['name' => 'Home',      'url' => bd_url()],
@@ -15,14 +25,7 @@ $seo = bd_seo(bd_page_seo('rivers') + [
     ],
 ]);
 $seo['jsonld'] = [
-    bd_jsonld_faq([
-        'How many rivers are there in Bangladesh?'
-            => 'Bangladesh has about ' . bd_num($geo['rivers_count']) . ' rivers, which is why it is often called the land of rivers.',
-        'What are the three main rivers of Bangladesh?'
-            => 'The Padma, the Jamuna and the Meghna. Together they form the Ganges–Brahmaputra–Meghna delta, the largest river delta in the world.',
-        'Which is the longest river in Bangladesh?'
-            => ($rivers[0]['name'] ?? 'The Padma') . ' runs about ' . bd_num($longest) . ' km inside Bangladesh.',
-    ]),
+    bd_jsonld_faq($faqs),
 ];
 
 require APP_ROOT . '/includes/layout/header.php';
@@ -77,5 +80,7 @@ require APP_ROOT . '/includes/layout/header.php';
     </a>
   </div>
 </section>
+
+<?= bd_render_faq($faqs, 'Questions about the rivers of Bangladesh') ?>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

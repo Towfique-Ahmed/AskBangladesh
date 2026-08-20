@@ -31,6 +31,21 @@ $siblings = array_values(array_filter(
 
 $density = $district['area'] > 0 ? $district['population'] / $district['area'] : 0;
 
+// One source for both the FAQPage markup and the visible block below it.
+$faqs = [
+    'Which division is ' . $district['name'] . ' in?'
+        => $district['name'] . ' district belongs to ' . $district['division']
+           . ' division, one of the eight divisions of Bangladesh.',
+    'What is the population of ' . $district['name'] . '?'
+        => $district['name'] . ' has a population of roughly ' . bd_num($district['population'])
+           . ', across an area of ' . bd_num($district['area'], 1) . ' square kilometres.',
+    'What is ' . $district['name'] . ' famous for?'
+        => $district['famous'],
+    'What time is Fajr in ' . $district['name'] . ' today?'
+        => 'Fajr begins at ' . $prayer['Fajr'] . ' and Maghrib at ' . $prayer['Maghrib']
+           . ' today in ' . $district['name'] . ', Bangladesh Standard Time.',
+];
+
 $seo = bd_seo([
     'title'       => $district['name'] . ' District — Area, Population & Places',
     'description' => $district['name'] . ' district in ' . $district['division'] . ' division, Bangladesh: '
@@ -70,19 +85,7 @@ $seo = bd_seo([
                 'addressCountry' => 'BD',
             ],
         ],
-        bd_jsonld_faq([
-            'Which division is ' . $district['name'] . ' in?'
-                => $district['name'] . ' district belongs to ' . $district['division']
-                   . ' division, one of the eight divisions of Bangladesh.',
-            'What is the population of ' . $district['name'] . '?'
-                => $district['name'] . ' has a population of roughly ' . bd_num($district['population'])
-                   . ', across an area of ' . bd_num($district['area'], 1) . ' square kilometres.',
-            'What is ' . $district['name'] . ' famous for?'
-                => $district['famous'],
-            'What time is Fajr in ' . $district['name'] . ' today?'
-                => 'Fajr begins at ' . $prayer['Fajr'] . ' and Maghrib at ' . $prayer['Maghrib']
-                   . ' today in ' . $district['name'] . ', Bangladesh Standard Time.',
-        ]),
+        bd_jsonld_faq($faqs),
     ],
 ]);
 
@@ -207,6 +210,7 @@ require APP_ROOT . '/includes/layout/header.php';
       <?php endforeach; ?>
     </div>
   </section>
+  <?= bd_render_faq($faqs, 'Frequently asked questions about ' . $district['name']) ?>
 </article>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

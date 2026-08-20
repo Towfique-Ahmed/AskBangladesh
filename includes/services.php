@@ -34,7 +34,6 @@ function bd_currencies(): array
         'CNY' => ['name' => 'Chinese Yuan',          'symbol' => '¥',   'flag' => '🇨🇳'],
         'KRW' => ['name' => 'South Korean Won',      'symbol' => '₩',   'flag' => '🇰🇷'],
         'CHF' => ['name' => 'Swiss Franc',           'symbol' => 'CHF', 'flag' => '🇨🇭'],
-        'ITL' => ['name' => 'Italy (Euro)',          'symbol' => '€',   'flag' => '🇮🇹'],
         'TRY' => ['name' => 'Turkish Lira',          'symbol' => '₺',   'flag' => '🇹🇷'],
         'PKR' => ['name' => 'Pakistani Rupee',       'symbol' => '₨',   'flag' => '🇵🇰'],
         'LKR' => ['name' => 'Sri Lankan Rupee',      'symbol' => 'Rs',  'flag' => '🇱🇰'],
@@ -59,7 +58,7 @@ function bd_fallback_rates(): array
         'INR' => 0.7150,    'SAR' => 0.03076,  'AED' => 0.03012,  'MYR' => 0.03610,
         'KWD' => 0.00251,   'QAR' => 0.02986,  'OMR' => 0.00316,  'BHD' => 0.00309,
         'SGD' => 0.01096,   'AUD' => 0.01252,  'CAD' => 0.01128,  'JPY' => 1.2450,
-        'CNY' => 0.05880,   'KRW' => 11.180,   'CHF' => 0.00710,  'ITL' => 0.00760,
+        'CNY' => 0.05880,   'KRW' => 11.180,   'CHF' => 0.00710,
         'TRY' => 0.3220,    'PKR' => 2.3050,   'LKR' => 2.4600,   'NPR' => 1.1440,
         'THB' => 0.2760,    'IDR' => 132.50,   'ZAR' => 0.1480,   'RUB' => 0.7420,
         'BRL' => 0.04480,   'SEK' => 0.08120,  'NOK' => 0.08450,  'NZD' => 0.01372,
@@ -84,9 +83,8 @@ function bd_exchange_rates(): array
     if ($live !== null && !empty($live['rates']) && is_array($live['rates'])) {
         $rates = ['BDT' => 1.0];
         foreach ($wanted as $code) {
-            $lookup = $code === 'ITL' ? 'EUR' : $code;
-            if (isset($live['rates'][$lookup]) && is_numeric($live['rates'][$lookup])) {
-                $rates[$code] = (float) $live['rates'][$lookup];
+            if (isset($live['rates'][$code]) && is_numeric($live['rates'][$code])) {
+                $rates[$code] = (float) $live['rates'][$code];
             }
         }
         if (count($rates) > 5) {
@@ -149,16 +147,16 @@ function bd_gold_prices(): array
 
     // Indicative BAJUS-style board, per bhori (11.664 g).
     $gold = [
-        ['karat' => '22K', 'label' => '22 Karat (Hallmark)', 'purity' => 91.6, 'bhori' => 173000],
-        ['karat' => '21K', 'label' => '21 Karat (Hallmark)', 'purity' => 87.5, 'bhori' => 165100],
-        ['karat' => '18K', 'label' => '18 Karat (Hallmark)', 'purity' => 75.0, 'bhori' => 141500],
-        ['karat' => 'SD',  'label' => 'Traditional (Sanatan)','purity' => 58.0, 'bhori' => 116800],
+        ['karat' => '22K', 'label' => '22 Karat (Hallmark)', 'purity' => 91.6, 'bhori' => 215000],
+        ['karat' => '21K', 'label' => '21 Karat (Hallmark)', 'purity' => 87.5, 'bhori' => 205300],
+        ['karat' => '18K', 'label' => '18 Karat (Hallmark)', 'purity' => 75.0, 'bhori' => 175900],
+        ['karat' => 'SD',  'label' => 'Traditional (Sanatan)','purity' => 58.0, 'bhori' => 145200],
     ];
     $silver = [
-        ['karat' => '22K', 'label' => '22 Karat Silver', 'purity' => 91.6, 'bhori' => 2900],
-        ['karat' => '21K', 'label' => '21 Karat Silver', 'purity' => 87.5, 'bhori' => 2755],
-        ['karat' => '18K', 'label' => '18 Karat Silver', 'purity' => 75.0, 'bhori' => 2350],
-        ['karat' => 'SD',  'label' => 'Traditional Silver','purity' => 58.0, 'bhori' => 1750],
+        ['karat' => '22K', 'label' => '22 Karat Silver', 'purity' => 91.6, 'bhori' => 3150],
+        ['karat' => '21K', 'label' => '21 Karat Silver', 'purity' => 87.5, 'bhori' => 3010],
+        ['karat' => '18K', 'label' => '18 Karat Silver', 'purity' => 75.0, 'bhori' => 2580],
+        ['karat' => 'SD',  'label' => 'Traditional Silver','purity' => 58.0, 'bhori' => 1990],
     ];
     $live = false;
     $source = 'indicative BAJUS-style board';

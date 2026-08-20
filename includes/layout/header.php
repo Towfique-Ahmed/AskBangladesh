@@ -24,7 +24,10 @@ $nav = [
     ['path' => 'about',      'page' => 'about',      'label' => 'About BD',   'icon' => '🇧🇩'],
 ];
 
-$ogImage = bd_abs_url('assets/og-image.svg');
+$ogImage = bd_abs_url('assets/og-image.png');
+
+// Newest data-file timestamp, used as the page's modified date.
+$modified = bd_content_modified();
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -62,11 +65,20 @@ $ogImage = bd_abs_url('assets/og-image.svg');
 <meta property="og:description" content="<?= e($seo['description']) ?>">
 <meta property="og:url" content="<?= e($seo['canonical']) ?>">
 <meta property="og:image" content="<?= e($ogImage) ?>">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="<?= e(APP_NAME) ?> — <?= e(APP_TAGLINE) ?>">
 <meta property="og:locale" content="en_US">
+<meta property="og:updated_time" content="<?= e($modified) ?>">
+<?php if ($seo['type'] === 'article'): ?>
+<meta property="article:modified_time" content="<?= e($modified) ?>">
+<?php endif; ?>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<?= e($seo['title']) ?>">
 <meta name="twitter:description" content="<?= e($seo['description']) ?>">
 <meta name="twitter:image" content="<?= e($ogImage) ?>">
+<meta name="twitter:image:alt" content="<?= e(APP_NAME) ?> — <?= e(APP_TAGLINE) ?>">
 
 <meta name="theme-color" content="#00a651">
 <meta name="author" content="<?= e(APP_NAME) ?>">
@@ -78,6 +90,7 @@ $ogImage = bd_abs_url('assets/og-image.svg');
 <link rel="stylesheet" href="<?= e(bd_url('assets/css/app.css')) ?>?v=<?= e(APP_VERSION) ?>">
 
 <script type="application/ld+json"><?= json_encode(bd_jsonld_site(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<script type="application/ld+json"><?= json_encode(bd_jsonld_organization(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php if (!empty($seo['breadcrumbs'])): ?>
 <script type="application/ld+json"><?= json_encode(bd_jsonld_breadcrumbs($seo['breadcrumbs']), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php endif; ?>
