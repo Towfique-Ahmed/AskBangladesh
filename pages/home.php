@@ -16,7 +16,7 @@ $typer = json_encode([
     'the world’s largest river delta.',
     'all 64 districts, mapped and searchable.',
     'today’s gold price, in bhori and grams.',
-    'prayer times for your own district.',
+    'sunrise and sunset for your own district.',
     'the Taka against 30+ world currencies.',
     'the longest sea beach on the planet.',
     'every government e-service link you need.',
@@ -33,7 +33,7 @@ require APP_ROOT . '/includes/layout/header.php';
       <p class="hero__typer" data-typer='<?= e($typer) ?>' data-reveal="120"></p>
       <p class="hero__lead" data-reveal="160">
         One place for the people of Bangladesh and for everyone curious about it — an interactive
-        map, live clocks and converters, district data, travel guides, prayer times, gold rates
+        map, live clocks and converters, district data, travel guides, sun times, gold rates
         and the government directory, all searchable from a single box.
       </p>
 

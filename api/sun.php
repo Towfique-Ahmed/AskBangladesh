@@ -1,5 +1,5 @@
 <?php
-/** Daily prayer times for any Bangladeshi district. */
+/** Sunrise, sunset and related solar times for any Bangladeshi district. */
 
 declare(strict_types=1);
 
@@ -7,7 +7,6 @@ require_once dirname(__DIR__) . '/includes/config.php';
 require_once dirname(__DIR__) . '/includes/services.php';
 
 $districtName = trim((string) ($_GET['district'] ?? 'Dhaka'));
-$school       = ($_GET['school'] ?? 'hanafi') === 'shafi' ? 'shafi' : 'hanafi';
 $dateParam    = (string) ($_GET['date'] ?? '');
 $timestamp    = $dateParam !== '' ? strtotime($dateParam) : time();
 
@@ -17,7 +16,8 @@ if ($timestamp === false) {
 
 $match = null;
 foreach (bd_districts() as $district) {
-    if (strcasecmp($district['name'], $districtName) === 0) {
+    if (strcasecmp($district['name'], $districtName) === 0
+        || bd_slug($district['name']) === bd_slug($districtName)) {
         $match = $district;
         break;
     }
@@ -33,8 +33,7 @@ bd_json_response([
     'lat'      => $match['lat'],
     'lon'      => $match['lon'],
     'date'     => date('Y-m-d', $timestamp),
-    'method'   => 'University of Islamic Sciences, Karachi (Fajr 18°, Isha 18°)',
-    'school'   => $school === 'hanafi' ? 'Hanafi (Asr shadow ratio 2)' : 'Shafi (Asr shadow ratio 1)',
     'timezone' => 'Asia/Dhaka (UTC+06:00)',
-    'times'    => bd_prayer_times((float) $match['lat'], (float) $match['lon'], $timestamp, $school),
+    'method'   => 'Solar position algorithm; sunrise and sunset at -0.833° to allow for refraction and the solar disc',
+    'times'    => bd_sun_times((float) $match['lat'], (float) $match['lon'], $timestamp),
 ]);

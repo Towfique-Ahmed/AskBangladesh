@@ -128,22 +128,29 @@ require APP_ROOT . '/includes/layout/header.php';
     </div>
   </div>
 
-  <?php if ($district): ?>
+  <?php if ($district):
+      $sun = bd_sun_times((float) $district['lat'], (float) $district['lon']); ?>
     <section class="section">
       <div class="section__head">
-        <h2>Prayer times in <?= e($districtName) ?> today</h2>
+        <h2>Sunrise and sunset at <?= e($place['name']) ?> today</h2>
+        <p>Useful for planning the golden hour — <?= e($sun['Day length']) ?> of daylight.</p>
       </div>
       <div class="grid grid--3">
-        <?php foreach (bd_prayer_times((float) $district['lat'], (float) $district['lon']) as $pname => $time):
-            $info = bd_prayer_meta()[$pname] ?? ['bn' => '', 'emoji' => '🕌']; ?>
-          <div class="prayercard" data-reveal>
-            <span class="prayercard__emoji" aria-hidden="true"><?= $info['emoji'] ?></span>
-            <span><span class="prayercard__name"><?= e($pname) ?></span>
-              <span class="prayercard__bn"><?= e($info['bn']) ?></span></span>
-            <span class="prayercard__time"><?= e($time) ?></span>
+        <?php foreach (['Sunrise', 'Golden hour begins', 'Sunset'] as $sname):
+            $info = bd_sun_meta()[$sname] ?? ['bn' => '', 'emoji' => '☀️']; ?>
+          <div class="suncard" data-reveal>
+            <span class="suncard__emoji" aria-hidden="true"><?= $info['emoji'] ?></span>
+            <span><span class="suncard__name"><?= e($sname) ?></span>
+              <span class="suncard__bn"><?= e($info['bn']) ?></span></span>
+            <span class="suncard__time"><?= e($sun[$sname]) ?></span>
           </div>
         <?php endforeach; ?>
       </div>
+      <p style="margin-top:1rem">
+        <a class="btn btn--ghost" href="<?= e(bd_sun_url($district)) ?>">
+          Full sun times for <?= e($districtName) ?> →
+        </a>
+      </p>
     </section>
   <?php endif; ?>
 

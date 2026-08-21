@@ -76,7 +76,7 @@ function bd_page_seo(string $page): array
     $meta = [
         'home' => [
             'title'       => 'AskBangladesh — Everything About Bangladesh',
-            'description' => 'Explore Bangladesh in one place: an interactive map of all 64 districts, live prayer times, gold rates, currency conversion, travel guides and government services.',
+            'description' => 'Explore Bangladesh in one place: an interactive map of all 64 districts, sunrise and sunset times, gold rates, currency conversion, travel guides and government services.',
             'keywords'    => 'Bangladesh, Bangladesh information, 64 districts, Bangladesh map, Bangladesh travel',
             'path'        => '',
         ],
@@ -140,11 +140,11 @@ function bd_page_seo(string $page): array
             'keywords'    => 'gold price in Bangladesh, gold price today, 22k gold price bhori, BAJUS gold rate',
             'path'        => 'gold',
         ],
-        'prayer' => [
-            'title'       => 'Prayer Times in Bangladesh Today',
-            'description' => 'Today’s prayer times for every district of Bangladesh — Fajr, Dhuhr, Asr, Maghrib and Isha — with a live countdown to the next namaz and sehri and iftar times.',
-            'keywords'    => 'prayer time Bangladesh, namaz time, sehri iftar time, Dhaka prayer times',
-            'path'        => 'prayer',
+        'sun' => [
+            'title'       => 'Sunrise & Sunset Times in Bangladesh',
+            'description' => 'Today’s sunrise and sunset times for every district of Bangladesh, with day length, solar noon, first and last light, and the morning and evening golden hours.',
+            'keywords'    => 'sunrise time Bangladesh, sunset time Bangladesh, day length, golden hour Dhaka',
+            'path'        => 'sunrise-sunset',
         ],
         'religion' => [
             'title'       => 'Religions of Bangladesh & Festivals',
@@ -166,7 +166,7 @@ function bd_page_seo(string $page): array
         ],
         'search' => [
             'title'       => 'Search Everything About Bangladesh',
-            'description' => 'Search everything about Bangladesh from one box: districts, rivers, mountains, travel destinations, government services, gold rates and prayer times.',
+            'description' => 'Search everything about Bangladesh from one box: districts, rivers, mountains, travel destinations, government services, gold rates and sunrise times.',
             'path'        => 'search',
         ],
         '404' => [
@@ -315,7 +315,7 @@ function bd_jsonld_organization(): array
         'areaServed'  => ['@type' => 'Country', 'name' => 'Bangladesh'],
         'knowsAbout'  => [
             'Bangladesh', 'Districts of Bangladesh', 'Bangladesh travel',
-            'Prayer times', 'Gold price in Bangladesh', 'Bangladeshi Taka',
+            'Sunrise and sunset times', 'Gold price in Bangladesh', 'Bangladeshi Taka',
         ],
     ];
 }
@@ -337,7 +337,7 @@ function bd_sitemap_urls(): array
     $add('',        'daily',   '1.0');
     $add('map',     'monthly', '0.9');
     $add('gold',    'daily',   '0.9');
-    $add('prayer',  'daily',   '0.9');
+    $add('sunrise-sunset', 'daily', '0.9');
     $add('currency','daily',   '0.9');
     $add('time',    'daily',   '0.8');
 
@@ -357,10 +357,10 @@ function bd_sitemap_urls(): array
         $add('division/' . bd_slug($division), 'monthly', '0.7');
     }
 
-    // A page per district, and a prayer-time page per district.
+    // A page per district, and a sun-times page per district.
     foreach (bd_districts() as $district) {
         $add('district/' . bd_slug($district['name']), 'monthly', '0.7');
-        $add('prayer/' . bd_slug($district['name']),   'daily',   '0.6');
+        $add('sunrise-sunset/' . bd_slug($district['name']), 'daily', '0.6');
     }
 
     // A page per travel destination.

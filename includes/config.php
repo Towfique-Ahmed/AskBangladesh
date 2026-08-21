@@ -12,10 +12,9 @@ define('APP_ROOT', dirname(__DIR__));
 define('CACHE_DIR', APP_ROOT . '/storage/cache');
 define('BD_TIMEZONE', 'Asia/Dhaka');
 
-// Cache lifetime in seconds for the live rate/prayer feeds.
+// Cache lifetime in seconds for the live rate feeds.
 define('CACHE_TTL_RATES', 3600);
 define('CACHE_TTL_GOLD', 3600);
-define('CACHE_TTL_PRAYER', 21600);
 
 // Seconds to wait on an outbound API before falling back to bundled values.
 define('HTTP_TIMEOUT', 6);

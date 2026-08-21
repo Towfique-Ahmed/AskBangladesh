@@ -23,7 +23,7 @@
         <a href="<?= e(bd_url('time')) ?>">Clock &amp; time converter</a>
         <a href="<?= e(bd_url('currency')) ?>">Currency converter</a>
         <a href="<?= e(bd_url('gold')) ?>">Gold price &amp; converter</a>
-        <a href="<?= e(bd_url('prayer')) ?>">Prayer times</a>
+        <a href="<?= e(bd_url('sunrise-sunset')) ?>">Sunrise &amp; sunset</a>
         <a href="<?= e(bd_url('search')) ?>">Global search</a>
       </div>
       <div>
@@ -48,7 +48,7 @@
   <div class="footer__bar">
     <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?> — built with PHP, no framework.<br>
        Content last updated <time datetime="<?= e(bd_content_modified()) ?>"><?= e((new DateTimeImmutable(bd_content_modified()))->setTimezone(new DateTimeZone(BD_TIMEZONE))->format('j F Y')) ?></time>.</p>
-    <p class="footer__note">Exchange, gold and prayer figures are indicative. Confirm with Bangladesh Bank, BAJUS and your local mosque before acting on them.</p>
+    <p class="footer__note">Exchange rates and gold prices are indicative. Confirm with Bangladesh Bank or BAJUS before acting on them.</p>
   </div>
 </footer>
 

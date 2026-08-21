@@ -13,7 +13,7 @@ if ($district === null) {
 $divisions = bd_divisions();
 $division  = $divisions[$district['division']] ?? null;
 $color     = $division['color'] ?? '#00a651';
-$prayer    = bd_prayer_times((float) $district['lat'], (float) $district['lon']);
+$sun       = bd_sun_times((float) $district['lat'], (float) $district['lon']);
 
 // Related content that genuinely sits in this district.
 $places = array_values(array_filter(
@@ -41,9 +41,10 @@ $faqs = [
            . ', across an area of ' . bd_num($district['area'], 1) . ' square kilometres.',
     'What is ' . $district['name'] . ' famous for?'
         => $district['famous'],
-    'What time is Fajr in ' . $district['name'] . ' today?'
-        => 'Fajr begins at ' . $prayer['Fajr'] . ' and Maghrib at ' . $prayer['Maghrib']
-           . ' today in ' . $district['name'] . ', Bangladesh Standard Time.',
+    'What time is sunrise and sunset in ' . $district['name'] . '?'
+        => 'The sun rises at ' . $sun['Sunrise'] . ' and sets at ' . $sun['Sunset']
+           . ' today in ' . $district['name'] . ', giving ' . $sun['Day length']
+           . ' of daylight.',
 ];
 
 $seo = bd_seo([
@@ -115,29 +116,29 @@ require APP_ROOT . '/includes/layout/header.php';
     <div class="stat"><div class="stat__value"><?= number_format((float) $district['lon'], 2) ?>°E</div><div class="stat__label">Longitude</div></div>
   </div>
 
-  <!-- --------------------------------------------------------- prayer -->
+  <!-- ------------------------------------------------------ sun times -->
   <section class="section">
     <div class="section__head">
-      <h2>Prayer times in <?= e($district['name']) ?> today</h2>
+      <h2>Sunrise and sunset in <?= e($district['name']) ?> today</h2>
       <p><?= e(date('l, j F Y')) ?></p>
     </div>
     <div class="grid grid--3">
-      <?php foreach ($prayer as $name => $time):
-          $info = bd_prayer_meta()[$name] ?? ['bn' => '', 'emoji' => '🕌'];
+      <?php foreach (['Sunrise', 'Solar noon', 'Sunset', 'First light', 'Last light', 'Day length'] as $name):
+          $info = bd_sun_meta()[$name] ?? ['bn' => '', 'emoji' => '☀️'];
       ?>
-        <div class="prayercard" data-reveal>
-          <span class="prayercard__emoji" aria-hidden="true"><?= $info['emoji'] ?></span>
+        <div class="suncard" data-reveal>
+          <span class="suncard__emoji" aria-hidden="true"><?= $info['emoji'] ?></span>
           <span>
-            <span class="prayercard__name"><?= e($name) ?></span>
-            <span class="prayercard__bn"><?= e($info['bn']) ?></span>
+            <span class="suncard__name"><?= e($name) ?></span>
+            <span class="suncard__bn"><?= e($info['bn']) ?></span>
           </span>
-          <span class="prayercard__time"><?= e($time) ?></span>
+          <span class="suncard__time"><?= e($sun[$name]) ?></span>
         </div>
       <?php endforeach; ?>
     </div>
     <p style="margin-top:1rem">
-      <a class="btn btn--ghost" href="<?= e(bd_prayer_url($district)) ?>">
-        Full prayer schedule for <?= e($district['name']) ?> →
+      <a class="btn btn--ghost" href="<?= e(bd_sun_url($district)) ?>">
+        Full sun times for <?= e($district['name']) ?> →
       </a>
     </p>
   </section>

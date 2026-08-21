@@ -31,7 +31,7 @@ $seo = bd_seo($searchSeo);
 
 require APP_ROOT . '/includes/layout/header.php';
 
-$suggestions = ['Sylhet', 'Cox’s Bazar', 'gold price', 'prayer times', 'Padma Bridge',
+$suggestions = ['Sylhet', 'Cox’s Bazar', 'gold price', 'sunset time', 'Padma Bridge',
                 'Sundarbans', 'e-passport', '999', 'Tazing Dong', 'hilsa', 'Pohela Boishakh', 'metro rail'];
 ?>
 
@@ -50,8 +50,7 @@ $suggestions = ['Sylhet', 'Cox’s Bazar', 'gold price', 'prayer times', 'Padma 
   </p>
 </div>
 
-<form class="card" data-reveal method="get" action="index.php" style="margin-bottom:1.6rem">
-  <input type="hidden" name="p" value="search">
+<form class="card" data-reveal method="get" action="<?= e(bd_url('search')) ?>" style="margin-bottom:1.6rem">
   <div class="field">
     <label for="page-search">Your search</label>
     <input type="search" class="input" id="page-search" name="q" value="<?= e($query) ?>"

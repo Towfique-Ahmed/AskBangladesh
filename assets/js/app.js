@@ -261,7 +261,7 @@
       rows = results;
       if (!results.length) {
         panel.innerHTML = '<div class="sresult__empty">No match for “' +
-          escapeHtml(query) + '”. Try a district, a river, “gold”, “999” or “prayer”.</div>';
+          escapeHtml(query) + '”. Try a district, a river, “gold”, “999” or “sunset”.</div>';
       } else {
         panel.innerHTML = results.map(function (r, i) {
           return '<a class="sresult" role="option" data-i="' + i + '" href="' + escapeHtml(r.url) + '">' +
@@ -693,60 +693,6 @@
                  'T' + pad(now.getHours()) + ':' + pad(now.getMinutes());
     }
     convert();
-  })();
-
-  /* ------------------------------------------------- next prayer countdown */
-
-  (function nextPrayer() {
-    const wrap = $('#prayer-list');
-    const label = $('#next-prayer-name');
-    const timer = $('#next-prayer-timer');
-    if (!wrap) { return; }
-
-    const cards = $$('.prayercard', wrap).filter(function (c) {
-      return c.getAttribute('data-prayer') !== 'Sunrise';
-    });
-
-    function refresh() {
-      const now = bdParts(new Date());
-      const mins = now.getHours() * 60 + now.getMinutes() + now.getSeconds() / 60;
-      let next = null;
-
-      $$('.prayercard', wrap).forEach(function (c) { c.classList.remove('is-next', 'is-past'); });
-
-      for (let i = 0; i < cards.length; i++) {
-        const t = (cards[i].getAttribute('data-time') || '').split(':');
-        if (t.length < 2) { continue; }
-        const m = (+t[0]) * 60 + (+t[1]);
-        if (m > mins && !next) { next = { card: cards[i], mins: m }; }
-        else if (m <= mins) { cards[i].classList.add('is-past'); }
-      }
-
-      let remaining;
-      if (next) {
-        next.card.classList.add('is-next');
-        remaining = (next.mins - mins) * 60;
-        if (label) { label.textContent = next.card.getAttribute('data-prayer'); }
-      } else if (cards.length) {
-        // Past Isha — the next prayer is tomorrow's Fajr.
-        cards[0].classList.add('is-next');
-        const t = (cards[0].getAttribute('data-time') || '0:0').split(':');
-        remaining = ((+t[0]) * 60 + (+t[1]) + 1440 - mins) * 60;
-        if (label) { label.textContent = cards[0].getAttribute('data-prayer') + ' (tomorrow)'; }
-      } else {
-        return;
-      }
-
-      if (timer) {
-        const h = Math.floor(remaining / 3600);
-        const m = Math.floor((remaining % 3600) / 60);
-        const s = Math.floor(remaining % 60);
-        timer.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
-      }
-    }
-
-    refresh();
-    setInterval(refresh, 1000);
   })();
 
   /* --------------------------------------------------------- copy buttons */

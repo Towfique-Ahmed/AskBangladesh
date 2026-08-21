@@ -85,7 +85,7 @@ function bd_abs_url(string $path = '', array $query = []): string
 function bd_district_url(array $d): string { return bd_url('district/' . bd_slug($d['name'])); }
 function bd_division_url(string $name): string { return bd_url('division/' . bd_slug($name)); }
 function bd_travel_url(array $t): string { return bd_url('travel/' . bd_slug($t['name'])); }
-function bd_prayer_url(array $d): string { return bd_url('prayer/' . bd_slug($d['name'])); }
+function bd_sun_url(array $d): string { return bd_url('sunrise-sunset/' . bd_slug($d['name'])); }
 
 /** The request path with the base directory and surrounding slashes removed. */
 function bd_request_path(): string
@@ -130,7 +130,7 @@ function bd_route(): array
         'time'       => 'time',
         'currency'   => 'currency',
         'gold'       => 'gold',
-        'prayer'     => 'prayer',
+        'sunrise-sunset' => 'sun',
         'religion'   => 'religion',
         'government' => 'government',
         'about'      => 'about',
@@ -141,10 +141,10 @@ function bd_route(): array
 
     // Two-segment detail pages: /district/dhaka, /travel/kuakata-sea-beach, …
     $detail = [
-        'district' => 'district',
-        'division' => 'division',
-        'travel'   => 'travel-detail',
-        'prayer'   => 'prayer',
+        'district'       => 'district',
+        'division'       => 'division',
+        'travel'         => 'travel-detail',
+        'sunrise-sunset' => 'sun',
     ];
 
     if ($second !== '' && isset($detail[$first])) {
@@ -171,6 +171,7 @@ function bd_active(string $page): string
         'districts' => ['districts', 'district', 'division'],
         'travel'    => ['travel', 'travel-detail'],
         'geography' => ['geography', 'mountains', 'rivers'],
+        'sun'       => ['sun'],
     ];
     $group = $family[$page] ?? [$page];
     return in_array($current, $group, true) ? ' is-active' : '';
@@ -532,7 +533,7 @@ function bd_tools(): array
         ['name' => 'Live Clock & World Time Converter', 'emoji' => '🕰️', 'url' => bd_url('time'), 'desc' => 'Bangladesh Standard Time with a converter for 24 world cities, plus countdowns.', 'keywords' => ['time', 'clock', 'timezone', 'BST', 'converter', 'timer', 'countdown']],
         ['name' => 'Currency Converter', 'emoji' => '💱', 'url' => bd_url('currency'), 'desc' => 'Convert the Bangladeshi Taka against 30+ world currencies with live rates.', 'keywords' => ['currency', 'taka', 'BDT', 'dollar', 'exchange rate', 'remittance', 'convert money']],
         ['name' => 'Gold Price in Bangladesh', 'emoji' => '🥇', 'url' => bd_url('gold'), 'desc' => 'BAJUS gold and silver rates per bhori, gram and ana, with a weight converter.', 'keywords' => ['gold', 'gold price', 'bhori', 'vori', 'silver', 'jewellery', 'BAJUS', 'ana']],
-        ['name' => 'Prayer Times (Namaz)', 'emoji' => '🕌', 'url' => bd_url('prayer'), 'desc' => 'Daily salah times for every district with the next-prayer countdown.', 'keywords' => ['prayer', 'namaz', 'salah', 'azan', 'fajr', 'iftar', 'sehri', 'ramadan']],
+        ['name' => 'Sunrise & Sunset Times', 'emoji' => '🌅', 'url' => bd_url('sunrise-sunset'), 'desc' => 'Sunrise, sunset, day length, solar noon and golden hour for every district.', 'keywords' => ['sunrise', 'sunset', 'day length', 'daylight', 'golden hour', 'solar noon', 'dawn', 'dusk', 'twilight']],
         ['name' => 'Global Search', 'emoji' => '🔍', 'url' => bd_url('search'), 'desc' => 'One search box across every district, place, service and fact in the app.', 'keywords' => ['search', 'find', 'lookup']],
         ['name' => 'Government Directory', 'emoji' => '🏛️', 'url' => bd_url('government'), 'desc' => 'Ministries, e-services, emergency hotlines and national institutions.', 'keywords' => ['government', 'NID', 'passport', 'tax', 'e-service', 'hotline', '999']],
         ['name' => 'Travel Guide', 'emoji' => '🧳', 'url' => bd_url('travel'), 'desc' => 'The best places to visit across the country with seasons and districts.', 'keywords' => ['travel', 'tourism', 'places', 'visit', 'beach', 'hills']],
