@@ -33,7 +33,6 @@ $files = [
     'currency'      => 'currency',
     'gold'          => 'gold',
     'sun'           => 'sun',
-    'prayer-gone'   => 'prayer-gone',
     'religion'      => 'religion',
     'government'    => 'government',
     'about'         => 'about',

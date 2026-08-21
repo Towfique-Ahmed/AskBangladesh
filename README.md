@@ -153,8 +153,8 @@ which resolves it with `bd_route()`.
 - **Search result pages are `noindex, follow`** — thin and effectively infinite — while the
   links they contain are still crawled.
 - `?district=` on the sun page **301-redirects** to its canonical `/sunrise-sunset/{slug}`.
-- The retired `/prayer` and `/prayer/{slug}` URLs **301-redirect** to their sun equivalents
-  rather than 404ing, so nothing already indexed is dropped.
+- The prayer-times feature has been removed entirely. `/prayer` and `/prayer/{slug}` no
+  longer exist and return 404.
 
 ## Data currency
 

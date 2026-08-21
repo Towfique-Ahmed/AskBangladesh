@@ -131,7 +131,6 @@ function bd_route(): array
         'currency'   => 'currency',
         'gold'       => 'gold',
         'sunrise-sunset' => 'sun',
-        'prayer'     => 'prayer-gone',
         'religion'   => 'religion',
         'government' => 'government',
         'about'      => 'about',
@@ -146,8 +145,6 @@ function bd_route(): array
         'division'       => 'division',
         'travel'         => 'travel-detail',
         'sunrise-sunset' => 'sun',
-        // Retired: /prayer/<slug> 301-redirects to the sun-times page.
-        'prayer'         => 'prayer-gone',
     ];
 
     if ($second !== '' && isset($detail[$first])) {
