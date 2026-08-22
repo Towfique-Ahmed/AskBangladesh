@@ -80,7 +80,7 @@ if (!defined('BASE_PATH')) {
  */
 if (!defined('GA_MEASUREMENT_ID')) {
     $gaEnv = getenv('GA_MEASUREMENT_ID');
-    define('GA_MEASUREMENT_ID', $gaEnv === false ? 'G-CMKB98X676' : trim($gaEnv));
+    define('GA_MEASUREMENT_ID', $gaEnv === false ? 'G-BE9C6F1KMW' : trim($gaEnv));
 }
 
 /*
