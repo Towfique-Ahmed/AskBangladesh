@@ -173,8 +173,12 @@ unreachable. The UI always states which of the two is being shown.
 Set `SITE_URL` in the environment so canonical tags and the sitemap emit your real origin:
 
 ```
-SITE_URL=https://askbangladesh.towfique.com
+SITE_URL=https://ask-bangladesh.com
 ```
+
+The app previously lived at `askbangladesh.towfique.com`; both `.htaccess` and
+`deploy/nginx.conf.example` permanently (301) redirect that host to
+`ask-bangladesh.com` so existing links and search rankings carry over.
 
 Without it the origin is derived per-request from the `Host` header, which works but pins
 nothing if the site answers on more than one hostname.
