@@ -4,11 +4,21 @@
 # Copy into /etc/nginx/sites-available/, adjust the three marked values, then:
 #   nginx -t && systemctl reload nginx
 
+# Domain migration: permanently redirect the old domain to the new one.
 server {
     listen 80;
     listen [::]:80;
 
-    server_name askbangladesh.example.com;          # <-- your domain
+    server_name askbangladesh.towfique.com;
+
+    return 301 https://ask-bangladesh.com$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name ask-bangladesh.com;                 # <-- your domain
 
     # The directory that CONTAINS index.php. The application is not nested in
     # a public/ subfolder — point this at the repository root itself.

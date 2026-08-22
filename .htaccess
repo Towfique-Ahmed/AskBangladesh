@@ -19,6 +19,10 @@ Options -Indexes
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Domain migration: permanently redirect the old domain to the new one.
+    RewriteCond %{HTTP_HOST} ^askbangladesh\.towfique\.com$ [NC]
+    RewriteRule ^(.*)$ https://ask-bangladesh.com/$1 [R=301,L]
+
     # Strip a trailing slash so /districts/ and /districts are not two URLs.
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+)/$ /$1 [R=301,L]
