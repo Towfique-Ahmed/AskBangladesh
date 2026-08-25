@@ -37,6 +37,11 @@ $files = [
     'government'    => 'government',
     'about'         => 'about',
     'search'        => 'search',
+    'calendar'      => 'calendar',
+    'thana'         => 'thana',
+    'privacy'       => 'privacy',
+    'terms'         => 'terms',
+    'contact'       => 'contact',
     'sitemap'       => 'sitemap',
     'robots'        => 'robots',
 ];

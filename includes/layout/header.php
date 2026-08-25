@@ -21,6 +21,8 @@ $nav = [
     ['path' => 'sunrise-sunset', 'page' => 'sun',    'label' => 'Sun Times',  'icon' => '🌅'],
     ['path' => 'religion',   'page' => 'religion',   'label' => 'Religion',   'icon' => '🕊️'],
     ['path' => 'government', 'page' => 'government', 'label' => 'Government', 'icon' => '🏛️'],
+    ['path' => 'calendar',   'page' => 'calendar',   'label' => 'Calendar',   'icon' => '📅'],
+    ['path' => 'thana',      'page' => 'thana',      'label' => 'Thanas',     'icon' => '🏢'],
     ['path' => 'about',      'page' => 'about',      'label' => 'About BD',   'icon' => '🇧🇩'],
 ];
 

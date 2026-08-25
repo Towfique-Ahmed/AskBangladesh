@@ -135,6 +135,11 @@ function bd_route(): array
         'government' => 'government',
         'about'      => 'about',
         'search'     => 'search',
+        'calendar'   => 'calendar',
+        'thana'      => 'thana',
+        'privacy'    => 'privacy',
+        'terms'      => 'terms',
+        'contact'    => 'contact',
         'sitemap.xml'=> 'sitemap',
         'robots.txt' => 'robots',
     ];

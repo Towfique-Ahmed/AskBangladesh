@@ -164,6 +164,33 @@ function bd_page_seo(string $page): array
             'keywords'    => 'about Bangladesh, Bangladesh facts, national symbols of Bangladesh, Bangladesh history',
             'path'        => 'about',
         ],
+        'calendar' => [
+            'title'       => 'Bangla & English Calendar — Seasons',
+            'description' => 'Bangla (Bengali) and English Gregorian calendar side by side, with the six seasons of Bangladesh, twelve Bangla months and national holidays.',
+            'keywords'    => 'Bangla calendar, Bengali calendar, Bangladesh seasons, Bangla months, Pohela Boishakh',
+            'path'        => 'calendar',
+        ],
+        'thana' => [
+            'title'       => 'All Thanas of Bangladesh by District',
+            'description' => 'Complete list of every thana (police station) in Bangladesh, grouped by all 64 districts. Search by thana name or district.',
+            'keywords'    => 'thana Bangladesh, police stations Bangladesh, thana list, Bangladesh thana',
+            'path'        => 'thana',
+        ],
+        'privacy' => [
+            'title'       => 'Privacy Policy',
+            'description' => 'Privacy policy for AskBangladesh — how we handle data, cookies and third-party services on ask-bangladesh.com.',
+            'path'        => 'privacy',
+        ],
+        'terms' => [
+            'title'       => 'Terms & Conditions',
+            'description' => 'Terms and conditions for using AskBangladesh, the informational reference site about Bangladesh.',
+            'path'        => 'terms',
+        ],
+        'contact' => [
+            'title'       => 'Contact Us',
+            'description' => 'Get in touch with the AskBangladesh team — report errors, suggest features or ask a question about Bangladesh.',
+            'path'        => 'contact',
+        ],
         'search' => [
             'title'       => 'Search Everything About Bangladesh',
             'description' => 'Search everything about Bangladesh from one box: districts, rivers, mountains, travel destinations, government services, gold rates and sunrise times.',
@@ -463,6 +490,11 @@ function bd_sitemap_urls(): array
     $add('religion',  'monthly', '0.8');
     $add('government','monthly', '0.8');
     $add('about',     'monthly', '0.8');
+    $add('calendar',  'monthly', '0.7');
+    $add('thana',     'monthly', '0.7');
+    $add('contact',   'yearly',  '0.3');
+    $add('privacy',   'yearly',  '0.2');
+    $add('terms',     'yearly',  '0.2');
 
     // Division pages.
     foreach (array_keys(bd_divisions()) as $division) {
