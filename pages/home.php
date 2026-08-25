@@ -10,7 +10,27 @@ $countdown = bd_countdowns();
 $next      = $countdown[0];
 $symbols   = array_slice(bd_nation('symbols'), 0, 6);
 
-$seo = bd_seo(bd_page_seo('home'));
+$seo = bd_seo(bd_page_seo('home') + [
+    'jsonld' => [
+        bd_jsonld_country(),
+        [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'ItemList',
+            'name'            => 'Tools on AskBangladesh',
+            'numberOfItems'   => count($tools),
+            'itemListElement' => array_map(
+                static fn (int $i, array $t): array => [
+                    '@type'    => 'ListItem',
+                    'position' => $i + 1,
+                    'name'     => $t['name'],
+                    'url'      => SITE_URL . $t['url'],
+                ],
+                array_keys($tools),
+                $tools
+            ),
+        ],
+    ],
+]);
 
 $typer = json_encode([
     'the world’s largest river delta.',

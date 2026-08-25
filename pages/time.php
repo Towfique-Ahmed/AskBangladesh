@@ -10,6 +10,13 @@ $seo = bd_seo(bd_page_seo('time') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Time'],
     ],
+    'jsonld' => [
+        bd_jsonld_web_app(
+            'Bangladesh Time Converter',
+            'Live Bangladesh Standard Time clock, world clocks for 34 cities and a two-way time zone converter.',
+            'time'
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

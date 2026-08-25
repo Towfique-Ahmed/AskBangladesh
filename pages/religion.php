@@ -5,10 +5,23 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 $religions = bd_nation('religions');
 $festivals = bd_nation('festivals');
 
+$festivalSchemas = bd_jsonld_festivals($festivals);
 $seo = bd_seo(bd_page_seo('religion') + [
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Religions'],
+    ],
+    'jsonld' => [
+        bd_jsonld_item_list(
+            'Religions of Bangladesh',
+            $religions,
+            static fn (array $r): array => [
+                '@type'       => 'Thing',
+                'name'        => $r['name'],
+                'description' => $r['note'],
+            ]
+        ),
+        ...$festivalSchemas,
     ],
 ]);
 

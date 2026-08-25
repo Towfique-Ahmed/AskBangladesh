@@ -11,6 +11,7 @@ $seo = bd_seo(bd_page_seo('geography') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Geography'],
     ],
+    'jsonld' => [bd_jsonld_country()],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

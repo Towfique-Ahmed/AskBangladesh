@@ -15,6 +15,7 @@ $seo = bd_seo(bd_page_seo('map') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Map'],
     ],
+    'jsonld' => [bd_jsonld_map()],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

@@ -13,6 +13,28 @@ $seo = bd_seo(bd_page_seo('transport') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Transport'],
     ],
+    'jsonld' => [
+        bd_jsonld_item_list(
+            'National Highways of Bangladesh',
+            $roads,
+            static fn (array $r): array => [
+                '@type'       => 'Thing',
+                'name'        => $r['code'] . ' — ' . $r['name'],
+                'description' => $r['note'],
+            ]
+        ),
+        bd_jsonld_item_list(
+            'Airports in Bangladesh',
+            $airports,
+            static fn (array $a): array => [
+                '@type' => 'Airport',
+                'name'  => $a['name'],
+                'iataCode' => $a['code'],
+                'address'  => ['@type' => 'PostalAddress', 'addressCountry' => 'BD', 'addressLocality' => $a['city']],
+                'geo'      => ['@type' => 'GeoCoordinates', 'latitude' => $a['lat'], 'longitude' => $a['lon']],
+            ]
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

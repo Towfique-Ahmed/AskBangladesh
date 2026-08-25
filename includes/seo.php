@@ -320,6 +320,118 @@ function bd_jsonld_organization(): array
     ];
 }
 
+/* --------------------------------------------------------- page-level schemas */
+
+/** Country schema for geography/about pages. */
+function bd_jsonld_country(): array
+{
+    $geo = bd_places('geography');
+    return [
+        '@context'      => 'https://schema.org',
+        '@type'         => 'Country',
+        'name'          => 'Bangladesh',
+        'alternateName' => 'People\'s Republic of Bangladesh',
+        'url'           => bd_abs_url('about'),
+        'description'   => 'A South Asian country in the Ganges–Brahmaputra–Meghna delta, with 64 districts across 8 divisions.',
+        'geo'           => [
+            '@type'     => 'GeoCoordinates',
+            'latitude'  => 23.6850,
+            'longitude' => 90.3563,
+        ],
+        'containedInPlace' => ['@type' => 'Continent', 'name' => $geo['continent'] ?? 'Asia'],
+    ];
+}
+
+/** WebApplication schema for tool pages (currency, gold, time, sun). */
+function bd_jsonld_web_app(string $name, string $description, string $path): array
+{
+    return [
+        '@context'           => 'https://schema.org',
+        '@type'              => 'WebApplication',
+        'name'               => $name,
+        'url'                => bd_abs_url($path),
+        'description'        => $description,
+        'applicationCategory'=> 'UtilityApplication',
+        'operatingSystem'    => 'Any',
+        'offers'             => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'USD'],
+        'inLanguage'         => 'en',
+        'isPartOf'           => ['@type' => 'WebSite', '@id' => bd_abs_url() . '#website'],
+    ];
+}
+
+/** ItemList schema from an array of items. */
+function bd_jsonld_item_list(string $name, array $items, callable $mapper): array
+{
+    return [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'ItemList',
+        'name'            => $name,
+        'numberOfItems'   => count($items),
+        'itemListElement' => array_values(array_map(
+            static fn (int $i, $item): array => ['@type' => 'ListItem', 'position' => $i + 1, 'item' => $mapper($item)],
+            array_keys($items),
+            $items
+        )),
+    ];
+}
+
+/** GovernmentService schema for the government page. */
+function bd_jsonld_government_services(array $services): array
+{
+    return [
+        '@context' => 'https://schema.org',
+        '@type'    => 'GovernmentOrganization',
+        'name'     => 'Government of Bangladesh',
+        'url'      => 'https://bangladesh.gov.bd',
+        'areaServed' => ['@type' => 'Country', 'name' => 'Bangladesh'],
+        'hasOfferCatalog' => [
+            '@type'          => 'OfferCatalog',
+            'name'           => 'Bangladesh Government e-Services',
+            'numberOfItems'  => count($services),
+            'itemListElement' => array_map(
+                static fn (array $s): array => [
+                    '@type'       => 'GovernmentService',
+                    'name'        => $s['name'],
+                    'description' => $s['desc'],
+                    'url'         => $s['url'],
+                    'serviceType' => 'e-Government',
+                ],
+                array_slice($services, 0, 10)
+            ),
+        ],
+    ];
+}
+
+/** Map schema for the interactive map page. */
+function bd_jsonld_map(): array
+{
+    return [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Map',
+        'name'        => 'Interactive Map of Bangladesh',
+        'url'         => bd_abs_url('map'),
+        'description' => 'Interactive SVG map of Bangladesh showing all 64 districts, mountains, travel destinations, airports and seaports.',
+        'mapType'     => 'https://schema.org/VenueMap',
+        'about'       => ['@type' => 'Country', 'name' => 'Bangladesh'],
+    ];
+}
+
+/** Event schema for festivals/religion page. */
+function bd_jsonld_festivals(array $festivals): array
+{
+    return array_map(
+        static fn (array $f): array => [
+            '@context'    => 'https://schema.org',
+            '@type'       => 'Event',
+            'name'        => $f['name'],
+            'description' => $f['desc'],
+            'location'    => ['@type' => 'Country', 'name' => 'Bangladesh'],
+            'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode',
+        ],
+        array_slice($festivals, 0, 6)
+    );
+}
+
 /* ------------------------------------------------------------ sitemap */
 
 /**
