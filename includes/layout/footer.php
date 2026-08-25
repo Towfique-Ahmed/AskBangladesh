@@ -30,9 +30,9 @@
         <h4>Know Bangladesh</h4>
         <a href="<?= e(bd_url('government')) ?>">Government &amp; e-services</a>
         <a href="<?= e(bd_url('religion')) ?>">Religions &amp; festivals</a>
+        <a href="<?= e(bd_url('calendar')) ?>">Bangla &amp; English Calendar</a>
+        <a href="<?= e(bd_url('thana')) ?>">All thanas</a>
         <a href="<?= e(bd_url('about')) ?>">National profile</a>
-        <a href="<?= e(bd_url('about') . '#history') ?>">History timeline</a>
-        <a href="<?= e(bd_url('about') . '#facts') ?>">Surprising facts</a>
       </div>
       <div>
         <h4>Emergency</h4>
@@ -46,8 +46,12 @@
   </div>
 
   <div class="footer__bar">
-    <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?> — built with PHP, no framework.<br>
-       Content last updated <time datetime="<?= e(bd_content_modified()) ?>"><?= e((new DateTimeImmutable(bd_content_modified()))->setTimezone(new DateTimeZone(BD_TIMEZONE))->format('j F Y')) ?></time>.</p>
+    <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?>. All rights reserved by <a href="https://towfique.com" target="_blank" rel="noopener noreferrer">towfique.com</a>.</p>
+    <p style="margin-top:.4rem">
+      <a href="<?= e(bd_url('privacy')) ?>">Privacy Policy</a> ·
+      <a href="<?= e(bd_url('terms')) ?>">Terms &amp; Conditions</a> ·
+      <a href="<?= e(bd_url('contact')) ?>">Contact Us</a>
+    </p>
     <p class="footer__note">Exchange rates and gold prices are indicative. Confirm with Bangladesh Bank or BAJUS before acting on them.</p>
   </div>
 </footer>
