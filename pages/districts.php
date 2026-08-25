@@ -11,6 +11,18 @@ $seo = bd_seo(bd_page_seo('districts') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Districts'],
     ],
+    'jsonld' => [
+        bd_jsonld_item_list(
+            'All 64 Districts of Bangladesh',
+            $districts,
+            static fn (array $d): array => [
+                '@type' => 'AdministrativeArea',
+                'name'  => $d['name'] . ' District',
+                'url'   => bd_abs_url('district/' . bd_slug($d['name'])),
+                'containedInPlace' => ['@type' => 'AdministrativeArea', 'name' => $d['division'] . ' Division'],
+            ]
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

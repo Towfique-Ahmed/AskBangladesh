@@ -13,6 +13,7 @@ $seo = bd_seo(bd_page_seo('about') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'About Bangladesh'],
     ],
+    'jsonld' => [bd_jsonld_country()],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

@@ -11,6 +11,13 @@ $seo = bd_seo(bd_page_seo('currency') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Currency Converter'],
     ],
+    'jsonld' => [
+        bd_jsonld_web_app(
+            'BDT Currency Converter',
+            'Convert the Bangladeshi Taka against 30+ world currencies with live exchange rates.',
+            'currency'
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

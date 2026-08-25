@@ -10,6 +10,13 @@ $seo = bd_seo(bd_page_seo('gold') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Gold Price'],
     ],
+    'jsonld' => [
+        bd_jsonld_web_app(
+            'Bangladesh Gold Price Calculator',
+            'Today\'s gold and silver prices in Bangladesh per bhori, gram and ana for 22K, 21K, 18K and traditional gold, with a weight converter.',
+            'gold'
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

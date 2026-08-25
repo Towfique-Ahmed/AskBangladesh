@@ -14,6 +14,20 @@ $seo = bd_seo(bd_page_seo('travel') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Travel'],
     ],
+    'jsonld' => [
+        bd_jsonld_item_list(
+            'Best Places to Visit in Bangladesh',
+            $travel,
+            static fn (array $p): array => [
+                '@type'       => 'TouristAttraction',
+                'name'        => $p['name'],
+                'description' => $p['desc'],
+                'url'         => bd_abs_url('travel/' . bd_slug($p['name'])),
+                'touristType' => $p['type'],
+                'address'     => ['@type' => 'PostalAddress', 'addressCountry' => 'BD', 'addressLocality' => $p['district']],
+            ]
+        ),
+    ],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

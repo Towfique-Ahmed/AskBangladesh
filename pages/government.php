@@ -12,6 +12,7 @@ $seo = bd_seo(bd_page_seo('government') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Government'],
     ],
+    'jsonld' => [bd_jsonld_government_services($services)],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';
