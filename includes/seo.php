@@ -116,6 +116,12 @@ function bd_page_seo(string $page): array
             'keywords'    => 'places to visit in Bangladesh, Bangladesh tourism, Cox\'s Bazar, Sundarbans',
             'path'        => 'travel',
         ],
+        'universities' => [
+            'title'       => 'Top Universities in Bangladesh',
+            'description' => 'The 20 best public and 20 best private universities in Bangladesh, with founding year, campus location, faculties and student numbers for each.',
+            'keywords'    => 'universities in Bangladesh, best university Bangladesh, public university, private university, Dhaka University, BUET, NSU, BRAC University',
+            'path'        => 'universities',
+        ],
         'transport' => [
             'title'       => 'Transport in Bangladesh — Roads & Fares',
             'description' => 'How to get around Bangladesh: national highways, train and bus fares, rickshaws and CNGs, launches, the Dhaka metro, airports, seaports and megaprojects.',
@@ -501,6 +507,7 @@ function bd_sitemap_urls(): array
     // Reference sections.
     $add('districts', 'monthly', '0.9');
     $add('travel',    'monthly', '0.9');
+    $add('universities', 'monthly', '0.9');
     $add('geography', 'monthly', '0.8');
     $add('mountains', 'monthly', '0.8');
     $add('rivers',    'monthly', '0.8');
@@ -531,6 +538,11 @@ function bd_sitemap_urls(): array
     // A page per travel destination.
     foreach (bd_places('travel') as $place) {
         $add('travel/' . bd_slug($place['name']), 'monthly', '0.7');
+    }
+
+    // A page per university.
+    foreach (bd_all_universities() as $u) {
+        $add('universities/' . bd_slug($u['name']), 'monthly', '0.7');
     }
 
     return $urls;
