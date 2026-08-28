@@ -176,6 +176,12 @@ function bd_page_seo(string $page): array
             'keywords'    => 'about Bangladesh, Bangladesh facts, national symbols of Bangladesh, Bangladesh history',
             'path'        => 'about',
         ],
+        'about-us' => [
+            'title'       => 'About Us — The AskBangladesh Team',
+            'description' => 'Meet the team behind AskBangladesh.com. Founder Towfique Ahmed on why the site exists, how the data is sourced and verified, and what we stand for.',
+            'keywords'    => 'about AskBangladesh, AskBangladesh team, Towfique Ahmed, AskBangladesh founder',
+            'path'        => 'about-us',
+        ],
         'calendar' => [
             'title'       => 'Bangla & English Calendar — Seasons',
             'description' => 'Bangla (Bengali) and English Gregorian calendar side by side, with the six seasons of Bangladesh, twelve Bangla months and national holidays.',
@@ -504,6 +510,7 @@ function bd_sitemap_urls(): array
     $add('presidents','monthly', '0.7');
     $add('prime-ministers','monthly', '0.7');
     $add('about',     'monthly', '0.8');
+    $add('about-us',  'yearly',  '0.5');
     $add('calendar',  'monthly', '0.7');
     $add('thana',     'monthly', '0.7');
     $add('contact',   'yearly',  '0.3');

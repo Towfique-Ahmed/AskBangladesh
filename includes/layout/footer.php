@@ -33,6 +33,7 @@
         <a href="<?= e(bd_url('calendar')) ?>">Bangla &amp; English Calendar</a>
         <a href="<?= e(bd_url('thana')) ?>">All thanas</a>
         <a href="<?= e(bd_url('about')) ?>">National profile</a>
+        <a href="<?= e(bd_url('about-us')) ?>">About Us</a>
       </div>
       <div>
         <h4>Emergency</h4>
@@ -48,6 +49,7 @@
   <div class="footer__bar">
     <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?>. All rights reserved by <a href="https://towfique.com" target="_blank" rel="noopener noreferrer">towfique.com</a>.</p>
     <p style="margin-top:.4rem">
+      <a href="<?= e(bd_url('about-us')) ?>">About Us</a> ·
       <a href="<?= e(bd_url('privacy')) ?>">Privacy Policy</a> ·
       <a href="<?= e(bd_url('terms')) ?>">Terms &amp; Conditions</a> ·
       <a href="<?= e(bd_url('contact')) ?>">Contact Us</a>

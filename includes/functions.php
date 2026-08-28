@@ -144,6 +144,7 @@ function bd_route(): array
         'presidents' => 'presidents',
         'prime-ministers' => 'prime-ministers',
         'about'      => 'about',
+        'about-us'   => 'about-us',
         'search'     => 'search',
         'calendar'   => 'calendar',
         'thana'      => 'thana',
