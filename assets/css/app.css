@@ -859,18 +859,3 @@ select.input { appearance: none; cursor: pointer; background-image: none; }
 
 .faq__a { padding: 0 1.15rem 1.05rem; }
 .faq__a p { margin: 0; font-size: .9rem; color: var(--text-dim); }
-
-/* ------------------------------------------------------------- founder */
-.founder { display: flex; gap: 1.25rem; align-items: flex-start; }
-.founder__avatar {
-  flex: 0 0 auto;
-  width: 72px; height: 72px;
-  display: grid; place-items: center;
-  font-size: 2.2rem;
-  border-radius: 50%;
-  background: var(--surface-2, rgba(0,0,0,.05));
-}
-.founder__body { min-width: 0; }
-@media (max-width: 640px) {
-  .founder { flex-direction: column; }
-}
