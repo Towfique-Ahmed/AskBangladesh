@@ -84,20 +84,47 @@ if (!defined('GA_MEASUREMENT_ID')) {
 }
 
 /*
+ * Google AdSense publisher ID. Override with the ADSENSE_CLIENT_ID
+ * environment variable, or set it to an empty string to drop the tag.
+ */
+if (!defined('ADSENSE_CLIENT_ID')) {
+    $adsEnv = getenv('ADSENSE_CLIENT_ID');
+    define('ADSENSE_CLIENT_ID', $adsEnv === false ? 'ca-pub-3937000731735176' : trim($adsEnv));
+}
+
+/*
+ * Whether the current host is a developer or preview machine rather than the
+ * live site. Both the analytics tag and the AdSense tag are held back here.
+ */
+$bdLocalHost = (static function (): bool {
+    $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    $name = explode(':', $host)[0];
+
+    return $host === ''
+        || str_starts_with($host, 'localhost')
+        || str_starts_with($host, '127.0.0.1')
+        || str_starts_with($host, '[::1]')
+        || str_ends_with($name, '.local')
+        || str_ends_with($name, '.test');
+})();
+
+/*
  * Local and preview hosts are excluded so development traffic never lands in
  * the production property. Set GA_FORCE=1 to tag them anyway.
  */
 if (!defined('GA_ENABLED')) {
-    $gaHost  = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
-    $gaLocal = $gaHost === ''
-        || str_starts_with($gaHost, 'localhost')
-        || str_starts_with($gaHost, '127.0.0.1')
-        || str_starts_with($gaHost, '[::1]')
-        || str_ends_with(explode(':', $gaHost)[0], '.local')
-        || str_ends_with(explode(':', $gaHost)[0], '.test');
-
-    define('GA_ENABLED', GA_MEASUREMENT_ID !== '' && (!$gaLocal || getenv('GA_FORCE') === '1'));
+    define('GA_ENABLED', GA_MEASUREMENT_ID !== '' && (!$bdLocalHost || getenv('GA_FORCE') === '1'));
 }
+
+/*
+ * Ads are likewise kept off local and preview hosts, so development traffic
+ * never counts as an impression. Set ADSENSE_FORCE=1 to tag them anyway.
+ */
+if (!defined('ADSENSE_ENABLED')) {
+    define('ADSENSE_ENABLED', ADSENSE_CLIENT_ID !== '' && (!$bdLocalHost || getenv('ADSENSE_FORCE') === '1'));
+}
+
+unset($bdLocalHost);
 
 if (!is_dir(CACHE_DIR)) {
     @mkdir(CACHE_DIR, 0775, true);
