@@ -132,40 +132,6 @@ require APP_ROOT . '/includes/layout/header.php';
   </div>
 </section>
 
-<!-- ---------------------------------------------------------------- team -->
-<section class="section" id="team">
-  <div class="section__head">
-    <h2>The AskBangladesh team</h2>
-    <p>Who is behind the data on this site.</p>
-  </div>
-
-  <div class="card founder" data-reveal>
-    <div class="founder__avatar" aria-hidden="true">🇧🇩</div>
-    <div class="founder__body">
-      <h3 style="margin-top:0">Towfique Ahmed — Founder</h3>
-      <p>
-        Towfique Ahmed is the founder of AskBangladesh.com. In his own words: I have spent years
-        building for the web, and along the way I kept running into the same problem — finding
-        clear, accurate, up-to-date information about Bangladesh in English was far harder than
-        it should be. Facts were scattered across PDFs, half-abandoned government pages and news
-        articles that contradicted each other.
-      </p>
-      <p>
-        AskBangladesh started from a simple thought: <em>put the data first, and let people decide
-        what matters to them.</em> Every number here — population, districts, upazilas, national
-        symbols, the historical timeline — is checked against official sources and updated as the
-        country changes. I am still learning and still improving how we source and verify things,
-        so if you spot something wrong, tell me.
-      </p>
-      <p style="margin-bottom:0">
-        <a class="btn btn--primary" href="https://www.linkedin.com/in/towfiq28/" target="_blank" rel="noopener noreferrer">
-          Connect on LinkedIn
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- --------------------------------------------------------- did you know -->
 <section class="section">
   <div class="section__head"><h2>Things people get surprised by</h2></div>
