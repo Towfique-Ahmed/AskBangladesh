@@ -144,6 +144,7 @@ return [
         ['year' => '1998', 'event' => 'The Bangabandhu Bridge connects the north-west to the rest of the country.'],
         ['year' => '2022', 'event' => 'The Padma Bridge and the first Dhaka Metro line open.'],
         ['year' => '2023', 'event' => 'South Asia’s first underwater tunnel opens beneath the Karnaphuli.'],
+        ['year' => '2024', 'event' => 'A student-led mass uprising in July–August forces Prime Minister Sheikh Hasina to resign; an interim government led by Chief Adviser Muhammad Yunus takes office in August.'],
     ],
 
     'facts' => [
