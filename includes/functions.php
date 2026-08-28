@@ -23,6 +23,19 @@ function bd_data(string $set): array
 function bd_districts(): array { return bd_data('districts')['districts'] ?? []; }
 function bd_divisions(): array { return bd_data('districts')['divisions'] ?? []; }
 function bd_places(string $key): array { return bd_data('places')[$key] ?? []; }
+function bd_universities(string $key): array { return bd_data('universities')[$key] ?? []; }
+/** All universities, public then private, each tagged with its category. */
+function bd_all_universities(): array
+{
+    $all = [];
+    foreach (['public', 'private'] as $category) {
+        foreach (bd_universities($category) as $u) {
+            $u['category'] = $category;
+            $all[] = $u;
+        }
+    }
+    return $all;
+}
 function bd_nation(string $key): array { return bd_data('nation')[$key] ?? []; }
 function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? []; }
 
@@ -93,6 +106,7 @@ function bd_abs_url(string $path = '', array $query = []): string
 function bd_district_url(array $d): string { return bd_url('district/' . bd_slug($d['name'])); }
 function bd_division_url(string $name): string { return bd_url('division/' . bd_slug($name)); }
 function bd_travel_url(array $t): string { return bd_url('travel/' . bd_slug($t['name'])); }
+function bd_university_url(array $u): string { return bd_url('universities/' . bd_slug($u['name'])); }
 function bd_sun_url(array $d): string { return bd_url('sunrise-sunset/' . bd_slug($d['name'])); }
 
 /** The request path with the base directory and surrounding slashes removed. */
@@ -134,6 +148,7 @@ function bd_route(): array
         'mountains'  => 'mountains',
         'rivers'     => 'rivers',
         'travel'     => 'travel',
+        'universities' => 'universities',
         'transport'  => 'transport',
         'time'       => 'time',
         'currency'   => 'currency',
@@ -160,6 +175,7 @@ function bd_route(): array
         'district'       => 'district',
         'division'       => 'division',
         'travel'         => 'travel-detail',
+        'universities'   => 'university-detail',
         'sunrise-sunset' => 'sun',
     ];
 
@@ -186,6 +202,7 @@ function bd_active(string $page): string
     $family  = [
         'districts' => ['districts', 'district', 'division'],
         'travel'    => ['travel', 'travel-detail'],
+        'universities' => ['universities', 'university-detail'],
         'geography' => ['geography', 'mountains', 'rivers'],
         'sun'       => ['sun'],
     ];
@@ -220,6 +237,16 @@ function bd_find_travel(string $slug): ?array
     foreach (bd_places('travel') as $place) {
         if (bd_slug($place['name']) === $slug) {
             return $place;
+        }
+    }
+    return null;
+}
+
+function bd_find_university(string $slug): ?array
+{
+    foreach (bd_all_universities() as $u) {
+        if (bd_slug($u['name']) === $slug) {
+            return $u;
         }
     }
     return null;
@@ -348,6 +375,17 @@ function bd_search_index(): array
             'category' => 'Travel',
             'icon'     => $t['emoji'],
             'url'      => bd_travel_url($t),
+        ]);
+    }
+
+    foreach (bd_all_universities() as $u) {
+        $add([
+            'title'    => $u['name'],
+            'subtitle' => ($u['category'] === 'public' ? 'Public' : 'Private') . ' university · ' . $u['city'],
+            'body'     => $u['desc'],
+            'category' => 'University',
+            'icon'     => '🎓',
+            'url'      => bd_university_url($u),
         ]);
     }
 
