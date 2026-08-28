@@ -26,6 +26,13 @@ function bd_places(string $key): array { return bd_data('places')[$key] ?? []; }
 function bd_nation(string $key): array { return bd_data('nation')[$key] ?? []; }
 function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? []; }
 
+/** The incumbent in a leaders list — the last entry, which always runs to "present". */
+function bd_current_leader(string $key): array
+{
+    $list = bd_leaders($key);
+    return $list === [] ? [] : $list[array_key_last($list)];
+}
+
 /* ---------------------------------------------------------------- output */
 
 function e(?string $value): string
@@ -478,7 +485,7 @@ function bd_search_index(): array
     foreach (bd_leaders('presidents') as $p) {
         $add([
             'title'    => $p['name'],
-            'subtitle' => 'President of Bangladesh, ' . $p['term'],
+            'subtitle' => $p['role'] . ' — ' . $p['term'],
             'body'     => $p['note'],
             'category' => 'President',
             'icon'     => '🎖️',
@@ -489,7 +496,7 @@ function bd_search_index(): array
     foreach (bd_leaders('prime_ministers') as $p) {
         $add([
             'title'    => $p['name'],
-            'subtitle' => 'Prime Minister of Bangladesh, ' . $p['term'],
+            'subtitle' => $p['role'] . ' — ' . $p['term'],
             'body'     => $p['note'],
             'category' => 'Prime Minister',
             'icon'     => '🧑‍💼',
@@ -566,8 +573,8 @@ function bd_tools(): array
         ['name' => 'Sunrise & Sunset Times', 'emoji' => '🌅', 'url' => bd_url('sunrise-sunset'), 'desc' => 'Sunrise, sunset, day length, solar noon and golden hour for every district.', 'keywords' => ['sunrise', 'sunset', 'day length', 'daylight', 'golden hour', 'solar noon', 'dawn', 'dusk', 'twilight']],
         ['name' => 'Global Search', 'emoji' => '🔍', 'url' => bd_url('search'), 'desc' => 'One search box across every district, place, service and fact in the app.', 'keywords' => ['search', 'find', 'lookup']],
         ['name' => 'Government Directory', 'emoji' => '🏛️', 'url' => bd_url('government'), 'desc' => 'Ministries, e-services, emergency hotlines and national institutions.', 'keywords' => ['government', 'NID', 'passport', 'tax', 'e-service', 'hotline', '999']],
-        ['name' => 'Presidents of Bangladesh', 'emoji' => '🎖️', 'url' => bd_url('presidents'), 'desc' => 'Every President of Bangladesh since 1971, in order, with terms in office.', 'keywords' => ['president', 'head of state', 'Shahabuddin', 'Abdul Hamid']],
-        ['name' => 'Prime Ministers of Bangladesh', 'emoji' => '🧑‍💼', 'url' => bd_url('prime-ministers'), 'desc' => 'Every Prime Minister and caretaker Chief Adviser of Bangladesh since 1971.', 'keywords' => ['prime minister', 'head of government', 'chief adviser', 'Sheikh Hasina', 'Yunus', 'Khaleda Zia']],
+        ['name' => 'Presidents of Bangladesh', 'emoji' => '🎖️', 'url' => bd_url('presidents'), 'desc' => 'Every President of Bangladesh since 1971, in order, with terms in office.', 'keywords' => ['president', 'head of state', 'Mirza Fakhrul Islam Alamgir', 'Shahabuddin', 'Abdul Hamid', 'Bangabhaban']],
+        ['name' => 'Prime Ministers of Bangladesh', 'emoji' => '🧑‍💼', 'url' => bd_url('prime-ministers'), 'desc' => 'Every Prime Minister and caretaker Chief Adviser of Bangladesh since 1971.', 'keywords' => ['prime minister', 'head of government', 'chief adviser', 'Tarique Rahman', 'Sheikh Hasina', 'Yunus', 'Khaleda Zia']],
         ['name' => 'Travel Guide', 'emoji' => '🧳', 'url' => bd_url('travel'), 'desc' => 'The best places to visit across the country with seasons and districts.', 'keywords' => ['travel', 'tourism', 'places', 'visit', 'beach', 'hills']],
         ['name' => 'Transport & Roads', 'emoji' => '🛣️', 'url' => bd_url('transport'), 'desc' => 'Highways, fares, airports, ports and the big infrastructure projects.', 'keywords' => ['transport', 'road', 'highway', 'bus', 'train', 'launch', 'metro', 'fare']],
         ['name' => 'Geography & Mountains', 'emoji' => '⛰️', 'url' => bd_url('geography'), 'desc' => 'Continent, delta, rivers, peaks, climate and the extreme points of the country.', 'keywords' => ['geography', 'continent', 'asia', 'mountain', 'peak', 'river', 'climate', 'delta']],
