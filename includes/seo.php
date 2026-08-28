@@ -160,14 +160,14 @@ function bd_page_seo(string $page): array
         ],
         'presidents' => [
             'title'       => 'Presidents of Bangladesh — Full List, 1971–Present',
-            'description' => 'Every President of Bangladesh since independence in 1971, in order, with terms in office and notes — from Sheikh Mujibur Rahman to Mohammed Shahabuddin.',
-            'keywords'    => 'presidents of Bangladesh, list of Bangladesh presidents, current president of Bangladesh',
+            'description' => 'Every President of Bangladesh since independence in 1971, in order, with terms in office and notes — from Sheikh Mujibur Rahman to Mirza Fakhrul Islam Alamgir.',
+            'keywords'    => 'presidents of Bangladesh, list of Bangladesh presidents, current president of Bangladesh, Mirza Fakhrul Islam Alamgir',
             'path'        => 'presidents',
         ],
         'prime-ministers' => [
             'title'       => 'Prime Ministers of Bangladesh — Full List, 1971–Present',
-            'description' => 'Every Prime Minister of Bangladesh since 1971, including caretaker and interim Chief Advisers, with terms in office — from Sheikh Mujibur Rahman to Muhammad Yunus.',
-            'keywords'    => 'prime ministers of Bangladesh, list of Bangladesh prime ministers, current prime minister of Bangladesh, chief adviser',
+            'description' => 'Every Prime Minister of Bangladesh since 1971, including caretaker and interim Chief Advisers, with terms in office — from Sheikh Mujibur Rahman to Tarique Rahman.',
+            'keywords'    => 'prime ministers of Bangladesh, list of Bangladesh prime ministers, current prime minister of Bangladesh, chief adviser, Tarique Rahman',
             'path'        => 'prime-ministers',
         ],
         'about' => [

@@ -56,7 +56,7 @@ return [
 
     'government' => [
         ['office' => 'President', 'role' => 'Head of state, elected by parliament for a five-year term', 'seat' => 'Bangabhaban, Dhaka', 'web' => 'https://bangabhaban.gov.bd'],
-        ['office' => 'Head of Government', 'role' => 'Chief executive of the republic — a Prime Minister leading the council of ministers, or a Chief Adviser leading an interim council during a caretaker period', 'seat' => 'Prime Minister’s Office, Tejgaon, Dhaka', 'web' => 'https://pmo.gov.bd'],
+        ['office' => 'Prime Minister', 'role' => 'Head of government and chief executive of the republic, leading the council of ministers', 'seat' => 'Prime Minister’s Office, Tejgaon, Dhaka', 'web' => 'https://pmo.gov.bd'],
         ['office' => 'Jatiya Sangsad', 'role' => 'Unicameral legislature of 350 seats (300 elected, 50 reserved for women)', 'seat' => 'Sher-e-Bangla Nagar, Dhaka', 'web' => 'https://parliament.gov.bd'],
         ['office' => 'Supreme Court', 'role' => 'Appellate Division and High Court Division, headed by the Chief Justice', 'seat' => 'Ramna, Dhaka', 'web' => 'https://supremecourt.gov.bd'],
         ['office' => 'Election Commission', 'role' => 'Conducts national and local elections, maintains the voter roll', 'seat' => 'Agargaon, Dhaka', 'web' => 'https://ecs.gov.bd'],
@@ -145,6 +145,8 @@ return [
         ['year' => '2022', 'event' => 'The Padma Bridge and the first Dhaka Metro line open.'],
         ['year' => '2023', 'event' => 'South Asia’s first underwater tunnel opens beneath the Karnaphuli.'],
         ['year' => '2024', 'event' => 'A student-led mass uprising in July–August forces Prime Minister Sheikh Hasina to resign; an interim government led by Chief Adviser Muhammad Yunus takes office in August.'],
+        ['year' => '2026', 'event' => 'The first general election since the uprising is held on 12 February; the BNP wins a landslide and Tarique Rahman is sworn in as Prime Minister on 17 February.'],
+        ['year' => '2026', 'event' => 'President Mohammed Shahabuddin resigns in July on health grounds; Mirza Fakhrul Islam Alamgir is elected in August in the first contested presidential election since 1991.'],
     ],
 
     'facts' => [
