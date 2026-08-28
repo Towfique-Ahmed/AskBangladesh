@@ -48,6 +48,11 @@ $modified = bd_content_modified();
   gtag('config', '<?= e(GA_MEASUREMENT_ID) ?>');
 </script>
 <?php endif; ?>
+<?php if (ADSENSE_ENABLED): ?>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?= rawurlencode(ADSENSE_CLIENT_ID) ?>"
+        crossorigin="anonymous"></script>
+<?php endif; ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
