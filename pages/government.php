@@ -67,6 +67,21 @@ require APP_ROOT . '/includes/layout/header.php';
       </article>
     <?php endforeach; ?>
   </div>
+
+  <div class="grid grid--2" style="margin-top:1.2rem">
+    <a class="tile" href="<?= e(bd_url('presidents')) ?>">
+      <span class="tile__icon" aria-hidden="true">🎖️</span>
+      <h3>All Presidents of Bangladesh</h3>
+      <p style="margin-bottom:.7rem">Every head of state since 1971, in order, with terms in office.</p>
+      <span class="tile__arrow">See the full list →</span>
+    </a>
+    <a class="tile" href="<?= e(bd_url('prime-ministers')) ?>">
+      <span class="tile__icon" aria-hidden="true">🧑‍💼</span>
+      <h3>All Prime Ministers of Bangladesh</h3>
+      <p style="margin-bottom:.7rem">Every head of government since 1971, including caretaker Chief Advisers.</p>
+      <span class="tile__arrow">See the full list →</span>
+    </a>
+  </div>
 </section>
 
 <!-- ------------------------------------------------------------- services -->
