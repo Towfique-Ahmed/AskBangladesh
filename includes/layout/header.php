@@ -85,6 +85,10 @@ $modified = bd_content_modified();
 <meta property="article:modified_time" content="<?= e($modified) ?>">
 <?php endif; ?>
 <meta name="twitter:card" content="summary_large_image">
+<?php if (defined('TWITTER_HANDLE') && TWITTER_HANDLE !== ''): ?>
+<meta name="twitter:site" content="<?= e(TWITTER_HANDLE) ?>">
+<meta name="twitter:creator" content="<?= e(TWITTER_HANDLE) ?>">
+<?php endif; ?>
 <meta name="twitter:title" content="<?= e($seo['title']) ?>">
 <meta name="twitter:description" content="<?= e($seo['description']) ?>">
 <meta name="twitter:image" content="<?= e($ogImage) ?>">

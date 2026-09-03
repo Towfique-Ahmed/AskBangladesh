@@ -6,9 +6,13 @@ $presidents = bd_leaders('presidents');
 $leader     = bd_current_leader('presidents');
 
 $seo = bd_seo(bd_page_seo('presidents') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Presidents'],
+    ],
+    'jsonld' => [
+        bd_jsonld_person_list('Presidents of Bangladesh', $presidents),
     ],
 ]);
 

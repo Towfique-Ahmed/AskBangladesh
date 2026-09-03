@@ -9,6 +9,7 @@ $ports     = bd_places('ports');
 $projects  = bd_places('megaprojects');
 
 $seo = bd_seo(bd_page_seo('transport') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Transport'],

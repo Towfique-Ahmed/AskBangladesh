@@ -6,9 +6,13 @@ $pms     = bd_leaders('prime_ministers');
 $leader  = bd_current_leader('prime_ministers');
 
 $seo = bd_seo(bd_page_seo('prime-ministers') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Prime Ministers'],
+    ],
+    'jsonld' => [
+        bd_jsonld_person_list('Prime Ministers of Bangladesh', $pms),
     ],
 ]);
 

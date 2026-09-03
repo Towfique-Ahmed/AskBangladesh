@@ -8,6 +8,7 @@ declare(strict_types=1);
 define('APP_NAME', 'AskBangladesh');
 define('APP_TAGLINE', 'Everything about Bangladesh, in one place');
 define('APP_VERSION', '2.0.0');
+define('TWITTER_HANDLE', '@AskBangladesh');
 define('APP_ROOT', dirname(__DIR__));
 define('CACHE_DIR', APP_ROOT . '/storage/cache');
 define('BD_TIMEZONE', 'Asia/Dhaka');

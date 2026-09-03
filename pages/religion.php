@@ -7,6 +7,7 @@ $festivals = bd_nation('festivals');
 
 $festivalSchemas = bd_jsonld_festivals($festivals);
 $seo = bd_seo(bd_page_seo('religion') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Religions'],

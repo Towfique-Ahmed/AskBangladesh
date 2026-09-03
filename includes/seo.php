@@ -118,7 +118,7 @@ function bd_page_seo(string $page): array
         ],
         'universities' => [
             'title'       => 'Top Universities in Bangladesh',
-            'description' => 'The 20 best public and 20 best private universities in Bangladesh, with founding year, campus location, faculties and student numbers for each.',
+            'description' => 'Public and private universities in Bangladesh, with founding year, campus location, faculties and student numbers for each.',
             'keywords'    => 'universities in Bangladesh, best university Bangladesh, public university, private university, Dhaka University, BUET, NSU, BRAC University',
             'path'        => 'universities',
         ],
@@ -203,11 +203,13 @@ function bd_page_seo(string $page): array
         'privacy' => [
             'title'       => 'Privacy Policy',
             'description' => 'Privacy policy for AskBangladesh — how we handle data, cookies and third-party services on ask-bangladesh.com.',
+            'keywords'    => 'AskBangladesh privacy policy, data policy, cookies',
             'path'        => 'privacy',
         ],
         'terms' => [
             'title'       => 'Terms & Conditions',
             'description' => 'Terms and conditions for using AskBangladesh, the informational reference site about Bangladesh.',
+            'keywords'    => 'AskBangladesh terms and conditions, terms of use',
             'path'        => 'terms',
         ],
         'contact' => [
@@ -481,6 +483,67 @@ function bd_jsonld_festivals(array $festivals): array
         ],
         array_slice($festivals, 0, 6)
     );
+}
+
+/** ItemList<Person> schema for leaders pages (presidents, prime ministers). */
+function bd_jsonld_person_list(string $name, array $leaders): array
+{
+    $items = [];
+    foreach ($leaders as $i => $leader) {
+        $items[] = [
+            '@type'    => 'ListItem',
+            'position' => $i + 1,
+            'item'     => [
+                '@type'       => 'Person',
+                'name'        => $leader['name'],
+                'description' => trim(($leader['role'] ?? '') . ', ' . ($leader['term'] ?? ''), ', '),
+                'jobTitle'    => $leader['role'] ?? '',
+            ],
+        ];
+    }
+
+    return [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'ItemList',
+        'name'            => $name,
+        'numberOfItems'   => count($items),
+        'itemListElement' => $items,
+    ];
+}
+
+/** AboutPage schema for the about-us page. */
+function bd_jsonld_about_page(): array
+{
+    return [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'AboutPage',
+        'name'        => 'About AskBangladesh',
+        'url'         => bd_abs_url('about-us'),
+        'description' => 'The team and mission behind AskBangladesh, a free reference site about Bangladesh.',
+        'publisher'   => ['@type' => 'Organization', '@id' => bd_abs_url() . '#organization'],
+        'author'      => [
+            '@type' => 'Person',
+            'name'  => 'Towfique Ahmed',
+            'url'   => bd_abs_url('about-us'),
+        ],
+        'inLanguage'  => 'en',
+        'isPartOf'    => ['@type' => 'WebSite', '@id' => bd_abs_url() . '#website'],
+    ];
+}
+
+/** ContactPage schema for the contact page. */
+function bd_jsonld_contact_page(): array
+{
+    return [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'ContactPage',
+        'name'        => 'Contact AskBangladesh',
+        'url'         => bd_abs_url('contact'),
+        'description' => 'Contact the AskBangladesh team to report errors, suggest features or ask a question.',
+        'publisher'   => ['@type' => 'Organization', '@id' => bd_abs_url() . '#organization'],
+        'inLanguage'  => 'en',
+        'isPartOf'    => ['@type' => 'WebSite', '@id' => bd_abs_url() . '#website'],
+    ];
 }
 
 /* ------------------------------------------------------------ sitemap */

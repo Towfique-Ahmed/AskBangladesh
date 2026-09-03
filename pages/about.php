@@ -9,6 +9,7 @@ $food     = bd_nation('food');
 $facts    = bd_nation('facts');
 
 $seo = bd_seo(bd_page_seo('about') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'About Bangladesh'],

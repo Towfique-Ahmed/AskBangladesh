@@ -6,6 +6,7 @@ $seo = bd_seo(bd_page_seo('contact') + [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Contact Us'],
     ],
+    'jsonld' => [bd_jsonld_contact_page()],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

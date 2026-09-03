@@ -3,10 +3,12 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 /** About Us: the people behind AskBangladesh and how the site is built. */
 
 $seo = bd_seo(bd_page_seo('about-us') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'About Us'],
     ],
+    'jsonld' => [bd_jsonld_about_page()],
 ]);
 
 require APP_ROOT . '/includes/layout/header.php';

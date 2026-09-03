@@ -7,6 +7,7 @@ $mountains = bd_places('mountains');
 $rivers    = bd_places('rivers');
 
 $seo = bd_seo(bd_page_seo('geography') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Geography'],
