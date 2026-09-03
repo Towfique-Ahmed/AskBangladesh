@@ -8,6 +8,7 @@ $services  = bd_nation('eservices');
 $emergency = bd_nation('emergency');
 
 $seo = bd_seo(bd_page_seo('government') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Government'],

@@ -18,6 +18,7 @@ $faqs = [
 ];
 
 $seo = bd_seo(bd_page_seo('mountains') + [
+    'type'        => 'article',
     'breadcrumbs' => [
         ['name' => 'Home',      'url' => bd_url()],
         ['name' => 'Geography', 'url' => bd_url('geography')],
