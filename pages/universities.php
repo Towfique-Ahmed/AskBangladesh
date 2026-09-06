@@ -33,8 +33,8 @@ require APP_ROOT . '/includes/layout/header.php';
   <span class="pagehead__eyebrow">🎓 Higher Education</span>
   <h1>Universities of Bangladesh</h1>
   <p>
-    The 20 best public universities and 20 best private universities in Bangladesh — from the
-    century-old University of Dhaka to fast-growing private campuses in Dhaka, Chattogram and Sylhet.
+    The top public and private universities in Bangladesh — from the
+    century-old University of Dhaka to fast-growing private campuses in Dhaka, Chattogram, Sylhet and Rajshahi.
   </p>
 </div>
 
