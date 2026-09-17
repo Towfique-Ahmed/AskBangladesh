@@ -7,6 +7,7 @@ $symbols  = bd_nation('symbols');
 $timeline = bd_nation('timeline');
 $food     = bd_nation('food');
 $facts    = bd_nation('facts');
+$economy  = bd_nation('economy');
 
 $seo = bd_seo(bd_page_seo('about') + [
     'type'        => 'article',
@@ -112,6 +113,23 @@ require APP_ROOT . '/includes/layout/header.php';
         </div>
       <?php endforeach; ?>
     </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ economy -->
+<section class="section">
+  <div class="section__head">
+    <h2>The economy</h2>
+    <p>What Bangladesh makes, sells and earns from abroad.</p>
+  </div>
+
+  <div class="card" data-reveal>
+    <p><?= e($economy['summary']) ?></p>
+    <ul style="margin:.9rem 0 0;padding-left:1.1rem;font-size:.9rem;color:var(--text-dim);display:grid;gap:.5rem">
+      <?php foreach ($economy['points'] as $point): ?>
+        <li><?= e($point) ?></li>
+      <?php endforeach; ?>
+    </ul>
   </div>
 </section>
 

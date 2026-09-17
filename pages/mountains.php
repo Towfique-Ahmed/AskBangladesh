@@ -81,6 +81,9 @@ require APP_ROOT . '/includes/layout/header.php';
              style="background:linear-gradient(90deg,var(--gold-500),var(--red-500))"></div>
       </div>
       <p><?= e($m['note']) ?></p>
+      <?php if (!empty($m['trek_info'])): ?>
+        <p style="font-size:.85rem;color:var(--text-mute)">🥾 <?= e($m['trek_info']) ?></p>
+      <?php endif; ?>
       <div style="margin-top:.6rem">
         <span class="badge badge--gold"><?= e($m['range']) ?></span>
         <?php

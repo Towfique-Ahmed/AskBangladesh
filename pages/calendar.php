@@ -81,6 +81,41 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="stat"><div class="stat__value">12</div><div class="stat__label">Bangla months</div></div>
 </div>
 
+<!-- ------------------------------------------------------------- history -->
+<section class="section">
+  <div class="section__head">
+    <h2>Where the Bangla calendar comes from</h2>
+  </div>
+  <div class="card" data-reveal>
+    <p>
+      The Bangla calendar (Bangabda, বঙ্গাব্দ) is a solar calendar, unlike the lunar Hijri calendar
+      used for Islamic observances. Its year count is traditionally linked to the reign of the
+      Mughal emperor Akbar, who in the sixteenth century had court astronomer Fathullah Shirazi
+      combine the existing Hijri lunar calendar with the solar Hindu calendar already in use in
+      Bengal. The result let land revenue, which followed the harvest and therefore the sun, be
+      collected on a schedule that stayed fixed to the seasons — something a purely lunar calendar,
+      which drifts about eleven days a year against the seasons, could never do.
+    </p>
+    <p>
+      For most of its history the Bangla year began in the month of Ashwin or shifted slightly
+      from region to region and reign to reign. The fixed modern practice — a 365 or 366‑day solar
+      year starting on 14 April with a leap day added to keep pace with the Gregorian calendar —
+      dates to a 1966 reform proposed by the Bangla Academy under scholar Muhammad Shahidullah,
+      which Bangladesh formally adopted for official use after independence. West Bengal in India
+      still uses a slightly different, older version of the same calendar, so Bangla New Year can
+      fall a day apart on the two sides of the border.
+    </p>
+    <p>
+      Because the calendar is agricultural at heart, its months and seasons still track the
+      farming year closely: Choitro and Boishakh (mid-March to mid-May) are harvest and threshing
+      months for winter rice, Asharh and Shrabon are transplanting months for the monsoon crop, and
+      Ogrohayon takes its name directly from “agro-hayon”, the month of the first (agro) rice
+      harvest. Rural almanacs (panjika) built on the Bangla calendar are still consulted for
+      auspicious dates for weddings, sowing and harvest across much of Bangladesh and West Bengal.
+    </p>
+  </div>
+</section>
+
 <!-- -------------------------------------------------------- English calendar -->
 <section class="section">
   <div class="section__head">

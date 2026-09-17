@@ -176,4 +176,36 @@ foreach ($prices['silver'] as $row) { $priceLookup['silver'][$row['karat']] = $r
   </p>
 </div>
 
+<!-- ------------------------------------------------------------- explainer -->
+<section class="section">
+  <div class="section__head">
+    <h2>How gold pricing works in Bangladesh</h2>
+  </div>
+  <div class="grid grid--2">
+    <div class="card" data-reveal>
+      <h3>⚖️ How BAJUS sets the board</h3>
+      <p>
+        The Bangladesh Jewellers’ Association (BAJUS) revises and publishes gold prices for the
+        whole country whenever the international spot price moves enough to matter, rather than on
+        a fixed daily schedule. The published figure is a base price per bhori for each purity
+        tier — 22K, 21K, 18K and traditional (sanatan) gold — that every jeweller in the country is
+        expected to follow, so a shop in Sylhet and a shop in Khulna quote the same base price on
+        the same day.
+      </p>
+    </div>
+    <div class="card" data-reveal="80">
+      <h3>🧾 Karat, purity and what changes the price</h3>
+      <p>
+        Karat measures how much of a piece is pure gold out of 24 parts: 22K is about 91.6% pure,
+        21K about 87.5%, and 18K about 75%, with the remainder made up of alloy metals that add
+        strength for everyday wear. Traditional (sanatan) gold has no fixed purity standard and is
+        priced by local convention rather than a BAJUS-certified karat. Because the underlying
+        international gold price moves throughout the day, the Taka price per bhori shown here
+        reflects that spot price converted at the current exchange rate, and can differ slightly
+        from the latest physical BAJUS notice until the board catches up.
+      </p>
+    </div>
+  </div>
+</section>
+
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

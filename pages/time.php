@@ -159,4 +159,35 @@ require APP_ROOT . '/includes/layout/header.php';
   </p>
 </div>
 
+<!-- ------------------------------------------------------------- explainer -->
+<section class="section">
+  <div class="section__head">
+    <h2>Why Bangladesh keeps a single, fixed time zone</h2>
+  </div>
+  <div class="grid grid--2">
+    <div class="card" data-reveal>
+      <h3>🕕 UTC+06:00, all year round</h3>
+      <p>
+        Bangladesh Standard Time has stood at a fixed UTC+06:00 offset since it briefly experimented
+        with daylight saving. In 2009 the government moved the clock forward by one hour for several
+        months to reduce electricity demand for lighting during peak evening hours, but the change
+        proved unpopular and confusing and was reversed the same year. Since then the country has
+        kept a single, unchanging offset year-round, with no clock changes to track and no daylight
+        saving to remember.
+      </p>
+    </div>
+    <div class="card" data-reveal="80">
+      <h3>🧮 Converting time zones by hand</h3>
+      <p>
+        Because Bangladesh never shifts its clock, converting to or from BST only requires knowing
+        whether the other city currently observes daylight saving. Most of Europe, North America
+        and Australia move their clocks twice a year, which is why Dhaka's gap to London, New York
+        or Sydney changes by an hour at different points in the year even though Dhaka itself never
+        moves — the tool above accounts for this automatically for any date you pick, not just the
+        current moment.
+      </p>
+    </div>
+  </div>
+</section>
+
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

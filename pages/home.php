@@ -54,7 +54,9 @@ require APP_ROOT . '/includes/layout/header.php';
       <p class="hero__lead" data-reveal="160">
         One place for the people of Bangladesh and for everyone curious about it — an interactive
         map, live clocks and converters, district data, travel guides, sun times, gold rates
-        and the government directory, all searchable from a single box.
+        and the government directory, all searchable from a single box. Every figure is sourced
+        from official statistics and government portals, and reference data is reviewed as the
+        country itself changes.
       </p>
 
       <div class="hero__cta" data-reveal="220">

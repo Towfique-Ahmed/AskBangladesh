@@ -38,6 +38,12 @@ $faqs = [
     'What is ' . $place['name'] . ' known for?'
         => $place['desc'],
 ];
+if (!empty($place['how_to_reach'])) {
+    $faqs['How do I get to ' . $place['name'] . '?'] = $place['how_to_reach'];
+}
+if (!empty($place['cost'])) {
+    $faqs['How much does it cost to visit ' . $place['name'] . '?'] = $place['cost'] . '.';
+}
 
 $seo = bd_seo([
     'title'       => $place['name'] . ' — Bangladesh Travel Guide',
@@ -105,6 +111,9 @@ require APP_ROOT . '/includes/layout/header.php';
         <div class="mapinfo__row"><span>Type</span><span><?= e($place['type']) ?></span></div>
         <div class="mapinfo__row"><span>Coordinates</span><span><?= number_format((float) $place['lat'], 4) ?>°N, <?= number_format((float) $place['lon'], 4) ?>°E</span></div>
         <div class="mapinfo__row"><span>Best time</span><span><?= e($place['best']) ?></span></div>
+        <?php if (!empty($place['cost'])): ?>
+          <div class="mapinfo__row"><span>Cost</span><span><?= e($place['cost']) ?></span></div>
+        <?php endif; ?>
       </div>
       <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap">
         <a class="btn btn--ghost" href="<?= e(bd_url('map')) ?>">Find it on the map →</a>
@@ -120,6 +129,9 @@ require APP_ROOT . '/includes/layout/header.php';
         and dry — while the monsoon between June and September is when the haors, waterfalls and
         hills are at their most dramatic.
       </p>
+      <?php if (!empty($place['how_to_reach'])): ?>
+        <p><strong>How to reach:</strong> <?= e($place['how_to_reach']) ?></p>
+      <?php endif; ?>
       <?php if ($district): ?>
         <p style="margin-bottom:0">
           <?= e($districtName) ?> is known for <?= e(lcfirst(rtrim($district['famous'], '.'))) ?>.
@@ -127,6 +139,42 @@ require APP_ROOT . '/includes/layout/header.php';
       <?php endif; ?>
     </div>
   </div>
+
+  <?php if (!empty($place['history'])): ?>
+    <section class="section">
+      <div class="section__head"><h2>History</h2></div>
+      <div class="card" data-reveal>
+        <p style="margin-bottom:0"><?= e($place['history']) ?></p>
+      </div>
+    </section>
+  <?php endif; ?>
+
+  <?php if (!empty($place['tips']) || !empty($place['nearby'])): ?>
+    <section class="section">
+      <div class="grid grid--2">
+        <?php if (!empty($place['tips'])): ?>
+          <div class="card" data-reveal>
+            <h3>✅ Tips for visiting</h3>
+            <ul style="margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--text-dim)">
+              <?php foreach ($place['tips'] as $tip): ?>
+                <li style="margin-bottom:.4rem"><?= e($tip) ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($place['nearby'])): ?>
+          <div class="card" data-reveal="80">
+            <h3>🧭 Nearby</h3>
+            <ul style="margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--text-dim)">
+              <?php foreach ($place['nearby'] as $spot): ?>
+                <li style="margin-bottom:.4rem"><?= e($spot) ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+      </div>
+    </section>
+  <?php endif; ?>
 
   <?php if ($district):
       $sun = bd_sun_times((float) $district['lat'], (float) $district['lon']); ?>

@@ -66,6 +66,10 @@ require APP_ROOT . '/includes/layout/header.php';
         <span class="badge"><?= $u['category'] === 'public' ? 'Public' : 'Private' ?></span>
         <span class="badge badge--red"><?= e($u['city']) ?></span>
         <span class="badge badge--gold">Est. <?= e((string) $u['established']) ?></span>
+        <span class="badge"><?= e($u['type']) ?></span>
+        <?php if (!empty($u['programs'])): ?>
+          <span class="badge"><?= count($u['programs']) ?> key programs</span>
+        <?php endif; ?>
       </div>
     </a>
   <?php endforeach; ?>

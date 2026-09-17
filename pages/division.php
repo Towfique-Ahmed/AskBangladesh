@@ -99,7 +99,10 @@ require APP_ROOT . '/includes/layout/header.php';
         <a class="card" href="<?= e(bd_district_url($district)) ?>" data-reveal="<?= ($i % 9) * 35 ?>">
           <h3><?= e($district['name']) ?></h3>
           <div style="color:var(--green-300);font-size:.9rem;margin-bottom:.5rem"><?= e($district['bn']) ?></div>
-          <p style="margin-bottom:.7rem"><?= e($district['famous']) ?></p>
+          <p style="margin-bottom:.4rem"><?= e($district['famous']) ?></p>
+          <?php if (!empty($district['economy'])): ?>
+            <p style="margin-bottom:.7rem;color:var(--text-mute);font-size:.85rem"><?= e($district['economy']) ?></p>
+          <?php endif; ?>
           <span class="badge badge--gold"><?= bd_num($district['area'], 0) ?> km²</span>
           <span class="badge badge--red"><?= bd_compact($district['population']) ?></span>
         </a>
