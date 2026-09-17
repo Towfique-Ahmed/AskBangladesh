@@ -155,4 +155,35 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
   </p>
 </div>
 
+<!-- ---------------------------------------------------------------- notes -->
+<section class="section">
+  <div class="section__head">
+    <h2>Using this converter well</h2>
+  </div>
+  <div class="grid grid--2">
+    <div class="card" data-reveal>
+      <h3>💡 Mid-market vs. what you actually get</h3>
+      <p>
+        The rate shown here is the mid-market rate — the midpoint between the buy and sell price
+        on the wholesale currency market, with no markup added. A bank, exchange house or mobile
+        remittance service always applies its own spread on top, and sometimes a flat fee as well,
+        so the amount that lands in a beneficiary's account is a little less than a simple
+        mid-market calculation suggests. Comparing the effective rate an operator actually offers
+        against the mid-market rate here is the easiest way to see how competitive it is.
+      </p>
+    </div>
+    <div class="card" data-reveal="80">
+      <h3>🏦 Why the Taka is managed, not freely floating</h3>
+      <p>
+        Bangladesh Bank, the central bank, oversees the exchange rate regime rather than leaving the
+        Taka to float entirely freely, intervening from time to time to smooth large swings and to
+        manage the country's foreign exchange reserves. This matters most for remittances and
+        import bills, which is why the rate quoted by a bank or a mobile money service can differ
+        slightly from both the mid-market rate and from what a rival operator quotes on the same
+        day.
+      </p>
+    </div>
+  </div>
+</section>
+
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

@@ -63,6 +63,51 @@ require APP_ROOT . '/includes/layout/header.php';
   </div>
 </section>
 
+<!-- ---------------------------------------------------------- what we cover -->
+<section class="section">
+  <div class="section__head">
+    <h2>What the site actually covers</h2>
+    <p>One project, several linked datasets, kept in sync with each other.</p>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card" data-reveal>
+      <h3>📚 The datasets</h3>
+      <p>
+        AskBangladesh is built on a set of hand-compiled reference datasets rather than a single
+        external feed: the 8 divisions and all 64 districts with their upazilas, unions and
+        coordinates; the national profile, symbols, government structure and religions; every
+        President and Prime Minister since 1971; public universities; and hundreds of travel
+        destinations and places of interest. Each dataset lives in its own file so it can be
+        checked and corrected independently of the others.
+      </p>
+    </div>
+    <div class="card" data-reveal="80">
+      <h3>🔧 The live tools</h3>
+      <p>
+        Alongside the reference data, a handful of small calculators run on top of live or
+        computed inputs: a currency converter against 30+ world currencies, a BAJUS-style gold
+        and silver price board, sunrise/sunset times computed per district from its own
+        coordinates, and a world clock and time-zone converter. These update automatically; the
+        reference datasets are the parts a person edits by hand.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-reveal="140" style="margin-top:1.2rem">
+    <h3>🗓️ How things are kept current</h3>
+    <p style="margin-bottom:0">
+      Structural facts — district boundaries, government offices, historical dates — change rarely
+      and are revisited whenever an official source updates them, such as a new census, a cabinet
+      reshuffle or an election result. Figures that move often, like exchange rates and gold
+      prices, are refreshed automatically from live sources; a snapshot is always kept as a
+      fallback so the page still shows a sensible number if a live source is briefly unreachable.
+      Anything time-sensitive says so on the page — a rate that is “live” versus “indicative”, or
+      figures marked with the year they are estimated for.
+    </p>
+  </div>
+</section>
+
 <!-- --------------------------------------------------------- what we do -->
 <section class="section">
   <div class="section__head">

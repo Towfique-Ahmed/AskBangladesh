@@ -239,4 +239,37 @@ require APP_ROOT . '/includes/layout/header.php';
   </p>
 </div>
 
+<!-- ------------------------------------------------------------- explainer -->
+<section class="section">
+  <div class="section__head">
+    <h2>Why sunrise time differs across Bangladesh</h2>
+  </div>
+  <div class="grid grid--2">
+    <div class="card" data-reveal>
+      <h3>🧭 One time zone, a country wide enough to matter</h3>
+      <p>
+        Bangladesh spans roughly 6 degrees of longitude from Panchagarh in the far northwest to
+        Teknaf in the southeast, and the whole country keeps a single clock, Bangladesh Standard
+        Time (UTC+06:00). The sun, however, does not respect a single time zone: it rises and sets
+        earlier the further east a place sits. That gap between true solar time and the clock is
+        why sunrise and sunset in Sylhet or Bandarban, near the eastern border, run noticeably
+        earlier than in Rajshahi or Kushtia on the western side, even though every district shows
+        the same clock time.
+      </p>
+    </div>
+    <div class="card" data-reveal="80">
+      <h3>🌇 Golden hour and the practical uses of this page</h3>
+      <p>
+        Day length also changes with the season: Bangladesh's mid-latitude position means summer
+        days run noticeably longer than winter ones, with the difference most visible around the
+        June and December solstices. The golden hour windows shown for each district — the soft,
+        warm light shortly after sunrise and before sunset — are commonly used for photography,
+        and the sunrise and sunset times themselves are widely used to time Islamic prayers (Fajr
+        and Maghrib in particular) and the daily fast during Ramadan, alongside farming and fishing
+        schedules along the coast and the river systems.
+      </p>
+    </div>
+  </div>
+</section>
+
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

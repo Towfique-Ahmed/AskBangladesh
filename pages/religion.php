@@ -79,6 +79,16 @@ require APP_ROOT . '/includes/layout/header.php';
             <li><?= e($site) ?></li>
           <?php endforeach; ?>
         </ul>
+        <?php if (!empty($religion['festivals'])): ?>
+          <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1rem 0 .4rem">
+            Faith-specific observances
+          </h4>
+          <ul style="margin:0;padding-left:1.1rem;font-size:.86rem;color:var(--text-dim)">
+            <?php foreach ($religion['festivals'] as $observance): ?>
+              <li><?= e($observance) ?></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
       </article>
     <?php endforeach; ?>
   </div>

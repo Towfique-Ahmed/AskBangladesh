@@ -62,6 +62,9 @@ require APP_ROOT . '/includes/layout/header.php';
         <div class="mapinfo__rows">
           <div class="mapinfo__row"><span>Seat</span><span><?= e($office['seat']) ?></span></div>
         </div>
+        <?php if (!empty($office['note'])): ?>
+          <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:.7rem"><?= e($office['note']) ?></p>
+        <?php endif; ?>
         <a class="tile__arrow" href="<?= e($office['web']) ?>" target="_blank" rel="noopener noreferrer">
           <?= e(parse_url($office['web'], PHP_URL_HOST) ?: $office['web']) ?> ↗
         </a>
