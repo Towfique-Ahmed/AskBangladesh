@@ -15,6 +15,7 @@ $nav = [
     ['path' => 'geography',  'page' => 'geography',  'label' => 'Geography',  'icon' => '⛰️'],
     ['path' => 'travel',     'page' => 'travel',     'label' => 'Travel',     'icon' => '🧳'],
     ['path' => 'universities', 'page' => 'universities', 'label' => 'Universities', 'icon' => '🎓'],
+    ['path' => 'jobs',       'page' => 'jobs',       'label' => 'Jobs',       'icon' => '💼'],
     ['path' => 'transport',  'page' => 'transport',  'label' => 'Transport',  'icon' => '🛣️'],
     ['path' => 'time',       'page' => 'time',       'label' => 'Time',       'icon' => '🕰️'],
     ['path' => 'currency',   'page' => 'currency',   'label' => 'Currency',   'icon' => '💱'],

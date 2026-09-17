@@ -122,6 +122,12 @@ function bd_page_seo(string $page): array
             'keywords'    => 'universities in Bangladesh, best university Bangladesh, public university, private university, Dhaka University, BUET, NSU, BRAC University',
             'path'        => 'universities',
         ],
+        'jobs' => [
+            'title'       => 'Bangladesh Government & Private Jobs',
+            'description' => '100 government and private-sector job roles in Bangladesh — from BCS cadre posts and bank recruitment to IT, RMG, pharma and NGO openings — each linking to the employer\'s official site.',
+            'keywords'    => 'Bangladesh jobs, government jobs Bangladesh, BCS job circular, bank job Bangladesh, private job Bangladesh, job circular',
+            'path'        => 'jobs',
+        ],
         'transport' => [
             'title'       => 'Transport in Bangladesh — Roads & Fares',
             'description' => 'How to get around Bangladesh: national highways, train and bus fares, rickshaws and CNGs, launches, the Dhaka metro, airports, seaports and megaprojects.',
@@ -571,6 +577,7 @@ function bd_sitemap_urls(): array
     $add('districts', 'monthly', '0.9');
     $add('travel',    'monthly', '0.9');
     $add('universities', 'monthly', '0.9');
+    $add('jobs',         'weekly',  '0.9');
     $add('geography', 'monthly', '0.8');
     $add('mountains', 'monthly', '0.8');
     $add('rivers',    'monthly', '0.8');
