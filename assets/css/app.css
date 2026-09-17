@@ -271,7 +271,8 @@ p { margin: 0 0 1em; }
 .mainnav { border-top: 1px solid var(--border); }
 .mainnav ul {
   max-width: var(--maxw); margin: 0 auto;
-  display: flex; gap: .2rem; list-style: none;
+  display: grid; grid-template-rows: repeat(2, auto); grid-auto-flow: column;
+  grid-auto-columns: max-content; gap: .2rem; list-style: none;
   padding: .35rem 1rem; overflow-x: auto;
   scrollbar-width: none;
 }
@@ -795,7 +796,7 @@ select.input { appearance: none; cursor: pointer; background-image: none; }
   .navtoggle { display: grid; }
   .mainnav { display: none; }
   .mainnav.is-open { display: block; }
-  .mainnav ul { flex-direction: column; padding: .6rem 1rem 1rem; }
+  .mainnav ul { display: flex; flex-direction: column; padding: .6rem 1rem 1rem; }
   .livechip small { display: none; }
   .footer__inner { grid-template-columns: 1fr; }
   .converter__row { grid-template-columns: 1fr; }
