@@ -63,7 +63,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <div class="grid grid--3">
   <?php foreach ($districts as $i => $district):
       $color = $divisions[$district['division']]['color'] ?? '#00a651';
-      $needle = $district['name'] . ' ' . $district['bn'] . ' ' . $district['division'] . ' ' . $district['famous'];
+      $needle = $district['name'] . ' ' . $district['bn'] . ' ' . $district['division'] . ' ' . $district['famous']
+          . ' ' . ($district['economy'] ?? '') . ' ' . ($district['culture'] ?? '');
   ?>
     <a class="card" href="<?= e(bd_district_url($district)) ?>" data-reveal="<?= ($i % 9) * 30 ?>"
              data-filter-item="<?= e($needle) ?>"
@@ -73,7 +74,10 @@ require APP_ROOT . '/includes/layout/header.php';
         <h3 style="margin:0"><?= e($district['name']) ?></h3>
       </div>
       <div style="color:var(--green-300);font-size:.92rem;margin-bottom:.5rem"><?= e($district['bn']) ?></div>
-      <p style="margin-bottom:.8rem"><?= e($district['famous']) ?></p>
+      <p style="margin-bottom:.4rem"><?= e($district['famous']) ?></p>
+      <?php if (!empty($district['economy'])): ?>
+        <p style="margin-bottom:.8rem;color:var(--text-mute);font-size:.85rem"><?= e($district['economy']) ?></p>
+      <?php endif; ?>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <span class="badge"><?= e($district['division']) ?></span>
         <span class="badge badge--gold"><?= bd_num($district['area'], 0) ?> km²</span>

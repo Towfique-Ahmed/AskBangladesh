@@ -45,6 +45,8 @@ $faqs = [
         => 'The sun rises at ' . $sun['Sunrise'] . ' and sets at ' . $sun['Sunset']
            . ' today in ' . $district['name'] . ', giving ' . $sun['Day length']
            . ' of daylight.',
+    'What is the main industry in ' . $district['name'] . '?'
+        => $district['economy'],
 ];
 
 $seo = bd_seo([
@@ -108,6 +110,12 @@ require APP_ROOT . '/includes/layout/header.php';
     </p>
   </div>
 
+  <!-- --------------------------------------------------------- history -->
+  <section class="section">
+    <div class="section__head"><h2>History of <?= e($district['name']) ?></h2></div>
+    <p><?= e($district['history']) ?></p>
+  </section>
+
   <div class="statgrid" data-reveal>
     <div class="stat"><div class="stat__value" data-count-to="<?= $district['area'] ?>" data-count-dec="1">0</div><div class="stat__label">Area (km²)</div></div>
     <div class="stat"><div class="stat__value" data-count-to="<?= $district['population'] ?>">0</div><div class="stat__label">Population</div></div>
@@ -157,12 +165,21 @@ require APP_ROOT . '/includes/layout/header.php';
           <div class="mapinfo__row"><span>Density</span><span><?= bd_num($density) ?> / km²</span></div>
           <div class="mapinfo__row"><span>Coordinates</span><span><?= number_format((float) $district['lat'], 4) ?>°N, <?= number_format((float) $district['lon'], 4) ?>°E</span></div>
           <div class="mapinfo__row"><span>Time zone</span><span>BST (UTC+06:00)</span></div>
+          <div class="mapinfo__row"><span>Upazilas</span><span><?= (int) $district['upazilas'] ?></span></div>
         </div>
       </div>
 
       <div class="card" data-reveal="80">
         <h3>⭐ Known for</h3>
         <p style="font-size:1rem"><?= e($district['famous']) ?></p>
+        <?php if (!empty($district['attractions'])): ?>
+          <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1.2rem 0 .4rem">Top attractions</h4>
+          <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+            <?php foreach ($district['attractions'] as $attraction): ?>
+              <span class="badge"><?= e($attraction) ?></span>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
         <?php if ($peaks): ?>
           <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1.2rem 0 .4rem">Peaks in this district</h4>
           <ul style="margin:0;padding-left:1.1rem;font-size:.88rem;color:var(--text-dim)">
@@ -174,6 +191,21 @@ require APP_ROOT . '/includes/layout/header.php';
         <div style="margin-top:1.2rem;display:flex;gap:.5rem;flex-wrap:wrap">
           <a class="btn btn--ghost" href="<?= e(bd_url('map')) ?>">See on the map →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------- economy & culture -->
+  <section class="section">
+    <div class="section__head"><h2>Economy &amp; culture</h2></div>
+    <div class="grid grid--2">
+      <div class="card" data-reveal>
+        <h3>💼 Economy</h3>
+        <p style="font-size:1rem"><?= e($district['economy']) ?></p>
+      </div>
+      <div class="card" data-reveal="80">
+        <h3>🎭 Culture &amp; cuisine</h3>
+        <p style="font-size:1rem"><?= e($district['culture']) ?></p>
       </div>
     </div>
   </section>
