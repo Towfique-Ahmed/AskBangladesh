@@ -38,6 +38,19 @@ function bd_all_universities(): array
 }
 function bd_nation(string $key): array { return bd_data('nation')[$key] ?? []; }
 function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? []; }
+function bd_jobs(string $key): array { return bd_data('jobs')[$key] ?? []; }
+/** All jobs, government then private, each tagged with its category. */
+function bd_all_jobs(): array
+{
+    $all = [];
+    foreach (['government', 'private'] as $category) {
+        foreach (bd_jobs($category) as $j) {
+            $j['category'] = $category;
+            $all[] = $j;
+        }
+    }
+    return $all;
+}
 
 /** The incumbent in a leaders list — the last entry, which always runs to "present". */
 function bd_current_leader(string $key): array
@@ -149,6 +162,7 @@ function bd_route(): array
         'rivers'     => 'rivers',
         'travel'     => 'travel',
         'universities' => 'universities',
+        'jobs'       => 'jobs',
         'transport'  => 'transport',
         'time'       => 'time',
         'currency'   => 'currency',
@@ -540,6 +554,17 @@ function bd_search_index(): array
             'category' => 'Prime Minister',
             'icon'     => '🧑‍💼',
             'url'      => bd_url('prime-ministers'),
+        ]);
+    }
+
+    foreach (bd_all_jobs() as $j) {
+        $add([
+            'title'    => $j['title'] . ' — ' . $j['org'],
+            'subtitle' => ($j['category'] === 'government' ? 'Government job' : 'Private job') . ' · ' . $j['sector'] . ' · ' . $j['location'],
+            'body'     => $j['qualification'] . ' ' . $j['salary'],
+            'category' => 'Job',
+            'icon'     => $j['category'] === 'government' ? '🏛️' : '💼',
+            'url'      => bd_url('jobs'),
         ]);
     }
 
