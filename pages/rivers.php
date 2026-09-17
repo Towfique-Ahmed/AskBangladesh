@@ -62,6 +62,12 @@ require APP_ROOT . '/includes/layout/header.php';
                style="background:linear-gradient(90deg,var(--teal-500),var(--green-300))"></div>
         </div>
         <p><?= e($r['note']) ?></p>
+        <?php if (!empty($r['origin'])): ?>
+          <p style="font-size:.85rem;color:var(--text-mute);margin-bottom:.3rem">📍 <strong>Origin:</strong> <?= e($r['origin']) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($r['significance'])): ?>
+          <p style="font-size:.85rem;color:var(--text-mute);margin-bottom:0">💧 <strong>Significance:</strong> <?= e($r['significance']) ?></p>
+        <?php endif; ?>
       </article>
     <?php endforeach; ?>
   </div>
