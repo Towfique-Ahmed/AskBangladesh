@@ -38,6 +38,14 @@ $faqs = [
         => $uni['name'] . ' is a ' . strtolower($categoryLabel) . ' university in Bangladesh.',
 ];
 
+if (!empty($uni['admission'])) {
+    $faqs['How can I get admission into ' . $uni['name'] . '?'] = $uni['admission'];
+}
+if (!empty($uni['programs'])) {
+    $faqs['What programmes does ' . $uni['name'] . ' offer?']
+        = $uni['name'] . ' offers programmes including ' . implode(', ', array_slice($uni['programs'], 0, 5)) . '.';
+}
+
 $seo = bd_seo([
     'title'       => $uni['name'] . ' (' . $uni['short'] . ') — Bangladesh Universities',
     'description' => rtrim($uni['desc'], '.') . '. Established ' . $uni['established']
@@ -93,6 +101,17 @@ require APP_ROOT . '/includes/layout/header.php';
     </div>
   </div>
 
+  <?php if (!empty($uni['history'])): ?>
+    <section class="section">
+      <div class="section__head"><h2>History</h2></div>
+      <p style="font-size:1rem"><?= e($uni['history']) ?></p>
+      <?php if (!empty($uni['campus'])): ?>
+        <h3 style="margin-top:1.2rem">🏫 Campus</h3>
+        <p style="font-size:1rem"><?= e($uni['campus']) ?></p>
+      <?php endif; ?>
+    </section>
+  <?php endif; ?>
+
   <div class="grid grid--2">
     <div class="card" data-reveal>
       <h3>📍 Location &amp; overview</h3>
@@ -138,6 +157,43 @@ require APP_ROOT . '/includes/layout/header.php';
       <?php endif; ?>
     </div>
   </div>
+
+  <?php if (!empty($uni['admission']) || !empty($uni['programs'])): ?>
+    <section class="section">
+      <div class="section__head"><h2>Admission &amp; programs</h2></div>
+      <div class="grid grid--2">
+        <?php if (!empty($uni['admission'])): ?>
+          <div class="card" data-reveal>
+            <h3>📝 Admission</h3>
+            <p style="font-size:1rem"><?= e($uni['admission']) ?></p>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($uni['programs'])): ?>
+          <div class="card" data-reveal="80">
+            <h3>🎓 Programs &amp; faculties</h3>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+              <?php foreach ($uni['programs'] as $program): ?>
+                <span class="badge"><?= e($program) ?></span>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </section>
+  <?php endif; ?>
+
+  <?php if (!empty($uni['notable_alumni'])): ?>
+    <section class="section">
+      <div class="section__head"><h2>Notable alumni</h2></div>
+      <div class="card" data-reveal>
+        <ul style="margin:0;padding-left:1.1rem;font-size:.95rem;line-height:1.7">
+          <?php foreach ($uni['notable_alumni'] as $alum): ?>
+            <li><?= e($alum) ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    </section>
+  <?php endif; ?>
 
   <?php if ($related): ?>
     <section class="section">
