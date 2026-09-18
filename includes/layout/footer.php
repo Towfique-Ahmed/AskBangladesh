@@ -5,7 +5,7 @@
   <div class="footer__inner">
     <div class="footer__brand">
       <h3>Ask<em>Bangladesh</em></h3>
-      <p>A single window on the land of rivers — 64 districts, the world’s largest delta, and everything a Bangladeshi or a visitor might want to look up.</p>
+      <p>A single window on the land of rivers - 64 districts, the world’s largest delta, and everything a Bangladeshi or a visitor might want to look up.</p>
       <p class="footer__flag" aria-hidden="true">🇧🇩</p>
     </div>
 
@@ -37,11 +37,11 @@
       </div>
       <div>
         <h4>Emergency</h4>
-        <a href="tel:999">999 — National emergency</a>
-        <a href="tel:333">333 — Government info</a>
-        <a href="tel:109">109 — Women &amp; children</a>
-        <a href="tel:1098">1098 — Child helpline</a>
-        <a href="tel:16263">16263 — Health line</a>
+        <a href="tel:999">999 - National emergency</a>
+        <a href="tel:333">333 - Government info</a>
+        <a href="tel:109">109 - Women &amp; children</a>
+        <a href="tel:1098">1098 - Child helpline</a>
+        <a href="tel:16263">16263 - Health line</a>
       </div>
     </div>
   </div>

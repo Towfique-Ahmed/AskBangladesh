@@ -265,7 +265,7 @@ function bd_sun_times(float $lat, float $lon, ?int $timestamp = null): array
     };
 
     $fmt = static function (?float $hours): string {
-        if ($hours === null) { return '—'; }
+        if ($hours === null) { return '-'; }
         $hours = fmod($hours + 24.0, 24.0);
         $h  = (int) floor($hours);
         $mi = (int) round(($hours - $h) * 60);
@@ -282,7 +282,7 @@ function bd_sun_times(float $lat, float $lon, ?int $timestamp = null): array
     $sunsetH  = $riseDelta === null ? null : $noon + $riseDelta;
 
     // Day length in whole minutes, from the same hour angle.
-    $dayLength = $riseDelta === null ? '—' : (function (float $hours): string {
+    $dayLength = $riseDelta === null ? '-' : (function (float $hours): string {
         $h = (int) floor($hours);
         $m = (int) round(($hours - $h) * 60);
         if ($m === 60) { $m = 0; $h++; }
@@ -305,13 +305,13 @@ function bd_sun_times(float $lat, float $lon, ?int $timestamp = null): array
 function bd_sun_meta(): array
 {
     return [
-        'First light'        => ['bn' => 'ভোরের আলো',  'emoji' => '🌆', 'note' => 'Civil dawn — the sky begins to lighten'],
+        'First light'        => ['bn' => 'ভোরের আলো',  'emoji' => '🌆', 'note' => 'Civil dawn - the sky begins to lighten'],
         'Sunrise'            => ['bn' => 'সূর্যোদয়',    'emoji' => '🌅', 'note' => 'The sun\'s upper edge clears the horizon'],
         'Golden hour ends'   => ['bn' => 'সোনালি আলো',  'emoji' => '📸', 'note' => 'Warm, low light ends as the sun climbs'],
         'Solar noon'         => ['bn' => 'মধ্যাহ্ন',     'emoji' => '☀️', 'note' => 'The sun is at its highest point'],
         'Golden hour begins' => ['bn' => 'সোনালি আলো',  'emoji' => '🌇', 'note' => 'The best light of the afternoon returns'],
         'Sunset'             => ['bn' => 'সূর্যাস্ত',    'emoji' => '🌆', 'note' => 'The sun drops below the horizon'],
-        'Last light'         => ['bn' => 'গোধূলি',      'emoji' => '🌌', 'note' => 'Civil dusk — daylight is gone'],
+        'Last light'         => ['bn' => 'গোধূলি',      'emoji' => '🌌', 'note' => 'Civil dusk - daylight is gone'],
         'Day length'         => ['bn' => 'দিনের দৈর্ঘ্য', 'emoji' => '⏳', 'note' => 'Hours between sunrise and sunset'],
     ];
 }

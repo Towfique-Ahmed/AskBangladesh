@@ -39,7 +39,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <h1>Where to go</h1>
   <p>
     The longest natural sea beach on Earth, the largest mangrove forest, a valley above the clouds,
-    tea gardens that run to the horizon and three UNESCO World Heritage Sites — all inside a country
+    tea gardens that run to the horizon and three UNESCO World Heritage Sites - all inside a country
     smaller than the state of Illinois.
   </p>
 </div>
@@ -90,7 +90,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <div class="card" data-reveal>
       <h3>🛂 Getting in</h3>
       <p>Most nationalities need a visa. Visa on arrival is available at Dhaka and Chattogram airports
-      for citizens of a set list of countries — check with a Bangladesh mission before you fly.</p>
+      for citizens of a set list of countries - check with a Bangladesh mission before you fly.</p>
     </div>
     <div class="card" data-reveal="60">
       <h3>💵 Money</h3>

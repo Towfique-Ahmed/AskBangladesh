@@ -47,7 +47,7 @@ if (!empty($uni['programs'])) {
 }
 
 $seo = bd_seo([
-    'title'       => $uni['name'] . ' (' . $uni['short'] . ') — Bangladesh Universities',
+    'title'       => $uni['name'] . ' (' . $uni['short'] . ') - Bangladesh Universities',
     'description' => rtrim($uni['desc'], '.') . '. Established ' . $uni['established']
         . ', located in ' . $uni['city'] . ', a ' . strtolower($categoryLabel) . ' university in Bangladesh.',
     'keywords'    => $uni['name'] . ', ' . $uni['short'] . ', ' . $districtName

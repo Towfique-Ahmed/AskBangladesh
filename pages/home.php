@@ -1,6 +1,6 @@
 <?php
 defined('APP_ROOT') || exit('Direct access is not permitted.');
-/** Landing page — the front door to every tool and dataset in the app. */
+/** Landing page - the front door to every tool and dataset in the app. */
 
 $profile   = bd_nation('profile');
 $facts     = bd_nation('facts');
@@ -52,7 +52,7 @@ require APP_ROOT . '/includes/layout/header.php';
       <h1 data-reveal="60">Ask anything about<br><span class="grad">Bangladesh</span></h1>
       <p class="hero__typer" data-typer='<?= e($typer) ?>' data-reveal="120"></p>
       <p class="hero__lead" data-reveal="160">
-        One place for the people of Bangladesh and for everyone curious about it — an interactive
+        One place for the people of Bangladesh and for everyone curious about it - an interactive
         map, live clocks and converters, district data, travel guides, sun times, gold rates
         and the government directory, all searchable from a single box. Every figure is sourced
         from official statistics and government portals, and reference data is reviewed as the
@@ -107,7 +107,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="section__head">
     <h2>Live right now</h2>
-    <p>Bangladesh Standard Time is UTC+06:00 all year — no daylight saving.</p>
+    <p>Bangladesh Standard Time is UTC+06:00 all year - no daylight saving.</p>
   </div>
 
   <div class="grid grid--4">
@@ -136,7 +136,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <a class="card" href="<?= e(bd_url('currency')) ?>" data-reveal="120">
       <h3>💱 US Dollar</h3>
       <div style="font:700 2rem/1.2 var(--mono); color:var(--green-300)">
-        ৳ <?= $usd > 0 ? bd_num(1 / $usd, 2) : '—' ?>
+        ৳ <?= $usd > 0 ? bd_num(1 / $usd, 2) : '-' ?>
       </div>
       <p>per 1 USD · <?= $rates['live'] ? 'live rate' : 'indicative' ?></p>
     </a>
@@ -144,7 +144,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <a class="card" href="<?= e(bd_url('gold')) ?>" data-reveal="180">
       <h3>🥇 Gold 22K</h3>
       <div style="font:700 2rem/1.2 var(--mono); color:var(--gold-500)">
-        ৳ <?= $g22 ? bd_num($g22['bhori']) : '—' ?>
+        ৳ <?= $g22 ? bd_num($g22['bhori']) : '-' ?>
       </div>
       <p>per bhori (11.664 g)</p>
     </a>

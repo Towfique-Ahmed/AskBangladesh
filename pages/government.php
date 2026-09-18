@@ -155,7 +155,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <span>🔗</span>
   <p style="margin:0">
     Every link here points to an official <code>.gov.bd</code> domain. Government portals change
-    addresses from time to time — if a link fails, start at
+    addresses from time to time - if a link fails, start at
     <strong>bangladesh.gov.bd</strong>, the national portal, or dial <strong>333</strong>.
   </p>
 </div>

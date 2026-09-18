@@ -52,7 +52,7 @@ function bd_all_jobs(): array
     return $all;
 }
 
-/** The incumbent in a leaders list — the last entry, which always runs to "present". */
+/** The incumbent in a leaders list - the last entry, which always runs to "present". */
 function bd_current_leader(string $key): array
 {
     $list = bd_leaders($key);
@@ -427,7 +427,7 @@ function bd_search_index(): array
 
     foreach (bd_places('roads') as $r) {
         $add([
-            'title'    => $r['code'] . ' — ' . $r['name'],
+            'title'    => $r['code'] . ' - ' . $r['name'],
             'subtitle' => $r['length'] . ' km national highway',
             'body'     => $r['note'],
             'category' => 'Road',
@@ -526,7 +526,7 @@ function bd_search_index(): array
 
     foreach (bd_nation('emergency') as $s) {
         $add([
-            'title'    => $s['service'] . ' — dial ' . $s['number'],
+            'title'    => $s['service'] . ' - dial ' . $s['number'],
             'subtitle' => 'Emergency hotline',
             'body'     => 'Call ' . $s['number'] . ' for ' . $s['service'] . '.',
             'category' => 'Emergency',
@@ -538,7 +538,7 @@ function bd_search_index(): array
     foreach (bd_leaders('presidents') as $p) {
         $add([
             'title'    => $p['name'],
-            'subtitle' => $p['role'] . ' — ' . $p['term'],
+            'subtitle' => $p['role'] . ' - ' . $p['term'],
             'body'     => $p['note'],
             'category' => 'President',
             'icon'     => '🎖️',
@@ -549,7 +549,7 @@ function bd_search_index(): array
     foreach (bd_leaders('prime_ministers') as $p) {
         $add([
             'title'    => $p['name'],
-            'subtitle' => $p['role'] . ' — ' . $p['term'],
+            'subtitle' => $p['role'] . ' - ' . $p['term'],
             'body'     => $p['note'],
             'category' => 'Prime Minister',
             'icon'     => '🧑‍💼',
@@ -559,7 +559,7 @@ function bd_search_index(): array
 
     foreach (bd_all_jobs() as $j) {
         $add([
-            'title'    => $j['title'] . ' — ' . $j['org'],
+            'title'    => $j['title'] . ' - ' . $j['org'],
             'subtitle' => ($j['category'] === 'government' ? 'Government job' : 'Private job') . ' · ' . $j['sector'] . ' · ' . $j['location'],
             'body'     => $j['qualification'] . ' ' . $j['salary'],
             'category' => 'Job',

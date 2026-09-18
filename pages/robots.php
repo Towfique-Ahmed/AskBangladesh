@@ -9,7 +9,7 @@ Allow: /
 
 # JSON endpoints carry no indexable content.
 Disallow: /api/
-# Search result pages are infinite and thin — keep them out of the index.
+# Search result pages are infinite and thin - keep them out of the index.
 Disallow: /search?
 Disallow: /search$
 

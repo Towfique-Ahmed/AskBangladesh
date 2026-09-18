@@ -1,6 +1,6 @@
 <?php
 defined('APP_ROOT') || exit('Direct access is not permitted.');
-/** Government and private job roles in Bangladesh, filterable by category. Each entry links out to the employer's own official site — this page has no per-job detail route. */
+/** Government and private job roles in Bangladesh, filterable by category. Each entry links out to the employer's own official site - this page has no per-job detail route. */
 
 $jobs       = bd_all_jobs();
 $govCount   = count(bd_jobs('government'));
@@ -27,7 +27,7 @@ $seo = bd_seo(bd_page_seo('jobs') + [
             static fn (array $j): array => [
                 '@type'       => 'Organization',
                 'name'        => $j['org'],
-                'description' => $j['title'] . ' — ' . $j['sector'],
+                'description' => $j['title'] . ' - ' . $j['sector'],
                 'url'         => $j['apply_url'],
             ]
         ),
@@ -43,7 +43,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <h1>Government &amp; Private Jobs in Bangladesh</h1>
   <p>
     <?= count($jobs) ?> roles across ministries, state-owned banks, the armed and civil services,
-    telecoms, banks, RMG, pharma, IT and NGOs — <?= $govCount ?> government and <?= $privCount ?> private-sector
+    telecoms, banks, RMG, pharma, IT and NGOs - <?= $govCount ?> government and <?= $privCount ?> private-sector
     positions. Every listing links straight to the employer's own official website; there is no
     separate detail page on this site for each job.
   </p>
@@ -52,7 +52,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <div class="card" data-reveal style="margin-bottom:1.4rem">
   <p style="margin:0 0 .9rem;font-size:.88rem;color:var(--text-mute)">
     ⚠️ <strong>These are illustrative, recurring role types, not live dated circulars.</strong>
-    Vacancy counts, pay and qualifications are indicative — always confirm the current opening,
+    Vacancy counts, pay and qualifications are indicative - always confirm the current opening,
     deadline and eligibility on the employer's own website (linked on each card) or its latest
     official notice before applying.
   </p>

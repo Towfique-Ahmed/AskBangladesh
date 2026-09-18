@@ -98,7 +98,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="section__head">
     <h2>The festival calendar</h2>
-    <p>Religious, seasonal and national — the days the whole country stops for.</p>
+    <p>Religious, seasonal and national - the days the whole country stops for.</p>
   </div>
 
   <div class="grid grid--3">

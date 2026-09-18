@@ -41,7 +41,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <div class="grid grid--2" style="margin-top:1rem">
       <div>
         <h3>🐛 Report an error</h3>
-        <p>Found incorrect data — a wrong population figure, a broken government link, or a misplaced map pin? Let us know and we will fix it.</p>
+        <p>Found incorrect data - a wrong population figure, a broken government link, or a misplaced map pin? Let us know and we will fix it.</p>
       </div>
       <div>
         <h3>💡 Suggest a feature</h3>

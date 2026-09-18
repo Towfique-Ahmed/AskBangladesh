@@ -109,7 +109,7 @@ require APP_ROOT . '/includes/layout/header.php';
       <select class="input" id="sun-district" name="district">
         <?php foreach ($districts as $district): ?>
           <option value="<?= e(bd_slug($district['name'])) ?>"<?= $district['name'] === $selected['name'] ? ' selected' : '' ?>>
-            <?= e($district['name']) ?> — <?= e($district['bn']) ?>
+            <?= e($district['name']) ?> - <?= e($district['bn']) ?>
           </option>
         <?php endforeach; ?>
       </select>
@@ -234,8 +234,8 @@ require APP_ROOT . '/includes/layout/header.php';
   <span>ℹ️</span>
   <p style="margin:0">
     Times are computed from each district's coordinates and account for atmospheric refraction
-    and the width of the solar disc. Local terrain — a ridge in the Chittagong Hill Tracts, for
-    instance — can hide the sun for several minutes either side of these figures.
+    and the width of the solar disc. Local terrain - a ridge in the Chittagong Hill Tracts, for
+    instance - can hide the sun for several minutes either side of these figures.
   </p>
 </div>
 
@@ -262,8 +262,8 @@ require APP_ROOT . '/includes/layout/header.php';
       <p>
         Day length also changes with the season: Bangladesh's mid-latitude position means summer
         days run noticeably longer than winter ones, with the difference most visible around the
-        June and December solstices. The golden hour windows shown for each district — the soft,
-        warm light shortly after sunrise and before sunset — are commonly used for photography,
+        June and December solstices. The golden hour windows shown for each district - the soft,
+        warm light shortly after sunrise and before sunset - are commonly used for photography,
         and the sunrise and sunset times themselves are widely used to time Islamic prayers (Fajr
         and Maghrib in particular) and the daily fast during Ramadan, alongside farming and fishing
         schedules along the coast and the river systems.

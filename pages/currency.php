@@ -58,7 +58,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
         <select class="input" id="cur-from">
           <?php foreach ($currencies as $code => $meta): ?>
             <option value="<?= e($code) ?>"<?= $code === 'BDT' ? ' selected' : '' ?>>
-              <?= $meta['flag'] ?> <?= e($code) ?> — <?= e($meta['name']) ?>
+              <?= $meta['flag'] ?> <?= e($code) ?> - <?= e($meta['name']) ?>
             </option>
           <?php endforeach; ?>
         </select>
@@ -71,7 +71,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
         <select class="input" id="cur-to">
           <?php foreach ($currencies as $code => $meta): ?>
             <option value="<?= e($code) ?>"<?= $code === 'USD' ? ' selected' : '' ?>>
-              <?= $meta['flag'] ?> <?= e($code) ?> — <?= e($meta['name']) ?>
+              <?= $meta['flag'] ?> <?= e($code) ?> - <?= e($meta['name']) ?>
             </option>
           <?php endforeach; ?>
         </select>
@@ -79,7 +79,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
     </div>
 
     <div class="result">
-      <div class="result__value" id="cur-result">—</div>
+      <div class="result__value" id="cur-result">-</div>
       <div class="result__meta" id="cur-meta"></div>
     </div>
   </form>
@@ -91,7 +91,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 <section class="section">
   <div class="section__head">
     <h2>Remittance corridors</h2>
-    <p>What one unit is worth in Taka — the currencies Bangladeshis abroad send home most.</p>
+    <p>What one unit is worth in Taka - the currencies Bangladeshis abroad send home most.</p>
   </div>
 
   <div class="grid grid--4">
@@ -164,7 +164,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
     <div class="card" data-reveal>
       <h3>💡 Mid-market vs. what you actually get</h3>
       <p>
-        The rate shown here is the mid-market rate — the midpoint between the buy and sell price
+        The rate shown here is the mid-market rate - the midpoint between the buy and sell price
         on the wholesale currency market, with no markup added. A bank, exchange house or mobile
         remittance service always applies its own spread on top, and sometimes a flat fee as well,
         so the amount that lands in a beneficiary's account is a little less than a simple

@@ -20,7 +20,7 @@ $seo = bd_seo(bd_page_seo('transport') + [
             $roads,
             static fn (array $r): array => [
                 '@type'       => 'Thing',
-                'name'        => $r['code'] . ' — ' . $r['name'],
+                'name'        => $r['code'] . ' - ' . $r['name'],
                 'description' => $r['note'],
             ]
         ),
@@ -47,7 +47,7 @@ $longestRoad = max(array_column($roads, 'length'));
   <span class="pagehead__eyebrow">🛣️ Getting around</span>
   <h1>Roads, rails and rivers</h1>
   <p>
-    Bangladesh moves by every means at once — rickshaws and metro trains, overnight launches down
+    Bangladesh moves by every means at once - rickshaws and metro trains, overnight launches down
     the Meghna and eight-lane expressways over the capital. Here is how it all fits together, and
     what it costs.
   </p>

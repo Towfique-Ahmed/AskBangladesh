@@ -12,7 +12,7 @@ $faqs = [
         => ($tallest['name'] ?? 'Saka Haphong') . ' is the highest peak in Bangladesh at '
            . bd_num($tallest['height'] ?? 1052) . ' metres, in Bandarban district near the Myanmar border.',
     'Where are the mountains of Bangladesh?'
-        => 'Almost every peak in Bangladesh stands in the Chittagong Hill Tracts — the districts of Bandarban, Rangamati and Khagrachhari in the south-east.',
+        => 'Almost every peak in Bangladesh stands in the Chittagong Hill Tracts - the districts of Bandarban, Rangamati and Khagrachhari in the south-east.',
     'Is Keokradong the highest peak of Bangladesh?'
         => 'No. Keokradong at 986 m was long believed to be the highest, but later surveys established Saka Haphong (Mowdok Mual) at 1,052 m as the true summit.',
 ];
@@ -59,7 +59,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <p>
     Bangladesh is overwhelmingly flat delta, but its south-eastern corner rises into the
     Chittagong Hill Tracts. Every significant peak in the country stands there, and the
-    highest — <?= e($tallest['name'] ?? '') ?> at <?= bd_num($tallest['height'] ?? 0) ?> m —
+    highest - <?= e($tallest['name'] ?? '') ?> at <?= bd_num($tallest['height'] ?? 0) ?> m -
     sits on the ridge along the Myanmar border.
   </p>
 </div>

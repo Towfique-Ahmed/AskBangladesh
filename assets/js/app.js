@@ -1,5 +1,5 @@
 /* =========================================================================
-   AskBangladesh — interaction layer
+   AskBangladesh - interaction layer
    No dependencies. Every module no-ops when its markup is absent.
    ========================================================================= */
 
@@ -28,8 +28,8 @@
     try { saved = localStorage.getItem(KEY); } catch (e) { /* ignore */ }
     if (saved) {
       apply(saved);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      apply('light');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      apply('dark');
     }
 
     const btn = $('#theme-toggle');
@@ -473,7 +473,7 @@
 
     function showEmpty() {
       if (!info) { return; }
-      info.innerHTML = '<p class="mapinfo__empty">Tap any pin on the map to see what is there — ' +
+      info.innerHTML = '<p class="mapinfo__empty">Tap any pin on the map to see what is there - ' +
         'district facts, peak heights, beaches, airports and ports.</p>';
     }
 
@@ -531,7 +531,7 @@
 
   /* ------------------------------------------------------ live converters */
 
-  // Currency converter — recalculates instantly from a rate table in the DOM.
+  // Currency converter - recalculates instantly from a rate table in the DOM.
   (function currency() {
     const form = $('#currency-tool');
     if (!form) { return; }
@@ -550,7 +550,7 @@
       const a = parseFloat(amount.value);
       const f = rates[from.value], t = rates[to.value];
       if (!isFinite(a) || !f || !t) {
-        out.textContent = '—';
+        out.textContent = '-';
         return;
       }
       const value = a / f * t;
@@ -608,7 +608,7 @@
       const grams = units[unit.value];
       const table = prices[metal.value] || {};
       const perBhori = table[karat.value];
-      if (!isFinite(q) || !grams || !perBhori) { out.textContent = '—'; return; }
+      if (!isFinite(q) || !grams || !perBhori) { out.textContent = '-'; return; }
 
       const totalGrams = q * grams;
       const perGram = perBhori / 11.6638038;
@@ -654,7 +654,7 @@
     }
 
     function convert() {
-      if (!dt.value) { out.textContent = '—'; return; }
+      if (!dt.value) { out.textContent = '-'; return; }
       const parts = dt.value.split(/[-T:]/).map(Number);
       // Interpret the entered wall-clock time as being in the "from" zone.
       let guess = Date.UTC(parts[0], parts[1] - 1, parts[2], parts[3], parts[4] || 0, 0);
@@ -676,7 +676,7 @@
           Math.abs(diff).toFixed(Math.abs(diff) % 1 ? 2 : 0).replace('.25', '¼').replace('.5', '½').replace('.75', '¾') +
           ' hours from ' + from.value.split('/').pop().replace(/_/g, ' ');
       } catch (e) {
-        out.textContent = '—';
+        out.textContent = '-';
       }
     }
 

@@ -25,7 +25,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <span class="pagehead__eyebrow">🇧🇩 National profile</span>
   <h1>About Bangladesh</h1>
   <p>
-    <?= e($profile['official_name']) ?> — <?= e($profile['bn_name']) ?> — is a country of
+    <?= e($profile['official_name']) ?> - <?= e($profile['bn_name']) ?> - is a country of
     <?= bd_compact($profile['population']) ?> people packed into
     <?= bd_num(bd_places('geography')['area_km2']) ?> km² of delta, making it one of the most
     densely populated nations on Earth.
@@ -137,7 +137,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="section__head">
     <h2>What Bangladesh eats</h2>
-    <p>Rice, fish and mustard oil — and everything built on top of them.</p>
+    <p>Rice, fish and mustard oil - and everything built on top of them.</p>
   </div>
 
   <div class="grid grid--4">

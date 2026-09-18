@@ -11,7 +11,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <div style="font-size:4rem">🧭</div>
   <h1 style="font-size:clamp(2rem,6vw,3.4rem)">404</h1>
   <p style="color:var(--text-dim);max-width:52ch;margin:0 auto 1.6rem">
-    That page is not on the map. Nothing is lost for long in a country with 907 rivers — try the
+    That page is not on the map. Nothing is lost for long in a country with 907 rivers - try the
     search box above, or start again from the front page.
   </p>
   <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">

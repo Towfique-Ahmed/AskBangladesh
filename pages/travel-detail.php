@@ -46,7 +46,7 @@ if (!empty($place['cost'])) {
 }
 
 $seo = bd_seo([
-    'title'       => $place['name'] . ' — Bangladesh Travel Guide',
+    'title'       => $place['name'] . ' - Bangladesh Travel Guide',
     'description' => rtrim($place['desc'], '.') . '. Located in ' . $districtName
         . ' district, Bangladesh. Best time to visit: ' . $place['best'] . '.',
     'keywords'    => $place['name'] . ', ' . $place['name'] . ' Bangladesh, '
@@ -125,8 +125,8 @@ require APP_ROOT . '/includes/layout/header.php';
       <h3>🧭 Planning your trip</h3>
       <p>
         The best window for <?= e($place['name']) ?> is <strong><?= e($place['best']) ?></strong>.
-        November to February is the easiest season for travel across Bangladesh generally — cool
-        and dry — while the monsoon between June and September is when the haors, waterfalls and
+        November to February is the easiest season for travel across Bangladesh generally - cool
+        and dry - while the monsoon between June and September is when the haors, waterfalls and
         hills are at their most dramatic.
       </p>
       <?php if (!empty($place['how_to_reach'])): ?>
@@ -181,7 +181,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <section class="section">
       <div class="section__head">
         <h2>Sunrise and sunset at <?= e($place['name']) ?> today</h2>
-        <p>Useful for planning the golden hour — <?= e($sun['Day length']) ?> of daylight.</p>
+        <p>Useful for planning the golden hour - <?= e($sun['Day length']) ?> of daylight.</p>
       </div>
       <div class="grid grid--3">
         <?php foreach (['Sunrise', 'Golden hour begins', 'Sunset'] as $sname):

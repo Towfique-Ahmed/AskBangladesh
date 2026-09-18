@@ -4,7 +4,7 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 /**
  * Government and private-sector job roles in Bangladesh, grouped by sector.
  * These describe the kind of recruitment each organisation regularly runs,
- * not a live, dated circular — vacancy counts and pay are indicative.
+ * not a live, dated circular - vacancy counts and pay are indicative.
  * 'apply_url' always points at the employer's own official website, since a
  * specific circular link goes dead within weeks; always confirm the current
  * opening and deadline there before applying.

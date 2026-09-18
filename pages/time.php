@@ -99,7 +99,7 @@ require APP_ROOT . '/includes/layout/header.php';
       </div>
 
       <div class="result">
-        <div class="result__value" id="tc-result">—</div>
+        <div class="result__value" id="tc-result">-</div>
         <div class="result__meta" id="tc-meta"></div>
       </div>
     </form>
@@ -183,7 +183,7 @@ require APP_ROOT . '/includes/layout/header.php';
         whether the other city currently observes daylight saving. Most of Europe, North America
         and Australia move their clocks twice a year, which is why Dhaka's gap to London, New York
         or Sydney changes by an hour at different points in the year even though Dhaka itself never
-        moves — the tool above accounts for this automatically for any date you pick, not just the
+        moves - the tool above accounts for this automatically for any date you pick, not just the
         current moment.
       </p>
     </div>
