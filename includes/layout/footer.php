@@ -47,7 +47,7 @@
   </div>
 
   <div class="footer__bar">
-    <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?>. All rights reserved by <a href="https://towfique.com" target="_blank" rel="noopener noreferrer">towfique.com</a>.</p>
+    <p>© <?= date('Y') ?> <?= e(APP_NAME) ?> v<?= e(APP_VERSION) ?>. All rights reserved by AskBangladesh.com.</p>
     <p style="margin-top:.4rem">
       <a href="<?= e(bd_url('about-us')) ?>">About Us</a> ·
       <a href="<?= e(bd_url('privacy')) ?>">Privacy Policy</a> ·
