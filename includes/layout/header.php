@@ -36,7 +36,7 @@ $ogImage = bd_abs_url('assets/og-image.png');
 $modified = bd_content_modified();
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <?php if (GA_ENABLED): ?>
 <!-- Google tag (gtag.js) -->
@@ -79,7 +79,7 @@ $modified = bd_content_modified();
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="<?= e(APP_NAME) ?> — <?= e(APP_TAGLINE) ?>">
+<meta property="og:image:alt" content="<?= e(APP_NAME) ?> - <?= e(APP_TAGLINE) ?>">
 <meta property="og:locale" content="en_US">
 <meta property="og:updated_time" content="<?= e($modified) ?>">
 <?php if ($seo['type'] === 'article'): ?>
@@ -93,15 +93,18 @@ $modified = bd_content_modified();
 <meta name="twitter:title" content="<?= e($seo['title']) ?>">
 <meta name="twitter:description" content="<?= e($seo['description']) ?>">
 <meta name="twitter:image" content="<?= e($ogImage) ?>">
-<meta name="twitter:image:alt" content="<?= e(APP_NAME) ?> — <?= e(APP_TAGLINE) ?>">
+<meta name="twitter:image:alt" content="<?= e(APP_NAME) ?> - <?= e(APP_TAGLINE) ?>">
 
-<meta name="theme-color" content="#00a651">
+<meta name="theme-color" content="#f3f3f3">
 <meta name="author" content="<?= e(APP_NAME) ?>">
 <meta name="geo.region" content="BD">
 <meta name="geo.placename" content="Bangladesh">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23006a4e'/><circle cx='45' cy='50' r='24' fill='%23f42a41'/></svg>">
 <link rel="sitemap" type="application/xml" href="<?= e(bd_url('sitemap.xml')) ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="<?= e(bd_url('assets/css/app.css')) ?>?v=<?= e(APP_VERSION) ?>">
 
 <script type="application/ld+json"><?= json_encode(bd_jsonld_site(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
@@ -114,13 +117,6 @@ $modified = bd_content_modified();
 <?php endforeach; ?>
 </head>
 <body data-page="<?= e($current) ?>" data-base="<?= e(bd_url()) ?>">
-
-<div class="aurora" aria-hidden="true">
-  <span class="aurora__blob aurora__blob--green"></span>
-  <span class="aurora__blob aurora__blob--red"></span>
-  <span class="aurora__blob aurora__blob--teal"></span>
-  <div class="aurora__grid"></div>
-</div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -148,7 +144,7 @@ $modified = bd_content_modified();
         id="global-search-input"
         name="q"
         class="globalsearch__input"
-        placeholder="Search anything — districts, gold, sunset times, visas, rivers…"
+        placeholder="Search anything - districts, gold, sunset times, visas, rivers…"
         value="<?= e($_GET['q'] ?? '') ?>"
         aria-label="Search everything about Bangladesh"
         aria-expanded="false"
@@ -172,6 +168,28 @@ $modified = bd_content_modified();
     </div>
   </div>
 
+  <div class="scrollbar" id="scroll-progress" aria-hidden="true"></div>
+</header>
+
+<div class="pagetop">
+<?php if (!empty($seo['breadcrumbs']) && count($seo['breadcrumbs']) > 1): ?>
+  <div class="pathbar">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <?php foreach ($seo['breadcrumbs'] as $i => $crumb): ?>
+          <li>
+            <?php if (!empty($crumb['url']) && $i < count($seo['breadcrumbs']) - 1): ?>
+              <a href="<?= e($crumb['url']) ?>"><?= e($crumb['name']) ?></a>
+            <?php else: ?>
+              <span aria-current="page"><?= e($crumb['name']) ?></span>
+            <?php endif; ?>
+          </li>
+        <?php endforeach; ?>
+      </ol>
+    </nav>
+  </div>
+<?php endif; ?>
+
   <nav class="mainnav" id="mainnav" aria-label="Primary">
     <ul>
       <?php foreach ($nav as $item): ?>
@@ -183,22 +201,6 @@ $modified = bd_content_modified();
       <?php endforeach; ?>
     </ul>
   </nav>
-  <div class="scrollbar" id="scroll-progress" aria-hidden="true"></div>
-</header>
+</div>
 
 <main id="main" class="main">
-<?php if (!empty($seo['breadcrumbs']) && count($seo['breadcrumbs']) > 1): ?>
-  <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <ol>
-      <?php foreach ($seo['breadcrumbs'] as $i => $crumb): ?>
-        <li>
-          <?php if (!empty($crumb['url']) && $i < count($seo['breadcrumbs']) - 1): ?>
-            <a href="<?= e($crumb['url']) ?>"><?= e($crumb['name']) ?></a>
-          <?php else: ?>
-            <span aria-current="page"><?= e($crumb['name']) ?></span>
-          <?php endif; ?>
-        </li>
-      <?php endforeach; ?>
-    </ol>
-  </nav>
-<?php endif; ?>

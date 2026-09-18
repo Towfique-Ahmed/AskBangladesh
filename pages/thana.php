@@ -34,7 +34,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <h1>All thanas of Bangladesh</h1>
   <p>
     Bangladesh has <?= bd_num($totalThanas) ?> thanas (police stations) across 64 districts.
-    A thana is the smallest administrative unit of law enforcement — each covers an upazila or a
+    A thana is the smallest administrative unit of law enforcement - each covers an upazila or a
     metropolitan ward.
   </p>
 </div>
@@ -49,7 +49,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="field">
     <label for="thana-filter">Search thanas</label>
     <input type="search" class="input" id="thana-filter" data-filter-input
-           placeholder="Try a thana name or district — &quot;Gulshan&quot;, &quot;Sylhet&quot;, &quot;Savar&quot;…">
+           placeholder="Try a thana name or district - &quot;Gulshan&quot;, &quot;Sylhet&quot;, &quot;Savar&quot;…">
   </div>
 </div>
 

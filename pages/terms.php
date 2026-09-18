@@ -28,7 +28,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <p><?= e(APP_NAME) ?> is a free, informational reference site about Bangladesh. The content is provided for general information purposes only and should not be relied upon as professional, legal, financial or medical advice.</p>
     <ul>
       <li><strong>Exchange rates</strong> are mid-market reference rates and may differ from what banks and remittance operators offer.</li>
-      <li><strong>Gold and silver prices</strong> are derived from international spot prices and are indicative — confirm with BAJUS or your jeweller before transacting.</li>
+      <li><strong>Gold and silver prices</strong> are derived from international spot prices and are indicative - confirm with BAJUS or your jeweller before transacting.</li>
       <li><strong>Sunrise and sunset times</strong> are computed from geographic coordinates and may vary by a minute or two from official almanacs.</li>
       <li><strong>Government service links</strong> point to official .gov.bd domains. We are not affiliated with the Government of Bangladesh.</li>
     </ul>

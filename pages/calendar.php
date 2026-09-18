@@ -54,7 +54,7 @@ $seo = bd_seo(bd_page_seo('calendar') + [
     ],
     'jsonld' => [
         bd_jsonld_web_app(
-            'Bangladesh Calendar — Bangla & English',
+            'Bangladesh Calendar - Bangla & English',
             'Bangla (Bengali) and English Gregorian calendar side by side with the six seasons and national holidays of Bangladesh.',
             'calendar'
         ),
@@ -93,13 +93,13 @@ require APP_ROOT . '/includes/layout/header.php';
       Mughal emperor Akbar, who in the sixteenth century had court astronomer Fathullah Shirazi
       combine the existing Hijri lunar calendar with the solar Hindu calendar already in use in
       Bengal. The result let land revenue, which followed the harvest and therefore the sun, be
-      collected on a schedule that stayed fixed to the seasons — something a purely lunar calendar,
+      collected on a schedule that stayed fixed to the seasons - something a purely lunar calendar,
       which drifts about eleven days a year against the seasons, could never do.
     </p>
     <p>
       For most of its history the Bangla year began in the month of Ashwin or shifted slightly
-      from region to region and reign to reign. The fixed modern practice — a 365 or 366‑day solar
-      year starting on 14 April with a leap day added to keep pace with the Gregorian calendar —
+      from region to region and reign to reign. The fixed modern practice - a 365 or 366‑day solar
+      year starting on 14 April with a leap day added to keep pace with the Gregorian calendar -
       dates to a 1966 reform proposed by the Bangla Academy under scholar Muhammad Shahidullah,
       which Bangladesh formally adopted for official use after independence. West Bengal in India
       still uses a slightly different, older version of the same calendar, so Bangla New Year can
@@ -136,7 +136,7 @@ require APP_ROOT . '/includes/layout/header.php';
           <span class="badge<?= $isCurrent ? ' badge--gold' : '' ?>"><?= $days ?> days</span>
         </div>
         <?php if ($isCurrent): ?>
-          <div style="color:var(--green-300);font-size:.85rem;margin-top:.3rem">Current month — Day <?= $currentDay ?></div>
+          <div style="color:var(--green-300);font-size:.85rem;margin-top:.3rem">Current month - Day <?= $currentDay ?></div>
         <?php endif; ?>
       </div>
     <?php endforeach; ?>
@@ -147,7 +147,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="section__head">
     <h2>Bangla Calendar (বঙ্গাব্দ)</h2>
-    <p>Twelve months, six seasons — each pair of months is linked to a season of the Bengali year.</p>
+    <p>Twelve months, six seasons - each pair of months is linked to a season of the Bengali year.</p>
   </div>
 
   <div class="grid grid--2">
@@ -177,27 +177,27 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="grid grid--3">
     <div class="card" data-reveal>
       <h3>☀️ Grishmo (গ্রীষ্ম)</h3>
-      <p><strong>Summer</strong> — Boishakh &amp; Jyoishtho (Apr–Jun). The hottest months, with temperatures above 35 °C.</p>
+      <p><strong>Summer</strong> - Boishakh &amp; Jyoishtho (Apr–Jun). The hottest months, with temperatures above 35 °C.</p>
     </div>
     <div class="card" data-reveal="50">
       <h3>🌧️ Borsha (বর্ষা)</h3>
-      <p><strong>Monsoon</strong> — Asharh &amp; Shrabon (Jun–Aug). Heavy rains, lush green landscapes, swelling rivers.</p>
+      <p><strong>Monsoon</strong> - Asharh &amp; Shrabon (Jun–Aug). Heavy rains, lush green landscapes, swelling rivers.</p>
     </div>
     <div class="card" data-reveal="100">
       <h3>🍂 Shorot (শরৎ)</h3>
-      <p><strong>Autumn</strong> — Bhadro &amp; Ashwin (Aug–Oct). Clear skies after the monsoon, kash phool blooms.</p>
+      <p><strong>Autumn</strong> - Bhadro &amp; Ashwin (Aug–Oct). Clear skies after the monsoon, kash phool blooms.</p>
     </div>
     <div class="card" data-reveal="150">
       <h3>🌾 Hemonto (হেমন্ত)</h3>
-      <p><strong>Late Autumn</strong> — Kartik &amp; Ogrohayon (Oct–Dec). Harvest season, Nabanna festival.</p>
+      <p><strong>Late Autumn</strong> - Kartik &amp; Ogrohayon (Oct–Dec). Harvest season, Nabanna festival.</p>
     </div>
     <div class="card" data-reveal="200">
       <h3>❄️ Sheet (শীত)</h3>
-      <p><strong>Winter</strong> — Poush &amp; Magh (Dec–Feb). Cool, dry, foggy mornings — the best travel season.</p>
+      <p><strong>Winter</strong> - Poush &amp; Magh (Dec–Feb). Cool, dry, foggy mornings - the best travel season.</p>
     </div>
     <div class="card" data-reveal="250">
       <h3>🌸 Boshonto (বসন্ত)</h3>
-      <p><strong>Spring</strong> — Falgun &amp; Choitro (Feb–Apr). Flowers bloom, Pohela Falgun is celebrated in red and yellow.</p>
+      <p><strong>Spring</strong> - Falgun &amp; Choitro (Feb–Apr). Flowers bloom, Pohela Falgun is celebrated in red and yellow.</p>
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <?php
 /**
- * AskBangladesh — front controller.
+ * AskBangladesh - front controller.
  *
  * Clean URLs are resolved by bd_route(); the web server rewrites anything
  * that is not a real file onto this script.

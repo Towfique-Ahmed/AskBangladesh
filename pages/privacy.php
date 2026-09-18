@@ -46,9 +46,9 @@ require APP_ROOT . '/includes/layout/header.php';
     <h2>Third-party services</h2>
     <p>We use the following external services:</p>
     <ul>
-      <li><strong>Google Analytics</strong> — for anonymous usage statistics</li>
-      <li><strong>open.er-api.com</strong> — for live currency exchange rates</li>
-      <li><strong>gold-api.com</strong> — for live gold price data</li>
+      <li><strong>Google Analytics</strong> - for anonymous usage statistics</li>
+      <li><strong>open.er-api.com</strong> - for live currency exchange rates</li>
+      <li><strong>gold-api.com</strong> - for live gold price data</li>
     </ul>
     <p>These services have their own privacy policies. We do not share any personal data with them.</p>
   </div>

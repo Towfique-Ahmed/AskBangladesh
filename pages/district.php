@@ -1,6 +1,6 @@
 <?php
 defined('APP_ROOT') || exit('Direct access is not permitted.');
-/** A page per district — the main indexable long-tail content of the site. */
+/** A page per district - the main indexable long-tail content of the site. */
 
 $district = bd_find_district($route['slug']);
 
@@ -50,7 +50,7 @@ $faqs = [
 ];
 
 $seo = bd_seo([
-    'title'       => $district['name'] . ' District — Area, Population & Places',
+    'title'       => $district['name'] . ' District - Area, Population & Places',
     'description' => $district['name'] . ' district in ' . $district['division'] . ' division, Bangladesh: '
         . bd_num($district['area'], 0) . ' km², about ' . bd_compact($district['population'])
         . ' people. ' . rtrim($district['famous'], '.') . '.',
@@ -184,7 +184,7 @@ require APP_ROOT . '/includes/layout/header.php';
           <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1.2rem 0 .4rem">Peaks in this district</h4>
           <ul style="margin:0;padding-left:1.1rem;font-size:.88rem;color:var(--text-dim)">
             <?php foreach ($peaks as $peak): ?>
-              <li><?= e($peak['name']) ?> — <?= bd_num($peak['height']) ?> m</li>
+              <li><?= e($peak['name']) ?> - <?= bd_num($peak['height']) ?> m</li>
             <?php endforeach; ?>
           </ul>
         <?php endif; ?>

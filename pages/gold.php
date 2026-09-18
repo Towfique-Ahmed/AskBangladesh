@@ -34,8 +34,8 @@ foreach ($prices['silver'] as $row) { $priceLookup['silver'][$row['karat']] = $r
   <span class="pagehead__eyebrow">🥇 Gold &amp; silver</span>
   <h1>Gold price in Bangladesh</h1>
   <p>
-    Prices follow the BAJUS category structure — 22, 21 and 18 karat hallmark gold plus traditional
-    (sanatan) gold — quoted per <strong>bhori</strong> (11.664 g), the unit every jeweller in the
+    Prices follow the BAJUS category structure - 22, 21 and 18 karat hallmark gold plus traditional
+    (sanatan) gold - quoted per <strong>bhori</strong> (11.664 g), the unit every jeweller in the
     country works in.
     <?= $prices['live'] ? 'Derived from the live international spot price.' : 'Live spot pricing is unreachable, so these are indicative figures.' ?>
   </p>
@@ -112,7 +112,7 @@ foreach ($prices['silver'] as $row) { $priceLookup['silver'][$row['karat']] = $r
       </div>
 
       <div class="result">
-        <div class="result__value" id="gold-result">—</div>
+        <div class="result__value" id="gold-result">-</div>
         <div class="result__meta" id="gold-meta"></div>
       </div>
     </form>
@@ -188,7 +188,7 @@ foreach ($prices['silver'] as $row) { $priceLookup['silver'][$row['karat']] = $r
         The Bangladesh Jewellers’ Association (BAJUS) revises and publishes gold prices for the
         whole country whenever the international spot price moves enough to matter, rather than on
         a fixed daily schedule. The published figure is a base price per bhori for each purity
-        tier — 22K, 21K, 18K and traditional (sanatan) gold — that every jeweller in the country is
+        tier - 22K, 21K, 18K and traditional (sanatan) gold - that every jeweller in the country is
         expected to follow, so a shop in Sylhet and a shop in Khulna quote the same base price on
         the same day.
       </p>

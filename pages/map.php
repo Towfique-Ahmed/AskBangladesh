@@ -139,7 +139,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
         // The four extreme points of the country.
         foreach ($geography['extremes'] as $direction => $point) {
             $pin([
-                'kind' => 'Extreme point — ' . $direction,
+                'kind' => 'Extreme point - ' . $direction,
                 'name' => $point['name'],
                 'note' => 'The ' . strtolower($direction) . 'ernmost point of Bangladesh.',
                 'link' => bd_url('geography'),
@@ -155,7 +155,7 @@ $pin = function (array $attrs, float $lat, float $lon, string $color, string $la
       <button type="button" class="legendchip" data-layer="mountain" style="color:#c0392b"><i></i> Peaks</button>
       <button type="button" class="legendchip" data-layer="airport"  style="color:#2980b9"><i></i> Airports</button>
       <button type="button" class="legendchip" data-layer="port"     style="color:#8e44ad"><i></i> Ports</button>
-      <button type="button" class="legendchip" data-layer="extreme"  style="color:#ffffff"><i></i> Extremes</button>
+      <button type="button" class="legendchip" data-layer="extreme"  style="color:#34393e"><i></i> Extremes</button>
     </div>
   </div>
 

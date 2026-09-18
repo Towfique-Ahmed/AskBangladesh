@@ -1,6 +1,6 @@
 <?php
 /**
- * AskBangladesh — application configuration and bootstrap.
+ * AskBangladesh - application configuration and bootstrap.
  */
 
 declare(strict_types=1);
@@ -54,7 +54,7 @@ if (!defined('BASE_PATH')) {
     $scriptDir = str_replace('\\', '/', dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '')));
 
     /*
-     * The running script is not always the front controller — api/*.php are
+     * The running script is not always the front controller - api/*.php are
      * entry points too, and their SCRIPT_NAME would otherwise make BASE_PATH
      * "/api", so every generated link would be prefixed with it. Climb back
      * out by however many directories the script sits below the app root.

@@ -27,7 +27,7 @@ function bd_trim_meta(string $text, int $limit): string
     if ($space !== false && $space > $limit * 0.6) {
         $cut = mb_substr($cut, 0, $space);
     }
-    return rtrim($cut, " ,.;:—-") . '…';
+    return rtrim($cut, " ,.;:-") . '…';
 }
 
 /**
@@ -75,13 +75,13 @@ function bd_page_seo(string $page): array
 {
     $meta = [
         'home' => [
-            'title'       => 'AskBangladesh — Everything About Bangladesh',
+            'title'       => 'AskBangladesh - Everything About Bangladesh',
             'description' => 'Explore Bangladesh in one place: an interactive map of all 64 districts, sunrise and sunset times, gold rates, currency conversion, travel guides and government services.',
             'keywords'    => 'Bangladesh, Bangladesh information, 64 districts, Bangladesh map, Bangladesh travel',
             'path'        => '',
         ],
         'map' => [
-            'title'       => 'Bangladesh Map — 64 Districts & Landmarks',
+            'title'       => 'Bangladesh Map - 64 Districts & Landmarks',
             'description' => 'Explore an interactive map of Bangladesh with all 64 districts, the highest peaks, top travel destinations, airports and seaports. Pan, zoom and tap any pin.',
             'keywords'    => 'Bangladesh map, district map of Bangladesh, interactive Bangladesh map',
             'path'        => 'map',
@@ -93,19 +93,19 @@ function bd_page_seo(string $page): array
             'path'        => 'districts',
         ],
         'geography' => [
-            'title'       => 'Geography of Bangladesh — Delta & Climate',
+            'title'       => 'Geography of Bangladesh - Delta & Climate',
             'description' => 'Which continent Bangladesh is on, the Ganges–Brahmaputra–Meghna delta, its six seasons, land borders, coastline and the four extreme points of the country.',
             'keywords'    => 'geography of Bangladesh, which continent is Bangladesh in, Bangladesh climate',
             'path'        => 'geography',
         ],
         'mountains' => [
-            'title'       => 'Mountains of Bangladesh — Highest Peaks',
+            'title'       => 'Mountains of Bangladesh - Highest Peaks',
             'description' => 'Every major peak in Bangladesh ranked by height, from Saka Haphong at 1,052 m down through Keokradong and Tazing Dong, with districts and trekking notes.',
             'keywords'    => 'highest mountain in Bangladesh, Saka Haphong, Keokradong, Tazing Dong',
             'path'        => 'mountains',
         ],
         'rivers' => [
-            'title'       => 'Rivers of Bangladesh — Padma & Jamuna',
+            'title'       => 'Rivers of Bangladesh - Padma & Jamuna',
             'description' => 'The major rivers of Bangladesh with their lengths and why each matters, from the Padma, Jamuna and Meghna to the Karnaphuli, Teesta and Halda.',
             'keywords'    => 'rivers of Bangladesh, Padma river, Jamuna river, Meghna river',
             'path'        => 'rivers',
@@ -124,30 +124,30 @@ function bd_page_seo(string $page): array
         ],
         'jobs' => [
             'title'       => 'Bangladesh Government & Private Jobs',
-            'description' => '100 government and private-sector job roles in Bangladesh — from BCS cadre posts and bank recruitment to IT, RMG, pharma and NGO openings — each linking to the employer\'s official site.',
+            'description' => '100 government and private-sector job roles in Bangladesh - from BCS cadre posts and bank recruitment to IT, RMG, pharma and NGO openings - each linking to the employer\'s official site.',
             'keywords'    => 'Bangladesh jobs, government jobs Bangladesh, BCS job circular, bank job Bangladesh, private job Bangladesh, job circular',
             'path'        => 'jobs',
         ],
         'transport' => [
-            'title'       => 'Transport in Bangladesh — Roads & Fares',
+            'title'       => 'Transport in Bangladesh - Roads & Fares',
             'description' => 'How to get around Bangladesh: national highways, train and bus fares, rickshaws and CNGs, launches, the Dhaka metro, airports, seaports and megaprojects.',
             'keywords'    => 'transport in Bangladesh, Bangladesh highways, bus fare, train ticket Bangladesh',
             'path'        => 'transport',
         ],
         'time' => [
-            'title'       => 'Current Time in Bangladesh — Live Clock',
+            'title'       => 'Current Time in Bangladesh - Live Clock',
             'description' => 'What time is it in Bangladesh right now? Live Bangladesh Standard Time (UTC+6), a world clock for 34 cities and a two-way time zone converter.',
             'keywords'    => 'time in Bangladesh, Bangladesh Standard Time, BST, Dhaka time now',
             'path'        => 'time',
         ],
         'currency' => [
-            'title'       => 'BDT Converter — Taka Exchange Rates',
+            'title'       => 'BDT Converter - Taka Exchange Rates',
             'description' => 'Convert the Bangladeshi Taka against the US dollar, euro, pound, riyal, dirham and 27 more currencies, with a full BDT exchange rate table.',
             'keywords'    => 'BDT converter, taka to dollar, Bangladeshi Taka exchange rate, USD to BDT',
             'path'        => 'currency',
         ],
         'gold' => [
-            'title'       => 'Gold Price in Bangladesh Today — 22K & 21K',
+            'title'       => 'Gold Price in Bangladesh Today - 22K & 21K',
             'description' => 'Today’s gold price in Bangladesh for 22 karat, 21 karat, 18 karat and traditional gold per bhori, gram and ana, plus silver rates and a weight converter.',
             'keywords'    => 'gold price in Bangladesh, gold price today, 22k gold price bhori, BAJUS gold rate',
             'path'        => 'gold',
@@ -171,31 +171,31 @@ function bd_page_seo(string $page): array
             'path'        => 'government',
         ],
         'presidents' => [
-            'title'       => 'Presidents of Bangladesh — Full List, 1971–Present',
-            'description' => 'Every President of Bangladesh since independence in 1971, in order, with terms in office and notes — from Sheikh Mujibur Rahman to Mirza Fakhrul Islam Alamgir.',
+            'title'       => 'Presidents of Bangladesh - Full List, 1971–Present',
+            'description' => 'Every President of Bangladesh since independence in 1971, in order, with terms in office and notes - from Sheikh Mujibur Rahman to Mirza Fakhrul Islam Alamgir.',
             'keywords'    => 'presidents of Bangladesh, list of Bangladesh presidents, current president of Bangladesh, Mirza Fakhrul Islam Alamgir',
             'path'        => 'presidents',
         ],
         'prime-ministers' => [
-            'title'       => 'Prime Ministers of Bangladesh — Full List, 1971–Present',
-            'description' => 'Every Prime Minister of Bangladesh since 1971, including caretaker and interim Chief Advisers, with terms in office — from Sheikh Mujibur Rahman to Tarique Rahman.',
+            'title'       => 'Prime Ministers of Bangladesh - Full List, 1971–Present',
+            'description' => 'Every Prime Minister of Bangladesh since 1971, including caretaker and interim Chief Advisers, with terms in office - from Sheikh Mujibur Rahman to Tarique Rahman.',
             'keywords'    => 'prime ministers of Bangladesh, list of Bangladesh prime ministers, current prime minister of Bangladesh, chief adviser, Tarique Rahman',
             'path'        => 'prime-ministers',
         ],
         'about' => [
-            'title'       => 'About Bangladesh — Facts, Symbols & History',
+            'title'       => 'About Bangladesh - Facts, Symbols & History',
             'description' => 'The national profile of Bangladesh: capital, currency, language, government, national symbols, a history timeline from Pundranagara to today, food and facts.',
             'keywords'    => 'about Bangladesh, Bangladesh facts, national symbols of Bangladesh, Bangladesh history',
             'path'        => 'about',
         ],
         'about-us' => [
-            'title'       => 'About Us — The AskBangladesh Team',
+            'title'       => 'About Us - The AskBangladesh Team',
             'description' => 'Meet the team behind AskBangladesh.com. Founder Towfique Ahmed on why the site exists, how the data is sourced and verified, and what we stand for.',
             'keywords'    => 'about AskBangladesh, AskBangladesh team, Towfique Ahmed, AskBangladesh founder',
             'path'        => 'about-us',
         ],
         'calendar' => [
-            'title'       => 'Bangla & English Calendar — Seasons',
+            'title'       => 'Bangla & English Calendar - Seasons',
             'description' => 'Bangla (Bengali) and English Gregorian calendar side by side, with the six seasons of Bangladesh, twelve Bangla months and national holidays.',
             'keywords'    => 'Bangla calendar, Bengali calendar, Bangladesh seasons, Bangla months, Pohela Boishakh',
             'path'        => 'calendar',
@@ -208,7 +208,7 @@ function bd_page_seo(string $page): array
         ],
         'privacy' => [
             'title'       => 'Privacy Policy',
-            'description' => 'Privacy policy for AskBangladesh — how we handle data, cookies and third-party services on ask-bangladesh.com.',
+            'description' => 'Privacy policy for AskBangladesh - how we handle data, cookies and third-party services on ask-bangladesh.com.',
             'keywords'    => 'AskBangladesh privacy policy, data policy, cookies',
             'path'        => 'privacy',
         ],
@@ -220,7 +220,7 @@ function bd_page_seo(string $page): array
         ],
         'contact' => [
             'title'       => 'Contact Us',
-            'description' => 'Get in touch with the AskBangladesh team — report errors, suggest features or ask a question about Bangladesh.',
+            'description' => 'Get in touch with the AskBangladesh team - report errors, suggest features or ask a question about Bangladesh.',
             'path'        => 'contact',
         ],
         'search' => [

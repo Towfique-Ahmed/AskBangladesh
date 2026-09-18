@@ -20,7 +20,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <p>
     <?= e(APP_NAME) ?> is a small, independent project with one job: make reliable information
     about Bangladesh easy to find, easy to read and free for everyone. This page is about the
-    team behind the site — for the country itself, see
+    team behind the site - for the country itself, see
     <a href="<?= e(bd_url('about')) ?>">About Bangladesh</a>.
   </p>
 </div>
@@ -35,7 +35,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="card founder" data-reveal>
     <div class="founder__avatar" aria-hidden="true">🇧🇩</div>
     <div class="founder__body">
-      <h3 style="margin-top:0">Towfique Ahmed — Founder</h3>
+      <h3 style="margin-top:0">Towfique Ahmed - Founder</h3>
       <p>
         Towfique Ahmed is the founder of AskBangladesh.com. In my own words, the web has been an
         integral part of my working life for well over a decade. I have built and shipped many
@@ -45,14 +45,14 @@ require APP_ROOT . '/includes/layout/header.php';
         Along the way I kept hitting the same wall: finding clear, accurate, up-to-date
         information about Bangladesh in English was far harder than it should be. Facts sat in
         scanned PDFs, half-abandoned government pages and news articles that contradicted each
-        other. I accidentally got caught up in collecting that data myself — districts, upazilas,
-        population, symbols, history — and eventually launched AskBangladesh with a simple
+        other. I accidentally got caught up in collecting that data myself - districts, upazilas,
+        population, symbols, history - and eventually launched AskBangladesh with a simple
         thought, <em>“put data first; let people choose what they want.”</em>
       </p>
       <p>
         Everything published here is checked against official sources and updated as the country
         changes. I am continually learning and improving how we source and verify things to reduce
-        any inaccuracies. If you spot something wrong, tell me — I would rather fix it than defend it.
+        any inaccuracies. If you spot something wrong, tell me - I would rather fix it than defend it.
       </p>
       <p style="margin-bottom:0">
         <a class="btn btn--primary" href="https://www.linkedin.com/in/towfiq28/" target="_blank" rel="noopener noreferrer">
@@ -97,12 +97,12 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="card" data-reveal="140" style="margin-top:1.2rem">
     <h3>🗓️ How things are kept current</h3>
     <p style="margin-bottom:0">
-      Structural facts — district boundaries, government offices, historical dates — change rarely
+      Structural facts - district boundaries, government offices, historical dates - change rarely
       and are revisited whenever an official source updates them, such as a new census, a cabinet
       reshuffle or an election result. Figures that move often, like exchange rates and gold
       prices, are refreshed automatically from live sources; a snapshot is always kept as a
       fallback so the page still shows a sensible number if a live source is briefly unreachable.
-      Anything time-sensitive says so on the page — a rate that is “live” versus “indicative”, or
+      Anything time-sensitive says so on the page - a rate that is “live” versus “indicative”, or
       figures marked with the year they are estimated for.
     </p>
   </div>
@@ -119,8 +119,8 @@ require APP_ROOT . '/includes/layout/header.php';
     <div class="tile" data-reveal>
       <span class="tile__icon" aria-hidden="true">📊</span>
       <h3>Data first</h3>
-      <p>Numbers come from official sources — the Bangladesh Bureau of Statistics, Bangladesh Bank
-        and government portals — not from other blogs.</p>
+      <p>Numbers come from official sources - the Bangladesh Bureau of Statistics, Bangladesh Bank
+        and government portals - not from other blogs.</p>
     </div>
     <div class="tile" data-reveal="60">
       <span class="tile__icon" aria-hidden="true">🔄</span>

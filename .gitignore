@@ -5,6 +5,12 @@ storage/cache/*.json
 /vendor/
 /node_modules/
 
+# Licensed webfont files. Lazzer is commercial and per-project licensed, so the
+# binaries must not be redistributed through this public repo. See
+# assets/fonts/README.md for what to place there at deploy time.
+assets/fonts/*.woff2
+assets/fonts/*.woff
+
 # Local environment and editor noise
 .env
 .env.local

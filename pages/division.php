@@ -23,7 +23,7 @@ $places    = array_values(array_filter(
 ));
 
 $seo = bd_seo([
-    'title'       => $name . ' Division — Districts & Population',
+    'title'       => $name . ' Division - Districts & Population',
     'description' => $name . ' division of Bangladesh covers ' . bd_num($division['area'])
         . ' km² with about ' . bd_compact($division['population']) . ' people across '
         . count($districts) . ' districts. Established in ' . $division['established'] . '.',

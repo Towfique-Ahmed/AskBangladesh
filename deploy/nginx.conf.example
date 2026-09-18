@@ -1,4 +1,4 @@
-# AskBangladesh — Nginx server block.
+# AskBangladesh - Nginx server block.
 #
 # Nginx ignores .htaccess entirely, so these rules must live in the site config.
 # Copy into /etc/nginx/sites-available/, adjust the three marked values, then:
@@ -21,7 +21,7 @@ server {
     server_name ask-bangladesh.com;                 # <-- your domain
 
     # The directory that CONTAINS index.php. The application is not nested in
-    # a public/ subfolder — point this at the repository root itself.
+    # a public/ subfolder - point this at the repository root itself.
     root /var/www/askbangladesh;                    # <-- your path
 
     index index.php index.html;
@@ -54,9 +54,15 @@ server {
     }
 
     # ----------------------------------------------------------- transport
-    location ~* \.(css|js|svg|woff2?)$ {
+    location ~* \.(css|js|svg)$ {
         expires 7d;
         add_header Cache-Control "public";
+    }
+
+    # Self-hosted webfonts are versioned by name, so they can be cached hard.
+    location ~* \.woff2?$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
     }
 
     gzip on;

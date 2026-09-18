@@ -1,4 +1,4 @@
-# AskBangladesh — Apache / LiteSpeed configuration.
+# AskBangladesh - Apache / LiteSpeed configuration.
 #
 # Every directive is wrapped in an <IfModule> guard so that a server missing
 # the module skips the block instead of failing the whole request with a 500.
@@ -51,11 +51,21 @@ RedirectMatch 404 ^/(includes|pages|storage)(/|$)
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
+# Self-hosted webfonts. Older servers do not know woff2, and a font served as
+# application/octet-stream is rejected by the browser's font loader.
+<IfModule mod_mime.c>
+    AddType font/woff2 .woff2
+    AddType font/woff  .woff
+</IfModule>
+
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/css             "access plus 7 days"
     ExpiresByType application/javascript "access plus 7 days"
     ExpiresByType image/svg+xml        "access plus 30 days"
+    # Font files are versioned by name, so they can be cached hard.
+    ExpiresByType font/woff2           "access plus 1 year"
+    ExpiresByType font/woff            "access plus 1 year"
     # HTML is generated per request and carries live clock and rate data.
     ExpiresByType text/html            "access plus 0 seconds"
 </IfModule>
