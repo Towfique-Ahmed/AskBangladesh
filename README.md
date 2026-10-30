@@ -132,10 +132,10 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | `/division/{slug}` | `/division/sylhet` | 8 |
 | `/travel/{slug}` | `/travel/sajek-valley` | 45 |
 | `/universities/{slug}` | `/universities/north-south-university` | 72 |
-| `/news/{slug}` | `/news/st-martins-island-reopens-to-tourists-on-1-november` | 9 |
+| `/news/{slug}` | `/news/st-martins-island-reopens-to-tourists-on-1-november` | 27 |
 | `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
-288 indexable URLs in total, every one listed in `/sitemap.xml`.
+306 indexable URLs in total, every one listed in `/sitemap.xml`.
 
 Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
 `deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,

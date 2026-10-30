@@ -40,7 +40,15 @@ function bd_nation(string $key): array { return bd_data('nation')[$key] ?? []; }
 function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? []; }
 function bd_jobs(string $key): array { return bd_data('jobs')[$key] ?? []; }
 /** News items, newest first. */
-function bd_news(): array { return bd_data('news')['items'] ?? []; }
+function bd_news(): array
+{
+    static $sorted = null;
+    if ($sorted === null) {
+        $sorted = bd_data('news')['items'] ?? [];
+        usort($sorted, static fn (array $a, array $b): int => strcmp($b['date'], $a['date']));
+    }
+    return $sorted;
+}
 function bd_news_url(array $n): string { return bd_url('news/' . bd_slug($n['title'])); }
 function bd_find_news(string $slug): ?array
 {

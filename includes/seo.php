@@ -129,7 +129,7 @@ function bd_page_seo(string $page): array
             'path'        => 'jobs',
         ],
         'news' => [
-            'title'       => 'Bangladesh News - Tech, Tourism & Economy',
+            'title'       => 'Bangladesh News - Economy, Tech & Tourism',
             'description' => 'Trending Bangladesh news in tech, tourism and the economy: St Martin’s reopening, the LDC graduation deferral, digital jobs and more, with sources.',
             'keywords'    => 'Bangladesh news, Bangladesh tech news, Bangladesh tourism news, Bangladesh economy news, St Martin\'s Island reopening, LDC graduation',
             'path'        => 'news',
