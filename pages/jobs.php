@@ -17,8 +17,8 @@ $faqs = [
 
 $seo = bd_seo(bd_page_seo('jobs') + [
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Jobs'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Jobs')],
     ],
     'jsonld' => [
         bd_jsonld_item_list(
@@ -39,35 +39,30 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">💼 Careers</span>
-  <h1>Government &amp; Private Jobs in Bangladesh</h1>
+  <span class="pagehead__eyebrow">💼 <?= e(t('Careers')) ?></span>
+  <h1><?= e(t('Government & Private Jobs in Bangladesh')) ?></h1>
   <p>
-    <?= count($jobs) ?> roles across ministries, state-owned banks, the armed and civil services,
-    telecoms, banks, RMG, pharma, IT and NGOs - <?= $govCount ?> government and <?= $privCount ?> private-sector
-    positions. Every listing links straight to the employer's own official website; there is no
-    separate detail page on this site for each job.
+    <?= e(tf('%s roles across ministries, state-owned banks, the armed and civil services, telecoms, banks, RMG, pharma, IT and NGOs - %s government and %s private-sector positions. Every listing links straight to the employer\'s own official website; there is no separate detail page on this site for each job.', bd_n(count($jobs)), bd_n($govCount), bd_n($privCount))) ?>
   </p>
 </div>
 
 <div class="card" data-reveal style="margin-bottom:1.4rem">
   <p style="margin:0 0 .9rem;font-size:.88rem;color:var(--text-mute)">
-    ⚠️ <strong>These are illustrative, recurring role types, not live dated circulars.</strong>
-    Vacancy counts, pay and qualifications are indicative - always confirm the current opening,
-    deadline and eligibility on the employer's own website (linked on each card) or its latest
-    official notice before applying.
+    ⚠️ <strong><?= e(t('These are illustrative, recurring role types, not live dated circulars.')) ?></strong>
+    <?= e(t('Vacancy counts, pay and qualifications are indicative - always confirm the current opening, deadline and eligibility on the employer\'s own website (linked on each card) or its latest official notice before applying.')) ?>
   </p>
   <div class="field" style="margin-bottom:.9rem">
-    <label for="job-filter">Search jobs</label>
+    <label for="job-filter"><?= e(t('Search jobs')) ?></label>
     <input type="search" class="input" id="job-filter" data-filter-input
-           placeholder="Try “bank”, “engineer”, “teacher” or “IT”…">
+           placeholder="<?= e(t('Try “bank”, “engineer”, “teacher” or “IT”…')) ?>">
   </div>
   <div class="chips">
-    <button type="button" class="chip is-active" data-filter-chip="all">Everything</button>
-    <button type="button" class="chip" data-filter-chip="government">Government</button>
-    <button type="button" class="chip" data-filter-chip="private">Private</button>
+    <button type="button" class="chip is-active" data-filter-chip="all"><?= e(t('Everything')) ?></button>
+    <button type="button" class="chip" data-filter-chip="government"><?= e(t('Govt.')) ?></button>
+    <button type="button" class="chip" data-filter-chip="private"><?= e(t('Private')) ?></button>
   </div>
   <p style="margin:.9rem 0 0;color:var(--text-mute);font-size:.85rem">
-    Showing <strong data-filter-count><?= count($jobs) ?></strong> of <?= count($jobs) ?> jobs.
+    <?= e(t('Showing')) ?> <strong data-filter-count><?= bd_n(count($jobs)) ?></strong> <?= e(t('of')) ?> <?= bd_n(count($jobs)) ?> <?= e(t('jobs.')) ?>
   </p>
 </div>
 
@@ -80,27 +75,27 @@ require APP_ROOT . '/includes/layout/header.php';
       <h3><?= e($j['title']) ?></h3>
       <p style="margin-bottom:.5rem;font-weight:600;color:var(--text)"><?= e($j['org']) ?></p>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem">
-        <span class="badge"><?= $j['category'] === 'government' ? 'Government' : 'Private' ?></span>
+        <span class="badge"><?= e($j['category'] === 'government' ? t('Govt.') : t('Private')) ?></span>
         <span class="badge badge--red"><?= e($j['location']) ?></span>
-        <span class="badge badge--gold"><?= e(bd_num($j['vacancies'])) ?> vacancies</span>
+        <span class="badge badge--gold"><?= e(bd_n($j['vacancies'])) ?> <?= e(t('vacancies')) ?></span>
       </div>
       <div class="mapinfo__rows" style="margin-bottom:.9rem">
-        <div class="mapinfo__row"><span>Sector</span><span><?= e($j['sector']) ?></span></div>
-        <div class="mapinfo__row"><span>Qualification</span><span><?= e($j['qualification']) ?></span></div>
-        <div class="mapinfo__row"><span>Pay</span><span><?= e($j['salary']) ?></span></div>
-        <div class="mapinfo__row"><span>Apply via</span><span><?= e($j['apply_via']) ?></span></div>
+        <div class="mapinfo__row"><span><?= e(t('Sector')) ?></span><span><?= e($j['sector']) ?></span></div>
+        <div class="mapinfo__row"><span><?= e(t('Qualification')) ?></span><span><?= e($j['qualification']) ?></span></div>
+        <div class="mapinfo__row"><span><?= e(t('Pay')) ?></span><span><?= e($j['salary']) ?></span></div>
+        <div class="mapinfo__row"><span><?= e(t('Apply via')) ?></span><span><?= e($j['apply_via']) ?></span></div>
       </div>
       <a class="btn btn--ghost" href="<?= e($j['apply_url']) ?>" target="_blank" rel="noopener noreferrer">
-        <?= e($j['org']) ?> official site →
+        <?= e($j['org']) ?> <?= e(t('official site →')) ?>
       </a>
     </div>
   <?php endforeach; ?>
 </div>
 
 <p data-filter-empty style="display:none;text-align:center;color:var(--text-mute);padding:3rem 1rem">
-  Nothing matches that search. Try “government”, “private”, “bank” or “engineer”.
+  <?= e(t('Nothing matches that search. Try “government”, “private”, “bank” or “engineer”.')) ?>
 </p>
 
-<?= bd_render_faq($faqs, 'Frequently asked questions about jobs in Bangladesh') ?>
+<?= bd_render_faq($faqs, t('Frequently asked questions about jobs in Bangladesh')) ?>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

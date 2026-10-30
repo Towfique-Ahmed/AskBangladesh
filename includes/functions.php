@@ -204,6 +204,45 @@ function bd_bn_digits(string $s): string
     return strtr($s, ['0' => '০', '1' => '১', '2' => '২', '3' => '৩', '4' => '৪', '5' => '৫', '6' => '৬', '7' => '৭', '8' => '৮', '9' => '৯']);
 }
 
+/** An entity's display name: Bengali in /bn when the record has one (name_bn, or bn for districts and universities). */
+function bd_name(array $item): string
+{
+    if (bd_lang() === 'bn') {
+        foreach (['name_bn', 'bn'] as $key) {
+            if (!empty($item[$key]) && is_string($item[$key])) {
+                return $item[$key];
+            }
+        }
+    }
+    return (string) ($item['name'] ?? '');
+}
+
+/** A district's display name from its English name (Bengali under /bn). */
+function bd_district_name(string $name): string
+{
+    $d = bd_find_district(bd_slug($name));
+    return $d === null ? $name : bd_name($d);
+}
+
+/** A formatted number, in Bengali digits under /bn. */
+function bd_n(float|int $n, int $decimals = 0): string
+{
+    $s = number_format((float) $n, $decimals);
+    return bd_lang() === 'bn' ? bd_bn_digits($s) : $s;
+}
+
+/** Translate month abbreviations and digits in a season string such as "Nov – Mar". */
+function bd_season(string $s): string
+{
+    if (bd_lang() !== 'bn') {
+        return $s;
+    }
+    $m = ['Jan' => 'জানু', 'Feb' => 'ফেব্রু', 'Mar' => 'মার্চ', 'Apr' => 'এপ্রিল', 'May' => 'মে', 'Jun' => 'জুন',
+          'Jul' => 'জুলাই', 'Aug' => 'আগস্ট', 'Sep' => 'সেপ্টেম্বর', 'Oct' => 'অক্টোবর', 'Nov' => 'নভেম্বর', 'Dec' => 'ডিসেম্বর',
+          'Year-round' => 'সারা বছর'];
+    return bd_bn_digits(strtr($s, $m));
+}
+
 /** URL of the current page in another language, keeping any query string. */
 function bd_lang_url(string $lang): string
 {
