@@ -20,6 +20,8 @@ $faqs = [
 ];
 
 $seo = bd_seo(bd_page_seo('news') + [
+    // Summaries of other outlets' reporting, not original journalism.
+    'noindex'     => true,
     'breadcrumbs' => [
         ['name' => t('Home'), 'url' => bd_url()],
         ['name' => t('News')],

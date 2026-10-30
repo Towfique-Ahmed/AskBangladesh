@@ -70,6 +70,8 @@ if ($isDistrictPage) {
         'keywords'    => $selected['name'] . ' sunrise time, ' . $selected['name'] . ' sunset time, '
             . $selected['name'] . ' day length, golden hour ' . $selected['name'],
         'path'        => 'sunrise-sunset/' . bd_slug($selected['name']),
+        // 64 near-identical templates; only the /sunrise-sunset hub is indexed.
+        'noindex'     => true,
         'breadcrumbs' => [
             ['name' => t('Home'),              'url' => bd_url()],
             ['name' => t('Sunrise & Sunset'),  'url' => bd_url('sunrise-sunset')],

@@ -16,6 +16,8 @@ $faqs = [
 ];
 
 $seo = bd_seo(bd_page_seo('jobs') + [
+    // Illustrative role types rather than live circulars.
+    'noindex'     => true,
     'breadcrumbs' => [
         ['name' => t('Home'), 'url' => bd_url()],
         ['name' => t('Jobs')],

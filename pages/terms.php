@@ -2,6 +2,7 @@
 defined('APP_ROOT') || exit('Direct access is not permitted.');
 
 $seo = bd_seo(bd_page_seo('terms') + [
+    'ads'         => false,
     'breadcrumbs' => [
         ['name' => 'Home', 'url' => bd_url()],
         ['name' => 'Terms & Conditions'],

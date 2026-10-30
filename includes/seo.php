@@ -35,8 +35,12 @@ function bd_trim_meta(string $text, int $limit): string
  *
  * @param array{
  *   title?:string, description?:string, path?:string, type?:string,
- *   noindex?:bool, breadcrumbs?:array, jsonld?:array, keywords?:string
+ *   noindex?:bool, ads?:bool, breadcrumbs?:array, jsonld?:array, keywords?:string
  * } $opts
+ *
+ * 'ads' decides whether the AdSense tag is loaded. It defaults to off for
+ * noindex pages: AdSense rejects sites that place ads on thin, templated or
+ * non-content pages, and anything not worth indexing is not worth an ad.
  */
 function bd_seo(array $opts = []): array
 {
@@ -61,6 +65,7 @@ function bd_seo(array $opts = []): array
         'canonical'   => bd_abs_url($path),
         'type'        => $opts['type'] ?? 'website',
         'noindex'     => (bool) ($opts['noindex'] ?? false),
+        'ads'         => (bool) ($opts['ads'] ?? !($opts['noindex'] ?? false)),
         'keywords'    => $opts['keywords'] ?? '',
         'breadcrumbs' => $opts['breadcrumbs'] ?? [],
         'jsonld'      => $opts['jsonld'] ?? [],
@@ -583,8 +588,6 @@ function bd_sitemap_urls(): array
     $add('districts', 'monthly', '0.9');
     $add('travel',    'monthly', '0.9');
     $add('universities', 'monthly', '0.9');
-    $add('jobs',         'weekly',  '0.9');
-    $add('news',         'daily',   '0.9');
     $add('geography', 'monthly', '0.8');
     $add('mountains', 'monthly', '0.8');
     $add('rivers',    'monthly', '0.8');
@@ -606,10 +609,12 @@ function bd_sitemap_urls(): array
         $add('division/' . bd_slug($division), 'monthly', '0.7');
     }
 
-    // A page per district, and a sun-times page per district.
+    /*
+     * A page per district. The per-district sunrise-sunset pages are left
+     * out: they share most of their text and are noindex (see pages/sun.php).
+     */
     foreach (bd_districts() as $district) {
         $add('district/' . bd_slug($district['name']), 'monthly', '0.7');
-        $add('sunrise-sunset/' . bd_slug($district['name']), 'daily', '0.6');
     }
 
     // A page per travel destination.
@@ -617,10 +622,12 @@ function bd_sitemap_urls(): array
         $add('travel/' . bd_slug($place['name']), 'monthly', '0.7');
     }
 
-    // A page per news article.
-    foreach (bd_news() as $n) {
-        $add('news/' . bd_slug($n['title']), 'weekly', '0.7');
-    }
+    /*
+     * News and jobs are deliberately absent. The news items are short
+     * summaries of other outlets' reporting and the jobs page lists
+     * illustrative role types, so both are noindex until they carry
+     * original, current content of their own.
+     */
 
     // A page per university.
     foreach (bd_all_universities() as $u) {

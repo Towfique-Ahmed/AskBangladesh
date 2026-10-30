@@ -25,6 +25,8 @@ $seo = bd_seo([
     'keywords'    => 'Bangladesh ' . strtolower($story['category']) . ' news, ' . $story['title'],
     'path'        => $path,
     'type'        => 'article',
+    // Short summary of another outlet's report; see bd_sitemap_urls().
+    'noindex'     => true,
     'breadcrumbs' => [
         ['name' => t('Home'), 'url' => bd_url()],
         ['name' => t('News'), 'url' => bd_url('news')],

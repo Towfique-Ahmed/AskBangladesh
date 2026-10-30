@@ -50,7 +50,7 @@ $modified = bd_content_modified();
   gtag('config', '<?= e(GA_MEASUREMENT_ID) ?>');
 </script>
 <?php endif; ?>
-<?php if (ADSENSE_ENABLED): ?>
+<?php if (ADSENSE_ENABLED && ($seo['ads'] ?? true)): ?>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?= rawurlencode(ADSENSE_CLIENT_ID) ?>"
         crossorigin="anonymous"></script>

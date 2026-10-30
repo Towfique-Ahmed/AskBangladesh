@@ -138,7 +138,9 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | `/bn/…` | `/bn/news`, `/bn/districts` - the Bengali version of any URL above | same again |
 | `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
-644 indexable URLs in total (322 pages, each in English and under `/bn`), every one listed in `/sitemap.xml`.
+426 indexable URLs in total (213 pages, each in English and under `/bn`), every one listed in `/sitemap.xml`.
+The per-district sunrise-sunset pages, `/news`, `/news/{slug}` and `/jobs` still resolve but are
+`noindex` and left out of the sitemap - see *Thin content and AdSense* below.
 
 Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
 `deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,
@@ -163,6 +165,12 @@ which resolves it with `bd_route()`.
   `priority`; **`/robots.txt`** points at it.
 - **Search result pages are `noindex, follow`** - thin and effectively infinite - while the
   links they contain are still crawled.
+- **Thin content and AdSense.** Pages that are templated, aggregated or illustrative are
+  `noindex, follow`, kept out of the sitemap and never load the AdSense tag: the 64
+  `/sunrise-sunset/{slug}` pages (they share ~70% of their text), the news section (short
+  summaries of other outlets' reporting) and `/jobs` (recurring role types, not live
+  circulars). Contact, privacy and terms stay indexed but carry no ads. Pass `'ads' => false`
+  or `'noindex' => true` to `bd_seo()` to opt a page out. `ads.txt` declares the publisher ID.
 - `?district=` on the sun page **301-redirects** to its canonical `/sunrise-sunset/{slug}`.
 - The prayer-times feature has been removed entirely. `/prayer` and `/prayer/{slug}` no
   longer exist and return 404.
