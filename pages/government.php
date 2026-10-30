@@ -23,9 +23,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <span class="pagehead__eyebrow">🏛️ <?= e(t('The state')) ?></span>
   <h1><?= e(t('Government & public services')) ?></h1>
   <p>
-    <?= e($profile['official_name']) ?> is a <?= e(strtolower($profile['government'])) ?>.
-    Below: how the state is organised, the online services citizens use most, and the numbers to
-    call when something goes wrong.
+    <?= e(tf('%s is a %s. Below: how the state is organised, the online services citizens use most, and the numbers to call when something goes wrong.', t($profile['official_name']), bd_lang() === 'bn' ? t($profile['government']) : strtolower($profile['government']))) ?>
   </p>
 </div>
 
@@ -41,8 +39,8 @@ require APP_ROOT . '/includes/layout/header.php';
       <a class="card" href="tel:<?= e($line['number']) ?>" data-reveal="<?= ($i % 9) * 40 ?>"
          style="border-color:color-mix(in srgb, var(--red-500) 26%, transparent)">
         <div style="font-size:1.7rem"><?= $line['emoji'] ?></div>
-        <div style="font:700 1.9rem/1.1 var(--mono);color:var(--red-300)"><?= e($line['number']) ?></div>
-        <p style="margin-top:.3rem"><?= e($line['service']) ?></p>
+        <div style="font:700 1.9rem/1.1 var(--mono);color:var(--red-300)"><?= e(bd_digits($line['number'])) ?></div>
+        <p style="margin-top:.3rem"><?= e(t($line['service'])) ?></p>
       </a>
     <?php endforeach; ?>
   </div>
@@ -57,13 +55,13 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="grid grid--2">
     <?php foreach ($offices as $i => $office): ?>
       <article class="card" data-reveal="<?= ($i % 6) * 50 ?>">
-        <h3>🏛️ <?= e($office['office']) ?></h3>
-        <p style="margin-bottom:.7rem"><?= e($office['role']) ?></p>
+        <h3>🏛️ <?= e(t($office['office'])) ?></h3>
+        <p style="margin-bottom:.7rem"><?= e(t($office['role'])) ?></p>
         <div class="mapinfo__rows">
-          <div class="mapinfo__row"><span>Seat</span><span><?= e($office['seat']) ?></span></div>
+          <div class="mapinfo__row"><span><?= e(t('Seat')) ?></span><span><?= e(t($office['seat'])) ?></span></div>
         </div>
         <?php if (!empty($office['note'])): ?>
-          <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:.7rem"><?= e($office['note']) ?></p>
+          <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:.7rem"><?= e(t($office['note'])) ?></p>
         <?php endif; ?>
         <a class="tile__arrow" href="<?= e($office['web']) ?>" target="_blank" rel="noopener noreferrer">
           <?= e(parse_url($office['web'], PHP_URL_HOST) ?: $office['web']) ?> ↗
@@ -82,22 +80,22 @@ require APP_ROOT . '/includes/layout/header.php';
       <h3><?= e(t('Presidents of Bangladesh')) ?></h3>
       <?php if ($curPresident): ?>
         <p style="margin-bottom:.7rem">
-          Current head of state: <strong><?= e($curPresident['name']) ?></strong>,
-          in office since <?= e(explode(' – ', $curPresident['term'])[0]) ?>.
+          <?= t('Current head of state:') ?> <strong><?= e($curPresident['name']) ?></strong>,
+          <?= e(t('in office since')) ?> <?= e(bd_digits(explode(' – ', $curPresident['term'])[0])) ?>.
         </p>
       <?php endif; ?>
-      <span class="tile__arrow">See every President since 1971 →</span>
+      <span class="tile__arrow"><?= e(t('See every President since 1971 →')) ?></span>
     </a>
     <a class="tile" href="<?= e(bd_url('prime-ministers')) ?>">
       <span class="tile__icon" aria-hidden="true">🧑‍💼</span>
       <h3><?= e(t('Prime Ministers of Bangladesh')) ?></h3>
       <?php if ($curPm): ?>
         <p style="margin-bottom:.7rem">
-          Current head of government: <strong><?= e($curPm['name']) ?></strong>,
-          in office since <?= e(explode(' – ', $curPm['term'])[0]) ?>.
+          <?= t('Current head of government:') ?> <strong><?= e($curPm['name']) ?></strong>,
+          <?= e(t('in office since')) ?> <?= e(bd_digits(explode(' – ', $curPm['term'])[0])) ?>.
         </p>
       <?php endif; ?>
-      <span class="tile__arrow">See every Prime Minister since 1971 →</span>
+      <span class="tile__arrow"><?= e(t('See every Prime Minister since 1971 →')) ?></span>
     </a>
   </div>
 </section>
@@ -123,8 +121,8 @@ require APP_ROOT . '/includes/layout/header.php';
          data-reveal="<?= ($i % 9) * 40 ?>"
          data-filter-item="<?= e($service['name'] . ' ' . $service['desc'] . ' ' . $service['url']) ?>">
         <span class="tile__icon" aria-hidden="true"><?= $service['emoji'] ?></span>
-        <h3><?= e($service['name']) ?></h3>
-        <p style="margin-bottom:.7rem"><?= e($service['desc']) ?></p>
+        <h3><?= e(t($service['name'])) ?></h3>
+        <p style="margin-bottom:.7rem"><?= e(t($service['desc'])) ?></p>
         <span class="tile__arrow"><?= e(parse_url($service['url'], PHP_URL_HOST) ?: '') ?> ↗</span>
       </a>
     <?php endforeach; ?>
@@ -143,20 +141,18 @@ require APP_ROOT . '/includes/layout/header.php';
   </div>
 
   <div class="statgrid" data-reveal>
-    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['divisions'] ?>">0</div><div class="stat__label">Divisions</div></div>
-    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['districts'] ?>">0</div><div class="stat__label">Districts</div></div>
-    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['upazilas'] ?>">0</div><div class="stat__label">Upazilas</div></div>
-    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['unions'] ?>">0</div><div class="stat__label">Union councils</div></div>
-    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['city_corps'] ?>">0</div><div class="stat__label">City corporations</div></div>
+    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['divisions'] ?>">0</div><div class="stat__label"><?= e(t('Divisions')) ?></div></div>
+    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['districts'] ?>">0</div><div class="stat__label"><?= e(t('Districts')) ?></div></div>
+    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['upazilas'] ?>">0</div><div class="stat__label"><?= e(t('Upazilas')) ?></div></div>
+    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['unions'] ?>">0</div><div class="stat__label"><?= e(t('Union councils')) ?></div></div>
+    <div class="stat"><div class="stat__value" data-count-to="<?= $profile['city_corps'] ?>">0</div><div class="stat__label"><?= e(t('City corporations')) ?></div></div>
   </div>
 </section>
 
 <div class="notice" data-reveal>
   <span>🔗</span>
   <p style="margin:0">
-    Every link here points to an official <code>.gov.bd</code> domain. Government portals change
-    addresses from time to time - if a link fails, start at
-    <strong>bangladesh.gov.bd</strong>, the national portal, or dial <strong>333</strong>.
+    <?= t('Every link here points to an official <code>.gov.bd</code> domain. Government portals change addresses from time to time - if a link fails, start at <strong>bangladesh.gov.bd</strong>, the national portal, or dial <strong>333</strong>.') ?>
   </p>
 </div>
 
