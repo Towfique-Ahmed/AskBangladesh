@@ -39,6 +39,17 @@ function bd_all_universities(): array
 function bd_nation(string $key): array { return bd_data('nation')[$key] ?? []; }
 function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? []; }
 function bd_jobs(string $key): array { return bd_data('jobs')[$key] ?? []; }
+/** News items, newest first. */
+function bd_news(): array { return bd_data('news')['items'] ?? []; }
+/** Human date for a news item - 'YYYY-MM-DD' or 'YYYY-MM'. */
+function bd_news_date(string $date): string
+{
+    $t = strtotime(strlen($date) === 7 ? $date . '-01' : $date);
+    if ($t === false) {
+        return $date;
+    }
+    return strlen($date) === 7 ? date('F Y', $t) : date('j F Y', $t);
+}
 /** All jobs, government then private, each tagged with its category. */
 function bd_all_jobs(): array
 {
@@ -163,6 +174,7 @@ function bd_route(): array
         'travel'     => 'travel',
         'universities' => 'universities',
         'jobs'       => 'jobs',
+        'news'       => 'news',
         'transport'  => 'transport',
         'time'       => 'time',
         'currency'   => 'currency',
@@ -557,6 +569,17 @@ function bd_search_index(): array
         ]);
     }
 
+    foreach (bd_news() as $n) {
+        $add([
+            'title'    => $n['title'],
+            'subtitle' => $n['category'] . ' news · ' . bd_news_date($n['date']),
+            'body'     => $n['summary'],
+            'category' => 'News',
+            'icon'     => $n['emoji'],
+            'url'      => bd_url('news'),
+        ]);
+    }
+
     foreach (bd_all_jobs() as $j) {
         $add([
             'title'    => $j['title'] . ' - ' . $j['org'],
@@ -631,7 +654,7 @@ function bd_tools(): array
 {
     return [
         ['name' => 'Interactive Bangladesh Map', 'emoji' => '🗺️', 'url' => bd_url('map'), 'desc' => 'Explore all 64 districts, peaks, beaches, airports and ports on a live vector map.', 'keywords' => ['map', 'district map', 'location', 'where']],
-        ['name' => 'Live Clock & World Time Converter', 'emoji' => '🕰️', 'url' => bd_url('time'), 'desc' => 'Bangladesh Standard Time with a converter for 24 world cities, plus countdowns.', 'keywords' => ['time', 'clock', 'timezone', 'BST', 'converter', 'timer', 'countdown']],
+        ['name' => 'Live Clock & World Time Converter', 'emoji' => '🕰️', 'url' => bd_url('time'), 'desc' => 'Bangladesh Standard Time with a converter for 34 world cities, plus countdowns.', 'keywords' => ['time', 'clock', 'timezone', 'BST', 'converter', 'timer', 'countdown']],
         ['name' => 'Currency Converter', 'emoji' => '💱', 'url' => bd_url('currency'), 'desc' => 'Convert the Bangladeshi Taka against 30+ world currencies with live rates.', 'keywords' => ['currency', 'taka', 'BDT', 'dollar', 'exchange rate', 'remittance', 'convert money']],
         ['name' => 'Gold Price in Bangladesh', 'emoji' => '🥇', 'url' => bd_url('gold'), 'desc' => 'BAJUS gold and silver rates per bhori, gram and ana, with a weight converter.', 'keywords' => ['gold', 'gold price', 'bhori', 'vori', 'silver', 'jewellery', 'BAJUS', 'ana']],
         ['name' => 'Sunrise & Sunset Times', 'emoji' => '🌅', 'url' => bd_url('sunrise-sunset'), 'desc' => 'Sunrise, sunset, day length, solar noon and golden hour for every district.', 'keywords' => ['sunrise', 'sunset', 'day length', 'daylight', 'golden hour', 'solar noon', 'dawn', 'dusk', 'twilight']],
@@ -639,6 +662,7 @@ function bd_tools(): array
         ['name' => 'Government Directory', 'emoji' => '🏛️', 'url' => bd_url('government'), 'desc' => 'Ministries, e-services, emergency hotlines and national institutions.', 'keywords' => ['government', 'NID', 'passport', 'tax', 'e-service', 'hotline', '999']],
         ['name' => 'Presidents of Bangladesh', 'emoji' => '🎖️', 'url' => bd_url('presidents'), 'desc' => 'Every President of Bangladesh since 1971, in order, with terms in office.', 'keywords' => ['president', 'head of state', 'Mirza Fakhrul Islam Alamgir', 'Shahabuddin', 'Abdul Hamid', 'Bangabhaban']],
         ['name' => 'Prime Ministers of Bangladesh', 'emoji' => '🧑‍💼', 'url' => bd_url('prime-ministers'), 'desc' => 'Every Prime Minister and caretaker Chief Adviser of Bangladesh since 1971.', 'keywords' => ['prime minister', 'head of government', 'chief adviser', 'Tarique Rahman', 'Sheikh Hasina', 'Yunus', 'Khaleda Zia']],
+        ['name' => 'Trending News', 'emoji' => '📰', 'url' => bd_url('news'), 'desc' => 'Dated, sourced headlines on Bangladesh tech, tourism and the economy.', 'keywords' => ['news', 'trending', 'headlines', 'tech news', 'tourism news', 'economy', 'latest']],
         ['name' => 'Travel Guide', 'emoji' => '🧳', 'url' => bd_url('travel'), 'desc' => 'The best places to visit across the country with seasons and districts.', 'keywords' => ['travel', 'tourism', 'places', 'visit', 'beach', 'hills']],
         ['name' => 'Transport & Roads', 'emoji' => '🛣️', 'url' => bd_url('transport'), 'desc' => 'Highways, fares, airports, ports and the big infrastructure projects.', 'keywords' => ['transport', 'road', 'highway', 'bus', 'train', 'launch', 'metro', 'fare']],
         ['name' => 'Geography & Mountains', 'emoji' => '⛰️', 'url' => bd_url('geography'), 'desc' => 'Continent, delta, rivers, peaks, climate and the extreme points of the country.', 'keywords' => ['geography', 'continent', 'asia', 'mountain', 'peak', 'river', 'climate', 'delta']],

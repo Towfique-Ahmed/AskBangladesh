@@ -158,6 +158,7 @@ return [
         ['year' => '2024', 'event' => 'A student-led mass uprising in July–August forces Prime Minister Sheikh Hasina to resign; an interim government led by Chief Adviser Muhammad Yunus takes office in August.'],
         ['year' => '2026', 'event' => 'The first general election since the uprising is held on 12 February; the BNP wins a landslide and Tarique Rahman is sworn in as Prime Minister on 17 February.'],
         ['year' => '2026', 'event' => 'President Mohammed Shahabuddin resigns in July on health grounds; Mirza Fakhrul Islam Alamgir is elected in August in the first contested presidential election since 1991.'],
+        ['year' => '2026', 'event' => 'On 30 October the UN General Assembly defers Bangladesh’s graduation from least-developed-country status, originally set for 24 November 2026, to 24 November 2029.'],
     ],
 
     'facts' => [

@@ -6,6 +6,7 @@ $profile   = bd_nation('profile');
 $facts     = bd_nation('facts');
 $tools     = bd_tools();
 $travel    = array_slice(bd_places('travel'), 0, 6);
+$news      = array_slice(bd_news(), 0, 3);
 $countdown = bd_countdowns();
 $next      = $countdown[0];
 $symbols   = array_slice(bd_nation('symbols'), 0, 6);
@@ -151,11 +152,30 @@ require APP_ROOT . '/includes/layout/header.php';
   </div>
 </section>
 
+<!-- ----------------------------------------------------------------- news -->
+<section class="section">
+  <div class="section__head">
+    <h2>Trending in Bangladesh</h2>
+    <p><a href="<?= e(bd_url('news')) ?>" style="color:var(--green-300)">All tech, tourism &amp; economy news →</a></p>
+  </div>
+
+  <div class="grid grid--3">
+    <?php foreach ($news as $i => $n): ?>
+      <a class="card" href="<?= e(bd_url('news')) ?>" data-reveal="<?= $i * 50 ?>">
+        <div style="font-size:2rem"><?= $n['emoji'] ?></div>
+        <h3><?= e($n['title']) ?></h3>
+        <span class="badge"><?= e($n['category']) ?></span>
+        <span class="badge badge--gold"><?= e(bd_news_date($n['date'])) ?></span>
+      </a>
+    <?php endforeach; ?>
+  </div>
+</section>
+
 <!-- ---------------------------------------------------------------- tools -->
 <section class="section">
   <div class="section__head">
     <h2>Everything in one place</h2>
-    <p>Twelve tools and libraries, all cross-linked and all searchable.</p>
+    <p>Tools and reference libraries, all cross-linked and all searchable.</p>
   </div>
 
   <div class="grid grid--3">
