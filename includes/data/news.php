@@ -19,6 +19,11 @@ return [
             'title_bn' => 'ভারী বৃষ্টিতে প্রধান ধান ফসলের ক্ষতি, ঘাটতি ২ লাখ টনের বেশি',
             'summary' => 'Pre-monsoon rain and upstream inflows hit Bangladesh’s main rice crop.',
             'summary_bn' => 'বর্ষাপূর্ব বৃষ্টি ও উজানের পানিতে বাংলাদেশের প্রধান ফসল ক্ষতিগ্রস্ত হয়েছে।',
+            'body_bn' => [
+                'মে মাসের শুরুর একটি প্রতিবেদন অনুযায়ী, বর্ষাপূর্ব ভারী বৃষ্টি ও উজানের পানিতে প্রধান ফসল ক্ষতিগ্রস্ত হওয়ায় বাংলাদেশ ২ লাখ মেট্রিক টনের বেশি চালের ঘাটতির দিকে যাচ্ছে।',
+                'ধান প্রধান খাদ্যশস্য, আর এপ্রিল-মে মাসে, বোরো মৌসুমে, দেশের সবচেয়ে বড় ফসল তোলা হয়। ফসল তোলার কাছাকাছি সময়ে ক্ষতি কৃষকের আয়ে আঘাত হানে এবং দাম বাড়াতে পারে।',
+                'প্রতিবেদনে ঘাটতি ২ লাখ টনের বেশি বলা হয়েছে।',
+            ],
             'body' => [
                 'Bangladesh is heading for a rice shortfall of more than 200,000 metric tonnes after heavy pre-monsoon rains and inflows from upstream damaged its main crop, according to a report in early May.',
                 'Rice is the staple food, and the harvest around April and May, the boro season, is the country’s largest. Damage close to harvest hits farm incomes and can push up prices.',
@@ -32,6 +37,11 @@ return [
             'title_bn' => 'দশকের মধ্যে ভয়াবহতম হামের প্রাদুর্ভাবে শিশু ওয়ার্ড ভরে গেছে',
             'summary' => 'Hospitals report child deaths and a surge in infections.',
             'summary_bn' => 'হাসপাতালগুলোতে শিশুমৃত্যু ও সংক্রমণ বৃদ্ধির খবর পাওয়া যাচ্ছে।',
+            'body_bn' => [
+                'মে মাসের শুরুর একটি প্রতিবেদন অনুযায়ী, কয়েক দশকের মধ্যে বাংলাদেশের ভয়াবহতম হামের প্রাদুর্ভাব স্বাস্থ্যব্যবস্থাকে চাপে ফেলেছে; হাসপাতালের ওয়ার্ড শিশুতে ভরে গেছে এবং চিকিৎসকরা সংক্রমণের ঢেউ ঠেকাতে হিমশিম খাচ্ছেন।',
+                'হাম অত্যন্ত ছোঁয়াচে, তবে টিকার দুই ডোজে প্রতিরোধযোগ্য। টিকাদানের ঘাটতির পরই সাধারণত প্রাদুর্ভাব দেখা দেয়।',
+                'অভিভাবকদের উচিত শিশুর দুই ডোজ টিকা হয়েছে কি না দেখে নেওয়া এবং জ্বর ও র‍্যাশ হলে স্থানীয় স্বাস্থ্যকর্মীর সঙ্গে কথা বলা বা ১৬২৬৩ স্বাস্থ্য নম্বরে ফোন করা।',
+            ],
             'body' => [
                 'Bangladesh’s deadliest measles outbreak in decades has stretched the health system, with children filling hospital wards and doctors struggling to contain a surge in infections, according to a report in early May.',
                 'Measles is highly contagious but preventable with two doses of vaccine. Outbreaks usually follow gaps in immunisation coverage.',
@@ -45,6 +55,11 @@ return [
             'title_bn' => 'অব্যবস্থাপনায় জন্মনিয়ন্ত্রণ সামগ্রীর সংকট',
             'summary' => 'The once-praised family planning system is struggling with shortages.',
             'summary_bn' => 'একসময় প্রশংসিত পরিবার পরিকল্পনা ব্যবস্থা সংকটে পড়েছে।',
+            'body_bn' => [
+                'মে মাসের একটি প্রতিবেদনে বলা হয়েছে, আন্তর্জাতিকভাবে দীর্ঘদিন প্রশংসিত বাংলাদেশের পরিবার পরিকল্পনা কর্মসূচি জন্মনিয়ন্ত্রণ সামগ্রীর তীব্র সংকটে ভেঙে পড়ছে, ফলে অনাকাঙ্ক্ষিত গর্ভধারণ বাড়ার আশঙ্কা দেখা দিয়েছে।',
+                'প্রতিবেদনে সংকটের কারণ হিসেবে অব্যবস্থাপনাকে দায়ী করা হয়েছে। বাংলাদেশের খ্যাতি গড়ে উঠেছিল ঘরে ঘরে পরিবার পরিকল্পনা সেবা পৌঁছে দেওয়া মাঠকর্মীদের ওপর।',
+                'প্রতিবেদনের মূল উদ্বেগ হলো দীর্ঘস্থায়ী সংকটে অনাকাঙ্ক্ষিত গর্ভধারণ বাড়তে পারে।',
+            ],
             'body' => [
                 'Bangladesh’s family planning programme, long praised internationally, is buckling under severe contraceptive shortages, raising fears of a rise in unplanned pregnancies, a May report said.',
                 'The report attributed the crisis to poor planning. Bangladesh built its reputation on community health workers who deliver family planning services door to door.',
@@ -58,6 +73,11 @@ return [
             'title_bn' => 'ইউনেস্কোর স্বীকৃতি পেলেও টাঙ্গাইল শাড়ির তাঁতশিল্প টিকে আছে সুতোর ওপর',
             'summary' => 'The craft’s detailed designs won intangible cultural heritage status in December 2025.',
             'summary_bn' => '২০২৫ সালের ডিসেম্বরে অধরা সাংস্কৃতিক ঐতিহ্যের স্বীকৃতি পেয়েছে এ শিল্প।',
+            'body_bn' => [
+                'টাঙ্গাইলে বোনা শাড়ির সূক্ষ্ম নকশা ও বুনট ২০২৫ সালের ডিসেম্বরে ইউনেস্কোর অধরা সাংস্কৃতিক ঐতিহ্যের স্বীকৃতি পেয়েছে, কিন্তু মার্চের একটি প্রতিবেদন বলছে এই ঐতিহ্য চাপের মুখে।',
+                'মধ্য বাংলাদেশের টাঙ্গাইল তাঁতের শাড়ির জন্য পরিচিত, আর প্রতিবেদনে বয়ন-ঐতিহ্যকে ভঙ্গুর বলা হয়েছে।',
+                'টাঙ্গাইল শাড়ি দেশের নানা বাজারে বিক্রি হয়।',
+            ],
             'body' => [
                 'The detailed designs and fine textures of saris woven in Tangail won UNESCO recognition as intangible cultural heritage in December 2025, but a March report said the tradition is under pressure.',
                 'Tangail, in central Bangladesh, is known for its handloom saris, and the report describes the weaving tradition as fragile.',
@@ -71,6 +91,11 @@ return [
             'title_bn' => 'সরকারি বাসায় ভাড়াটিয়াদের ৩১ অক্টোবরের মধ্যে ছাড়তে নির্দেশ, নইলে বরাদ্দ বাতিল',
             'summary' => 'Officials ordered the eviction of tenants from government houses, with allotments cancelled for those who do not comply.',
             'summary_bn' => 'সরকারি বাসা থেকে ভাড়াটিয়া উচ্ছেদের নির্দেশ; নির্দেশ না মানলে বরাদ্দ বাতিল হবে।',
+            'body_bn' => [
+                'কর্মকর্তারা নির্দেশ দিয়েছেন, সরকারি বরাদ্দের বাসায় যারা বরাদ্দপ্রাপ্ত নন, অর্থাৎ ভাড়াটিয়াদের ৩১ অক্টোবরের মধ্যে সরিয়ে দিতে হবে। নির্দেশ না মানলে বরাদ্দপ্রাপ্তদের বরাদ্দ বাতিল হবে।',
+                'সরকারি বাসা পদমর্যাদা ও চাকরি অনুযায়ী সরকারি কর্মচারীদের বরাদ্দ দেওয়া হয় এবং সাবলেট দেওয়া নিষিদ্ধ। সময়সীমার উদ্দেশ্য যোগ্যদের জন্য বাসা খালি করা।',
+                'আক্রান্ত বাসিন্দাদের উচিত সংশ্লিষ্ট গৃহায়ন কর্তৃপক্ষের নোটিশে সঠিক নিয়ম দেখে নেওয়া।',
+            ],
             'body' => [
                 'Officials have ordered that tenants, meaning people living in government-allotted houses who are not the allottees, must be removed by 31 October. Allottees who fail to comply face cancellation of their allotment.',
                 'Government housing is allotted to public servants in line with their grade and service, and sub-letting is not allowed. The deadline is meant to free up housing for those entitled to it.',
@@ -84,6 +109,11 @@ return [
             'title_bn' => 'রিয়াদের কারখানার আগুনে নিহত নওগাঁর পাঁচজনের মরদেহ দেশে আসছে',
             'summary' => 'DNA tests identified the five workers, whose bodies were due to reach Naogaon on Saturday.',
             'summary_bn' => 'ডিএনএ পরীক্ষায় শনাক্ত পাঁচ শ্রমিকের মরদেহ শনিবার নওগাঁয় পৌঁছানোর কথা।',
+            'body_bn' => [
+                'সৌদি আরবের রিয়াদে কারখানার আগুনে নিহত নওগাঁর পাঁচজনের মরদেহ ডিএনএ পরীক্ষায় শনাক্ত হওয়ার পর শনিবার দেশে আনার কথা।',
+                'আগুনে মরদেহ শনাক্ত করা কঠিন হয়ে পড়ায় পরিবারগুলো কয়েক দিন নিশ্চিত খবরের অপেক্ষায় ছিল। সৌদি আরব বাংলাদেশি অভিবাসী শ্রমিকদের প্রধান গন্তব্যগুলোর একটি, আর উপসাগর থেকে আসা রেমিট্যান্স অনেক গ্রামীণ পরিবারের জীবনরেখা।',
+                'বিদেশে যেতে ইচ্ছুক শ্রমিকদের উচিত জনশক্তি, কর্মসংস্থান ও প্রশিক্ষণ ব্যুরোর মাধ্যমে নিয়োগকর্তা ও ভিসার ধরন যাচাই করা এবং কাগজপত্রের কপি পরিবারের কাছে রাখা।',
+            ],
             'body' => [
                 'The bodies of five men from Naogaon who died in a factory fire in Riyadh, Saudi Arabia, are due to be brought home on Saturday after they were identified through DNA testing.',
                 'Families waited days for confirmation because the fire left the bodies hard to identify. Saudi Arabia is one of the main destinations for Bangladeshi migrant workers, and remittances from the Gulf are a lifeline for many rural households.',
@@ -97,6 +127,11 @@ return [
             'title_bn' => 'সার ডিলার নিয়োগে অনিয়ম, খাদ্যনিরাপত্তা নিয়ে সম্পাদকীয়ে সতর্কতা',
             'summary' => 'More than 47,000 applications were filed for about 5,000 fertiliser dealerships, and an editorial flagged irregularities.',
             'summary_bn' => 'প্রায় ৫ হাজার ডিলারশিপের জন্য ৪৭ হাজারের বেশি আবেদন; সম্পাদকীয়ে অনিয়মের কথা বলা হয়েছে।',
+            'body_bn' => [
+                'প্রথম আলোর একটি সম্পাদকীয়তে সার ডিলার নিয়োগে অনিয়ম নিয়ে উদ্বেগ প্রকাশ করা হয়েছে। সারা দেশে প্রায় ৫ হাজার ডিলারশিপের জন্য ৪৭ হাজারের বেশি আবেদন জমা পড়েছে।',
+                'সম্পাদকীয়তে সতর্ক করা হয়েছে, নিয়োগ ন্যায্য ও স্বচ্ছ না হলে ভবিষ্যতে সারের ঘাটতি বাড়তে পারে এবং খাদ্যনিরাপত্তা ঝুঁকিতে পড়তে পারে। সার কৃষকের কাছে পৌঁছায় লাইসেন্সপ্রাপ্ত ডিলারদের মাধ্যমে, তাই কারা সে লাইসেন্স পান তা চাষের মৌসুমে দাম ও সরবরাহে প্রভাব ফেলে।',
+                'সম্পাদকীয়র উদ্বেগ তার নিজস্ব মত; আমাদের পর্যালোচিত প্রতিবেদনে কর্তৃপক্ষ এখনও সাড়া দেয়নি।',
+            ],
             'body' => [
                 'A Prothom Alo editorial has raised concerns about irregularities in the appointment of fertiliser dealers. More than 47,000 applications were submitted for around 5,000 dealerships across the country.',
                 'The editorial warned that if appointments are not made fairly and transparently, the problem could worsen future fertiliser shortages and put food security at risk. Fertiliser reaches farmers through a network of licensed dealers, so who holds those licences affects prices and supply at planting time.',
@@ -128,6 +163,11 @@ return [
             'title_bn' => '২০ হাজারের বেশি মাধ্যমিক শিক্ষক ইংরেজি বা গণিত পড়াচ্ছেন বিষয়ভিত্তিক ডিগ্রি ছাড়াই',
             'summary' => 'A report found that thousands of teachers hold degrees in other subjects.',
             'summary_bn' => 'একটি প্রতিবেদনে দেখা গেছে, হাজার হাজার শিক্ষক অন্য বিষয়ে ডিগ্রি নিয়ে এ দুই বিষয় পড়াচ্ছেন।',
+            'body_bn' => [
+                'অক্টোবরের মাঝামাঝি প্রকাশিত একটি প্রতিবেদন অনুযায়ী, বাংলাদেশের ২০ হাজারের বেশি মাধ্যমিক শিক্ষক অন্য বিষয়ে ডিগ্রি নিয়ে ইংরেজি বা গণিত পড়াচ্ছেন।',
+                'এ তথ্য স্কুলগুলোকে যেসব বিষয় পড়াতে হয় এবং সেসব বিষয়ে পাওয়া বিশেষজ্ঞ শিক্ষকের মধ্যে ফাঁক দেখায়। আরেকটি সংশ্লিষ্ট প্রতিবেদনে দেখা গেছে, সরকারি কলেজে আইসিটি ক্লাস প্রায়ই অন্য বিষয়ের শিক্ষকরা নেন, অন্যত্র প্রোগ্রামার বা অতিথি শিক্ষকরা।',
+                'শিক্ষা বিশেষজ্ঞরা বলছেন, বিশেষত গ্রামাঞ্চলে মূল বিষয়গুলোর জন্য নিয়োগ ও প্রশিক্ষণ শিখন-ফল উন্নয়নের চাবিকাঠি।',
+            ],
             'body' => [
                 'More than 20,000 secondary school teachers in Bangladesh teach English or mathematics even though their degrees are in other subjects, according to a report published in mid-October.',
                 'The finding points to a gap between the subjects schools must teach and the specialist teachers available to teach them. A related report found that ICT classes in government colleges are often taken by teachers of other subjects, with programmers or guest teachers filling in elsewhere.',
@@ -177,6 +217,11 @@ return [
             'title_bn' => 'ব্যাংকিং নজর: খসড়া আইনে পারিবারিক নিয়ন্ত্রণের সুযোগ, কারখানা চালুর তহবিল প্রায় অব্যবহৃত',
             'summary' => 'A draft Bank Company Act keeps scope for family control of banks, and only Tk 5.61 billion of a Tk 200 billion incentive fund was disbursed.',
             'summary_bn' => 'ব্যাংক কোম্পানি আইনের খসড়ায় পারিবারিক নিয়ন্ত্রণের সুযোগ রয়ে গেছে; ২০ হাজার কোটি টাকার তহবিল থেকে বিতরণ মাত্র ৫৬১ কোটি।',
+            'body_bn' => [
+                'ব্যাংক কোম্পানি আইনের একটি খসড়ায় ব্যাংকে পারিবারিক নিয়ন্ত্রণের সুযোগ রেখে দেওয়া হয়েছে, অথচ খাতটির পরিচালনা নিয়ে বছরের পর বছর উদ্বেগের পর সংস্কারকেরা তা বাদ চেয়েছিলেন।',
+                'আলাদাভাবে, বন্ধ কারখানা চালুতে সহায়তার জন্য ২০ হাজার কোটি টাকার বরাদ্দ সত্ত্বেও প্রণোদনা তহবিল থেকে মাত্র ৫৬১ কোটি টাকা বিতরণ হয়েছে।',
+                'দুটি বিষয়ই ব্যাংকিং খাতের সংস্কার এবং বেসরকারি খাতে ঋণপ্রবাহ দুর্বল হওয়ার বৃহত্তর বিতর্কের অংশ।',
+            ],
             'body' => [
                 'A draft of the Bank Company Act retains scope for family control of banks, a point reformers wanted removed after years of concern about governance in the sector.',
                 'Separately, only Tk 5.61 billion has been disbursed from an incentive fund meant to help reopen closed factories, despite a Tk 200 billion allocation.',
@@ -208,6 +253,11 @@ return [
             'title_bn' => 'চরম তাপ মোকাবিলায় বাংলাদেশসহ চার দেশের যৌথ উদ্যোগ',
             'summary' => 'Bangladesh, India, Nepal and Bhutan will work together on heat risk, as the ‘feels-like’ temperature has risen by about 4.5°C since 1980.',
             'summary_bn' => 'বাংলাদেশ, ভারত, নেপাল ও ভূটান একসঙ্গে কাজ করবে; ১৯৮০ সাল থেকে অনুভূত তাপমাত্রা প্রায় ৪.৫° সেলসিয়াস বেড়েছে।',
+            'body_bn' => [
+                'বাংলাদেশ, ভারত, নেপাল ও ভুটান ৮ অক্টোবর চরম তাপ মোকাবিলায় একটি যৌথ উদ্যোগ চালু করেছে।',
+                'উদ্যোগ চালুর সময় উল্লেখ করা একটি তথ্য হলো, তাপ ও আর্দ্রতা দুটোই হিসাবে নেওয়া অনুভূত তাপমাত্রা ১৯৮০ সাল থেকে প্রায় ৪.৫° সেলসিয়াস বেড়েছে।',
+                'তাপ দক্ষিণ এশিয়ায় জনস্বাস্থ্য ও উৎপাদনশীলতার ক্রমবর্ধমান উদ্বেগ, বিশেষত খোলা আকাশের নিচে কাজ করা মানুষ ও শিশুদের জন্য।',
+            ],
             'body' => [
                 'Bangladesh, India, Nepal and Bhutan launched a joint initiative on 8 October to tackle extreme heat.',
                 'One figure cited in the launch is that the feels-like temperature, which accounts for both heat and humidity, has risen by about 4.5°C since 1980.',
@@ -221,6 +271,11 @@ return [
             'title_bn' => 'সুন্দরবনে বায়ুদূষণ শনাক্ত',
             'summary' => 'A study found fine-particle levels of 102 micrograms per cubic metre in the Sharankhola range.',
             'summary_bn' => 'গবেষণায় শরণখোলা রেঞ্জে প্রতি ঘনমিটারে ১০২ মাইক্রোগ্রাম সূক্ষ্ম কণা পাওয়া গেছে।',
+            'body_bn' => [
+                'পরিবেশ ও ভৌগোলিক তথ্য সেবা কেন্দ্রের (সিইজিআইএস) সঙ্গে সংশ্লিষ্ট একটি গবেষণায় সুন্দরবনে বায়ুদূষণ শনাক্ত হয়েছে। শরণখোলা রেঞ্জে গড় পিএম২.৫ ঘনত্ব প্রতি ঘনমিটারে ১০২ মাইক্রোগ্রামে পৌঁছেছে, আর পিএম১০ ছিল ১১৪।',
+                'সুন্দরবন বিশ্বের বৃহত্তম ম্যানগ্রোভ বন এবং ইউনেস্কো বিশ্ব ঐতিহ্যস্থান। সংরক্ষিত বনে বায়ুদূষণ কাছের শিল্প, নৌযান ও পোড়ানো থেকে নির্গমনের ইঙ্গিত দেয়।',
+                'সংরক্ষণকারী সংগঠনগুলো দীর্ঘদিন ধরে বন রক্ষায় সমন্বিত পদক্ষেপের দাবি জানিয়ে আসছে।',
+            ],
             'body' => [
                 'A study linked to the Centre for Environmental and Geographic Information Services (CEGIS) detected air pollution in the Sundarbans. Average PM2.5 concentration in the Sharankhola range reached 102 micrograms per cubic metre, while PM10 stood at 114.',
                 'The Sundarbans is the world’s largest mangrove forest and a UNESCO World Heritage Site. Air pollution in a protected forest points to emissions from nearby industry, shipping and burning.',
@@ -234,6 +289,11 @@ return [
             'title_bn' => 'টেককানেক্ট ২০২৬: এআই, ফাইভজি ও বাংলা ভাষার প্রযুক্তি আলোচ্য সূচিতে',
             'summary' => 'Speakers at the Dhaka conference discussed AI skills and digital infrastructure.',
             'summary_bn' => 'ঢাকার সম্মেলনে বক্তারা এআই দক্ষতা ও ডিজিটাল অবকাঠামো নিয়ে আলোচনা করেছেন।',
+            'body_bn' => [
+                'ঢাকার আগারগাঁওয়ের বঙ্গবন্ধু আন্তর্জাতিক সম্মেলন কেন্দ্রে অনুষ্ঠিত বাংলাদেশ টেককানেক্ট ২০২৬ কৃত্রিম বুদ্ধিমত্তা ও ডিজিটাল অবকাঠামোয় মনোযোগ দিয়েছে।',
+                'বক্তারা ফাইভজির সম্প্রসারণ, এআই দক্ষতা এবং বাংলা ভাষার এআই সম্পদের প্রয়োজনীয়তা নিয়ে আলোচনা করেন। একজন বক্তা উল্লেখ করেন, নিম্ন ও মধ্যম আয়ের দেশগুলোর ইন্টারনেট ব্যবহারকারীদের মাত্র ৫ শতাংশ জেনারেটিভ এআই ব্যবহার করেন।',
+                'এই অনুষ্ঠানেই আইসিটি মন্ত্রী পাঁচ বছরে ১০ লাখ ডিজিটাল চাকরির লক্ষ্য ঘোষণা করেন।',
+            ],
             'body' => [
                 'Bangladesh TechConnect 2026, held at the Bangabandhu International Conference Centre in Agargaon, Dhaka, focused on artificial intelligence and digital infrastructure.',
                 'Speakers discussed the expansion of 5G, AI skills, and the need for Bangla-language AI resources. One speaker noted that only 5 percent of internet users in low- and middle-income countries use generative AI.',
@@ -321,6 +381,11 @@ return [
             'title_bn' => 'দুর্গাপূজার ছুটির পর বেনাপোল ও সোনামসজিদ স্থলবন্দরে বাণিজ্য আবার চালু',
             'summary' => 'Export and import activity with India restarted on Saturday morning after the festival and weekly holidays.',
             'summary_bn' => 'ছুটি ও সাপ্তাহিক বন্ধের পর শনিবার সকাল থেকে ভারতের সঙ্গে আমদানি-রপ্তানি শুরু হয়েছে।',
+            'body_bn' => [
+                'দুর্গাপূজা ও সাপ্তাহিক ছুটির বিরতির পর ২৪ অক্টোবর, শনিবার সকালে বেনাপোল ও সোনামসজিদ স্থলবন্দর দিয়ে বাংলাদেশ ও ভারতের মধ্যে বাণিজ্য আবার শুরু হয়েছে।',
+                'বেনাপোল দেশের ব্যস্ততম স্থলবন্দর, আর ছুটিতে আটকে থাকা পণ্য শুল্ক ও বন্দর অফিস খোলার পর আবার চলতে শুরু করে। দীর্ঘ ছুটির সময় সাধারণত ট্রাকের জট জমে।',
+                'ভারতের সঙ্গে বাংলাদেশের বাণিজ্যের বড় অংশ স্থলবন্দর দিয়ে হয়, তাই উৎসবের বন্ধ আমদানিকারক-রপ্তানিকারকরা নিবিড়ভাবে লক্ষ করেন।',
+            ],
             'body' => [
                 'Trade between Bangladesh and India through the Benapole and Sonamasjid land ports resumed on Saturday morning, 24 October, after a pause for Durga Puja and the weekly holidays.',
                 'Benapole is the country’s busiest land port, and goods held up over the holidays began moving again when customs and port offices reopened. Traders typically see a backlog of trucks build up around long holiday periods.',
@@ -334,6 +399,11 @@ return [
             'title_bn' => 'ডায়মন্ড ওয়ার্ল্ডের এমডি গ্রেপ্তারের পর দায়িত্বশীল সংবাদ পরিবেশনের আহ্বান বাজুসের',
             'summary' => 'BAJUS said allegations against one individual should not tarnish the image of the whole jewellery sector.',
             'summary_bn' => 'বাজুস বলেছে, একজন ব্যক্তির বিরুদ্ধে অভিযোগ যেন পুরো জুয়েলারি খাতের ভাবমূর্তি ক্ষুণ্ন না করে।',
+            'body_bn' => [
+                'বাংলাদেশ জুয়েলার্স অ্যাসোসিয়েশন (বাজুস) ডায়মন্ড ওয়ার্ল্ডের ব্যবস্থাপনা পরিচালক দিলীপ কুমার আগরওয়ালার গ্রেপ্তার নিয়ে গণমাধ্যমকে দায়িত্বশীলভাবে সংবাদ পরিবেশনের অনুরোধ করেছে। সংগঠনটি বলেছে, একজন ব্যক্তির বিরুদ্ধে অভিযোগ যেন দেশের পুরো জুয়েলারি খাতের ভাবমূর্তি ক্ষুণ্ন না করে।',
+                'সংগঠনটি বৃহস্পতিবার, ২৩ অক্টোবর এ কথা বলে। এই সংবাদে শুধু সংগঠনের বক্তব্য তুলে ধরা হয়েছে। জনাব আগরওয়ালার বিরুদ্ধে অভিযোগ প্রমাণিত নয় এবং আস্কবাংলাদেশ তা স্বাধীনভাবে যাচাই করেনি।',
+                'বাজুস বাংলাদেশে প্রতিদিনের সোনা-রুপার দাম ঠিক করে। নির্দেশক দর ও ওজন রূপান্তরের জন্য আমাদের সোনার পাতা দেখুন।',
+            ],
             'body' => [
                 'The Bangladesh Jewellers Association (BAJUS) has asked the media to report responsibly on the arrest of Diamond World managing director Dilip Kumar Agarwala. It said allegations against one individual should not damage the image of the country’s entire jewellery sector.',
                 'The association spoke up on Thursday 23 October. This story reports only the association’s statement. The allegations against Mr Agarwala are unproven, and AskBangladesh has not independently assessed them.',
@@ -347,6 +417,11 @@ return [
             'title_bn' => 'নভেম্বরের গ্লোবাল সোর্সিং এক্সপোতে খাত বেড়ে ১২টি',
             'summary' => 'The three-day expo at Purbachal runs 15 to 17 November, up from eight sectors last year.',
             'summary_bn' => '১৫ থেকে ১৭ নভেম্বর পূর্বাচলে তিন দিনের এক্সপো, গত বছর ছিল আটটি খাত।',
+            'body_bn' => [
+                'গ্লোবাল সোর্সিং এক্সপো ২০২৬ পূর্বাচলের বাংলাদেশ-চায়না ফ্রেন্ডশিপ প্রদর্শনী কেন্দ্রে ১৫ থেকে ১৭ নভেম্বর তিন দিন চলবে। রপ্তানি উন্নয়ন ব্যুরো জানিয়েছে, খাতের সংখ্যা আট থেকে বেড়ে বারো হয়েছে এবং ২০০টির বেশি স্টল আশা করা হচ্ছে।',
+                'প্লাস্টিক, হিমায়িত খাদ্য, মৎস্য, পাট, আসবাব ও ওষুধ অংশগ্রহণকারী খাতগুলোর মধ্যে। কর্মসূচিতে সেমিনার, ব্যবসায়ী-থেকে-ব্যবসায়ী বৈঠক এবং অনলাইন ম্যাচমেকিং পোর্টাল আছে।',
+                '২০২৫ সালের ১ থেকে ৩ ডিসেম্বরের প্রথম সংস্করণ বিদেশি অংশগ্রহণ কম হওয়ায় সমালোচিত হয়েছিল, যার জন্য প্রদর্শকরা রাজনৈতিক অনিশ্চয়তা ও দুর্বল প্রস্তুতিকে দায়ী করেন। সরকার বছরে দুবার এক্সপো করার পরিকল্পনা জানিয়েছে, তাই ক্রেতারা আসবেন কি না তা এবারের আয়োজনের পরীক্ষা।',
+            ],
             'body' => [
                 'The Global Sourcing Expo 2026 will run for three days from 15 to 17 November at the Bangladesh-China Friendship Exhibition Centre in Purbachal. The Export Promotion Bureau says the number of sectors has grown from eight to twelve, with more than 200 stalls expected.',
                 'Plastics, frozen food, fisheries, jute, furniture and pharmaceuticals are among the participating sectors. The programme includes seminars, business-to-business meetings and an online matchmaking portal.',
@@ -360,6 +435,11 @@ return [
             'title_bn' => 'স্থানীয় ব্যাক-টু-ব্যাক এলসির বার্তা আদান-প্রদান সুইফট থেকে সরাচ্ছে বাংলাদেশ ব্যাংক',
             'summary' => 'Reports say processing of local back-to-back letters of credit will shift to a domestic messaging system next month.',
             'summary_bn' => 'প্রতিবেদন অনুযায়ী আগামী মাস থেকে দেশীয় বার্তা ব্যবস্থায় স্থানীয় ব্যাক-টু-ব্যাক এলসি প্রক্রিয়া হবে।',
+            'body_bn' => [
+                'প্রতিবেদন অনুযায়ী, বাংলাদেশ ব্যাংক আগামী মাসে স্থানীয় ব্যাক-টু-ব্যাক ঋণপত্রের (এলসি) প্রক্রিয়াকরণ আন্তর্জাতিক সুইফট নেটওয়ার্ক থেকে দেশীয় বার্তা ব্যবস্থায় নিয়ে যাবে, যাতে ব্যাংকের খরচ কমবে বলে আশা।',
+                'ব্যাক-টু-ব্যাক এলসি তৈরি পোশাক রপ্তানিকারকরা ব্যাপকভাবে ব্যবহার করেন; রপ্তানি আদেশের বিপরীতে কাপড় ও অনুষঙ্গ কিনতে তাঁরা স্থানীয় ব্যাংকে এটি খোলেন। স্থানীয় লেনদেনে দেশীয় চ্যানেল ব্যবহার বার্তা-ফি কমাতে পারে।',
+                'এই সংবাদ লেখার সময় বাংলাদেশ ব্যাংকের কোনো সার্কুলারে আমরা পরিবর্তনটি নিশ্চিত করতে পারিনি, তাই রপ্তানিকারক ও ব্যাংকারদের সঠিক তারিখ ও পদ্ধতির জন্য কেন্দ্রীয় ব্যাংকের বিজ্ঞপ্তি দেখা উচিত।',
+            ],
             'body' => [
                 'Bangladesh Bank will reportedly shift the processing of local back-to-back letters of credit from the international SWIFT network to a domestic messaging system next month, a change expected to cut costs for banks.',
                 'Back-to-back LCs are widely used by garment exporters, who open them with local banks to buy fabric and accessories against an export order. Using a domestic channel for local transactions could reduce messaging fees.',
@@ -373,6 +453,11 @@ return [
             'title_bn' => 'স্কোপাস-সূচিভুক্ত গবেষণায় দেশের বিশ্ববিদ্যালয়গুলোর শীর্ষে ঢাকা বিশ্ববিদ্যালয়',
             'summary' => 'DU leads the country’s universities in research publications indexed in the Scopus database.',
             'summary_bn' => 'আন্তর্জাতিক স্কোপাস ডেটাবেসে সূচিভুক্ত গবেষণা প্রকাশনায় ঢাকা বিশ্ববিদ্যালয় দেশে এগিয়ে।',
+            'body_bn' => [
+                'স্কোপাসে - সহকর্মী-পর্যালোচিত গবেষণার আন্তর্জাতিক ডেটাবেসে - সূচিভুক্ত গবেষণা প্রকাশনায় ঢাকা বিশ্ববিদ্যালয় বাংলাদেশের শীর্ষ বিশ্ববিদ্যালয় বলে জানানো হয়েছে।',
+                'স্বাধীন হিসাবেও একই চিত্র। বাংলাদেশি গবেষণার একটি ট্র্যাকার ২০২৫ সালে ঢাকা বিশ্ববিদ্যালয়ের লেখকদের প্রায় ১,৭৪৫টি স্কোপাস-সূচিভুক্ত নথি গুনেছে, ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি ও বুয়েটও শীর্ষ তিনে। ২০২৬ সালের জুলাইয়ে নেচার ইনডেক্সও দেশের ১৪৩টি নিবন্ধের মধ্যে ২১টি নিয়ে ঢাকা বিশ্ববিদ্যালয়কে বাংলাদেশের শীর্ষ গবেষণা প্রতিষ্ঠান বলেছে।',
+                'প্রকাশনার সংখ্যা গবেষণার পরিমাণ মাপে, পাঠদানের মান নয়। ভর্তি ও ক্যাম্পাসের তথ্যের জন্য আমাদের বিশ্ববিদ্যালয় বিভাগে ঢাকা বিশ্ববিদ্যালয়ের পাতা দেখুন।',
+            ],
             'body' => [
                 'The University of Dhaka has been reported as the top Bangladeshi university for research publications indexed in Scopus, the international database of peer-reviewed research.',
                 'Independent tallies point the same way. A tracker of Bangladeshi research counted about 1,745 Scopus-indexed documents from Dhaka University authors in 2025, with Daffodil International University and BUET also among the top three. In July 2026, the Nature Index also named Dhaka University Bangladesh’s leading research institution, with 21 of 143 articles from the country.',
@@ -386,6 +471,11 @@ return [
             'title_bn' => 'দূষিত বুড়িগঙ্গায় এখনও টিকে আছে গঙ্গা নদীর শুশুক, বলছে গবেষণা',
             'summary' => 'Researchers estimate about 20 dolphins in the river that runs through Dhaka.',
             'summary_bn' => 'গবেষকদের হিসাবে ঢাকার মধ্য দিয়ে বয়ে যাওয়া এ নদীতে প্রায় ২০টি শুশুক আছে।',
+            'body_bn' => [
+                'একটি নতুন গবেষণা অনুযায়ী, বাংলাদেশের অন্যতম দূষিত নদী বুড়িগঙ্গায় বিপন্ন গঙ্গা নদীর শুশুক এখনও বেঁচে আছে। গবেষকদের হিসাবে নদীতে প্রায় ২০টি শুশুক আছে।',
+                'দলটি ২০২৩ সালের সেপ্টেম্বর থেকে ২০২৪ সালের আগস্ট পর্যন্ত ১২ মাসে ২৭ কিমি অংশে জরিপ করে এবং ১২ মাসের ১০ মাসেই শুশুক দেখতে পায়। নদী অপরিশোধিত শিল্পবর্জ্য ও পয়ঃবর্জ্য বইছে, আগের গবেষণায় শুকনো মৌসুমে অক্সিজেন প্রায় শূন্য পাওয়া গেছে, তবু শুশুক টিকে আছে। গবেষকদের সন্দেহ, এরা আক্রমণাত্মক এক ধরনের ক্যাটফিশ খেতে শুরু করে থাকতে পারে, তবে গবেষণায় তাদের খাদ্য পরীক্ষা করা হয়নি।',
+                'একজন সহ-লেখক বলেন, দূষণ বন্ধ করাই অগ্রাধিকার, আর নৌযান চলাচলও প্রাণীগুলোকে বিরক্ত করে বলে ধারণা। ২০২৫ সালের একটি জাতীয় জরিপে সারা দেশে প্রায় ২,৩০০ নদীর শুশুকের হিসাব পাওয়া গেছে।',
+            ],
             'body' => [
                 'Endangered Ganges river dolphins are still living in the Buriganga, one of the most polluted rivers in Bangladesh, according to a new study. The researchers estimate about 20 dolphins in the river.',
                 'The team surveyed a 27 km stretch over 12 months, from September 2023 to August 2024, and spotted dolphins in 10 of the 12 months. The river takes untreated industrial waste and sewage, and earlier work found oxygen levels close to zero in the dry season, yet the dolphins persist. Researchers suspect they may have shifted to an invasive catfish for food, but the study did not test their diet.',
@@ -399,6 +489,11 @@ return [
             'title_bn' => 'গুলশানের কেন্দ্রীয় পার্ক নিয়ে বিরোধ চলছে',
             'summary' => 'A fifth complaint has been filed over encroachment, in a long-running fight over who controls the eight-acre park.',
             'summary_bn' => 'আট একরের পার্কটির নিয়ন্ত্রণ নিয়ে দীর্ঘদিনের বিরোধে দখলের অভিযোগে পঞ্চম অভিযোগ দায়ের হয়েছে।',
+            'body_bn' => [
+                'গুলশানের একটি পার্কে দখল নিয়ে পঞ্চম অভিযোগ দায়ের হয়েছে, যা আট একরের এই সবুজ জায়গা - সাবেক গুলশান সেন্ট্রাল পার্ক, এখন শহীদ তাজউদ্দীন আহমদ স্মৃতি পার্ক - নিয়ে দীর্ঘদিনের বিরোধে যুক্ত হলো।',
+                '২০২২ সালে হাইকোর্ট রায় দেয় যে গুলশান মডেল টাউন পরিকল্পনায় প্লটটি পার্ক হিসেবে নির্ধারিত। তবু মাত্র প্রায় ৩.৩ একর জনসাধারণের জন্য খোলা হয়; বাকিটা গুলশান ইয়ুথ ক্লাবের নিয়ন্ত্রণে, যারা ফুটবল টার্ফ চালায় ও ঘণ্টা হিসাবে ভাড়া নেয়। ২০২৫ সালের সেপ্টেম্বরে কর্মী, আইনজীবী ও শিক্ষাবিদরা ব্যবস্থাপনা চুক্তিকে চ্যালেঞ্জ করে আইনি নোটিশ পাঠান।',
+                'রাজউক বলছে পার্কটি তার মালিকানায় আছে, আর ঢাকা উত্তর সিটি করপোরেশন বলছে আনুষ্ঠানিকভাবে নাম বদল হয়নি। ঢাকায় খোলা জায়গা দুর্লভ, তাই বাসিন্দা ও পরিবেশবাদী সংগঠনগুলো মামলাটি নিবিড়ভাবে লক্ষ করছে।',
+            ],
             'body' => [
                 'A fifth complaint has been filed over encroachment on a Gulshan park, adding to a long-running dispute over the eight-acre green space formerly known as Gulshan Central Park, now named Shaheed Tajuddin Ahmad Smriti Park.',
                 'In 2022 the High Court ruled that the plot was designated as a park in the Gulshan Model Town plan. Only about 3.3 acres were reopened to the public, however, and the rest remains under the control of the Gulshan Youth Club, which runs a football turf and charges hourly rent. In September 2025, activists, lawyers and academics served a legal notice challenging the management agreement.',
@@ -412,6 +507,11 @@ return [
             'title_bn' => 'বাংলাদেশের ব্লু কার্বনের সম্ভাবনা নিয়ে সেমিনার',
             'summary' => 'A seminar in Cox’s Bazar heard that coastal ecosystems could attract climate finance through carbon credits.',
             'summary_bn' => 'কক্সবাজারের সেমিনারে বলা হয়েছে, উপকূলীয় বাস্তুতন্ত্র কার্বন ক্রেডিটের মাধ্যমে জলবায়ু অর্থায়ন আনতে পারে।',
+            'body_bn' => [
+                'ব্লু কার্বন বিজ্ঞানসম্মতভাবে পরিমাপ ও সংরক্ষণ করা গেলে বাংলাদেশের উপকূলীয় বাস্তুতন্ত্র জলবায়ু অর্থায়ন ও কার্বন ক্রেডিটের পথ খুলতে পারে, কক্সবাজারের একটি সেমিনারে ১৩ অক্টোবর, মঙ্গলবার এ কথা বলা হয়।',
+                'ব্লু কার্বন হলো ম্যানগ্রোভ, লবণাক্ত জলাভূমি ও সামুদ্রিক ঘাসের মতো উপকূলীয় আবাসস্থলে সঞ্চিত কার্বন। বাংলাদেশে বিশ্বের বৃহত্তম ম্যানগ্রোভ বন সুন্দরবন এবং দীর্ঘ উপকূল আছে।',
+                'বাংলাদেশ সমুদ্রবিজ্ঞান গবেষণা ইনস্টিটিউটের আয়োজিত অনুষ্ঠানে বক্তারা বলেন, ক্রেডিট দাবি করার আগে দেশের নির্ভরযোগ্য পরিমাপ দরকার।',
+            ],
             'body' => [
                 'Bangladesh’s coastal ecosystems could open the way for climate finance and carbon credits if blue carbon is scientifically measured and conserved, a seminar in Cox’s Bazar was told on Tuesday 13 October.',
                 'Blue carbon is the carbon stored in coastal habitats such as mangroves, salt marshes and seagrass. Bangladesh has the Sundarbans, the world’s largest mangrove forest, and a long coast.',
@@ -425,6 +525,11 @@ return [
             'title_bn' => 'সেপ্টেম্বরে স্বাভাবিকের চেয়ে ১৭.৯ শতাংশ কম বৃষ্টি',
             'summary' => 'The Bangladesh Meteorological Department says September rainfall fell short of normal.',
             'summary_bn' => 'আবহাওয়া অধিদপ্তর জানিয়েছে, সেপ্টেম্বরে বৃষ্টিপাত স্বাভাবিকের চেয়ে কম ছিল।',
+            'body_bn' => [
+                'আবহাওয়া অধিদপ্তরের তথ্য অনুযায়ী, সেপ্টেম্বরে বাংলাদেশে স্বাভাবিকের চেয়ে ১৭.৯ শতাংশ কম বৃষ্টি হয়েছে।',
+                'ঘাটতিটি বর্ষার শেষে এসেছে, যে ঋতুতে দেশের বছরের বেশির ভাগ বৃষ্টি হয়। স্বাভাবিকের কম বৃষ্টি মৌসুমের শেষ দিকের ফসল ও নদীর পানির স্তরে প্রভাব ফেলতে পারে।',
+                'ঋতু ও প্রতিটি অঞ্চলের জলবায়ু জানতে আমাদের ভূগোল বিভাগ দেখুন।',
+            ],
             'body' => [
                 'Bangladesh received 17.9 percent less rainfall than normal in September, according to the Bangladesh Meteorological Department.',
                 'The shortfall comes at the end of the monsoon, a season that supplies most of the country’s annual rain. Below-normal rain can affect late-season crops and the water levels of rivers.',
@@ -438,6 +543,11 @@ return [
             'title_bn' => 'এক দশকে ১৪৬টি হাতির মৃত্যু, অপরিকল্পিত প্রকল্পে আটকে যাচ্ছে চলাচলের পথ',
             'summary' => 'The environment minister gave the toll for 2016 to 2025, while speakers said development is cutting migration routes.',
             'summary_bn' => '২০১৬ থেকে ২০২৫ সালের মৃত্যুর হিসাব দিয়েছেন পরিবেশমন্ত্রী; আলোচনায় বক্তারা বলেছেন উন্নয়ন হাতির করিডর বন্ধ করছে।',
+            'body_bn' => [
+                'পরিবেশ, বন ও জলবায়ু পরিবর্তন মন্ত্রী আবদুল আউয়াল মিন্টু বন বিভাগের তথ্য উদ্ধৃত করে ২৬ সেপ্টেম্বর জানান, ২০১৬ থেকে ২০২৫ সালের মধ্যে বাংলাদেশে অন্তত ১৪৬টি হাতি মারা গেছে।',
+                'আগস্টে বিশ্ব হাতি দিবসের এক আলোচনায় বক্তারা বলেন, অপরিকল্পিত অবকাঠামো হাতিদের বনে বনে চলাচলের ঐতিহ্যবাহী করিডর আটকে দিচ্ছে, তাদের চলাচল ব্যাহত করছে এবং মানুষের সঙ্গে সংঘাতের ঝুঁকি বাড়াচ্ছে।',
+                'বুনো হাতি মূলত চট্টগ্রাম, কক্সবাজার ও সিলেটের পাহাড়ে এবং শেরপুর-ময়মনসিংহের আশপাশে উত্তরে দেখা যায়।',
+            ],
             'body' => [
                 'At least 146 elephants died in Bangladesh between 2016 and 2025, Environment, Forest and Climate Change Minister Abdul Awal Mintoo said on 26 September, citing Forest Department data.',
                 'At a World Elephant Day discussion in August, speakers said unplanned infrastructure was blocking the traditional corridors elephants use to move between forests, disrupting their movement and raising the risk of conflict with people.',
@@ -451,6 +561,11 @@ return [
             'title_bn' => 'জাতিসংঘে জলবায়ু বিষয়ে পাঁচ দফা দাবি তুললেন তারেক রহমান',
             'summary' => 'The prime minister called for deeper emissions cuts, predictable finance, technology access, renewables and the Loss and Damage Fund.',
             'summary_bn' => 'গভীর নিঃসরণ হ্রাস, নির্ভরযোগ্য অর্থায়ন, প্রযুক্তি প্রাপ্যতা, নবায়নযোগ্য জ্বালানি ও ক্ষয়ক্ষতি তহবিল বাস্তবায়নের দাবি।',
+            'body_bn' => [
+                'প্রধানমন্ত্রী তারেক রহমান সেপ্টেম্বরে জাতিসংঘে জলবায়ু বিষয়ে আন্তর্জাতিক সম্প্রদায়ের সামনে পাঁচটি জরুরি দাবি তুলে ধরেছেন।',
+                'তিনি গভীর নিঃসরণ হ্রাস, নির্ভরযোগ্য জলবায়ু অর্থায়ন, জলবায়ু-বান্ধব প্রযুক্তিতে বেশি প্রবেশাধিকার, নবায়নযোগ্য জ্বালানির সম্প্রসারণ এবং ক্ষয়ক্ষতি তহবিল পূর্ণভাবে বাস্তবায়নের আহ্বান জানান।',
+                'বাংলাদেশ সমুদ্রপৃষ্ঠের উচ্চতা বৃদ্ধি, ঘূর্ণিঝড় ও বন্যায় সবচেয়ে ঝুঁকিপূর্ণ দেশগুলোর একটি, তাই জলবায়ু অর্থায়ন এর কূটনীতির পুনরাবৃত্ত বিষয়।',
+            ],
             'body' => [
                 'Prime Minister Tarique Rahman placed five urgent demands before the international community on climate at the United Nations in September.',
                 'He called for deeper cuts in emissions, predictable climate finance, greater access to climate-smart technologies, expanded renewable energy and full implementation of the Loss and Damage Fund.',
@@ -464,6 +579,11 @@ return [
             'title_bn' => 'জলবায়ু পরিবর্তনে ২ কোটি ২০ লাখ শিশু বাড়তি তাপের চাপে',
             'summary' => 'A report says millions of children aged 0 to 9 are already exposed to additional dangerous heat.',
             'summary_bn' => '০ থেকে ৯ বছর বয়সী লাখ লাখ শিশু ইতিমধ্যে বিপজ্জনক বাড়তি তাপের মুখে পড়ছে।',
+            'body_bn' => [
+                'জলবায়ু পরিবর্তন ইতিমধ্যে বাংলাদেশের লাখ লাখ শিশুকে বাড়তি বিপজ্জনক তাপের চাপে ফেলছে। একটি প্রতিবেদনে আক্রান্তদের মধ্যে ০ থেকে ৯ বছর বয়সী ২ কোটি ২০ লাখ শিশুর কথা বলা হয়েছে।',
+                'ছোট শিশুরা বড়দের চেয়ে তাপে বেশি ঝুঁকিতে, কারণ তাদের শরীর কম কার্যকরভাবে ঠান্ডা হয়। তাপপ্রবাহ পড়াশোনা ব্যাহত করতে ও অসুখের ঝুঁকি বাড়াতেও পারে।',
+                'তাপপ্রবাহের সময় অভিভাবকদের উচিত শিশুদের পানি পান করানো এবং দুপুরের রোদ থেকে দূরে রাখা।',
+            ],
             'body' => [
                 'Climate change is already exposing millions of children in Bangladesh to extra dangerous heat stress. A report counts 22 million children aged 0 to 9 among those affected.',
                 'Young children are more vulnerable to heat than adults because their bodies cool less efficiently. Heatwaves can also disrupt schooling and increase the risk of illness.',
@@ -477,6 +597,11 @@ return [
             'title_bn' => 'বন্যাকবলিত নেপালে সতর্ক থাকতে বাংলাদেশি পর্যটকদের পরামর্শ দূতাবাসের',
             'summary' => 'The Bangladesh embassy in Kathmandu advised caution in areas affected by heavy rain, floods and landslides.',
             'summary_bn' => 'ভারী বৃষ্টি, বন্যা ও ভূমিধসে আক্রান্ত এলাকায় ভ্রমণে সতর্ক থাকতে বলেছে কাঠমান্ডুর বাংলাদেশ দূতাবাস।',
+            'body_bn' => [
+                'কাঠমান্ডুর বাংলাদেশ দূতাবাস বাংলাদেশি পর্যটক ও ট্রেকারদের ভারী বৃষ্টি, বন্যা ও ভূমিধসে আক্রান্ত নেপালের কিছু এলাকায় ভ্রমণে সতর্ক থাকতে পরামর্শ দিয়েছে।',
+                'নেপাল বাংলাদেশি ভ্রমণকারীদের জনপ্রিয় বহির্গামী গন্তব্য, আর বর্ষা ও তার পরের সময়ে পাহাড় ও ট্রেকিং এলাকায় সড়ক বন্ধ ও ভূমিধসের ঝুঁকি থাকে।',
+                'রওনা হওয়ার আগে ভ্রমণকারীদের উচিত ট্যুর অপারেটর ও দূতাবাসের কাছে পরিস্থিতি জেনে নেওয়া এবং বিমা রাখা।',
+            ],
             'body' => [
                 'The Bangladesh embassy in Kathmandu has advised Bangladeshi tourists and trekkers to take care when travelling in parts of Nepal affected by heavy rainfall, floods and landslides.',
                 'Nepal is a popular outbound destination for Bangladeshi travellers, and the monsoon and its aftermath bring road closures and landslide risks to hill and trekking areas.',
@@ -528,6 +653,12 @@ return [
             'title_bn' => 'এআই-নির্ভর হয়রানি ঠেকাতে সাইবার আইনের খসড়া, বাকস্বাধীনতা নিয়ে উদ্বেগ',
             'summary' => 'A draft law targeting AI-generated fakes and online abuse of women is under review, and civil society groups say its wording is too broad.',
             'summary_bn' => 'এআই-তৈরি ভুয়া কনটেন্ট ও নারীদের অনলাইন হয়রানি ঠেকানোর খসড়া আইন পর্যালোচনায়; নাগরিক সংগঠনগুলো বলছে ভাষা অতি বিস্তৃত।',
+            'body_bn' => [
+                'সরকার এআই-তৈরি ভুয়া কনটেন্ট ও নারীদের অনলাইন হয়রানি ঠেকাতে আরও কঠোর সাইবার আইন বিবেচনা করছে। খসড়াটির লক্ষ্য এআই-তৈরি কনটেন্টের ক্ষতি, বিশেষত নারীদের অনলাইনে হয়রানিতে ব্যবহৃত কনটেন্ট।',
+                'সমালোচকরা বলছেন, খসড়া সে লক্ষ্যের চেয়েও এগিয়ে গেছে। নাগরিক সংগঠন কনস্টিটিউশন ওয়াচডগ সতর্ক করেছে, গুজব, মানহানি ও অপতথ্য নিয়ে বিস্তৃত ধারাগুলো আগের ডিজিটাল নিরাপত্তা আইনগুলোর বিরুদ্ধে অভিযুক্ত সেন্সরশিপ ফিরিয়ে আনতে পারে এবং অনলাইনে মতপ্রকাশের স্বাধীনতাকে হুমকিতে ফেলতে পারে।',
+                'সংগঠনটি সরকারকে বর্তমান আকারে খসড়া প্রত্যাহার এবং কমপক্ষে ৩০ দিনের জন্য জনমত গ্রহণ আবার খুলে দিতে অনুরোধ করেছে। ডিজিটাল-অধিকারকর্মীরা সাধারণত বলেন, এআই অপব্যবহারের আইন সংকীর্ণভাবে লেখা, ক্ষতিগুলো নির্দিষ্টভাবে সংজ্ঞায়িত এবং অপব্যবহার ঠেকানোর রক্ষাকবচসহ হওয়া উচিত।',
+                'ফলাফল বাংলাদেশের প্রতিটি ইন্টারনেট ব্যবহারকারীর জন্য গুরুত্বপূর্ণ - সাংবাদিক ও শিক্ষার্থী থেকে সামাজিক মাধ্যমে বিক্রয়কারী ছোট ব্যবসায়ী পর্যন্ত। খসড়া সংশোধিত হলে বা জনমতের জন্য উন্মুক্ত হলে আস্কবাংলাদেশ এই সংবাদ হালনাগাদ করবে।',
+            ],
             'body' => [
                 'The government is weighing a tougher cyber law aimed at AI-generated fakes and the online abuse of women. The draft is aimed at harm caused by AI-generated content, particularly content used to abuse women online.',
                 'Critics say the draft goes further than that goal. The civil society group Constitution Watchdog has warned that broad provisions on rumours, defamation and disinformation could revive the kind of censorship that earlier digital-security laws were accused of enabling, and could threaten free expression online.',
@@ -581,6 +712,11 @@ return [
             'title_bn' => 'বিশ্ব পর্যটন দিবসে পর্যটনে এআই ও ডিজিটাল প্রযুক্তির কথা বলল বাংলাদেশ',
             'summary' => 'Officials said a National Tourism Policy 2026 is being prepared and highlighted digital transformation of the sector.',
             'summary_bn' => 'কর্মকর্তারা জানিয়েছেন জাতীয় পর্যটন নীতি ২০২৬ প্রণয়ন চলছে এবং খাতটির ডিজিটাল রূপান্তরের ওপর জোর দেওয়া হয়েছে।',
+            'body_bn' => [
+                '৩ অক্টোবরের বিশ্ব পর্যটন দিবসের অনুষ্ঠানে বাংলাদেশি কর্মকর্তারা খাতটি আধুনিকায়নের উদ্যোগের অংশ হিসেবে কৃত্রিম বুদ্ধিমত্তা ও ডিজিটাল সরঞ্জাম ব্যবহার করে পর্যটন সম্প্রসারণের পরিকল্পনা তুলে ধরেন।',
+                'কর্মকর্তারা জানান, জাতীয় পর্যটন নীতি ২০২৬ প্রণয়ন চলছে। একই সঙ্গে খাতটির জন্য দীর্ঘমেয়াদি মহাপরিকল্পনাও খসড়া হচ্ছে।',
+                'একই প্রতিবেদনগুলো খাতটির সবচেয়ে বড় দুর্বলতা স্বীকার করেছে: অবকাঠামো। সড়ক, হোটেল, স্যানিটেশন ও দুর্গম আকর্ষণে যোগাযোগ এখনও আঞ্চলিক প্রতিবেশীদের চেয়ে পিছিয়ে, আর এশিয়া-প্রশান্ত অঞ্চলের একটি পর্যটন উন্নয়ন সূচকে বাংলাদেশ সবার নিচে।',
+            ],
             'body' => [
                 'At a World Tourism Day programme on 3 October, Bangladeshi officials set out plans to expand tourism using artificial intelligence and digital tools, as part of efforts to modernise the sector.',
                 'Officials said a National Tourism Policy 2026 is being prepared. Officials are also drafting a longer-term master plan for the sector.',
@@ -594,6 +730,12 @@ return [
             'title_bn' => '২০ বছরের পর্যটন মহাপরিকল্পনার খসড়া করছে সরকার',
             'summary' => 'The plan covers about 1,500 catalogued attractions, and 60 priority projects worth around Tk 19,000 crore have been identified.',
             'summary_bn' => 'পরিকল্পনায় প্রায় ১ হাজার ৫০০ আকর্ষণ অন্তর্ভুক্ত; প্রায় ১৯ হাজার কোটি টাকার ৬০টি অগ্রাধিকার প্রকল্প চিহ্নিত।',
+            'body_bn' => [
+                'সরকার পর্যটনের ২০ বছরের মহাপরিকল্পনা খসড়া করছে, যার লক্ষ্য ছড়ানো-ছিটানো আকর্ষণগুলোকে সংগঠিত, বেশি আয়ের শিল্পে পরিণত করা। পর্যটন বোর্ড আশা করছে ২০২৬ সালের শেষে পরিকল্পনাটি চূড়ান্ত হবে।',
+                'পরিকল্পনায় সারা দেশের প্রায় ১,৫০০ তালিকাভুক্ত আকর্ষণ অন্তর্ভুক্ত। বাংলাদেশ পর্যটন করপোরেশন প্রায় ১৯ হাজার কোটি টাকা ব্যয়ের ৬০টি প্রকল্পকে অগ্রাধিকার দিয়েছে। প্রস্তাবিত ক্ষেত্রের মধ্যে সুন্দরবন ঘিরে ইকো-ট্যুরিজম, কমিউনিটি হোমস্টে এবং গ্রামীণ ও কৃষি পর্যটন।',
+                'কক্সবাজারকে সম্ভাব্য আঞ্চলিক পর্যটন কেন্দ্র হিসেবে বিবেচনা করা হচ্ছে, টেকসই পর্যটন ও স্মার্ট-সিটি উন্নয়নে মনোযোগী আলাদা মহাপরিকল্পনাসহ।',
+                'এগুলো পরিকল্পনা, সম্পন্ন প্রকল্প নয়, সময়সূচি বদলাতে পারে। আজই যেসব জায়গায় যাওয়া যায় তার জন্য ভ্রমণ বিভাগ দেখুন, যেখানে এখন ৪৫টি গন্তব্য আছে।',
+            ],
             'body' => [
                 'The government is drafting a 20-year master plan for tourism that aims to turn a scattered collection of attractions into an organised, higher-earning industry. The Tourism Board expects the plan to be finalised by the end of 2026.',
                 'The plan covers about 1,500 catalogued attractions across the country. The Bangladesh Parjatan Corporation has prioritised 60 projects costing around Tk 19,000 crore. Proposed areas include eco-tourism around the Sundarbans, community homestays, and rural and agro-tourism.',
@@ -608,6 +750,11 @@ return [
             'title_bn' => 'বাজারভিত্তিক বিনিময় হারে ডলার প্রায় ১২২ টাকায়',
             'summary' => 'Market data from August 2026 showed the dollar at roughly Tk 122, within a weekly range of about Tk 122–123.6.',
             'summary_bn' => '২০২৬ সালের আগস্টে ডলার প্রায় ১২২ টাকায় লেনদেন হয়েছে, সাপ্তাহিক ওঠানামা ছিল আনুমানিক ১২২ থেকে ১২৩.৬ টাকা।',
+            'body_bn' => [
+                '২০২৬ সালের আগস্টে মার্কিন ডলার প্রায় ১২২ টাকায় লেনদেন হয়েছে; এক সপ্তাহে টাকার সমাপনী হার ছিল আনুমানিক ১২২ থেকে ১২৩.৬ টাকার মধ্যে। জুলাইয়ে হার প্রায় ১২৩.৩৫ টাকা ছুঁয়েছিল, যা এক ডেটা সরবরাহকারী ডলারের ঐতিহাসিক সর্বোচ্চ বলেছে।',
+                'এই গতি ২০২৫ সালের মে মাসে বাংলাদেশ ব্যাংকের নমনীয় বিনিময় হার কাঠামোয় যাওয়ার ধারাবাহিকতা, যেখানে সীমার মধ্যে বাজারশক্তি হার ঠিক করে। দীর্ঘমেয়াদে ২০১৬ সাল থেকে টাকার বিপরীতে ডলার ৫০ শতাংশের বেশি বেড়েছে।',
+                'ব্যাংক, এক্সচেঞ্জ হাউস ও ওয়েবসাইটের উদ্ধৃত হার আলাদা। নির্দেশক হার ও রূপান্তরের জন্য মুদ্রা পাতা ব্যবহার করুন এবং টাকা পাঠানো বা বদলানোর আগে আপনার ব্যাংকে প্রকৃত হার যাচাই করুন।',
+            ],
             'body' => [
                 'In August 2026 the US dollar traded at roughly Tk 122, with the taka’s closing rate moving between about Tk 122 and Tk 123.6 over a week. In July the rate had touched about Tk 123.35, described by one data provider as a historical high for the dollar.',
                 'The move follows Bangladesh Bank’s shift in May 2025 to a flexible exchange-rate framework in which market forces, within limits, determine the rate. Over the longer run, the dollar has gained more than 50 percent against the taka since 2016.',
@@ -621,6 +768,11 @@ return [
             'title_bn' => '২০২৬-এর প্রথম ছয় মাসে স্টার্টআপে বিনিয়োগ তীব্র কমেছে',
             'summary' => 'A mid-year report recorded about US$6 million across six deals, roughly 95% below the same period of 2025.',
             'summary_bn' => 'একটি অর্ধবার্ষিক প্রতিবেদনে ছয়টি চুক্তিতে প্রায় ৬০ লাখ ডলার বিনিয়োগ, আগের বছরের একই সময়ের তুলনায় প্রায় ৯৫ শতাংশ কম।',
+            'body_bn' => [
+                'একটি অর্ধবার্ষিক বিনিয়োগ প্রতিবেদন অনুযায়ী, ২০২৬ সালের প্রথম ছয় মাসে বাংলাদেশি স্টার্টআপ ছয়টি চুক্তিতে প্রায় ৬০ লাখ ডলার সংগ্রহ করেছে। ২০২৫ সালের প্রথমার্ধের তুলনায় এটি প্রায় ৯৫% কম।',
+                'ডিজিটাল অর্থনীতি নিয়ে সরকারের উচ্চাকাঙ্ক্ষার সঙ্গে এই মন্দা বৈপরীত্যপূর্ণ। প্রতিবেদনের অঙ্কটি নথিভুক্ত চুক্তির, তাই সব ব্যক্তিগত রাউন্ড হয়তো এতে নেই।',
+                'একটি শিল্প-সংকলন ২০১০ সাল থেকে স্টার্টআপে মোট বিনিয়োগ ১১০ কোটি ডলারের কিছু বেশি বলেছে, যা আমরা স্বাধীনভাবে নিশ্চিত করতে পারিনি। বিনিয়োগ কত দ্রুত ফিরবে, তা ওপরের ডিজিটাল-চাকরির লক্ষ্যের জন্য খোলা প্রশ্ন।',
+            ],
             'body' => [
                 'Bangladeshi startups raised about US$6 million across six deals in the first half of 2026, according to a mid-year investment report. That is a fall of roughly 95% from the first half of 2025.',
                 'The slump contrasts with the government’s ambitions for the digital economy. The report’s figure covers recorded deals, so it may not capture every private round.',
@@ -634,6 +786,11 @@ return [
             'title_bn' => '২০২৫-২৬ অর্থবছরে রেকর্ড রেমিট্যান্স, মূল্যস্ফীতি কমেছে',
             'summary' => 'Inward remittances reached roughly US$35 billion in FY26, and headline inflation eased to 8.32% in July.',
             'summary_bn' => '২০২৬ অর্থবছরে প্রবাসী আয় প্রায় ৩ হাজার ৫০০ কোটি ডলারে পৌঁছেছে; জুলাইয়ে মূল্যস্ফীতি নেমেছে ৮.৩২ শতাংশে।',
+            'body_bn' => [
+                'প্রবাসী বাংলাদেশিদের পাঠানো অর্থ ২০২৫-২৬ অর্থবছরে প্রায় ৩,৫০০ কোটি মার্কিন ডলারের রেকর্ডে পৌঁছেছে, আগের বছরের চেয়ে প্রায় ১৭% বেশি। সঠিক অঙ্কে সূত্রভেদে সামান্য পার্থক্য আছে - ৩,৫৩০ কোটি থেকে ৩,৫৬০ কোটি ডলার।',
+                'এই আয় বছরে বাংলাদেশ ব্যাংকের বৈদেশিক মুদ্রাবাজার থেকে নিট ৬৪০ কোটি ডলার কিনতে সাহায্য করেছে এবং প্রায় ৬৬০ কোটি ডলারের লেনদেন ভারসাম্য উদ্বৃত্ত সমর্থন করেছে।',
+                'মে মাসের ৯.৪২% থেকে ২০২৬ সালের জুলাইয়ে মূল্যস্ফীতি নেমেছে ৮.৩২%-এ। ২০২৬ অর্থবছরের প্রবৃদ্ধির অনুমান ভিন্ন: বিবিএস সাময়িকভাবে ৪.১৪%, এডিবি ৩.৭% বলেছে এবং ২০২৭ অর্থবছরে ৪.৫% পূর্বাভাস দিয়েছে। এডিবি সতর্ক করেছে, মধ্যপ্রাচ্যে সংঘাত বাড়লে জ্বালানি ও জাহাজভাড়া বাড়তে এবং রেমিট্যান্স কমতে পারে।',
+            ],
             'body' => [
                 'Money sent home by Bangladeshis abroad reached a record of roughly US$35 billion in the 2025-26 fiscal year, up about 17% on the year before. Sources differ slightly on the exact total, at between US$35.3 billion and US$35.6 billion.',
                 'The inflows helped Bangladesh Bank buy a net US$6.4 billion from the foreign-exchange market during the year and supported a balance-of-payments surplus of about US$6.6 billion.',

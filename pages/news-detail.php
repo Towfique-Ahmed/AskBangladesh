@@ -66,7 +66,7 @@ require APP_ROOT . '/includes/layout/header.php';
     <p style="line-height:1.75;margin:0 0 1rem"><?= e($paragraph) ?></p>
   <?php endforeach; ?>
   <p style="margin:1.2rem 0 0;color:var(--text-mute);font-size:.85rem">
-    <?= e(tf('By the AskBangladesh news desk. Based on %s. Figures and plans may change after publication.', $story['source'])) ?>
+    <?= e(tf('By the AskBangladesh news desk. Based on %s. Figures and plans may change after publication.', bd_source($story['source']))) ?>
   </p>
 </article>
 
