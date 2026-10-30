@@ -33,7 +33,7 @@ $seo = bd_seo(bd_page_seo('home') + [
     ],
 ]);
 
-$typer = json_encode([
+$typer = json_encode(array_map('t', [
     'the world’s largest river delta.',
     'all 64 districts, mapped and searchable.',
     'today’s gold price, in bhori and grams.',
@@ -41,7 +41,7 @@ $typer = json_encode([
     'the Taka against 30+ world currencies.',
     'the longest sea beach on the planet.',
     'every government e-service link you need.',
-], JSON_UNESCAPED_UNICODE);
+]), JSON_UNESCAPED_UNICODE);
 
 require APP_ROOT . '/includes/layout/header.php';
 ?>
@@ -50,37 +50,32 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="hero__inner">
     <div>
       <span class="hero__badge" data-reveal>🇧🇩 <?= e($profile['bn_name']) ?></span>
-      <h1 data-reveal="60">Ask anything about<br><span class="grad">Bangladesh</span></h1>
+      <h1 data-reveal="60"><?= e(t('Ask anything about')) ?><br><span class="grad"><?= e(t('Bangladesh')) ?></span></h1>
       <p class="hero__typer" data-typer='<?= e($typer) ?>' data-reveal="120"></p>
-      <p class="hero__lead" data-reveal="160">
-        One place for the people of Bangladesh and for everyone curious about it - an interactive
-        map, live clocks and converters, district data, travel guides, sun times, gold rates
-        and the government directory, all searchable from a single box. Every figure is sourced
-        from official statistics and government portals, and reference data is reviewed as the
-        country itself changes.
+      <p class="hero__lead" data-reveal="160"> <?= e(t('One place for the people of Bangladesh and for everyone curious about it - an interactive map, live clocks and converters, district data, travel guides, sun times, gold rates and the government directory, all searchable from a single box. Every figure is sourced from official statistics and government portals, and reference data is reviewed as the country itself changes.')) ?>
       </p>
 
       <div class="hero__cta" data-reveal="220">
-        <a class="btn btn--primary" href="<?= e(bd_url('map')) ?>">🗺️ Open the interactive map</a>
-        <a class="btn" href="<?= e(bd_url('search')) ?>">🔍 Search everything</a>
+        <a class="btn btn--primary" href="<?= e(bd_url('map')) ?>">🗺️ <?= e(t('Open the interactive map')) ?></a>
+        <a class="btn" href="<?= e(bd_url('search')) ?>">🔍 <?= e(t('Search everything')) ?></a>
       </div>
 
       <div class="hero__stats" data-reveal="280">
         <div class="hero__stat">
           <strong data-count-to="64">64</strong>
-          <span>Districts</span>
+          <span><?= e(t('Districts')) ?></span>
         </div>
         <div class="hero__stat">
           <strong data-count-to="8">8</strong>
-          <span>Divisions</span>
+          <span><?= e(t('Divisions')) ?></span>
         </div>
         <div class="hero__stat">
           <strong data-count-to="907">907</strong>
-          <span>Rivers</span>
+          <span><?= e(t('Rivers')) ?></span>
         </div>
         <div class="hero__stat">
           <strong data-count-to="171" data-count-suffix="M">171M</strong>
-          <span>People</span>
+          <span><?= e(t('People')) ?></span>
         </div>
       </div>
     </div>
@@ -107,24 +102,24 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------ live strip -->
 <section class="section">
   <div class="section__head">
-    <h2>Live right now</h2>
-    <p>Bangladesh Standard Time is UTC+06:00 all year - no daylight saving.</p>
+    <h2><?= e(t('Live right now')) ?></h2>
+    <p><?= e(t('Bangladesh Standard Time is UTC+06:00 all year - no daylight saving.')) ?></p>
   </div>
 
   <div class="grid grid--4">
     <div class="card" data-reveal>
-      <h3>🕰️ Time in Bangladesh</h3>
+      <h3>🕰️ <?= e(t('Time in Bangladesh')) ?></h3>
       <div style="font:700 2rem/1.2 var(--mono); color:var(--green-300)" data-bd-clock>--:--:--</div>
       <p data-bd-date>&nbsp;</p>
     </div>
 
     <div class="card" data-reveal="60">
-      <h3><?= e($next['emoji']) ?> Next: <?= e($next['name']) ?></h3>
+      <h3><?= e($next['emoji']) ?> <?= e(t('Next:')) ?> <?= e($next['name']) ?></h3>
       <div class="countdown" data-countdown="<?= e($next['target']) ?>" style="margin-top:.6rem">
-        <div class="countdown__cell"><div class="countdown__num" data-cd-d>0</div><div class="countdown__lbl">Days</div></div>
-        <div class="countdown__cell"><div class="countdown__num" data-cd-h>00</div><div class="countdown__lbl">Hrs</div></div>
-        <div class="countdown__cell"><div class="countdown__num" data-cd-m>00</div><div class="countdown__lbl">Min</div></div>
-        <div class="countdown__cell"><div class="countdown__num" data-cd-s>00</div><div class="countdown__lbl">Sec</div></div>
+        <div class="countdown__cell"><div class="countdown__num" data-cd-d>0</div><div class="countdown__lbl"><?= e(t('Days')) ?></div></div>
+        <div class="countdown__cell"><div class="countdown__num" data-cd-h>00</div><div class="countdown__lbl"><?= e(t('Hrs')) ?></div></div>
+        <div class="countdown__cell"><div class="countdown__num" data-cd-m>00</div><div class="countdown__lbl"><?= e(t('Min')) ?></div></div>
+        <div class="countdown__cell"><div class="countdown__num" data-cd-s>00</div><div class="countdown__lbl"><?= e(t('Sec')) ?></div></div>
       </div>
     </div>
 
@@ -135,19 +130,19 @@ require APP_ROOT . '/includes/layout/header.php';
     $g22   = $gold['gold'][0] ?? null;
     ?>
     <a class="card" href="<?= e(bd_url('currency')) ?>" data-reveal="120">
-      <h3>💱 US Dollar</h3>
+      <h3>💱 <?= e(t('US Dollar')) ?></h3>
       <div style="font:700 2rem/1.2 var(--mono); color:var(--green-300)">
         ৳ <?= $usd > 0 ? bd_num(1 / $usd, 2) : '-' ?>
       </div>
-      <p>per 1 USD · <?= $rates['live'] ? 'live rate' : 'indicative' ?></p>
+      <p><?= e(t('per 1 USD')) ?> · <?= e($rates['live'] ? t('live rate') : t('indicative')) ?></p>
     </a>
 
     <a class="card" href="<?= e(bd_url('gold')) ?>" data-reveal="180">
-      <h3>🥇 Gold 22K</h3>
+      <h3>🥇 <?= e(t('Gold 22K')) ?></h3>
       <div style="font:700 2rem/1.2 var(--mono); color:var(--gold-500)">
         ৳ <?= $g22 ? bd_num($g22['bhori']) : '-' ?>
       </div>
-      <p>per bhori (11.664 g)</p>
+      <p><?= e(t('per bhori (11.664 g)')) ?></p>
     </a>
   </div>
 </section>
@@ -155,16 +150,16 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ----------------------------------------------------------------- news -->
 <section class="section">
   <div class="section__head">
-    <h2>Trending in Bangladesh</h2>
-    <p><a href="<?= e(bd_url('news')) ?>" style="color:var(--green-300)">All tech, tourism &amp; economy news →</a></p>
+    <h2><?= e(t('Trending in Bangladesh')) ?></h2>
+    <p><a href="<?= e(bd_url('news')) ?>" style="color:var(--green-300)"><?= e(t('All news →')) ?></a></p>
   </div>
 
   <div class="grid grid--3">
     <?php foreach ($news as $i => $n): ?>
       <a class="card" href="<?= e(bd_news_url($n)) ?>" data-reveal="<?= $i * 50 ?>">
         <div style="font-size:2rem"><?= $n['emoji'] ?></div>
-        <h3><?= e($n['title']) ?></h3>
-        <span class="badge"><?= e($n['category']) ?></span>
+        <h3><?= e(bd_l($n, 'title')) ?></h3>
+        <span class="badge"><?= e(t($n['category'])) ?></span>
         <span class="badge badge--gold"><?= e(bd_news_date($n['date'])) ?></span>
       </a>
     <?php endforeach; ?>
@@ -174,8 +169,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ---------------------------------------------------------------- tools -->
 <section class="section">
   <div class="section__head">
-    <h2>Everything in one place</h2>
-    <p>Tools and reference libraries, all cross-linked and all searchable.</p>
+    <h2><?= e(t('Everything in one place')) ?></h2>
+    <p><?= e(t('Tools and reference libraries, all cross-linked and all searchable.')) ?></p>
   </div>
 
   <div class="grid grid--3">
@@ -193,8 +188,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- --------------------------------------------------------------- travel -->
 <section class="section">
   <div class="section__head">
-    <h2>Where to go</h2>
-    <p><a href="<?= e(bd_url('travel')) ?>" style="color:var(--green-300)">See all destinations →</a></p>
+    <h2><?= e(t('Where to go')) ?></h2>
+    <p><a href="<?= e(bd_url('travel')) ?>" style="color:var(--green-300)"><?= e(t('See all destinations →')) ?></a></p>
   </div>
 
   <div class="grid grid--3">
@@ -204,7 +199,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <h3><?= e($place['name']) ?></h3>
         <p style="margin-bottom:.6rem"><?= e($place['desc']) ?></p>
         <span class="badge"><?= e($place['type']) ?></span>
-        <span class="badge badge--gold">Best: <?= e($place['best']) ?></span>
+        <span class="badge badge--gold"><?= e(t('Best:')) ?> <?= e($place['best']) ?></span>
       </a>
     <?php endforeach; ?>
   </div>
@@ -213,8 +208,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- -------------------------------------------------------------- symbols -->
 <section class="section">
   <div class="section__head">
-    <h2>National identity</h2>
-    <p><a href="<?= e(bd_url('about')) ?>" style="color:var(--green-300)">Full national profile →</a></p>
+    <h2><?= e(t('National identity')) ?></h2>
+    <p><a href="<?= e(bd_url('about')) ?>" style="color:var(--green-300)"><?= e(t('Full national profile →')) ?></a></p>
   </div>
 
   <div class="grid grid--3">
@@ -230,8 +225,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------ emergency -->
 <section class="section">
   <div class="section__head">
-    <h2>If you need help right now</h2>
-    <p>National hotlines, free from any Bangladeshi number.</p>
+    <h2><?= e(t('If you need help right now')) ?></h2>
+    <p><?= e(t('National hotlines, free from any Bangladeshi number.')) ?></p>
   </div>
 
   <div class="grid grid--4">

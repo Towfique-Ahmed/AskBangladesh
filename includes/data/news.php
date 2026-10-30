@@ -14,12 +14,247 @@ return [
 
     'items' => [
         [
+            'date' => '2026-05-05', 'category' => 'Economy', 'emoji' => '🌾',
+            'title' => 'Heavy rains damage the key rice crop, leaving a shortfall of over 200,000 tonnes',
+            'title_bn' => 'ভারী বৃষ্টিতে প্রধান ধান ফসলের ক্ষতি, ঘাটতি ২ লাখ টনের বেশি',
+            'summary' => 'Pre-monsoon rain and upstream inflows hit Bangladesh’s main rice crop.',
+            'summary_bn' => 'বর্ষাপূর্ব বৃষ্টি ও উজানের পানিতে বাংলাদেশের প্রধান ফসল ক্ষতিগ্রস্ত হয়েছে।',
+            'body' => [
+                'Bangladesh is heading for a rice shortfall of more than 200,000 metric tonnes after heavy pre-monsoon rains and inflows from upstream damaged its main crop, according to a report in early May.',
+                'Rice is the staple food, and the harvest around April and May, the boro season, is the country’s largest. Damage close to harvest hits farm incomes and can push up prices.',
+                'The report put the shortfall at more than 200,000 tonnes.',
+            ],
+            'source' => 'reporting by Prothom Alo and wire services, 5 May 2026',
+        ],
+        [
+            'date' => '2026-05-08', 'category' => 'Health', 'emoji' => '🩺',
+            'title' => 'Deadliest measles outbreak in decades fills children’s wards',
+            'title_bn' => 'দশকের মধ্যে ভয়াবহতম হামের প্রাদুর্ভাবে শিশু ওয়ার্ড ভরে গেছে',
+            'summary' => 'Hospitals report child deaths and a surge in infections.',
+            'summary_bn' => 'হাসপাতালগুলোতে শিশুমৃত্যু ও সংক্রমণ বৃদ্ধির খবর পাওয়া যাচ্ছে।',
+            'body' => [
+                'Bangladesh’s deadliest measles outbreak in decades has stretched the health system, with children filling hospital wards and doctors struggling to contain a surge in infections, according to a report in early May.',
+                'Measles is highly contagious but preventable with two doses of vaccine. Outbreaks usually follow gaps in immunisation coverage.',
+                'Parents should check that children have had both doses and speak to a local health worker or call the 16263 health line if a child has a fever and rash.',
+            ],
+            'source' => 'reporting by Prothom Alo and wire services, 8 May 2026',
+        ],
+        [
+            'date' => '2026-05-15', 'category' => 'Health', 'emoji' => '💊',
+            'title' => 'Poor planning fuels contraceptive shortage',
+            'title_bn' => 'অব্যবস্থাপনায় জন্মনিয়ন্ত্রণ সামগ্রীর সংকট',
+            'summary' => 'The once-praised family planning system is struggling with shortages.',
+            'summary_bn' => 'একসময় প্রশংসিত পরিবার পরিকল্পনা ব্যবস্থা সংকটে পড়েছে।',
+            'body' => [
+                'Bangladesh’s family planning programme, long praised internationally, is buckling under severe contraceptive shortages, raising fears of a rise in unplanned pregnancies, a May report said.',
+                'The report attributed the crisis to poor planning. Bangladesh built its reputation on community health workers who deliver family planning services door to door.',
+                'The report’s central concern is that prolonged shortages could lead to more unplanned pregnancies.',
+            ],
+            'source' => 'reporting by Prothom Alo and wire services, 15 May 2026',
+        ],
+        [
+            'date' => '2026-03-11', 'category' => 'Culture', 'emoji' => '🧵',
+            'title' => 'Tangail’s sari weaving tradition is recognised by UNESCO but hangs by a thread',
+            'title_bn' => 'ইউনেস্কোর স্বীকৃতি পেলেও টাঙ্গাইল শাড়ির তাঁতশিল্প টিকে আছে সুতোর ওপর',
+            'summary' => 'The craft’s detailed designs won intangible cultural heritage status in December 2025.',
+            'summary_bn' => '২০২৫ সালের ডিসেম্বরে অধরা সাংস্কৃতিক ঐতিহ্যের স্বীকৃতি পেয়েছে এ শিল্প।',
+            'body' => [
+                'The detailed designs and fine textures of saris woven in Tangail won UNESCO recognition as intangible cultural heritage in December 2025, but a March report said the tradition is under pressure.',
+                'Tangail, in central Bangladesh, is known for its handloom saris, and the report describes the weaving tradition as fragile.',
+                'Tangail saris are sold in markets across the country.',
+            ],
+            'source' => 'reporting by Prothom Alo and wire services, 11 March 2026',
+        ],
+        [
+            'date' => '2026-10-30', 'category' => 'Society', 'emoji' => '🏠',
+            'title' => 'Government housing: tenants told to leave by 31 October or lose allotments',
+            'title_bn' => 'সরকারি বাসায় ভাড়াটিয়াদের ৩১ অক্টোবরের মধ্যে ছাড়তে নির্দেশ, নইলে বরাদ্দ বাতিল',
+            'summary' => 'Officials ordered the eviction of tenants from government houses, with allotments cancelled for those who do not comply.',
+            'summary_bn' => 'সরকারি বাসা থেকে ভাড়াটিয়া উচ্ছেদের নির্দেশ; নির্দেশ না মানলে বরাদ্দ বাতিল হবে।',
+            'body' => [
+                'Officials have ordered that tenants, meaning people living in government-allotted houses who are not the allottees, must be removed by 31 October. Allottees who fail to comply face cancellation of their allotment.',
+                'Government housing is allotted to public servants in line with their grade and service, and sub-letting is not allowed. The deadline is meant to free up housing for those entitled to it.',
+                'Residents affected should check the notice issued by the relevant housing authority for the exact rules.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 30 October 2026',
+        ],
+        [
+            'date' => '2026-10-30', 'category' => 'Society', 'emoji' => '🕯️',
+            'title' => 'Bodies of five Naogaon men killed in Riyadh factory fire to be brought home',
+            'title_bn' => 'রিয়াদের কারখানার আগুনে নিহত নওগাঁর পাঁচজনের মরদেহ দেশে আসছে',
+            'summary' => 'DNA tests identified the five workers, whose bodies were due to reach Naogaon on Saturday.',
+            'summary_bn' => 'ডিএনএ পরীক্ষায় শনাক্ত পাঁচ শ্রমিকের মরদেহ শনিবার নওগাঁয় পৌঁছানোর কথা।',
+            'body' => [
+                'The bodies of five men from Naogaon who died in a factory fire in Riyadh, Saudi Arabia, are due to be brought home on Saturday after they were identified through DNA testing.',
+                'Families waited days for confirmation because the fire left the bodies hard to identify. Saudi Arabia is one of the main destinations for Bangladeshi migrant workers, and remittances from the Gulf are a lifeline for many rural households.',
+                'Workers heading abroad should confirm their employer and visa category through the Bureau of Manpower, Employment and Training and keep copies of their documents with their family.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 30 October 2026',
+        ],
+        [
+            'date' => '2026-10-28', 'category' => 'Economy', 'emoji' => '🌾',
+            'title' => 'Fertiliser dealer appointments draw an editorial warning on food security',
+            'title_bn' => 'সার ডিলার নিয়োগে অনিয়ম, খাদ্যনিরাপত্তা নিয়ে সম্পাদকীয়ে সতর্কতা',
+            'summary' => 'More than 47,000 applications were filed for about 5,000 fertiliser dealerships, and an editorial flagged irregularities.',
+            'summary_bn' => 'প্রায় ৫ হাজার ডিলারশিপের জন্য ৪৭ হাজারের বেশি আবেদন; সম্পাদকীয়ে অনিয়মের কথা বলা হয়েছে।',
+            'body' => [
+                'A Prothom Alo editorial has raised concerns about irregularities in the appointment of fertiliser dealers. More than 47,000 applications were submitted for around 5,000 dealerships across the country.',
+                'The editorial warned that if appointments are not made fairly and transparently, the problem could worsen future fertiliser shortages and put food security at risk. Fertiliser reaches farmers through a network of licensed dealers, so who holds those licences affects prices and supply at planting time.',
+                'The editorial’s concerns are its own view; the authorities have yet to respond in the coverage we reviewed.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 28 October 2026',
+        ],
+        [
+            'date' => '2026-10-27', 'category' => 'Education', 'emoji' => '📝',
+            'title' => 'HSC 2026 results moved to 31 October',
+            'title_bn' => 'এইচএসসি ২০২৬-এর ফল ৩১ অক্টোবর',
+            'summary' => 'The results were first set for 29 October before the date was changed.',
+            'summary_bn' => 'ফল প্রকাশের তারিখ আগে ২৯ অক্টোবর নির্ধারিত ছিল, পরে বদলানো হয়েছে।',
+            'body_bn' => [
+                '২০২৬ সালের উচ্চ মাধ্যমিক সার্টিফিকেট (এইচএসসি) ও সমমানের পরীক্ষার ফল ৩১ অক্টোবর প্রকাশিত হবে। এর আগে ফল প্রকাশের তারিখ নির্ধারিত ছিল ২৯ অক্টোবর, পরে তা বদলানো হয়।',
+                'শিক্ষা বোর্ডগুলো প্রতিষ্ঠানগুলোকে অনলাইনে ফল প্রকাশের পরামর্শ দিয়েছে। শিক্ষার্থীরা বোর্ডের ওয়েবসাইট ও মোবাইল মেসেজ সেবার মাধ্যমে ফল জানতে পারবে।',
+                'ফলের পর শুরু হবে বিশ্ববিদ্যালয় ভর্তির মৌসুম। সরকারি ও বেসরকারি বিকল্প জানতে আমাদের বিশ্ববিদ্যালয় বিভাগ দেখুন।',
+            ],
+            'body' => [
+                'The results of the 2026 Higher Secondary Certificate (HSC) and equivalent examinations will be published on 31 October. They had earlier been scheduled for 29 October, before the date was changed.',
+                'The education boards have advised institutions to publish results online. Students can check results through the education boards’ websites and through mobile messaging services.',
+                'After the results come the university admission seasons. For public and private options, see our universities section.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 27 October 2026',
+        ],
+        [
+            'date' => '2026-10-16', 'category' => 'Education', 'emoji' => '📚',
+            'title' => 'Over 20,000 secondary teachers teach English or maths without a degree in the subject',
+            'title_bn' => '২০ হাজারের বেশি মাধ্যমিক শিক্ষক ইংরেজি বা গণিত পড়াচ্ছেন বিষয়ভিত্তিক ডিগ্রি ছাড়াই',
+            'summary' => 'A report found that thousands of teachers hold degrees in other subjects.',
+            'summary_bn' => 'একটি প্রতিবেদনে দেখা গেছে, হাজার হাজার শিক্ষক অন্য বিষয়ে ডিগ্রি নিয়ে এ দুই বিষয় পড়াচ্ছেন।',
+            'body' => [
+                'More than 20,000 secondary school teachers in Bangladesh teach English or mathematics even though their degrees are in other subjects, according to a report published in mid-October.',
+                'The finding points to a gap between the subjects schools must teach and the specialist teachers available to teach them. A related report found that ICT classes in government colleges are often taken by teachers of other subjects, with programmers or guest teachers filling in elsewhere.',
+                'Education experts say recruitment and training for core subjects, especially in rural areas, will be key to improving learning outcomes.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 16 October 2026',
+        ],
+        [
+            'date' => '2026-10', 'category' => 'Economy', 'emoji' => '📉',
+            'title' => 'World Bank: growth weakens and private credit slumps to a 33-year low',
+            'title_bn' => 'বিশ্বব্যাংক: প্রবৃদ্ধি দুর্বল, বেসরকারি ঋণ ৩৩ বছরে সর্বনিম্নে',
+            'summary' => 'The bank’s October update projects growth of 3.4% this fiscal year and a 15% fall in net foreign investment.',
+            'summary_bn' => 'অক্টোবরের হালনাগাদে চলতি অর্থবছরে প্রবৃদ্ধি ৩.৪ শতাংশ এবং নিট বিদেশি বিনিয়োগ ১৫ শতাংশ কমার পূর্বাভাস।',
+            'body_bn' => [
+                'বিশ্বব্যাংকের অক্টোবরের হালনাগাদে বলা হয়েছে, বাংলাদেশের অর্থনীতি ক্রমবর্ধমান চাপের মুখে। চলতি অর্থবছরে জিডিপি প্রবৃদ্ধি ৩.৪ শতাংশে নামতে পারে বলে পূর্বাভাস দেওয়া হয়েছে।',
+                'বেসরকারি খাতের ঋণ প্রবৃদ্ধি ৩৩ বছরের সর্বনিম্নে নেমেছে এবং নিট সরাসরি বিদেশি বিনিয়োগ ১৫ শতাংশ কমে প্রায় ১৫০ কোটি ডলারে দাঁড়িয়েছে। তৃতীয় প্রান্তিকে শিল্প উৎপাদন ০.৩ শতাংশ সংকুচিত হয়েছে, যা কোভিড-১৯ মহামারির পর শিল্প খাতে প্রথম প্রান্তিক সংকোচন।',
+                'ব্যাংক ব্যাংকিং খাতসহ বিভিন্ন খাতে সংস্কারের তাগিদ দিয়েছে। আলাদা একটি থিংক ট্যাংক প্রতিবেদনে অর্থনীতিকে তিনটি কাঠামোগত ফাঁদে আটকা বলে বর্ণনা করা হয়েছে। সরকার বলছে, তাদের নীতি স্থিতিশীলতা আনবে।',
+            ],
+            'body' => [
+                'The World Bank’s October update says Bangladesh’s economy is under growing pressure. It projects GDP growth could fall to 3.4% this fiscal year.',
+                'Private-sector credit growth has dropped to its lowest level in 33 years, and net foreign direct investment fell by 15 percent to about US$1.5 billion. Industrial production contracted by 0.3 percent in the third quarter, the first quarterly contraction in the industrial sector since the Covid-19 pandemic.',
+                'The bank urged reforms, including in the banking sector. A think-tank report separately described the economy as caught in three structural traps. The government has argued that its policies will bring stability.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, October 2026',
+        ],
+        [
+            'date' => '2026-10', 'category' => 'Economy', 'emoji' => '📊',
+            'title' => 'IMF expects inflation near 11 percent and slower growth',
+            'title_bn' => 'আইএমএফ: মূল্যস্ফীতি ১১ শতাংশের কাছাকাছি, প্রবৃদ্ধি ধীর',
+            'summary' => 'The fund’s October forecast puts inflation at 10.9% this fiscal year and growth at 2.2% in 2027–28.',
+            'summary_bn' => 'তহবিলের অক্টোবরের পূর্বাভাসে চলতি অর্থবছরে মূল্যস্ফীতি ১০.৯ শতাংশ এবং ২০২৭-২৮ সালে প্রবৃদ্ধি ২.২ শতাংশ।',
+            'body_bn' => [
+                'আন্তর্জাতিক মুদ্রা তহবিলের (আইএমএফ) অক্টোবরের পূর্বাভাসে বলা হয়েছে, বাংলাদেশে মূল্যস্ফীতি ৮.৭ শতাংশ থেকে বেড়ে ১০.৯ শতাংশে উঠতে পারে এবং ২০২৭-২৮ অর্থবছরে অর্থনৈতিক প্রবৃদ্ধি ২.২ শতাংশে নামতে পারে।',
+                'সর্বশেষ সরকারি হিসাবে সেপ্টেম্বরে মূল্যস্ফীতি ছিল ৮.৩৪ শতাংশ। সরকারি ঋণও বাড়ছে, জিডিপির ৩৮.৯ শতাংশ থেকে ৪০.৫ শতাংশে।',
+                'আইএমএফ আরও পূর্বাভাস দিয়েছে, চলতি বছর মাথাপিছু জিডিপি হবে প্রায় ২ হাজার ৮৮৬ ডলার, যা ভারতের ২ হাজার ৭৪৯ ডলারের চেয়ে বেশি। ৪৫০ কোটি ডলারের নতুন ঋণ চুক্তি ডিসেম্বরে সই হতে পারে।',
+            ],
+            'body' => [
+                'The International Monetary Fund’s October forecast expects inflation in Bangladesh to rise to 10.9 percent from 8.7 percent, and economic growth to slow to 2.2 percent in fiscal year 2027-28.',
+                'The latest official figure puts inflation at 8.34 percent in September. Government debt is also rising, from 38.9 percent of GDP to 40.5 percent.',
+                'The IMF also projects per capita GDP of about US$2,886 this year, ahead of India’s US$2,749. A new IMF loan of US$4.5 billion could be signed in December.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, October 2026',
+        ],
+        [
+            'date' => '2026-10', 'category' => 'Economy', 'emoji' => '🏦',
+            'title' => 'Banking watch: family control survives in draft law, and a factory fund goes largely unspent',
+            'title_bn' => 'ব্যাংকিং নজর: খসড়া আইনে পারিবারিক নিয়ন্ত্রণের সুযোগ, কারখানা চালুর তহবিল প্রায় অব্যবহৃত',
+            'summary' => 'A draft Bank Company Act keeps scope for family control of banks, and only Tk 5.61 billion of a Tk 200 billion incentive fund was disbursed.',
+            'summary_bn' => 'ব্যাংক কোম্পানি আইনের খসড়ায় পারিবারিক নিয়ন্ত্রণের সুযোগ রয়ে গেছে; ২০ হাজার কোটি টাকার তহবিল থেকে বিতরণ মাত্র ৫৬১ কোটি।',
+            'body' => [
+                'A draft of the Bank Company Act retains scope for family control of banks, a point reformers wanted removed after years of concern about governance in the sector.',
+                'Separately, only Tk 5.61 billion has been disbursed from an incentive fund meant to help reopen closed factories, despite a Tk 200 billion allocation.',
+                'Both items are part of the wider debate on banking-sector reform and the weak flow of credit to the private sector.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, October 2026',
+        ],
+        [
+            'date' => '2026-10-29', 'category' => 'Environment', 'emoji' => '💰',
+            'title' => 'Climate finance falls far short of need',
+            'title_bn' => 'জলবায়ু অর্থায়ন প্রয়োজনের তুলনায় অনেক কম',
+            'summary' => 'A national plan estimates Tk 28.52 trillion is needed by 2050, against a 2026–27 climate allocation of Tk 517.46 billion.',
+            'summary_bn' => 'জাতীয় অভিযোজন পরিকল্পনা অনুযায়ী ২০৫০ সালের মধ্যে প্রয়োজন ২৮.৫২ লক্ষ কোটি টাকা, অথচ ২০২৬-২৭ বরাদ্দ ৫১ হাজার ৭৪৬ কোটি টাকা।',
+            'body_bn' => [
+                'বাংলাদেশের জলবায়ু ব্যয় প্রয়োজনের তুলনায় অনেক কম। জাতীয় অভিযোজন পরিকল্পনার (এনএপি) হিসাবে ২০৫০ সালের মধ্যে প্রায় ২৩ হাজার কোটি ডলার, অর্থাৎ প্রায় ২৮.৫২ লক্ষ কোটি টাকা প্রয়োজন হবে।',
+                '২০২৬-২৭ অর্থবছরে ২৫টি মন্ত্রণালয় ও বিভাগে জলবায়ু-সংশ্লিষ্ট বরাদ্দ ৫১ হাজার ৭৪৬ কোটি টাকা।',
+                'এ ব্যবধানই ব্যাখ্যা করে কেন প্রধানমন্ত্রী আন্তর্জাতিক মঞ্চে নির্ভরযোগ্য জলবায়ু অর্থায়নের দাবি তুলছেন।',
+            ],
+            'body' => [
+                'Bangladesh’s climate spending falls well short of its needs. The National Adaptation Plan estimates that nearly US$230 billion, or about Tk 28.52 trillion, will be required by 2050.',
+                'The climate-related allocation across 25 ministries and divisions in the 2026-27 fiscal year stands at Tk 517.46 billion.',
+                'The gap helps explain why the prime minister has pressed for predictable climate finance in international forums.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 29 October 2026',
+        ],
+        [
+            'date' => '2026-10-08', 'category' => 'Environment', 'emoji' => '🥵',
+            'title' => 'Bangladesh and three neighbours launch a joint extreme-heat initiative',
+            'title_bn' => 'চরম তাপ মোকাবিলায় বাংলাদেশসহ চার দেশের যৌথ উদ্যোগ',
+            'summary' => 'Bangladesh, India, Nepal and Bhutan will work together on heat risk, as the ‘feels-like’ temperature has risen by about 4.5°C since 1980.',
+            'summary_bn' => 'বাংলাদেশ, ভারত, নেপাল ও ভূটান একসঙ্গে কাজ করবে; ১৯৮০ সাল থেকে অনুভূত তাপমাত্রা প্রায় ৪.৫° সেলসিয়াস বেড়েছে।',
+            'body' => [
+                'Bangladesh, India, Nepal and Bhutan launched a joint initiative on 8 October to tackle extreme heat.',
+                'One figure cited in the launch is that the feels-like temperature, which accounts for both heat and humidity, has risen by about 4.5°C since 1980.',
+                'Heat is a growing public-health and productivity concern in South Asia, particularly for outdoor workers and children.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 8 October 2026',
+        ],
+        [
+            'date' => '2026-10-11', 'category' => 'Environment', 'emoji' => '🌫️',
+            'title' => 'Air pollution detected in the Sundarbans',
+            'title_bn' => 'সুন্দরবনে বায়ুদূষণ শনাক্ত',
+            'summary' => 'A study found fine-particle levels of 102 micrograms per cubic metre in the Sharankhola range.',
+            'summary_bn' => 'গবেষণায় শরণখোলা রেঞ্জে প্রতি ঘনমিটারে ১০২ মাইক্রোগ্রাম সূক্ষ্ম কণা পাওয়া গেছে।',
+            'body' => [
+                'A study linked to the Centre for Environmental and Geographic Information Services (CEGIS) detected air pollution in the Sundarbans. Average PM2.5 concentration in the Sharankhola range reached 102 micrograms per cubic metre, while PM10 stood at 114.',
+                'The Sundarbans is the world’s largest mangrove forest and a UNESCO World Heritage Site. Air pollution in a protected forest points to emissions from nearby industry, shipping and burning.',
+                'Conservation groups have long called for coordinated action to protect the forest.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, 11 October 2026',
+        ],
+        [
+            'date' => '2026-10', 'category' => 'Tech', 'emoji' => '📡',
+            'title' => 'TechConnect 2026 puts AI, 5G and Bangla-language tools on the agenda',
+            'title_bn' => 'টেককানেক্ট ২০২৬: এআই, ফাইভজি ও বাংলা ভাষার প্রযুক্তি আলোচ্য সূচিতে',
+            'summary' => 'Speakers at the Dhaka conference discussed AI skills and digital infrastructure.',
+            'summary_bn' => 'ঢাকার সম্মেলনে বক্তারা এআই দক্ষতা ও ডিজিটাল অবকাঠামো নিয়ে আলোচনা করেছেন।',
+            'body' => [
+                'Bangladesh TechConnect 2026, held at the Bangabandhu International Conference Centre in Agargaon, Dhaka, focused on artificial intelligence and digital infrastructure.',
+                'Speakers discussed the expansion of 5G, AI skills, and the need for Bangla-language AI resources. One speaker noted that only 5 percent of internet users in low- and middle-income countries use generative AI.',
+                'The same event is where the ICT minister announced a goal of one million digital jobs in five years.',
+            ],
+            'source' => 'reporting by Prothom Alo and other Bangladeshi outlets, October 2026',
+        ],
+        [
             'date' => '2026-10-30', 'category' => 'Economy', 'emoji' => '🇯🇵',
             'title' => 'Japan denies agreeing to take 100,000 Bangladeshi workers',
+            'title_bn' => 'এক লাখ বাংলাদেশি শ্রমিক নিতে রাজি হওয়ার খবর অস্বীকার করল জাপান',
             'summary' => 'Japan’s foreign ministry has called social media claims about a 100,000-worker deal false, as the PM returned from a four-day state visit.',
+            'summary_bn' => 'চার দিনের সফর শেষে প্রধানমন্ত্রী দেশে ফেরার সময় জাপানের পররাষ্ট্র মন্ত্রণালয় সামাজিক মাধ্যমের দাবিকে ভুয়া বলেছে।',
+            'body_bn' => [
+                'প্রধানমন্ত্রী তারেক রহমানের টোকিও সফরের সময় এক লাখ বাংলাদেশি শ্রমিক নিতে রাজি হওয়ার কথা জাপানের পররাষ্ট্র মন্ত্রণালয় অস্বীকার করেছে। সামাজিক মাধ্যমে এ-সংক্রান্ত দাবিকে মন্ত্রণালয় ভুয়া বলে উল্লেখ করেছে।',
+                'চার দিনের রাষ্ট্রীয় সফর শেষে প্রধানমন্ত্রী শুক্রবার ভোরে দেশে ফিরেছেন। নারিতা থেকে কারিগরি ত্রুটির কারণে পাঁচ ঘণ্টা দেরিতে তাঁর ফ্লাইট ঢাকার উদ্দেশে রওনা হয়। সফরের মূল আলোচনা ছিল বাণিজ্য, বিনিয়োগ ও অর্থনৈতিক অংশীদারত্ব চুক্তি, শ্রমিক পাঠানোর কোনো চুক্তি নয়।',
+                'বিদেশে চাকরির প্রলোভন দেখানো ভাইরাল পোস্ট সম্পর্কে সতর্ক থাকুন এবং সংশ্লিষ্ট সরকারের আনুষ্ঠানিক বক্তব্যের সঙ্গে দাবি যাচাই করুন।',
+            ],
             'body' => [
                 'Japan’s foreign ministry has denied that it agreed to accept 100,000 Bangladeshi workers during Prime Minister Tarique Rahman’s visit to Tokyo, calling claims to the contrary on social media false.',
-                'The prime minister returned home early on Friday after completing a four-day state visit to Japan. The trip focused on trade, investment and an Economic Partnership Agreement between the two countries, not on a labour-export deal.',
+                'The prime minister returned home early on Friday after completing a four-day state visit to Japan. His flight left Narita for Dhaka after a five-hour delay caused by a technical fault. The trip focused on trade, investment and an Economic Partnership Agreement between the two countries, not on a labour-export deal.',
                 'The episode is a reminder for job seekers to check recruitment claims against official statements from the governments concerned, and to be wary of agents who promise overseas jobs on the strength of viral posts.',
             ],
             'source' => 'reporting by New Age and other Bangladeshi outlets, 30 October 2026',
@@ -27,7 +262,15 @@ return [
         [
             'date' => '2026-10-28', 'category' => 'Economy', 'emoji' => '🏭',
             'title' => 'PM invites Japanese firms to explore five sectors in Bangladesh',
+            'title_bn' => 'বাংলাদেশের পাঁচ খাতে বিনিয়োগে জাপানি কোম্পানিগুলোকে আমন্ত্রণ প্রধানমন্ত্রীর',
             'summary' => 'In Tokyo, Prime Minister Tarique Rahman pitched automotive, energy, technology and space, high-speed rail and logistics, and agro-processing.',
+            'summary_bn' => 'টোকিওতে প্রধানমন্ত্রী তারেক রহমান অটোমোবাইল, জ্বালানি, প্রযুক্তি ও মহাকাশ, উচ্চগতির রেল ও লজিস্টিকস এবং কৃষি-প্রক্রিয়াকরণে বিনিয়োগের আহ্বান জানান।',
+            'body_bn' => [
+                'প্রধানমন্ত্রী তারেক রহমান জাপানি কোম্পানিগুলোকে পাঁচটি অগ্রাধিকার খাতে বিনিয়োগের আমন্ত্রণ জানিয়েছেন: অটোমোবাইল উৎপাদন, জ্বালানি, প্রযুক্তি ও মহাকাশ, উচ্চগতির রেল ও লজিস্টিকস এবং কৃষি-প্রক্রিয়াকরণ। জাপানের প্রধানমন্ত্রী সানায়ে তাকাইচির আমন্ত্রণে ২৬ থেকে ২৯ অক্টোবরের রাষ্ট্রীয় সফরে তিনি বাংলাদেশ-জাপান অর্থনৈতিক ফোরামে এ আহ্বান জানান।',
+                'তিনি বলেন, বাংলাদেশে প্রায় ৩৫০টি জাপানি কোম্পানি কাজ করছে, তবে জাপানের সরাসরি বিনিয়োগ ৫০ কোটি ডলারের নিচে। বাংলাদেশ ২০২৬ থেকে ২০৩১ সময়কালে ১২টি অগ্রাধিকার খাতে ১ হাজার ৩৮০ কোটি ডলারের একটি প্রস্তাবিত সহযোগিতা ও বিনিয়োগ প্যাকেজ তৈরি করেছে। এ বছর সই হওয়া অর্থনৈতিক অংশীদারত্ব চুক্তি বাংলাদেশের প্রথম এ ধরনের চুক্তি।',
+                'জ্বালানি খাতে তিনি জানান, গ্যাস ও বিদ্যুতের জন্য স্বল্প, মধ্য ও দীর্ঘমেয়াদি পরিকল্পনা আছে এবং জাপানি জ্বালানি কোম্পানি জেরার সঙ্গে ঘনিষ্ঠভাবে কাজ চলছে। তিনি টেকনোলজিক্যাল ভিলেজ ও ইনোভেশন সিটি গড়তে এবং কাফকো সার কারখানা আধুনিকায়নে জাপানের সহায়তাও চেয়েছেন।',
+                'সফরের আগে ব্যবসায়ী নেতারা জাপানি বিনিয়োগ আকর্ষণ, জাপানে রপ্তানি বাড়ানো এবং অংশীদারত্ব চুক্তি দ্রুত বাস্তবায়নকে অগ্রাধিকার দিতে প্রধানমন্ত্রীর প্রতি আহ্বান জানিয়েছিলেন। সফরে কোন কোন চুক্তি সই হয়েছে, লেখার সময় তার চূড়ান্ত তালিকা নিশ্চিত হয়নি।',
+            ],
             'body' => [
                 'Prime Minister Tarique Rahman has invited Japanese companies to invest in five priority sectors: automotive manufacturing, energy, technology and space, high-speed rail and logistics, and agro-processing. He made the pitch at the Bangladesh-Japan Economic Forum during a state visit to Tokyo from 26 to 29 October, at the invitation of Japanese Prime Minister Sanae Takaichi.',
                 'He said about 350 Japanese companies already operate in Bangladesh, but that Japanese direct investment remains below US$500 million. Bangladesh has prepared a proposed cooperation and investment package worth US$13.8 billion across 12 priority sectors for 2026 to 2031, and an Economic Partnership Agreement signed this year is the first such agreement Bangladesh has concluded with any country.',
@@ -39,7 +282,14 @@ return [
         [
             'date' => '2026-10-27', 'category' => 'Economy', 'emoji' => '🤝',
             'title' => 'Bangladesh and Malaysia begin free trade agreement talks, aiming for 2027',
+            'title_bn' => 'মালয়েশিয়ার সঙ্গে মুক্ত বাণিজ্য চুক্তির আলোচনা শুরু, লক্ষ্য ২০২৭',
             'summary' => 'The two countries formally launched negotiations and concluded a first round, targeting a balanced deal by 2027.',
+            'summary_bn' => 'দুই দেশ আনুষ্ঠানিকভাবে আলোচনা শুরু করেছে এবং প্রথম দফা শেষ হয়েছে; লক্ষ্য ২০২৭ সালের মধ্যে ভারসাম্যপূর্ণ চুক্তি।',
+            'body_bn' => [
+                'বাংলাদেশ ও মালয়েশিয়া ২৭ অক্টোবর, মঙ্গলবার আনুষ্ঠানিকভাবে মুক্ত বাণিজ্য চুক্তির (এফটিএ) আলোচনা শুরু করেছে। লক্ষ্য ২০২৭ সালের মধ্যে একটি আধুনিক, ভারসাম্যপূর্ণ ও পারস্পরিক সুবিধাজনক চুক্তি সম্পন্ন করা। আলোচনার প্রথম দফা ইতিমধ্যে শেষ হয়েছে।',
+                'চুক্তিটির উদ্দেশ্য দ্বিপাক্ষিক বাণিজ্য ও বিনিয়োগ বাড়ানো এবং অর্থনৈতিক সম্পর্ক জোরদার করা। মালয়েশিয়া বাংলাদেশি শ্রমিকদের অন্যতম গন্তব্য এবং বিনিয়োগের উৎস, ফলে আলোচনা বাণিজ্য ও শ্রমনীতি - দুই ক্ষেত্রেই গুরুত্বপূর্ণ।',
+                'এলডিসি উত্তরণ আরও তিন বছর পেছানোর পর বাণিজ্য চুক্তির গুরুত্ব বেড়েছে, কারণ ভবিষ্যতে হারানো সুবিধার বিকল্প হিসেবে এ ধরনের চুক্তি কাজে লাগতে পারে।',
+            ],
             'body' => [
                 'Bangladesh and Malaysia formally launched negotiations for a free trade agreement on Tuesday 27 October, aiming to conclude what they described as a modern, balanced and mutually beneficial deal by 2027. A first round of talks has since concluded.',
                 'The agreement is intended to expand bilateral trade and investment and strengthen economic ties. Malaysia is a major destination for Bangladeshi workers and a source of investment, which gives the talks a role in both trade and labour policy.',
@@ -50,7 +300,14 @@ return [
         [
             'date' => '2026-10-27', 'category' => 'Economy', 'emoji' => '💵',
             'title' => 'Fuel import payments push the dollar to Tk 124',
+            'title_bn' => 'জ্বালানি আমদানির বিল পরিশোধে ডলারের দাম ১২৪ টাকায়',
             'summary' => 'Demand for dollars to settle state energy import bills has strengthened the US currency against the taka.',
+            'summary_bn' => 'সরকারি জ্বালানি আমদানির বিল মেটাতে ডলারের চাহিদা বাড়ায় টাকার বিপরীতে মার্কিন মুদ্রা শক্তিশালী হয়েছে।',
+            'body_bn' => [
+                '২৭ অক্টোবর বাজারে মার্কিন ডলারের দাম প্রায় ১২৪ টাকায় উঠেছে। রাষ্ট্রীয় জ্বালানি আমদানির বিল পরিশোধের জন্য বৈদেশিক মুদ্রার চাহিদা বাড়ায় এমন হয়েছে।',
+                'আগস্টে ডলারের দাম ছিল প্রায় ১২২ টাকা। ২০২৫ সালের মে থেকে বাংলাদেশ ব্যাংক একটি কাঠামোর মধ্যে বাজারভিত্তিক বিনিময় হার চালু রেখেছে, ফলে জ্বালানি বিলের মতো বড় অঙ্কের পরিশোধে স্বল্পমেয়াদে হার নড়ে যেতে পারে।',
+                'টাকার মান কমলে আমদানি করা জ্বালানি, খাদ্য ও যন্ত্রপাতির খরচ বাড়ে। সম্ভাব্য হারের জন্য মুদ্রা পাতা দেখুন, আর টাকা বদলানো বা পাঠানোর আগে ব্যাংকের সঙ্গে হার যাচাই করুন।',
+            ],
             'body' => [
                 'The US dollar rose to about Tk 124 in the market on 27 October as demand for foreign currency increased to settle bills for state energy imports.',
                 'The move is a further step from the rates of about Tk 122 seen in August. Bangladesh Bank has allowed the rate to be set by the market within a framework since May 2025, so large payments such as fuel bills can move it in the short term.',
@@ -61,7 +318,9 @@ return [
         [
             'date' => '2026-10-24', 'category' => 'Economy', 'emoji' => '🚛',
             'title' => 'Trade through Benapole and Sonamasjid land ports resumes after Durga Puja',
+            'title_bn' => 'দুর্গাপূজার ছুটির পর বেনাপোল ও সোনামসজিদ স্থলবন্দরে বাণিজ্য আবার চালু',
             'summary' => 'Export and import activity with India restarted on Saturday morning after the festival and weekly holidays.',
+            'summary_bn' => 'ছুটি ও সাপ্তাহিক বন্ধের পর শনিবার সকাল থেকে ভারতের সঙ্গে আমদানি-রপ্তানি শুরু হয়েছে।',
             'body' => [
                 'Trade between Bangladesh and India through the Benapole and Sonamasjid land ports resumed on Saturday morning, 24 October, after a pause for Durga Puja and the weekly holidays.',
                 'Benapole is the country’s busiest land port, and goods held up over the holidays began moving again when customs and port offices reopened. Traders typically see a backlog of trucks build up around long holiday periods.',
@@ -72,7 +331,9 @@ return [
         [
             'date' => '2026-10-23', 'category' => 'Economy', 'emoji' => '💍',
             'title' => 'Jewellers’ association urges responsible reporting after Diamond World arrest',
+            'title_bn' => 'ডায়মন্ড ওয়ার্ল্ডের এমডি গ্রেপ্তারের পর দায়িত্বশীল সংবাদ পরিবেশনের আহ্বান বাজুসের',
             'summary' => 'BAJUS said allegations against one individual should not tarnish the image of the whole jewellery sector.',
+            'summary_bn' => 'বাজুস বলেছে, একজন ব্যক্তির বিরুদ্ধে অভিযোগ যেন পুরো জুয়েলারি খাতের ভাবমূর্তি ক্ষুণ্ন না করে।',
             'body' => [
                 'The Bangladesh Jewellers Association (BAJUS) has asked the media to report responsibly on the arrest of Diamond World managing director Dilip Kumar Agarwala. It said allegations against one individual should not damage the image of the country’s entire jewellery sector.',
                 'The association spoke up on Thursday 23 October. This story reports only the association’s statement. The allegations against Mr Agarwala are unproven, and AskBangladesh has not independently assessed them.',
@@ -83,7 +344,9 @@ return [
         [
             'date' => '2026-10-18', 'category' => 'Economy', 'emoji' => '🛍️',
             'title' => 'Global Sourcing Expo expands to 12 sectors for its November edition',
+            'title_bn' => 'নভেম্বরের গ্লোবাল সোর্সিং এক্সপোতে খাত বেড়ে ১২টি',
             'summary' => 'The three-day expo at Purbachal runs 15 to 17 November, up from eight sectors last year.',
+            'summary_bn' => '১৫ থেকে ১৭ নভেম্বর পূর্বাচলে তিন দিনের এক্সপো, গত বছর ছিল আটটি খাত।',
             'body' => [
                 'The Global Sourcing Expo 2026 will run for three days from 15 to 17 November at the Bangladesh-China Friendship Exhibition Centre in Purbachal. The Export Promotion Bureau says the number of sectors has grown from eight to twelve, with more than 200 stalls expected.',
                 'Plastics, frozen food, fisheries, jute, furniture and pharmaceuticals are among the participating sectors. The programme includes seminars, business-to-business meetings and an online matchmaking portal.',
@@ -94,7 +357,9 @@ return [
         [
             'date' => '2026-10', 'category' => 'Economy', 'emoji' => '🏦',
             'title' => 'Bangladesh Bank to move local back-to-back LC messaging off SWIFT',
+            'title_bn' => 'স্থানীয় ব্যাক-টু-ব্যাক এলসির বার্তা আদান-প্রদান সুইফট থেকে সরাচ্ছে বাংলাদেশ ব্যাংক',
             'summary' => 'Reports say processing of local back-to-back letters of credit will shift to a domestic messaging system next month.',
+            'summary_bn' => 'প্রতিবেদন অনুযায়ী আগামী মাস থেকে দেশীয় বার্তা ব্যবস্থায় স্থানীয় ব্যাক-টু-ব্যাক এলসি প্রক্রিয়া হবে।',
             'body' => [
                 'Bangladesh Bank will reportedly shift the processing of local back-to-back letters of credit from the international SWIFT network to a domestic messaging system next month, a change expected to cut costs for banks.',
                 'Back-to-back LCs are widely used by garment exporters, who open them with local banks to buy fabric and accessories against an export order. Using a domestic channel for local transactions could reduce messaging fees.',
@@ -105,7 +370,9 @@ return [
         [
             'date' => '2026-10', 'category' => 'Education', 'emoji' => '🎓',
             'title' => 'University of Dhaka tops Bangladeshi universities in Scopus-indexed research',
+            'title_bn' => 'স্কোপাস-সূচিভুক্ত গবেষণায় দেশের বিশ্ববিদ্যালয়গুলোর শীর্ষে ঢাকা বিশ্ববিদ্যালয়',
             'summary' => 'DU leads the country’s universities in research publications indexed in the Scopus database.',
+            'summary_bn' => 'আন্তর্জাতিক স্কোপাস ডেটাবেসে সূচিভুক্ত গবেষণা প্রকাশনায় ঢাকা বিশ্ববিদ্যালয় দেশে এগিয়ে।',
             'body' => [
                 'The University of Dhaka has been reported as the top Bangladeshi university for research publications indexed in Scopus, the international database of peer-reviewed research.',
                 'Independent tallies point the same way. A tracker of Bangladeshi research counted about 1,745 Scopus-indexed documents from Dhaka University authors in 2025, with Daffodil International University and BUET also among the top three. In July 2026, the Nature Index also named Dhaka University Bangladesh’s leading research institution, with 21 of 143 articles from the country.',
@@ -116,7 +383,9 @@ return [
         [
             'date' => '2026-10', 'category' => 'Environment', 'emoji' => '🐬',
             'title' => 'Ganges river dolphins still survive in the polluted Buriganga, study finds',
+            'title_bn' => 'দূষিত বুড়িগঙ্গায় এখনও টিকে আছে গঙ্গা নদীর শুশুক, বলছে গবেষণা',
             'summary' => 'Researchers estimate about 20 dolphins in the river that runs through Dhaka.',
+            'summary_bn' => 'গবেষকদের হিসাবে ঢাকার মধ্য দিয়ে বয়ে যাওয়া এ নদীতে প্রায় ২০টি শুশুক আছে।',
             'body' => [
                 'Endangered Ganges river dolphins are still living in the Buriganga, one of the most polluted rivers in Bangladesh, according to a new study. The researchers estimate about 20 dolphins in the river.',
                 'The team surveyed a 27 km stretch over 12 months, from September 2023 to August 2024, and spotted dolphins in 10 of the 12 months. The river takes untreated industrial waste and sewage, and earlier work found oxygen levels close to zero in the dry season, yet the dolphins persist. Researchers suspect they may have shifted to an invasive catfish for food, but the study did not test their diet.',
@@ -127,7 +396,9 @@ return [
         [
             'date' => '2026-10', 'category' => 'Environment', 'emoji' => '🌳',
             'title' => 'Dispute over Gulshan’s central park continues',
+            'title_bn' => 'গুলশানের কেন্দ্রীয় পার্ক নিয়ে বিরোধ চলছে',
             'summary' => 'A fifth complaint has been filed over encroachment, in a long-running fight over who controls the eight-acre park.',
+            'summary_bn' => 'আট একরের পার্কটির নিয়ন্ত্রণ নিয়ে দীর্ঘদিনের বিরোধে দখলের অভিযোগে পঞ্চম অভিযোগ দায়ের হয়েছে।',
             'body' => [
                 'A fifth complaint has been filed over encroachment on a Gulshan park, adding to a long-running dispute over the eight-acre green space formerly known as Gulshan Central Park, now named Shaheed Tajuddin Ahmad Smriti Park.',
                 'In 2022 the High Court ruled that the plot was designated as a park in the Gulshan Model Town plan. Only about 3.3 acres were reopened to the public, however, and the rest remains under the control of the Gulshan Youth Club, which runs a football turf and charges hourly rent. In September 2025, activists, lawyers and academics served a legal notice challenging the management agreement.',
@@ -138,7 +409,9 @@ return [
         [
             'date' => '2026-10-13', 'category' => 'Environment', 'emoji' => '🌊',
             'title' => 'Seminar highlights Bangladesh’s blue carbon potential',
+            'title_bn' => 'বাংলাদেশের ব্লু কার্বনের সম্ভাবনা নিয়ে সেমিনার',
             'summary' => 'A seminar in Cox’s Bazar heard that coastal ecosystems could attract climate finance through carbon credits.',
+            'summary_bn' => 'কক্সবাজারের সেমিনারে বলা হয়েছে, উপকূলীয় বাস্তুতন্ত্র কার্বন ক্রেডিটের মাধ্যমে জলবায়ু অর্থায়ন আনতে পারে।',
             'body' => [
                 'Bangladesh’s coastal ecosystems could open the way for climate finance and carbon credits if blue carbon is scientifically measured and conserved, a seminar in Cox’s Bazar was told on Tuesday 13 October.',
                 'Blue carbon is the carbon stored in coastal habitats such as mangroves, salt marshes and seagrass. Bangladesh has the Sundarbans, the world’s largest mangrove forest, and a long coast.',
@@ -149,7 +422,9 @@ return [
         [
             'date' => '2026-10-02', 'category' => 'Environment', 'emoji' => '🌧️',
             'title' => 'Bangladesh records 17.9 percent less rain in September',
+            'title_bn' => 'সেপ্টেম্বরে স্বাভাবিকের চেয়ে ১৭.৯ শতাংশ কম বৃষ্টি',
             'summary' => 'The Bangladesh Meteorological Department says September rainfall fell short of normal.',
+            'summary_bn' => 'আবহাওয়া অধিদপ্তর জানিয়েছে, সেপ্টেম্বরে বৃষ্টিপাত স্বাভাবিকের চেয়ে কম ছিল।',
             'body' => [
                 'Bangladesh received 17.9 percent less rainfall than normal in September, according to the Bangladesh Meteorological Department.',
                 'The shortfall comes at the end of the monsoon, a season that supplies most of the country’s annual rain. Below-normal rain can affect late-season crops and the water levels of rivers.',
@@ -160,7 +435,9 @@ return [
         [
             'date' => '2026-09-26', 'category' => 'Environment', 'emoji' => '🐘',
             'title' => '146 elephants died in a decade as unplanned projects block corridors',
+            'title_bn' => 'এক দশকে ১৪৬টি হাতির মৃত্যু, অপরিকল্পিত প্রকল্পে আটকে যাচ্ছে চলাচলের পথ',
             'summary' => 'The environment minister gave the toll for 2016 to 2025, while speakers said development is cutting migration routes.',
+            'summary_bn' => '২০১৬ থেকে ২০২৫ সালের মৃত্যুর হিসাব দিয়েছেন পরিবেশমন্ত্রী; আলোচনায় বক্তারা বলেছেন উন্নয়ন হাতির করিডর বন্ধ করছে।',
             'body' => [
                 'At least 146 elephants died in Bangladesh between 2016 and 2025, Environment, Forest and Climate Change Minister Abdul Awal Mintoo said on 26 September, citing Forest Department data.',
                 'At a World Elephant Day discussion in August, speakers said unplanned infrastructure was blocking the traditional corridors elephants use to move between forests, disrupting their movement and raising the risk of conflict with people.',
@@ -171,7 +448,9 @@ return [
         [
             'date' => '2026-09', 'category' => 'Environment', 'emoji' => '🌍',
             'title' => 'Tarique outlines five-point climate demands at the UN',
+            'title_bn' => 'জাতিসংঘে জলবায়ু বিষয়ে পাঁচ দফা দাবি তুললেন তারেক রহমান',
             'summary' => 'The prime minister called for deeper emissions cuts, predictable finance, technology access, renewables and the Loss and Damage Fund.',
+            'summary_bn' => 'গভীর নিঃসরণ হ্রাস, নির্ভরযোগ্য অর্থায়ন, প্রযুক্তি প্রাপ্যতা, নবায়নযোগ্য জ্বালানি ও ক্ষয়ক্ষতি তহবিল বাস্তবায়নের দাবি।',
             'body' => [
                 'Prime Minister Tarique Rahman placed five urgent demands before the international community on climate at the United Nations in September.',
                 'He called for deeper cuts in emissions, predictable climate finance, greater access to climate-smart technologies, expanded renewable energy and full implementation of the Loss and Damage Fund.',
@@ -182,7 +461,9 @@ return [
         [
             'date' => '2026-08-27', 'category' => 'Environment', 'emoji' => '🌡️',
             'title' => '22 million Bangladeshi children face extra heat stress from climate change',
+            'title_bn' => 'জলবায়ু পরিবর্তনে ২ কোটি ২০ লাখ শিশু বাড়তি তাপের চাপে',
             'summary' => 'A report says millions of children aged 0 to 9 are already exposed to additional dangerous heat.',
+            'summary_bn' => '০ থেকে ৯ বছর বয়সী লাখ লাখ শিশু ইতিমধ্যে বিপজ্জনক বাড়তি তাপের মুখে পড়ছে।',
             'body' => [
                 'Climate change is already exposing millions of children in Bangladesh to extra dangerous heat stress. A report counts 22 million children aged 0 to 9 among those affected.',
                 'Young children are more vulnerable to heat than adults because their bodies cool less efficiently. Heatwaves can also disrupt schooling and increase the risk of illness.',
@@ -193,7 +474,9 @@ return [
         [
             'date' => '2026-09-28', 'category' => 'Tourism', 'emoji' => '🏔️',
             'title' => 'Embassy urges Bangladeshi tourists to take care in flood-hit Nepal',
+            'title_bn' => 'বন্যাকবলিত নেপালে সতর্ক থাকতে বাংলাদেশি পর্যটকদের পরামর্শ দূতাবাসের',
             'summary' => 'The Bangladesh embassy in Kathmandu advised caution in areas affected by heavy rain, floods and landslides.',
+            'summary_bn' => 'ভারী বৃষ্টি, বন্যা ও ভূমিধসে আক্রান্ত এলাকায় ভ্রমণে সতর্ক থাকতে বলেছে কাঠমান্ডুর বাংলাদেশ দূতাবাস।',
             'body' => [
                 'The Bangladesh embassy in Kathmandu has advised Bangladeshi tourists and trekkers to take care when travelling in parts of Nepal affected by heavy rainfall, floods and landslides.',
                 'Nepal is a popular outbound destination for Bangladeshi travellers, and the monsoon and its aftermath bring road closures and landslide risks to hill and trekking areas.',
@@ -204,7 +487,14 @@ return [
         [
             'date' => '2026-08-19', 'category' => 'Tourism', 'emoji' => '🚤',
             'title' => 'Covered bins and no loud music: new rules for Sundarbans tourist boats',
+            'title_bn' => 'ঢাকনাওয়ালা ময়লার ঝুড়ি, উচ্চস্বরে গান নয়: সুন্দরবনের পর্যটকবাহী নৌযানের নতুন নিয়ম',
             'summary' => 'Tourist vessels in the mangrove forest have been told to carry covered dustbins and keep noise down.',
+            'summary_bn' => 'বনের জীববৈচিত্র্য রক্ষায় ট্যুরিস্ট নৌযানকে ঢাকনাওয়ালা ডাস্টবিন রাখতে ও উচ্চস্বরে সংগীত বাজাতে নিষেধ করা হয়েছে।',
+            'body_bn' => [
+                'সুন্দরবনে চলাচলকারী পর্যটকবাহী নৌযানকে জাহাজে ঢাকনাওয়ালা ডাস্টবিন রাখতে এবং উচ্চস্বরে গান না বাজাতে নির্দেশ দেওয়া হয়েছে। উদ্দেশ্য ম্যানগ্রোভ বনের জীববৈচিত্র্য রক্ষা করা।',
+                'সুন্দরবন ইউনেস্কো বিশ্ব ঐতিহ্যের স্বীকৃতি পাওয়া স্থান এবং রয়েল বেঙ্গল টাইগারের আবাস। ট্যুর লঞ্চের আবর্জনা ও শব্দ বন্যপ্রাণীকে বিরক্ত ও জলপথকে দূষিত করতে পারে।',
+                'ভ্রমণকারীরা বন বিভাগের নিবন্ধিত অপারেটরের সঙ্গে যান এবং সব আবর্জনা সঙ্গে করে ফেরত আনুন। বিস্তারিত জানতে আমাদের সুন্দরবন ভ্রমণ গাইড দেখুন।',
+            ],
             'body' => [
                 'Tourist vessels operating in the Sundarbans have been told to keep covered dustbins on board and not to play loud music, to protect the biodiversity of the mangrove forest.',
                 'The Sundarbans is a UNESCO World Heritage Site and home to the Royal Bengal Tiger. Litter and noise from tour launches can disturb wildlife and pollute the waterways.',
@@ -215,7 +505,15 @@ return [
         [
             'date' => '2026-10-30', 'category' => 'Economy', 'emoji' => '📈',
             'title' => 'UN gives Bangladesh three more years before LDC graduation',
+            'title_bn' => 'জাতিসংঘ এলডিসি উত্তরণের জন্য বাংলাদেশকে আরও তিন বছর দিল',
             'summary' => 'The UN General Assembly has deferred Bangladesh’s graduation from least-developed-country status from 24 November 2026 to 24 November 2029.',
+            'summary_bn' => 'জাতিসংঘ সাধারণ পরিষদ বাংলাদেশের এলডিসি উত্তরণ ২৪ নভেম্বর ২০২৬ থেকে পিছিয়ে ২৪ নভেম্বর ২০২৯ করেছে।',
+            'body_bn' => [
+                'জাতিসংঘ সাধারণ পরিষদ স্বল্পোন্নত দেশের (এলডিসি) তালিকা থেকে বাংলাদেশের উত্তরণ তিন বছর পিছিয়ে দিয়েছে। প্রস্তাব পাসের মাধ্যমে উত্তরণের তারিখ ২৪ নভেম্বর ২০২৬ থেকে সরে ২৪ নভেম্বর ২০২৯ হয়েছে। একই দিনে উত্তরণের কথা থাকা নেপালও একই সময় পেয়েছে।',
+                'ফেব্রুয়ারিতে ক্ষমতায় আসা নির্বাচিত সরকার ক্ষমতা নেওয়ার পরপরই আনুষ্ঠানিক অনুরোধ জানায়। এপ্রিলে প্রধানমন্ত্রী তারেক রহমান জাতিসংঘের মহাসচিবকে সরাসরি অনুরোধ করেন। বাণিজ্য-সুবিধা হারানোর প্রস্তুতির জন্য আরও সময় প্রয়োজন, এ যুক্তি দেখিয়েছেন কর্মকর্তারা।',
+                'রপ্তানিকারকদের জন্য সবচেয়ে গুরুত্বপূর্ণ হলো প্রধান বাজারে শুল্কমুক্ত প্রবেশাধিকার, বিশেষ করে তৈরি পোশাকের জন্য। নতুন সময়সূচিতে এ সুবিধা ২০২৯ সালের নভেম্বর পর্যন্ত চলবে বলে আশা করা হচ্ছে। জাতিসংঘের একটি বাণিজ্য সংস্থার হিসাবে, সুবিধা বন্ধ হলে বাংলাদেশ বছরে ১৭৫০ কোটি ডলারেরও বেশি রপ্তানি আয় হারাতে পারে - এ কারণেই ব্যবসায়ী সংগঠনগুলো সময় বাড়ানোর দাবি জানিয়েছিল।',
+                'উত্তরণের প্রস্তুতি নিয়ে বাংলাদেশকে নিয়মিত প্রতিবেদন দিতে হবে। আগামী কয়েক বছরের মনোযোগ থাকবে পোশাকের বাইরে রপ্তানি বহুমুখী করা, উৎপাদনশীলতা বাড়ানো এবং হারানো সুবিধার বদলে নতুন বাণিজ্য চুক্তি করার ওপর।',
+            ],
             'body' => [
                 'The United Nations General Assembly has approved a three-year deferment of Bangladesh’s graduation from the group of least-developed countries (LDCs). The move, adopted by resolution, pushes the transition date from 24 November 2026 to 24 November 2029. Nepal, which was due to graduate on the same day, received the same extension.',
                 'The request came from the elected government that took office in February 2026. It submitted a formal request soon after taking power, and Prime Minister Tarique Rahman followed up with a direct appeal to the UN Secretary-General in April. Officials argued that the country needed more time to prepare for the loss of trade preferences that come with LDC status.',
@@ -227,7 +525,9 @@ return [
         [
             'date' => '2026-10-28', 'category' => 'Tech', 'emoji' => '🛡️',
             'title' => 'Draft cyber law on AI-generated abuse sparks free-speech concerns',
+            'title_bn' => 'এআই-নির্ভর হয়রানি ঠেকাতে সাইবার আইনের খসড়া, বাকস্বাধীনতা নিয়ে উদ্বেগ',
             'summary' => 'A draft law targeting AI-generated fakes and online abuse of women is under review, and civil society groups say its wording is too broad.',
+            'summary_bn' => 'এআই-তৈরি ভুয়া কনটেন্ট ও নারীদের অনলাইন হয়রানি ঠেকানোর খসড়া আইন পর্যালোচনায়; নাগরিক সংগঠনগুলো বলছে ভাষা অতি বিস্তৃত।',
             'body' => [
                 'The government is weighing a tougher cyber law aimed at AI-generated fakes and the online abuse of women. The draft is aimed at harm caused by AI-generated content, particularly content used to abuse women online.',
                 'Critics say the draft goes further than that goal. The civil society group Constitution Watchdog has warned that broad provisions on rumours, defamation and disinformation could revive the kind of censorship that earlier digital-security laws were accused of enabling, and could threaten free expression online.',
@@ -239,7 +539,14 @@ return [
         [
             'date' => '2026-10-27', 'category' => 'Tech', 'emoji' => '💻',
             'title' => 'Government sets target of one million digital jobs in five years',
+            'title_bn' => 'পাঁচ বছরে ১০ লাখ ডিজিটাল চাকরির লক্ষ্য সরকারের',
             'summary' => 'ICT Minister Faqir Mahbub Anam announced the goal at Bangladesh TechConnect 2026 in Dhaka.',
+            'summary_bn' => 'ঢাকায় বাংলাদেশ টেককানেক্ট ২০২৬ সম্মেলনে আইসিটি মন্ত্রী ফকির মাহবুব আনাম এ লক্ষ্য ঘোষণা করেন।',
+            'body_bn' => [
+                'আগামী পাঁচ বছরে ডিজিটাল খাতে ১০ লাখ কর্মসংস্থান সৃষ্টির লক্ষ্য নিয়েছে সরকার। ২৭ অক্টোবর ঢাকায় বাংলাদেশ টেককানেক্ট ২০২৬ সম্মেলনে আইসিটি মন্ত্রী ফকির মাহবুব আনাম এ কথা জানান।',
+                'মন্ত্রী লক্ষ্যটিকে তথ্যপ্রযুক্তি ও কৃত্রিম বুদ্ধিমত্তার আঞ্চলিক কেন্দ্র হওয়ার উদ্যোগের অংশ হিসেবে বর্ণনা করেন। দেশের বিশাল তরুণ জনগোষ্ঠী এবং ক্রমবর্ধমান সফটওয়্যার রপ্তানিকারক, ফ্রিল্যান্সার ও আউটসোর্সিং প্রতিষ্ঠানের ওপর ভিত্তি করেই এ পরিকল্পনা।',
+                'তবে স্টার্টআপ খাতের বর্তমান অবস্থা এ লক্ষ্যের জন্য স্বস্তিদায়ক নয়। একটি অর্ধবার্ষিক বিনিয়োগ প্রতিবেদনে ২০২৬ সালের প্রথম ছয় মাসে ছয়টি চুক্তিতে মাত্র ৬০ লাখ ডলারের মতো বিনিয়োগ দেখা গেছে, যা আগের বছরের একই সময়ের তুলনায় প্রায় ৯৫ শতাংশ কম। দক্ষতা প্রশিক্ষণ, ইন্টারনেটের মান, মূলধনের প্রাপ্যতা ও স্থিতিশীল নীতিমালার ওপর নির্ভর করবে লক্ষ্য পূরণ।',
+            ],
             'body' => [
                 'The government wants to create one million jobs in the digital sector over the next five years, ICT Minister Faqir Mahbub Anam said at Bangladesh TechConnect 2026 in Dhaka on 27 October.',
                 'The minister described the target as part of a push to turn Bangladesh into a regional hub for information technology and artificial intelligence. The aim is to build on the country’s large young population and its growing base of software exporters, freelancers and outsourcing firms.',
@@ -251,7 +558,15 @@ return [
         [
             'date' => '2026-10-25', 'category' => 'Tourism', 'emoji' => '🏝️',
             'title' => 'St Martin’s Island reopens to tourists on 1 November',
+            'title_bn' => '১ নভেম্বর পর্যটকদের জন্য খুলছে সেন্ট মার্টিন',
             'summary' => 'The coral island’s 2026–27 season runs from 1 November to 15 March, with a daily visitor cap and a Tk 100 conservation fee.',
+            'summary_bn' => '২০২৬-২৭ মৌসুম চলবে ১ নভেম্বর থেকে ১৫ মার্চ পর্যন্ত; দৈনিক পর্যটকসীমা ও ১০০ টাকার পরিবেশ সংরক্ষণ ফি থাকবে।',
+            'body_bn' => [
+                'বাংলাদেশের একমাত্র প্রবাল দ্বীপ সেন্ট মার্টিন ২০২৬ সালের ১ নভেম্বর পর্যটকদের জন্য খুলছে। মৌসুম চলবে ২০২৭ সালের ১৫ মার্চ পর্যন্ত। এ বছরের শুরুতে কয়েক মাস দ্বীপে পর্যটক যাওয়া বন্ধ ছিল।',
+                'নতুন মৌসুমের নিয়মে দৈনিক পর্যটকের সংখ্যা গড়ে ৩ হাজার ৫০০ জনে সীমিত করা হয়েছে, আগে এ সীমা ছিল ২ হাজার। প্রত্যেক পর্যটককে ১০০ টাকা পরিবেশ সংরক্ষণ ফি দিতে হবে। জাহাজ চালানোর আগে পরিবেশ মন্ত্রণালয়ের অনুমোদন নিতে হবে এবং অনুমোদিত জাহাজ কক্সবাজারের নুনিয়াছড়া থেকে ছাড়বে।',
+                'সীমা বাড়ানো ও মৌসুম দীর্ঘ করায় সংরক্ষণকর্মীরা আপত্তি তুলেছেন; তাঁদের মতে এতে দ্বীপের প্রবাল ও জীববৈচিত্র্য ঝুঁকিতে পড়বে। অপরদিকে ট্রলার মালিকেরা বলছেন, সময়মতো অনুমোদন মিলবে কি না তা নিয়ে তাঁরা অনিশ্চিত।',
+                'রাত্রিযাপনের নিয়ম নিয়ে সংবাদে ভিন্নতা আছে, তাই বুকিংয়ের আগে সর্বশেষ নিয়ম যাচাই করুন। কীভাবে যাবেন ও কী নেবেন, তা জানতে আমাদের সেন্ট মার্টিন ভ্রমণ গাইড দেখুন।',
+            ],
             'body' => [
                 'Bangladesh’s only coral island reopens to tourists on 1 November 2026. The season runs until 15 March 2027, after the island was closed to visitors for months earlier this year.',
                 'Under the rules for the new season, the number of visitors is capped at an average of 3,500 a day, up from 2,000 previously. Each visitor pays a Tk 100 environmental conservation fee, collected under the country’s rules for Ecologically Critical Areas. Shipping agencies need environment ministry approval before sailing, and approved vessels leave from Nuniachhara in Cox’s Bazar.',
@@ -263,7 +578,9 @@ return [
         [
             'date' => '2026-10-03', 'category' => 'Tourism', 'emoji' => '🧭',
             'title' => 'World Tourism Day: Bangladesh pitches AI and digital tools for tourism',
+            'title_bn' => 'বিশ্ব পর্যটন দিবসে পর্যটনে এআই ও ডিজিটাল প্রযুক্তির কথা বলল বাংলাদেশ',
             'summary' => 'Officials said a National Tourism Policy 2026 is being prepared and highlighted digital transformation of the sector.',
+            'summary_bn' => 'কর্মকর্তারা জানিয়েছেন জাতীয় পর্যটন নীতি ২০২৬ প্রণয়ন চলছে এবং খাতটির ডিজিটাল রূপান্তরের ওপর জোর দেওয়া হয়েছে।',
             'body' => [
                 'At a World Tourism Day programme on 3 October, Bangladeshi officials set out plans to expand tourism using artificial intelligence and digital tools, as part of efforts to modernise the sector.',
                 'Officials said a National Tourism Policy 2026 is being prepared. Officials are also drafting a longer-term master plan for the sector.',
@@ -274,7 +591,9 @@ return [
         [
             'date' => '2026-09-27', 'category' => 'Tourism', 'emoji' => '🗺️',
             'title' => 'Government drafts a 20-year tourism master plan',
+            'title_bn' => '২০ বছরের পর্যটন মহাপরিকল্পনার খসড়া করছে সরকার',
             'summary' => 'The plan covers about 1,500 catalogued attractions, and 60 priority projects worth around Tk 19,000 crore have been identified.',
+            'summary_bn' => 'পরিকল্পনায় প্রায় ১ হাজার ৫০০ আকর্ষণ অন্তর্ভুক্ত; প্রায় ১৯ হাজার কোটি টাকার ৬০টি অগ্রাধিকার প্রকল্প চিহ্নিত।',
             'body' => [
                 'The government is drafting a 20-year master plan for tourism that aims to turn a scattered collection of attractions into an organised, higher-earning industry. The Tourism Board expects the plan to be finalised by the end of 2026.',
                 'The plan covers about 1,500 catalogued attractions across the country. The Bangladesh Parjatan Corporation has prioritised 60 projects costing around Tk 19,000 crore. Proposed areas include eco-tourism around the Sundarbans, community homestays, and rural and agro-tourism.',
@@ -286,7 +605,9 @@ return [
         [
             'date' => '2026-08', 'category' => 'Economy', 'emoji' => '💱',
             'title' => 'Taka trades around Tk 122 to the dollar under a market-based rate',
+            'title_bn' => 'বাজারভিত্তিক বিনিময় হারে ডলার প্রায় ১২২ টাকায়',
             'summary' => 'Market data from August 2026 showed the dollar at roughly Tk 122, within a weekly range of about Tk 122–123.6.',
+            'summary_bn' => '২০২৬ সালের আগস্টে ডলার প্রায় ১২২ টাকায় লেনদেন হয়েছে, সাপ্তাহিক ওঠানামা ছিল আনুমানিক ১২২ থেকে ১২৩.৬ টাকা।',
             'body' => [
                 'In August 2026 the US dollar traded at roughly Tk 122, with the taka’s closing rate moving between about Tk 122 and Tk 123.6 over a week. In July the rate had touched about Tk 123.35, described by one data provider as a historical high for the dollar.',
                 'The move follows Bangladesh Bank’s shift in May 2025 to a flexible exchange-rate framework in which market forces, within limits, determine the rate. Over the longer run, the dollar has gained more than 50 percent against the taka since 2016.',
@@ -297,7 +618,9 @@ return [
         [
             'date' => '2026-07', 'category' => 'Tech', 'emoji' => '🚀',
             'title' => 'Startup funding drops sharply in the first half of 2026',
+            'title_bn' => '২০২৬-এর প্রথম ছয় মাসে স্টার্টআপে বিনিয়োগ তীব্র কমেছে',
             'summary' => 'A mid-year report recorded about US$6 million across six deals, roughly 95% below the same period of 2025.',
+            'summary_bn' => 'একটি অর্ধবার্ষিক প্রতিবেদনে ছয়টি চুক্তিতে প্রায় ৬০ লাখ ডলার বিনিয়োগ, আগের বছরের একই সময়ের তুলনায় প্রায় ৯৫ শতাংশ কম।',
             'body' => [
                 'Bangladeshi startups raised about US$6 million across six deals in the first half of 2026, according to a mid-year investment report. That is a fall of roughly 95% from the first half of 2025.',
                 'The slump contrasts with the government’s ambitions for the digital economy. The report’s figure covers recorded deals, so it may not capture every private round.',
@@ -308,7 +631,9 @@ return [
         [
             'date' => '2026-07', 'category' => 'Economy', 'emoji' => '💸',
             'title' => 'Remittances hit a record in FY2025-26 as inflation eases',
+            'title_bn' => '২০২৫-২৬ অর্থবছরে রেকর্ড রেমিট্যান্স, মূল্যস্ফীতি কমেছে',
             'summary' => 'Inward remittances reached roughly US$35 billion in FY26, and headline inflation eased to 8.32% in July.',
+            'summary_bn' => '২০২৬ অর্থবছরে প্রবাসী আয় প্রায় ৩ হাজার ৫০০ কোটি ডলারে পৌঁছেছে; জুলাইয়ে মূল্যস্ফীতি নেমেছে ৮.৩২ শতাংশে।',
             'body' => [
                 'Money sent home by Bangladeshis abroad reached a record of roughly US$35 billion in the 2025-26 fiscal year, up about 17% on the year before. Sources differ slightly on the exact total, at between US$35.3 billion and US$35.6 billion.',
                 'The inflows helped Bangladesh Bank buy a net US$6.4 billion from the foreign-exchange market during the year and supported a balance-of-payments surplus of about US$6.6 billion.',

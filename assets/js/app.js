@@ -277,7 +277,7 @@
     }
 
     function search(query) {
-      fetch(BASE + 'api/search.php?q=' + encodeURIComponent(query) + '&limit=8')
+      fetch(BASE + 'api/search.php?q=' + encodeURIComponent(query) + '&limit=8&lang=' + ((document.body && document.body.dataset.lang) || 'en'))
         .then(function (r) { return r.json(); })
         .then(function (data) {
           if (input.value.trim() === query) { render(data.results || [], query); }

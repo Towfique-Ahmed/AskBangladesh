@@ -37,7 +37,7 @@ $ogImage = bd_abs_url('assets/og-image.png');
 $modified = bd_content_modified();
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="<?= e(bd_lang()) ?>" data-theme="light">
 <head>
 <?php if (GA_ENABLED): ?>
 <!-- Google tag (gtag.js) -->
@@ -64,6 +64,9 @@ $modified = bd_content_modified();
 <meta name="keywords" content="<?= e($seo['keywords']) ?>">
 <?php endif; ?>
 <link rel="canonical" href="<?= e($seo['canonical']) ?>">
+<link rel="alternate" hreflang="en" href="<?= e(SITE_URL . bd_lang_url('en')) ?>">
+<link rel="alternate" hreflang="bn" href="<?= e(SITE_URL . bd_lang_url('bn')) ?>">
+<link rel="alternate" hreflang="x-default" href="<?= e(SITE_URL . bd_lang_url('en')) ?>">
 
 <?php if ($seo['noindex']): ?>
 <meta name="robots" content="noindex, follow">
@@ -81,7 +84,8 @@ $modified = bd_content_modified();
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="<?= e(APP_NAME) ?> - <?= e(APP_TAGLINE) ?>">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="<?= bd_lang() === 'bn' ? 'bn_BD' : 'en_US' ?>">
+<meta property="og:locale:alternate" content="<?= bd_lang() === 'bn' ? 'en_US' : 'bn_BD' ?>">
 <meta property="og:updated_time" content="<?= e($modified) ?>">
 <?php if ($seo['type'] === 'article'): ?>
 <meta property="article:modified_time" content="<?= e($modified) ?>">
@@ -105,7 +109,18 @@ $modified = bd_content_modified();
 <link rel="sitemap" type="application/xml" href="<?= e(bd_url('sitemap.xml')) ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap">
+<script>
+  // Remember the chosen language; send returning Bengali readers to /bn.
+  (function () {
+    try {
+      var lang = <?= json_encode(bd_lang()) ?>, KEY = 'askbd-lang';
+      if (location.search.indexOf('lang=en') > -1) { localStorage.setItem(KEY, 'en'); }
+      else if (lang === 'bn') { localStorage.setItem(KEY, 'bn'); }
+      else if (localStorage.getItem(KEY) === 'bn') { location.replace(<?= json_encode(bd_lang_url('bn')) ?>); }
+    } catch (e) {}
+  })();
+</script>
 <link rel="stylesheet" href="<?= e(bd_url('assets/css/app.css')) ?>?v=<?= e(APP_VERSION) ?>">
 
 <script type="application/ld+json"><?= json_encode(bd_jsonld_site(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
@@ -117,9 +132,9 @@ $modified = bd_content_modified();
 <script type="application/ld+json"><?= json_encode($block, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php endforeach; ?>
 </head>
-<body data-page="<?= e($current) ?>" data-base="<?= e(bd_url()) ?>">
+<body data-page="<?= e($current) ?>" data-base="<?= e(BASE_PATH . '/') ?>" data-lang="<?= e(bd_lang()) ?>">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><?= e(t('Skip to content')) ?></a>
 
 <header class="topbar" id="topbar">
   <div class="topbar__inner">
@@ -134,7 +149,7 @@ $modified = bd_content_modified();
       </span>
       <span class="brand__text">
         <strong>Ask<em>Bangladesh</em></strong>
-        <small><?= e(APP_TAGLINE) ?></small>
+        <small><?= e(t(APP_TAGLINE)) ?></small>
       </span>
     </a>
 
@@ -145,19 +160,23 @@ $modified = bd_content_modified();
         id="global-search-input"
         name="q"
         class="globalsearch__input"
-        placeholder="Search anything - districts, gold, sunset times, visas, rivers…"
+        placeholder="<?= e(t('Search anything - districts, gold, sunset times, visas, rivers…')) ?>"
         value="<?= e($_GET['q'] ?? '') ?>"
-        aria-label="Search everything about Bangladesh"
+        aria-label="<?= e(t('Search everything about Bangladesh')) ?>"
         aria-expanded="false"
         aria-controls="global-search-results"
         role="combobox">
       <kbd class="globalsearch__kbd">/</kbd>
-      <button type="submit" class="globalsearch__go">Search</button>
+      <button type="submit" class="globalsearch__go"><?= e(t('Search')) ?></button>
       <div class="globalsearch__panel" id="global-search-results" role="listbox" hidden></div>
     </form>
 
     <div class="topbar__actions">
-      <button type="button" class="iconbtn" id="theme-toggle" aria-label="Switch colour theme" title="Switch theme">
+      <?php $other = bd_lang() === 'bn' ? 'en' : 'bn'; ?>
+      <a class="iconbtn langtoggle" id="lang-toggle" href="<?= e(bd_lang_url($other) . ($other === 'en' ? (str_contains(bd_lang_url($other), '?') ? '&' : '?') . 'lang=en' : '')) ?>"
+         hreflang="<?= e($other) ?>" lang="<?= e($other) ?>" title="<?= $other === 'bn' ? 'বাংলায় দেখুন' : 'View in English' ?>"
+         aria-label="<?= $other === 'bn' ? 'বাংলায় দেখুন' : 'View in English' ?>"><?= $other === 'bn' ? 'বাং' : 'EN' ?></a>
+      <button type="button" class="iconbtn" id="theme-toggle" aria-label="<?= e(t('Switch colour theme')) ?>" title="<?= e(t('Switch theme')) ?>">
         <span class="iconbtn__sun">☀️</span><span class="iconbtn__moon">🌙</span>
       </button>
       <div class="livechip" title="Bangladesh Standard Time (UTC+6)">
@@ -196,7 +215,7 @@ $modified = bd_content_modified();
       <?php foreach ($nav as $item): ?>
         <li>
           <a href="<?= e(bd_url($item['path'])) ?>" class="mainnav__link<?= bd_active($item['page']) ?>">
-            <span aria-hidden="true"><?= $item['icon'] ?></span><?= e($item['label']) ?>
+            <span aria-hidden="true"><?= $item['icon'] ?></span><?= e(t($item['label'])) ?>
           </a>
         </li>
       <?php endforeach; ?>
@@ -205,3 +224,6 @@ $modified = bd_content_modified();
 </div>
 
 <main id="main" class="main">
+<?php if (bd_lang() === 'bn' && !in_array($current, ['home', 'news', 'news-detail', '404'], true)): ?>
+  <p class="langnote" role="note">এই পৃষ্ঠার বিস্তারিত তথ্য আপাতত ইংরেজিতে রয়েছে। মেনু, শিরোনাম ও সংবাদ বাংলায় পড়া যাবে; বাকি অংশ ধাপে ধাপে বাংলায় আনা হচ্ছে।</p>
+<?php endif; ?>

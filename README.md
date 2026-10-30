@@ -22,6 +22,7 @@ No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 | 🧳 **Travel** | 45 destinations with type, district and best season - beaches, hills, mangroves, tea gardens, wetlands and UNESCO sites. |
 | 🎓 **Universities** | 72 public and private universities with founding year, location, programmes and student numbers, each with its own page. |
 | 💼 **Jobs** | 118 recurring government and private-sector role types linking to each employer's official site. |
+| 🌐 **Bengali & English** | Every page is available in both languages: English at `/…` and Bengali (বাংলা) at `/bn/…`, with a toggle in the header that remembers the choice. The menu, footer, home page, news and search results are fully translated; other pages show a short notice and fall back to English for their detailed text while translation continues. |
 | 📰 **News** | Original articles on trending Bangladesh news in tech, tourism and the economy, published on the site with a page per story and a topic filter. |
 | 🛣️ **Transport** | National highways, fares for every mode from rickshaw to metro, airports, seaports and the megaprojects that redrew the map. |
 | 🕰️ **Time** | Live Bangladesh Standard Time (digital + analogue), 34 world clocks, a two-way time-zone converter and countdowns to national days. |
@@ -112,7 +113,8 @@ includes/
     nation.php          profile, symbols, government, religions, festivals, history
     universities.php    public and private universities
     jobs.php            government and private job roles
-    news.php            trending news items (edit this file to refresh the News page)
+    news.php            trending news items, with Bengali title/summary/body fields (edit to refresh the News page)
+  lang/bn.php           Bengali UI strings, keyed by the English text passed to t()
   layout/               header and footer
 pages/                  one file per route, incl. sitemap.php and robots.php
 api/                    JSON endpoints
@@ -132,10 +134,11 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | `/division/{slug}` | `/division/sylhet` | 8 |
 | `/travel/{slug}` | `/travel/sajek-valley` | 45 |
 | `/universities/{slug}` | `/universities/north-south-university` | 72 |
-| `/news/{slug}` | `/news/st-martins-island-reopens-to-tourists-on-1-november` | 27 |
+| `/news/{slug}` | `/news/st-martins-island-reopens-to-tourists-on-1-november` | 43 |
+| `/bn/…` | `/bn/news`, `/bn/districts` - the Bengali version of any URL above | same again |
 | `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
-306 indexable URLs in total, every one listed in `/sitemap.xml`.
+644 indexable URLs in total (322 pages, each in English and under `/bn`), every one listed in `/sitemap.xml`.
 
 Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
 `deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,

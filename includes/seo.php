@@ -40,7 +40,7 @@ function bd_trim_meta(string $text, int $limit): string
  */
 function bd_seo(array $opts = []): array
 {
-    $title = trim((string) ($opts['title'] ?? APP_NAME));
+    $title = t(trim((string) ($opts['title'] ?? APP_NAME)));
     $path  = (string) ($opts['path'] ?? bd_request_path());
 
     /*
@@ -57,7 +57,7 @@ function bd_seo(array $opts = []): array
     return [
         'title'       => $title,
         'full_title'  => $fullTitle,
-        'description' => bd_trim_meta((string) ($opts['description'] ?? APP_TAGLINE), 158),
+        'description' => bd_trim_meta(t((string) ($opts['description'] ?? APP_TAGLINE)), 158),
         'canonical'   => bd_abs_url($path),
         'type'        => $opts['type'] ?? 'website',
         'noindex'     => (bool) ($opts['noindex'] ?? false),
@@ -625,6 +625,15 @@ function bd_sitemap_urls(): array
     // A page per university.
     foreach (bd_all_universities() as $u) {
         $add('universities/' . bd_slug($u['name']), 'monthly', '0.7');
+    }
+
+    // Every page also exists in Bengali under /bn.
+    $root = SITE_URL . BASE_PATH;
+    foreach ($urls as $u) {
+        if (str_starts_with($u['loc'], $root)) {
+            $rest = substr($u['loc'], strlen($root));
+            $urls[] = ['loc' => $root . '/bn' . ($rest === '/' ? '' : $rest)] + $u;
+        }
     }
 
     return $urls;

@@ -4,34 +4,34 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 
 $news    = bd_news();
 $asOf    = bd_news_date((string) (bd_data('news')['as_of'] ?? date('Y-m-d')));
-$icons   = ['Tech' => '💻', 'Tourism' => '🧳', 'Economy' => '📈', 'Environment' => '🌿', 'Education' => '🎓'];
+$icons   = ['Tech' => '💻', 'Tourism' => '🧳', 'Economy' => '📈', 'Environment' => '🌿', 'Education' => '🎓', 'Society' => '👥', 'Health' => '🩺', 'Culture' => '🎨'];
 $topics  = [];
 foreach ($news as $n) {
     $topics[$n['category']] = $icons[$n['category']] ?? '📰';
 }
 
 $faqs = [
-    'Where does this news come from?'
-        => 'Every story is written by the AskBangladesh news desk and published on this site. Each article names the reporting it draws on at the bottom of the page.',
-    'How often is the news section updated?'
-        => 'The list was last reviewed on ' . $asOf . '. Older items are removed as they go stale. Check the linked source for anything that may have changed since.',
-    'Which topics are covered?'
-        => 'Technology, tourism and travel, economy and trade, environment and climate, and education, with a focus on stories that affect people living in, visiting or doing business with Bangladesh.',
+    t('Where does this news come from?')
+        => t('Every story is written by the AskBangladesh news desk and published on this site. Each article names the reporting it draws on at the bottom of the page.'),
+    t('How often is the news section updated?')
+        => tf('The list was last reviewed on %s. Older items are removed as they go stale. Check the linked source for anything that may have changed since.', $asOf),
+    t('Which topics are covered?')
+        => t('Technology, tourism and travel, economy and trade, environment and climate, and education, with a focus on stories that affect people living in, visiting or doing business with Bangladesh.'),
 ];
 
 $seo = bd_seo(bd_page_seo('news') + [
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'News'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('News')],
     ],
     'jsonld' => [
         bd_jsonld_item_list(
-            'Trending Bangladesh News',
+            t('Trending Bangladesh News'),
             $news,
             static fn (array $n): array => [
                 '@type'         => 'NewsArticle',
-                'headline'      => $n['title'],
-                'description'   => $n['summary'],
+                'headline'      => bd_l($n, 'title'),
+                'description'   => bd_l($n, 'summary'),
                 'datePublished' => $n['date'],
                 'url'           => bd_abs_url('news/' . bd_slug($n['title'])),
                 'articleSection' => $n['category'],
@@ -46,29 +46,27 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">📰 Trending now</span>
-  <h1>Bangladesh News: Tech, Tourism &amp; Economy</h1>
+  <span class="pagehead__eyebrow">📰 <?= e(t('Trending now')) ?></span>
+  <h1><?= e(t('Bangladesh News: Economy, Tech & Tourism')) ?></h1>
   <p>
-    What is moving in Bangladesh right now - trade talks and investment, digital jobs, reopened
-    islands, the taka, climate and wildlife. Original stories from the AskBangladesh news
-    desk, written and published here. Last reviewed <?= e($asOf) ?>.
+    <?= e(tf('What is moving in Bangladesh right now - trade talks and investment, digital jobs, reopened islands, the taka, climate and wildlife. Original stories from the AskBangladesh news desk, written and published here. Last reviewed %s.', $asOf)) ?>
   </p>
 </div>
 
 <div class="card" data-reveal style="margin-bottom:1.4rem">
   <div class="field" style="margin-bottom:.9rem">
-    <label for="news-filter">Search the news</label>
+    <label for="news-filter"><?= e(t('Search the news')) ?></label>
     <input type="search" class="input" id="news-filter" data-filter-input
-           placeholder="Try “St Martin”, “jobs”, “remittance” or “AI”…">
+           placeholder="<?= e(t('Try “St Martin”, “jobs”, “remittance” or “AI”…')) ?>">
   </div>
   <div class="chips">
-    <button type="button" class="chip is-active" data-filter-chip="all">Everything</button>
+    <button type="button" class="chip is-active" data-filter-chip="all"><?= e(t('Everything')) ?></button>
     <?php foreach ($topics as $topic => $icon): ?>
-      <button type="button" class="chip" data-filter-chip="<?= e($topic) ?>"><?= $icon ?> <?= e($topic) ?></button>
+      <button type="button" class="chip" data-filter-chip="<?= e($topic) ?>"><?= $icon ?> <?= e(t($topic)) ?></button>
     <?php endforeach; ?>
   </div>
   <p style="margin:.9rem 0 0;color:var(--text-mute);font-size:.85rem">
-    Showing <strong data-filter-count><?= count($news) ?></strong> of <?= count($news) ?> stories.
+    <?= e(t('Showing')) ?> <strong data-filter-count><?= count($news) ?></strong> <?= e(t('of')) ?> <?= count($news) ?> <?= e(t('stories.')) ?>
   </p>
 </div>
 
@@ -79,20 +77,20 @@ require APP_ROOT . '/includes/layout/header.php';
              data-filter-group="<?= e($n['category']) ?>">
       <span class="tile__icon" aria-hidden="true"><?= $n['emoji'] ?></span>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem">
-        <span class="badge"><?= e($n['category']) ?></span>
+        <span class="badge"><?= e(t($n['category'])) ?></span>
         <span class="badge badge--gold"><time datetime="<?= e($n['date']) ?>"><?= e(bd_news_date($n['date'])) ?></time></span>
       </div>
-      <h3><?= e($n['title']) ?></h3>
-      <p style="margin-bottom:.9rem"><?= e($n['summary']) ?></p>
-      <a class="btn btn--ghost" href="<?= e(bd_news_url($n)) ?>">Read the story →</a>
+      <h3><?= e(bd_l($n, 'title')) ?></h3>
+      <p style="margin-bottom:.9rem"><?= e(bd_l($n, 'summary')) ?></p>
+      <a class="btn btn--ghost" href="<?= e(bd_news_url($n)) ?>"><?= e(t('Read the story →')) ?></a>
     </article>
   <?php endforeach; ?>
 </div>
 
 <p data-filter-empty style="display:none;text-align:center;color:var(--text-mute);padding:3rem 1rem">
-  Nothing matches that search. Try “tech”, “tourism” or “economy”.
+  <?= e(t('Nothing matches that search. Try “tech”, “tourism” or “economy”.')) ?>
 </p>
 
-<?= bd_render_faq($faqs, 'Frequently asked questions about this news section') ?>
+<?= bd_render_faq($faqs, t('Frequently asked questions about this news section')) ?>
 
 <?php require APP_ROOT . '/includes/layout/footer.php'; ?>

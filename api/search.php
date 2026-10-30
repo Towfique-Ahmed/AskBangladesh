@@ -17,7 +17,7 @@ $results = array_map(
     static fn (array $r): array => [
         'title'    => $r['title'],
         'subtitle' => $r['subtitle'],
-        'category' => $r['category'],
+        'category' => t($r['category']),
         'icon'     => $r['icon'],
         'url'      => $r['url'],
     ],
