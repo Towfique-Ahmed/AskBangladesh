@@ -224,6 +224,17 @@ function bd_district_name(string $name): string
     return $d === null ? $name : bd_name($d);
 }
 
+/** Today's date in full, e.g. "Friday, 30 October 2026" or its Bengali form under /bn. */
+function bd_today_long(): string
+{
+    if (bd_lang() !== 'bn') {
+        return date('l, j F Y');
+    }
+    $days = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+    $months = ['', 'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+    return $days[(int) date('w')] . ', ' . bd_bn_digits(date('j')) . ' ' . $months[(int) date('n')] . ' ' . bd_bn_digits(date('Y'));
+}
+
 /** A formatted number, in Bengali digits under /bn. */
 function bd_n(float|int $n, int $decimals = 0): string
 {

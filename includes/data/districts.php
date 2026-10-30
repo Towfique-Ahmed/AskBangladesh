@@ -21,7 +21,9 @@ return [
     'districts' => [
         // ---------------------------------------------------------- Dhaka
         [
-            'name' => 'Dhaka', 'bn' => 'ঢাকা', 'division' => 'Dhaka', 'lat' => 23.8103, 'lon' => 90.4125,
+            'name' => 'Dhaka',
+            'famous_bn' => 'রাজধানী শহর, লালবাগ কেল্লা, আহসান মঞ্জিল ও মসলিনের ঐতিহ্য', 'economy_bn' => 'দেশের তৈরি পোশাক (আরএমজি) রপ্তানি শিল্পের সদর দপ্তর এখানে; সঙ্গে রয়েছে জাতীয় ব্যাংকিং, সরকারি প্রশাসন ও পুরান ঢাকার ঘন পাইকারি ব্যবসা।',
+            'culture_bn' => 'পুরান ঢাকার কাচ্চি বিরিয়ানি ও রাস্তার খাবার, পহেলা বৈশাখের মঙ্গল শোভাযাত্রা এবং দীর্ঘ নবাবি ও রিকশা-শিল্পের ঐতিহ্যের জন্য পরিচিত।', 'bn' => 'ঢাকা', 'division' => 'Dhaka', 'lat' => 23.8103, 'lon' => 90.4125,
             'area' => 1463.6, 'population' => 12043977,
             'famous' => 'Capital city, Lalbagh Fort, Ahsan Manzil, muslin heritage',
             'history' => 'Founded as the Mughal provincial capital "Jahangir Nagar" by Subahdar Islam Khan in 1608, Dhaka has over four centuries of continuous urban history visible in its old-town mosques and forts. It briefly served as capital of Bengal and Assam under British rule (1905-1911), and has been the capital of independent Bangladesh since 1971.',
@@ -31,7 +33,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Gazipur', 'bn' => 'গাজীপুর', 'division' => 'Dhaka', 'lat' => 24.0958, 'lon' => 90.4125,
+            'name' => 'Gazipur',
+            'famous_bn' => 'ভাওয়াল জাতীয় উদ্যান ও পোশাক শিল্পের কেন্দ্র', 'economy_bn' => 'দেশের সবচেয়ে বেশি পোশাক ও বস্ত্র কারখানা এখানে; সঙ্গে কোনাবাড়ী ও টঙ্গী এলাকায় ওষুধ কারখানা ও শিল্পাঞ্চল।',
+            'culture_bn' => 'শ্রীপুর ও কালিয়াকৈরে গ্রামীণ মেলা ও ভাওয়ালের লোককথা এখনও আছে, পাশাপাশি দ্রুত বেড়ে ওঠা কারখানা-শহরের সংস্কৃতি।', 'bn' => 'গাজীপুর', 'division' => 'Dhaka', 'lat' => 24.0958, 'lon' => 90.4125,
             'area' => 1806.4, 'population' => 5263474,
             'famous' => 'Bhawal National Park, garment industry hub',
             'history' => 'The area grew around the Bhawal zamindari estate under British rule, whose disputed succession became the famous "Bhawal Sannyasi" court case of the 1930s. After 1971 it developed rapidly into Dhaka\'s main industrial satellite town.',
@@ -41,7 +45,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Kishoreganj', 'bn' => 'কিশোরগঞ্জ', 'division' => 'Dhaka', 'lat' => 24.4449, 'lon' => 90.7766,
+            'name' => 'Kishoreganj',
+            'famous_bn' => 'শোলাকিয়া ঈদগাহ, হাওরের জলাভূমি ও নিকলী', 'economy_bn' => 'হাওর অববাহিকায় ধান ও মাছ চাষ, ঐতিহ্যবাহী নৌকা তৈরি এবং উল্লেখযোগ্য প্রবাসী আয়।',
+            'culture_bn' => 'হাওরের মাঝিদের ভাটিয়ালি গান এবং হাওরের মাছ ও ইলিশভিত্তিক খাবার।', 'bn' => 'কিশোরগঞ্জ', 'division' => 'Dhaka', 'lat' => 24.4449, 'lon' => 90.7766,
             'area' => 2688.6, 'population' => 3267630,
             'famous' => 'Sholakia Eid ground, Haor wetlands, Nikli',
             'history' => 'Historically part of the Bara-Bhuyan chieftains\' resistance to Mughal expansion in the 16th-17th centuries, centred near Egarosindur. The Sholakia Eidgah, established in 1828, has grown into one of the largest single Eid congregations in the world.',
@@ -51,7 +57,9 @@ return [
             'upazilas' => 13,
         ],
         [
-            'name' => 'Manikganj', 'bn' => 'মানিকগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.8644, 'lon' => 90.0047,
+            'name' => 'Manikganj',
+            'famous_bn' => 'বালিয়াটি প্রাসাদ ও পদ্মার তীর', 'economy_bn' => 'পাট ও ধান চাষ, ঢাকা-আরিচা মহাসড়ক ধরে ঢাকায় সচল ছোট ব্যবসা।',
+            'culture_bn' => 'বাউল গান এবং পদ্মা ও কালীগঙ্গা নদীকেন্দ্রিক মাঝিদের সংস্কৃতি।', 'bn' => 'মানিকগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.8644, 'lon' => 90.0047,
             'area' => 1383.7, 'population' => 1558154,
             'famous' => 'Baliati Palace, Padma river bank',
             'history' => 'Once part of a larger Dhaka district, the area is known for the 19th-century Baliati Palace built by local zamindars, and its settlement pattern has long been reshaped by the shifting Padma and Jamuna char lands.',
@@ -61,7 +69,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Munshiganj', 'bn' => 'মুন্সিগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.5422, 'lon' => 90.5305,
+            'name' => 'Munshiganj',
+            'famous_bn' => 'ইদ্রাকপুর কেল্লা, অতীশ দীপঙ্করের জন্মস্থান ও আলুর বলয়', 'economy_bn' => 'বাংলাদেশের আলুর বলয় হিসেবে পরিচিত; ঢাকার বাজারে আলু ও সবজির বড় অংশ সরবরাহ করে।',
+            'culture_bn' => 'বিক্রমপুরের ঐতিহাসিক সাহিত্য-ঐতিহ্য এবং বাংলা নববর্ষের ঐতিহ্যবাহী নদীমেলা।', 'bn' => 'মুন্সিগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.5422, 'lon' => 90.5305,
             'area' => 954.9, 'population' => 1625000,
             'famous' => 'Idrakpur Fort, Atish Dipankar birthplace, potato belt',
             'history' => 'Birthplace of the 11th-century Buddhist scholar Atish Dipankar, and site of Idrakpur Fort, built around 1660 by Mughal faujdar Mir Jumla to guard the river approaches to Dhaka.',
@@ -71,7 +81,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Narayanganj', 'bn' => 'নারায়ণগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.6238, 'lon' => 90.5000,
+            'name' => 'Narayanganj',
+            'famous_bn' => 'পূর্বের ঢাকা, পানাম নগর ও জামদানি বুনন', 'economy_bn' => 'বস্ত্র ও পাটকল, নদীবন্দরের বাণিজ্য এবং জামদানি শাড়ি বোনার কুটির শিল্প।',
+            'culture_bn' => 'জামদানি বুনন - ইউনেস্কো স্বীকৃত অধরা সাংস্কৃতিক ঐতিহ্য - এবং সোনারগাঁওয়ের লোকশিল্প উৎসব।', 'bn' => 'নারায়ণগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.6238, 'lon' => 90.5000,
             'area' => 684.4, 'population' => 3909138,
             'famous' => 'Dhaka of the East, Panam City, jamdani weaving',
             'history' => 'A major Mughal-era river port, nicknamed "Dhaka of the East" by the British for its jute trade. Panam City in Sonargaon was the capital of medieval Bengal under Isa Khan in the 16th century.',
@@ -81,7 +93,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Narsingdi', 'bn' => 'নরসিংদী', 'division' => 'Dhaka', 'lat' => 23.9322, 'lon' => 90.7150,
+            'name' => 'Narsingdi',
+            'famous_bn' => 'ওয়ারী-বটেশ্বরের ধ্বংসাবশেষ ও বস্ত্র ব্যবসা', 'economy_bn' => 'বস্ত্র ও হোসিয়ারি উৎপাদন এবং ঘোড়াশাল সার ও বিদ্যুৎ কমপ্লেক্স।',
+            'culture_bn' => 'জীবন্ত বাউল সংগীতের ঐতিহ্য এবং বেলাব ও শিবপুরে কেন্দ্রীভূত তাঁতি সম্প্রদায়।', 'bn' => 'নরসিংদী', 'division' => 'Dhaka', 'lat' => 23.9322, 'lon' => 90.7150,
             'area' => 1140.8, 'population' => 2584452,
             'famous' => 'Wari-Bateshwar ruins, textile trade',
             'history' => 'The nearby Wari-Bateshwar archaeological site shows settlement dating back over 2,500 years, believed to have been an ancient trade centre on an old course of the Brahmaputra.',
@@ -91,7 +105,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Tangail', 'bn' => 'টাঙ্গাইল', 'division' => 'Dhaka', 'lat' => 24.2513, 'lon' => 89.9167,
+            'name' => 'Tangail',
+            'famous_bn' => 'টাঙ্গাইল শাড়ি, আটিয়া মসজিদ ও মধুপুর বন', 'economy_bn' => 'বিশ্বখ্যাত টাঙ্গাইল তাঁত শাড়ি শিল্প, সঙ্গে যমুনার বন্যা-সমভূমিতে পাট ও ধান চাষ।',
+            'culture_bn' => 'টাঙ্গাইল শাড়ি বোনার ঐতিহ্য এবং এলেঙ্গায় প্রাণবন্ত পহেলা বৈশাখের মেলা।', 'bn' => 'টাঙ্গাইল', 'division' => 'Dhaka', 'lat' => 24.2513, 'lon' => 89.9167,
             'area' => 3414.3, 'population' => 4037608,
             'famous' => 'Tangail saree, Atia Mosque, Madhupur forest',
             'history' => 'Seat of the Karatia and Santosh zamindari estates under British rule, and a key sector for Kader Siddiqui\'s ("Tiger Siddiqui") Mukti Bahini forces during the 1971 Liberation War.',
@@ -101,7 +117,9 @@ return [
             'upazilas' => 12,
         ],
         [
-            'name' => 'Faridpur', 'bn' => 'ফরিদপুর', 'division' => 'Dhaka', 'lat' => 23.6070, 'lon' => 89.8429,
+            'name' => 'Faridpur',
+            'famous_bn' => 'পাটের রাজধানী, পাথরাইল ও পদ্মা সেতুর সংযোগ সড়ক', 'economy_bn' => 'পাট চাষ ও বাণিজ্যের ঐতিহ্য, এখন পদ্মা সেতু এক্সপ্রেসওয়ে দিয়ে নতুন সংযোগে সবজি চাষে বৈচিত্র্য আনছে।',
+            'culture_bn' => 'নিম্ন পদ্মা অববাহিকার বাউল ও মুর্শিদি গান।', 'bn' => 'ফরিদপুর', 'division' => 'Dhaka', 'lat' => 23.6070, 'lon' => 89.8429,
             'area' => 2072.7, 'population' => 2162876,
             'famous' => 'Jute capital, Pathrail, Padma bridge approach',
             'history' => 'A colonial-era jute trading centre linked by rail and river steamer to Kolkata, and birthplace of several notable 20th-century Bengali political and literary figures.',
@@ -111,7 +129,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Gopalganj', 'bn' => 'গোপালগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.0050, 'lon' => 89.8266,
+            'name' => 'Gopalganj',
+            'famous_bn' => 'টুঙ্গিপাড়া ও বাঘিয়ার বিলের শাপলা', 'economy_bn' => 'নিচু হাওর ও বিল এলাকায় ধান ও মাছ চাষ।',
+            'culture_bn' => 'শাপলা ফোটার মৌসুমে বাঘিয়ার বিলে স্থানীয় উৎসব ও ঐতিহ্যবাহী নৌকাবাইচ।', 'bn' => 'গোপালগঞ্জ', 'division' => 'Dhaka', 'lat' => 23.0050, 'lon' => 89.8266,
             'area' => 1490.0, 'population' => 1295000,
             'famous' => 'Tungipara, Baghiar Bill water lilies',
             'history' => 'Ancestral home of Sheikh Mujibur Rahman, founding leader of Bangladesh, whose mausoleum stands at Tungipara. The district was administratively separated from Faridpur in 1984.',
@@ -121,7 +141,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Madaripur', 'bn' => 'মাদারীপুর', 'division' => 'Dhaka', 'lat' => 23.1641, 'lon' => 90.1897,
+            'name' => 'Madaripur',
+            'famous_bn' => 'শকুনি লেক ও আউলিয়াপুর মাজার', 'economy_bn' => 'চরাঞ্চলে পাট ও ধান চাষ এবং প্রবাসী আয়নির্ভর উল্লেখযোগ্য স্থানীয় অর্থনীতি।',
+            'culture_bn' => 'শকুনি লেকে নৌকাবাইচ উৎসব এবং ঐতিহ্যবাহী যাত্রাপালার চর্চা।', 'bn' => 'মাদারীপুর', 'division' => 'Dhaka', 'lat' => 23.1641, 'lon' => 90.1897,
             'area' => 1145.0, 'population' => 1300000,
             'famous' => 'Shakuni Lake, Auliapur Mazar',
             'history' => 'A historic river port on the old Padma-Kumar channel that long served as a trade link between southern Bengal and Dhaka before the Padma Bridge was built.',
@@ -131,7 +153,9 @@ return [
             'upazilas' => 4,
         ],
         [
-            'name' => 'Rajbari', 'bn' => 'রাজবাড়ী', 'division' => 'Dhaka', 'lat' => 23.7574, 'lon' => 89.6444,
+            'name' => 'Rajbari',
+            'famous_bn' => 'দৌলতদিয়া ফেরিঘাট ও গোয়ালন্দের ইলিশ', 'economy_bn' => 'গোয়ালন্দ ঘাটে ইলিশ আহরণ এবং ফেরিনির্ভর বাণিজ্য ও পরিবহন সেবা।',
+            'culture_bn' => 'পদ্মার মাঝিদের জীবনযাত্রাকেন্দ্রিক ভাটিয়ালি নদীর গান।', 'bn' => 'রাজবাড়ী', 'division' => 'Dhaka', 'lat' => 23.7574, 'lon' => 89.6444,
             'area' => 1118.8, 'population' => 1160000,
             'famous' => 'Daulatdia ferry ghat, Goalanda hilsa',
             'history' => 'Grew up around the Daulatdia-Goalanda Padma river crossing, a strategic ferry and rail junction that has linked Dhaka with Khulna and Kolkata since the British era.',
@@ -141,7 +165,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Shariatpur', 'bn' => 'শরীয়তপুর', 'division' => 'Dhaka', 'lat' => 23.2423, 'lon' => 90.4348,
+            'name' => 'Shariatpur',
+            'famous_bn' => 'পদ্মা সেতুর দক্ষিণ প্রান্ত ও মহিষার চর', 'economy_bn' => 'পদ্মার উর্বর চরে কৃষি, পদ্মা সেতু চালুর পর বাণিজ্যের সংযোগ বাড়ছে।',
+            'culture_bn' => 'ফরায়েজি ধর্মসংস্কার আন্দোলনের ঐতিহ্য এবং পদ্মার তীরে ঐতিহ্যবাহী নৌকা নির্মাণ।', 'bn' => 'শরীয়তপুর', 'division' => 'Dhaka', 'lat' => 23.2423, 'lon' => 90.4348,
             'area' => 1181.5, 'population' => 1250000,
             'famous' => 'Padma bridge south end, Mahisar Char',
             'history' => 'Named after the 19th-century Islamic reformer Haji Shariatullah, leader of the Faraizi movement, who was born in this area. The southern end of the Padma Bridge lies within the district.',
@@ -153,7 +179,9 @@ return [
 
         // ----------------------------------------------------- Chattogram
         [
-            'name' => 'Chattogram', 'bn' => 'চট্টগ্রাম', 'division' => 'Chattogram', 'lat' => 22.3569, 'lon' => 91.7832,
+            'name' => 'Chattogram',
+            'famous_bn' => 'বন্দরনগরী, পতেঙ্গা সৈকত, ফয়’স লেক ও মেজবান', 'economy_bn' => 'দেশের প্রধান সমুদ্রবন্দর ও দ্বিতীয় বৃহত্তম শহর; জাহাজ নির্মাণ, জাহাজ ভাঙা শিল্প ও রপ্তানি প্রক্রিয়াকরণ অঞ্চলের কেন্দ্র।',
+            'culture_bn' => 'মেজবান নামের সামাজিক গরুর মাংসের ভোজ, স্বতন্ত্র চাটগাঁইয়া উপভাষা এবং পর্তুগিজ আমলের প্রভাবযুক্ত পুরোনো শহরের স্থাপত্যের জন্য বিখ্যাত।', 'bn' => 'চট্টগ্রাম', 'division' => 'Chattogram', 'lat' => 22.3569, 'lon' => 91.7832,
             'area' => 5282.9, 'population' => 9169618,
             'famous' => 'Port city, Patenga beach, Foys Lake, mezban',
             'history' => 'A seaport known to Arab, Chinese and European traders since antiquity, ruled successively by the Arakanese, the Mughals from 1666, and the British. It played a pivotal role in 1971, when the declaration of independence was first broadcast from a radio station here.',
@@ -163,7 +191,9 @@ return [
             'upazilas' => 15,
         ],
         [
-            'name' => "Cox's Bazar", 'bn' => 'কক্সবাজার', 'division' => 'Chattogram', 'lat' => 21.4272, 'lon' => 92.0058,
+            'name' => "Cox's Bazar",
+            'famous_bn' => 'বিশ্বের দীর্ঘতম প্রাকৃতিক সমুদ্রসৈকত (১২০ কিমি)', 'economy_bn' => 'পর্যটন প্রধান শিল্প, সঙ্গে উপকূলে সামুদ্রিক মাছ ধরা ও লবণ উৎপাদন।',
+            'culture_bn' => 'রাখাইন বৌদ্ধ ঐতিহ্য বাঙালি উপকূলীয় মুসলিম রীতির পাশাপাশি আছে; শুঁটকি উৎপাদন ব্যাপক।', 'bn' => 'কক্সবাজার', 'division' => 'Chattogram', 'lat' => 21.4272, 'lon' => 92.0058,
             'area' => 2491.9, 'population' => 2823265,
             'famous' => "World's longest natural sea beach (120 km)",
             'history' => 'Named after British East India Company officer Captain Hiram Cox in the late 18th century, the area was historically part of the Arakan trade corridor and remains home to long-settled Rakhine communities.',
@@ -173,7 +203,9 @@ return [
             'upazilas' => 8,
         ],
         [
-            'name' => 'Bandarban', 'bn' => 'বান্দরবান', 'division' => 'Chattogram', 'lat' => 22.1953, 'lon' => 92.2184,
+            'name' => 'Bandarban',
+            'famous_bn' => 'তাজিংডং, নীলগিরি, বগা লেক ও পাহাড়ি জনগোষ্ঠী', 'economy_bn' => 'ফলের বাগান - বিশেষত কলা ও কাঁঠাল - উদ্যানপালন এবং ক্রমবর্ধমান ইকো-ট্যুরিজম।',
+            'culture_bn' => 'স্বতন্ত্র পাহাড়ি জাতিগোষ্ঠীর ভাষা ও বয়নঐতিহ্য, মারমা বৌদ্ধদের রাশ উৎসবসহ।', 'bn' => 'বান্দরবান', 'division' => 'Chattogram', 'lat' => 22.1953, 'lon' => 92.2184,
             'area' => 4479.0, 'population' => 481109,
             'famous' => 'Tazing Dong, Nilgiri, Boga Lake, hill tribes',
             'history' => 'Settled for centuries by indigenous hill communities including the Marma, Bawm, Mro and Tripura, historically governed by the traditional Bohmong Circle chieftainship recognised through the Mughal and British periods.',
@@ -183,7 +215,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Rangamati', 'bn' => 'রাঙ্গামাটি', 'division' => 'Chattogram', 'lat' => 22.6533, 'lon' => 92.1735,
+            'name' => 'Rangamati',
+            'famous_bn' => 'কাপ্তাই হ্রদ, ঝুলন্ত সেতু ও সাজেকের প্রবেশদ্বার', 'economy_bn' => 'কাপ্তাই হ্রদে মৎস্য আহরণ, সেগুন ও কাঠের বনায়ন এবং জলবিদ্যুৎ উৎপাদন।',
+            'culture_bn' => 'চাকমা ও মারমাদের বয়ন ও নৌকাবাইচের ঐতিহ্য, রাজবন বিহার বৌদ্ধ মন্দিরকে কেন্দ্র করে।', 'bn' => 'রাঙ্গামাটি', 'division' => 'Chattogram', 'lat' => 22.6533, 'lon' => 92.1735,
             'area' => 6116.1, 'population' => 647587,
             'famous' => 'Kaptai Lake, Hanging Bridge, Sajek gateway',
             'history' => 'Historic seat of the Chakma Circle monarchy; the original royal palace site now lies submerged under Kaptai Lake, formed when the Karnaphuli hydroelectric dam was completed in 1962.',
@@ -193,7 +227,9 @@ return [
             'upazilas' => 10,
         ],
         [
-            'name' => 'Khagrachhari', 'bn' => 'খাগড়াছড়ি', 'division' => 'Chattogram', 'lat' => 23.1193, 'lon' => 91.9847,
+            'name' => 'Khagrachhari',
+            'famous_bn' => 'সাজেক ভ্যালি, আলুটিলা গুহা ও রিছাং ঝরনা', 'economy_bn' => 'জুম চাষ, কমলা ও কলার বাগান এবং সাজেককে ঘিরে দ্রুত বাড়তে থাকা পর্যটন।',
+            'culture_bn' => 'চাকমা, ত্রিপুরা ও মারমা জনগোষ্ঠীর আবাস; তাদের বৈসাবি নববর্ষ উৎসব ও বাঁশের হস্তশিল্প বহুল প্রচলিত।', 'bn' => 'খাগড়াছড়ি', 'division' => 'Chattogram', 'lat' => 23.1193, 'lon' => 91.9847,
             'area' => 2699.6, 'population' => 714000,
             'famous' => 'Sajek Valley, Alutila Cave, Richang waterfall',
             'history' => 'Part of the Chittagong Hill Tracts, historically governed by indigenous chiefs before British annexation in the 19th century, and a focal point of the CHT insurgency until the 1997 Peace Accord.',
@@ -203,7 +239,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Feni', 'bn' => 'ফেনী', 'division' => 'Chattogram', 'lat' => 23.0159, 'lon' => 91.3976,
+            'name' => 'Feni',
+            'famous_bn' => 'মুহুরী প্রকল্প ও সোনাগাজীর উপকূল', 'economy_bn' => 'বিশাল প্রবাসী জনগোষ্ঠীর ওপর গড়ে ওঠা রেমিট্যান্সনির্ভর অর্থনীতি, সঙ্গে মুহুরী সেচ প্রকল্পের সহায়তায় ধান চাষ।',
+            'culture_bn' => 'প্রবাসীদের সম্পর্ক স্থানীয় স্থাপত্য ও ব্যবসাকে প্রভাবিত করেছে; ফেনী নদীতে ঐতিহ্যবাহী নৌকাবাইচও হয়।', 'bn' => 'ফেনী', 'division' => 'Chattogram', 'lat' => 23.0159, 'lon' => 91.3976,
             'area' => 990.4, 'population' => 1650000,
             'famous' => 'Muhuri project, Sonagazi coastline',
             'history' => 'Separated from Noakhali as its own district in 1984; areas along the Muhuri river saw fighting during the 1971 Liberation War.',
@@ -213,7 +251,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Lakshmipur', 'bn' => 'লক্ষ্মীপুর', 'division' => 'Chattogram', 'lat' => 22.9447, 'lon' => 90.8282,
+            'name' => 'Lakshmipur',
+            'famous_bn' => 'মেঘনার মোহনা ও সয়াবিনের রাজধানী', 'economy_bn' => 'দেশের শীর্ষ সয়াবিন উৎপাদক জেলা, সঙ্গে মেঘনার মোহনায় ইলিশ ধরা।',
+            'culture_bn' => 'নদীনির্ভর জেলে সম্প্রদায় মেঘনার তীরে ভাটিয়ালি নৌকার গান বাঁচিয়ে রেখেছে।', 'bn' => 'লক্ষ্মীপুর', 'division' => 'Chattogram', 'lat' => 22.9447, 'lon' => 90.8282,
             'area' => 1455.9, 'population' => 1900000,
             'famous' => 'Meghna estuary, soybean capital',
             'history' => 'Formed on the alluvial land of the Meghna estuary, historically prone to river erosion that repeatedly reshaped its char settlements through the 19th and 20th centuries.',
@@ -223,7 +263,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Noakhali', 'bn' => 'নোয়াখালী', 'division' => 'Chattogram', 'lat' => 22.8696, 'lon' => 91.0995,
+            'name' => 'Noakhali',
+            'famous_bn' => 'নিঝুম দ্বীপ ও বাজরা শাহী মসজিদ', 'economy_bn' => 'নারকেল ও সুপারি চাষ, মাছ ধরা এবং বিশাল প্রবাসী আয়ের অর্থনীতি।',
+            'culture_bn' => 'স্বতন্ত্র নোয়াখাইল্যা উপভাষা, নারকেলভিত্তিক মিষ্টি ও ঐতিহ্যবাহী লোকনাট্য।', 'bn' => 'নোয়াখালী', 'division' => 'Chattogram', 'lat' => 22.8696, 'lon' => 91.0995,
             'area' => 3600.9, 'population' => 3625000,
             'famous' => 'Nijhum Dwip, Bajra Shahi Mosque',
             'history' => 'Repeatedly reshaped by Meghna river erosion and accretion since the 18th century, forcing the district town to relocate more than once. The area was the site of the 1946 Noakhali riots, which Mahatma Gandhi personally visited to restore communal peace.',
@@ -233,7 +275,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Cumilla', 'bn' => 'কুমিল্লা', 'division' => 'Chattogram', 'lat' => 23.4607, 'lon' => 91.1809,
+            'name' => 'Cumilla',
+            'famous_bn' => 'ময়নামতির বৌদ্ধ ধ্বংসাবশেষ ও রসমালাই', 'economy_bn' => 'বাংলাদেশের অগ্রণী গ্রামীণ সমবায় আন্দোলনের (‘কুমিল্লা মডেল’) কেন্দ্র, সঙ্গে খাদি সুতি বয়ন ও খাদ্য প্রক্রিয়াকরণ।',
+            'culture_bn' => 'রসমালাই মিষ্টি ও খাদি কাপড়ের জন্য দেশজুড়ে বিখ্যাত, গ্রামীণ সমবায় উদ্যোগের শক্তিশালী ঐতিহ্যসহ।', 'bn' => 'কুমিল্লা', 'division' => 'Chattogram', 'lat' => 23.4607, 'lon' => 91.1809,
             'area' => 3085.2, 'population' => 6212216,
             'famous' => 'Mainamati Buddhist ruins, rasmalai',
             'history' => 'Site of the ancient Samatata kingdom and the Mainamati Buddhist monastic ruins dating to the 7th-8th centuries. A British cantonment was established here in the 19th century, and the district saw major battles during the 1971 Liberation War.',
@@ -243,7 +287,9 @@ return [
             'upazilas' => 17,
         ],
         [
-            'name' => 'Chandpur', 'bn' => 'চাঁদপুর', 'division' => 'Chattogram', 'lat' => 23.2333, 'lon' => 90.6712,
+            'name' => 'Chandpur',
+            'famous_bn' => 'ইলিশের রাজধানী, মেঘনা-পদ্মার মিলনস্থল', 'economy_bn' => 'বাংলাদেশের ‘ইলিশের রাজধানী’ নামে পরিচিত; এর মৎস্য অবতরণ কেন্দ্র থেকে দেশের ইলিশ বাণিজ্যের বড় অংশ চলে।',
+            'culture_bn' => 'ইলিশভিত্তিক খাবার স্থানীয় পরিচয়ের কেন্দ্রে, সঙ্গে মেঘনার নৌকার গান ও উৎসব।', 'bn' => 'চাঁদপুর', 'division' => 'Chattogram', 'lat' => 23.2333, 'lon' => 90.6712,
             'area' => 1704.1, 'population' => 2600000,
             'famous' => 'Hilsa capital, Meghna-Padma confluence',
             'history' => 'A major Meghna river port and steamer junction since colonial times, linking Dhaka, Chattogram and Kolkata, though the town suffered heavy river erosion through the 20th century.',
@@ -253,7 +299,9 @@ return [
             'upazilas' => 8,
         ],
         [
-            'name' => 'Brahmanbaria', 'bn' => 'ব্রাহ্মণবাড়িয়া', 'division' => 'Chattogram', 'lat' => 23.9571, 'lon' => 91.1119,
+            'name' => 'Brahmanbaria',
+            'famous_bn' => 'সংগীতের ঐতিহ্য ও আখাউড়া স্থলবন্দর', 'economy_bn' => 'আখাউড়া স্থলবন্দরের মাধ্যমে সীমান্ত বাণিজ্য, কৃষি এবং তিতাস গ্যাসক্ষেত্র থেকে প্রাকৃতিক গ্যাস উত্তোলন।',
+            'culture_bn' => 'বিশেষত শাস্ত্রীয় সংগীত ও কাওয়ালি গাওয়ায় একটি খ্যাতিমান সংগীত-ঐতিহ্য।', 'bn' => 'ব্রাহ্মণবাড়িয়া', 'division' => 'Chattogram', 'lat' => 23.9571, 'lon' => 91.1119,
             'area' => 1927.1, 'population' => 3300000,
             'famous' => 'Music heritage, Akhaura land port',
             'history' => 'Long a centre of classical and folk music, having produced noted singers in the shyama sangeet and qawwali traditions. The Akhaura land port has been a key India-Bangladesh crossing since Partition.',
@@ -265,7 +313,9 @@ return [
 
         // ------------------------------------------------------- Rajshahi
         [
-            'name' => 'Rajshahi', 'bn' => 'রাজশাহী', 'division' => 'Rajshahi', 'lat' => 24.3745, 'lon' => 88.6042,
+            'name' => 'Rajshahi',
+            'famous_bn' => 'রেশম নগরী, আমের রাজধানী ও পদ্মা গার্ডেন', 'economy_bn' => 'বিখ্যাত আমবাগান, রাজশাহী রেশম বয়নশিল্প এবং বড় শিক্ষাসেবা খাত।',
+            'culture_bn' => 'রাজশাহী রেশম শাড়ি এবং ক্ষীরশাপাতি ও ল্যাংড়ার মতো আমের জাতের জন্য বিখ্যাত, যা গ্রীষ্মকালীন আম উৎসবে উদযাপিত হয়।', 'bn' => 'রাজশাহী', 'division' => 'Rajshahi', 'lat' => 24.3745, 'lon' => 88.6042,
             'area' => 2407.0, 'population' => 2915000,
             'famous' => 'Silk city, mango capital, Padma Garden',
             'history' => 'Developed as a colonial-era administrative and educational centre on the Padma river, later becoming seat of Rajshahi Division and home to one of Bangladesh\'s oldest universities, established in 1953.',
@@ -275,7 +325,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Bogura', 'bn' => 'বগুড়া', 'division' => 'Rajshahi', 'lat' => 24.8465, 'lon' => 89.3773,
+            'name' => 'Bogura',
+            'famous_bn' => 'মহাস্থানগড় (প্রাচীনতম নগর) ও দই', 'economy_bn' => 'উত্তরবঙ্গজুড়ে আলু ও ধানের বড় কৃষি-প্রক্রিয়াকরণ ও বাণিজ্যকেন্দ্র।',
+            'culture_bn' => 'স্বতন্ত্র মিষ্টি দই এবং মহাস্থান এলাকার ঐতিহ্যবাহী মৃৎশিল্পের জন্য দেশজুড়ে বিখ্যাত।', 'bn' => 'বগুড়া', 'division' => 'Rajshahi', 'lat' => 24.8465, 'lon' => 89.3773,
             'area' => 2919.9, 'population' => 3800000,
             'famous' => 'Mahasthangarh (oldest city), doi (sweet yogurt)',
             'history' => 'Site of Mahasthangarh, believed to be the oldest archaeological urban site in Bangladesh, dating to the 3rd century BCE as capital of the ancient Pundravardhana kingdom.',
@@ -285,7 +337,9 @@ return [
             'upazilas' => 12,
         ],
         [
-            'name' => 'Joypurhat', 'bn' => 'জয়পুরহাট', 'division' => 'Rajshahi', 'lat' => 25.0947, 'lon' => 89.0227,
+            'name' => 'Joypurhat',
+            'famous_bn' => 'পাথরঘাটা মন্দির ও চিনিকল', 'economy_bn' => 'দেশের প্রধান চুনাপাথর খনি এবং পাঁচবিবিতে একটি বড় চিনিকল।',
+            'culture_bn' => 'আখ কাটার মৌসুম ধরে গ্রামীণ মেলা বসে।', 'bn' => 'জয়পুরহাট', 'division' => 'Rajshahi', 'lat' => 25.0947, 'lon' => 89.0227,
             'area' => 965.4, 'population' => 1000000,
             'famous' => 'Pathorghata temple, sugar mill',
             'history' => 'One of Bangladesh\'s youngest districts, created in 1984 from Bogura. Its limestone deposits near Jamalganj have been mined since the colonial period.',
@@ -295,7 +349,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Naogaon', 'bn' => 'নওগাঁ', 'division' => 'Rajshahi', 'lat' => 24.7936, 'lon' => 88.9318,
+            'name' => 'Naogaon',
+            'famous_bn' => 'পাহাড়পুর সোমপুর মহাবিহার (ইউনেস্কো)', 'economy_bn' => 'দেশের অন্যতম বৃহৎ ধান উৎপাদক জেলা, ব্যাপক ভূগর্ভস্থ পানির সেচে সমর্থিত।',
+            'culture_bn' => 'জেলার কিছু অংশে সাঁওতাল ও অন্যান্য আদিবাসী সম্প্রদায় বাস করে, তাদের স্বতন্ত্র ফসল তোলার উৎসব এখনও টিকে আছে।', 'bn' => 'নওগাঁ', 'division' => 'Rajshahi', 'lat' => 24.7936, 'lon' => 88.9318,
             'area' => 3435.7, 'population' => 2750000,
             'famous' => 'Paharpur Somapura Mahavihara (UNESCO)',
             'history' => 'Home to Paharpur\'s Somapura Mahavihara, a UNESCO World Heritage 8th-century Buddhist monastery built under the Pala dynasty and once the largest Buddhist monastery south of the Himalayas.',
@@ -305,7 +361,9 @@ return [
             'upazilas' => 11,
         ],
         [
-            'name' => 'Natore', 'bn' => 'নাটোর', 'division' => 'Rajshahi', 'lat' => 24.4206, 'lon' => 89.0003,
+            'name' => 'Natore',
+            'famous_bn' => 'উত্তরা গণভবন, নাটোর রাজবাড়ী ও কাঁচাগোল্লা', 'economy_bn' => 'আখ ও ধান চাষ, সঙ্গে স্থানীয় সুপরিচিত মিষ্টি শিল্প।',
+            'culture_bn' => 'কাঁচাগোল্লার জন্মস্থান, যা এখানে ঊনবিংশ শতকে উদ্ভাবিত হয়ে এখন জাতীয় প্রিয় মিষ্টি।', 'bn' => 'নাটোর', 'division' => 'Rajshahi', 'lat' => 24.4206, 'lon' => 89.0003,
             'area' => 1900.1, 'population' => 1900000,
             'famous' => 'Uttara Gonobhaban, Natore Rajbari, kanchagolla',
             'history' => 'Seat of the historic Natore Raj zamindari estate from the 18th century, whose ruler Rani Bhabani was a celebrated philanthropic patron. The Uttara Gonobhaban palace later served as a residence for the President of Bangladesh.',
@@ -315,7 +373,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Chapainawabganj', 'bn' => 'চাঁপাইনবাবগঞ্জ', 'division' => 'Rajshahi', 'lat' => 24.5965, 'lon' => 88.2775,
+            'name' => 'Chapainawabganj',
+            'famous_bn' => 'আমের রাজধানী, ছোট সোনা মসজিদ ও গৌড়ের ধ্বংসাবশেষ', 'economy_bn' => 'বাংলাদেশের শীর্ষ আম উৎপাদক জেলা, সঙ্গে রেশম চাষ।',
+            'culture_bn' => 'গ্রীষ্মকালীন আম উৎসব ও আমভিত্তিক মিষ্টি স্থানীয় জীবনের বড় অংশ।', 'bn' => 'চাঁপাইনবাবগঞ্জ', 'division' => 'Rajshahi', 'lat' => 24.5965, 'lon' => 88.2775,
             'area' => 1702.6, 'population' => 1800000,
             'famous' => 'Mango capital, Choto Sona Mosque, Gaur ruins',
             'history' => 'Site of Gaur, the medieval capital of the independent Bengal Sultanate from the 14th to 16th centuries, whose ruins straddle the India-Bangladesh border here. The Choto Sona Mosque was built in the early 16th century under Sultan Hussain Shah.',
@@ -325,7 +385,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Pabna', 'bn' => 'পাবনা', 'division' => 'Rajshahi', 'lat' => 24.0064, 'lon' => 89.2372,
+            'name' => 'Pabna',
+            'famous_bn' => 'হার্ডিঞ্জ ব্রিজ, ঈশ্বরদী ও রূপপুর পারমাণবিক বিদ্যুৎকেন্দ্র', 'economy_bn' => 'নির্মাণাধীন রূপপুর পারমাণবিক বিদ্যুৎকেন্দ্র, ঈশ্বরদী রপ্তানি প্রক্রিয়াকরণ অঞ্চল এবং পাট প্রক্রিয়াকরণের আবাস।',
+            'culture_bn' => 'শাহজাদপুরে ঐতিহ্যবাহী বস্ত্র বয়ন এবং পদ্মার নৌজীবনকেন্দ্রিক লোকগান।', 'bn' => 'পাবনা', 'division' => 'Rajshahi', 'lat' => 24.0064, 'lon' => 89.2372,
             'area' => 2371.5, 'population' => 2800000,
             'famous' => 'Hardinge Bridge, Ishwardi, Rooppur nuclear plant',
             'history' => 'The Hardinge Bridge, opened in 1915 over the Padma near Bheramara/Ishwardi, was a major colonial-era engineering feat. Pabna also has a history of 19th-century peasant uprisings against local zamindars.',
@@ -335,7 +397,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Sirajganj', 'bn' => 'সিরাজগঞ্জ', 'division' => 'Rajshahi', 'lat' => 24.4534, 'lon' => 89.7007,
+            'name' => 'Sirajganj',
+            'famous_bn' => 'বঙ্গবন্ধু সেতু ও তাঁত বয়ন', 'economy_bn' => 'দেশের অন্যতম বৃহৎ তাঁত বয়ন ক্লাস্টার, সঙ্গে যমুনার তীর বরাবর একটি শিল্পবলয়।',
+            'culture_bn' => 'সুতি ও রেশম তাঁত বয়নের ঐতিহাসিক কেন্দ্র, সঙ্গে যমুনার মাঝিদের ঐতিহ্যবাহী সংস্কৃতি।', 'bn' => 'সিরাজগঞ্জ', 'division' => 'Rajshahi', 'lat' => 24.4534, 'lon' => 89.7007,
             'area' => 2497.9, 'population' => 3300000,
             'famous' => 'Bangabandhu Bridge, handloom weaving',
             'history' => 'A historic jute and cotton trading river port on the Jamuna, linked to Kolkata by rail-ferry during British rule. The Bangabandhu Bridge, opened in 1998, transformed it into a key national transport link.',
@@ -347,7 +411,9 @@ return [
 
         // --------------------------------------------------------- Khulna
         [
-            'name' => 'Khulna', 'bn' => 'খুলনা', 'division' => 'Khulna', 'lat' => 22.8456, 'lon' => 89.5403,
+            'name' => 'Khulna',
+            'famous_bn' => 'সুন্দরবনের প্রবেশদ্বার, রূপসা সেতু ও চিংড়ি ব্যবসা', 'economy_bn' => 'চিংড়ি ও পাট প্রক্রিয়াকরণ, মোংলা বন্দরসংশ্লিষ্ট জাহাজ বাণিজ্য এবং খুলনা শিপইয়ার্ড।',
+            'culture_bn' => 'সুন্দরবনসংশ্লিষ্ট মধু সংগ্রহ (মৌয়ালি) ও মাছ ধরার (বাওয়ালি) ঐতিহ্য এবং বিশাল শুঁটকি বাণিজ্য।', 'bn' => 'খুলনা', 'division' => 'Khulna', 'lat' => 22.8456, 'lon' => 89.5403,
             'area' => 4394.5, 'population' => 2600000,
             'famous' => 'Sundarbans gateway, Rupsha bridge, shrimp trade',
             'history' => 'Developed as a river port and jute-milling centre in the colonial era, becoming a divisional headquarters in 1960 and the main gateway to the Sundarbans mangrove forest.',
@@ -357,7 +423,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Bagerhat', 'bn' => 'বাগেরহাট', 'division' => 'Khulna', 'lat' => 22.6516, 'lon' => 89.7859,
+            'name' => 'Bagerhat',
+            'famous_bn' => 'ষাট গম্বুজ মসজিদ (ইউনেস্কো) ও খান জাহান আলী', 'economy_bn' => 'সংলগ্ন সুন্দরবনের সঙ্গে যুক্ত চিংড়ি (বাগদা ও গলদা) চাষ ও মাছ ধরা।',
+            'culture_bn' => 'খান জাহান আলীর বার্ষিক ওরস (মৃত্যুবার্ষিকী) অনুষ্ঠানে অঞ্চলজুড়ে থেকে তীর্থযাত্রীরা আসেন।', 'bn' => 'বাগেরহাট', 'division' => 'Khulna', 'lat' => 22.6516, 'lon' => 89.7859,
             'area' => 3959.1, 'population' => 1500000,
             'famous' => 'Sixty Dome Mosque (UNESCO), Khan Jahan Ali',
             'history' => 'Founded in the 15th century by Sufi saint-general Khan Jahan Ali, whose mosque city here - including the Sixty Dome Mosque (Shatgombuj Masjid) - is a UNESCO World Heritage Site reflecting early Muslim architecture in Bengal.',
@@ -367,7 +435,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Chuadanga', 'bn' => 'চুয়াডাঙ্গা', 'division' => 'Khulna', 'lat' => 23.6402, 'lon' => 88.8418,
+            'name' => 'Chuadanga',
+            'famous_bn' => 'সবচেয়ে উষ্ণ জেলা ও মুজিবনগর আমলের প্রথম রাজধানী', 'economy_bn' => 'তামাক ও পাট চাষ, ভারতের সঙ্গে দর্শনা রেল সংযোগের কাছে সীমান্ত বাণিজ্য।',
+            'culture_bn' => 'কথ্য ভাষায় বাংলাদেশের উষ্ণতম জেলা নামে পরিচিত; মাথাভাঙ্গা নদীকে ঘিরে স্থানীয় লোকঐতিহ্য।', 'bn' => 'চুয়াডাঙ্গা', 'division' => 'Khulna', 'lat' => 23.6402, 'lon' => 88.8418,
             'area' => 1174.1, 'population' => 1300000,
             'famous' => 'Hottest district, first capital of Mujibnagar era',
             'history' => 'Briefly served as the first administrative seat of the provisional Mujibnagar Government of Bangladesh in April 1971, before it relocated to nearby Meherpur.',
@@ -377,7 +447,9 @@ return [
             'upazilas' => 4,
         ],
         [
-            'name' => 'Jashore', 'bn' => 'যশোর', 'division' => 'Khulna', 'lat' => 23.1664, 'lon' => 89.2081,
+            'name' => 'Jashore',
+            'famous_bn' => 'প্রথম মুক্ত জেলা ও গদখালীর ফুলের গ্রাম', 'economy_bn' => 'গদখালী ও পানিসারাকেন্দ্রিক বাংলাদেশের ফুল চাষের কেন্দ্র, সারা দেশে বীজ ও কাটা ফুল সরবরাহ করে।',
+            'culture_bn' => 'বাংলাদেশের ফুলের রাজধানী নামে পরিচিত; ঝিকরগাছায় বড় বার্ষিক ফুল উৎসব হয়।', 'bn' => 'যশোর', 'division' => 'Khulna', 'lat' => 23.1664, 'lon' => 89.2081,
             'area' => 2606.9, 'population' => 3000000,
             'famous' => 'First liberated district, flower village Godkhali',
             'history' => 'The first district liberated during the 1971 Liberation War, on 6 December 1971. It is home to Bangladesh\'s first cantonment, established in 1783 under the British.',
@@ -387,7 +459,9 @@ return [
             'upazilas' => 8,
         ],
         [
-            'name' => 'Jhenaidah', 'bn' => 'ঝিনাইদহ', 'division' => 'Khulna', 'lat' => 23.5448, 'lon' => 89.1539,
+            'name' => 'Jhenaidah',
+            'famous_bn' => 'নলদুরী, মিয়া বাড়ি মসজিদ ও খেজুরের গুড়', 'economy_bn' => 'পাট ও ধান চাষের পাশাপাশি শীতকালীন খেজুর গুড় উৎপাদন।',
+            'culture_bn' => 'খেজুর গুড়ের মিষ্টি এবং ঐতিহ্যবাহী বাঁশ ও বেতের হস্তশিল্পের জন্য বিখ্যাত।', 'bn' => 'ঝিনাইদহ', 'division' => 'Khulna', 'lat' => 23.5448, 'lon' => 89.1539,
             'area' => 1964.8, 'population' => 1950000,
             'famous' => 'Nalduri, Miah Bari mosque, date molasses',
             'history' => 'The Nalduri royal family and the Miah Bari Mosque reflect a long zamindari and Muslim architectural heritage from the Mughal-to-British transition period.',
@@ -397,7 +471,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Kushtia', 'bn' => 'কুষ্টিয়া', 'division' => 'Khulna', 'lat' => 23.9013, 'lon' => 89.1206,
+            'name' => 'Kushtia',
+            'famous_bn' => 'লালন শাহের মাজার ও শিলাইদহ কুঠিবাড়ি (রবীন্দ্রনাথ)', 'economy_bn' => 'চিনিকল, তামাক চাষ এবং শক্তিশালী পাট প্রক্রিয়াকরণ ভিত্তি।',
+            'culture_bn' => 'বাউল/লালন সংগীত ও দর্শন ঐতিহ্যের জন্মস্থান, বাংলার অন্যতম প্রধান মরমি সাধনার কেন্দ্র।', 'bn' => 'কুষ্টিয়া', 'division' => 'Khulna', 'lat' => 23.9013, 'lon' => 89.1206,
             'area' => 1621.2, 'population' => 2150000,
             'famous' => 'Lalon Shah shrine, Shilaidaha Kuthibari (Tagore)',
             'history' => 'Home to the mystic-poet Lalon Shah (Lalon Fakir), whose shrine and Baul philosophy remain deeply influential. Rabindranath Tagore managed his family\'s zamindari estate from the Shilaidaha Kuthibari here, writing much of his early poetry on the Padma.',
@@ -407,7 +483,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Magura', 'bn' => 'মাগুরা', 'division' => 'Khulna', 'lat' => 23.4855, 'lon' => 89.4198,
+            'name' => 'Magura',
+            'famous_bn' => 'সিদ্ধেশ্বরী মন্দির ও নবগঙ্গা নদী', 'economy_bn' => 'পাট ও ধান চাষ, সঙ্গে ছোট পরিসরে তাঁত বয়ন।',
+            'culture_bn' => 'সিদ্ধেশ্বরী মন্দিরে ঐতিহ্যবাহী কালীপূজা উৎসবে অঞ্চলজুড়ে থেকে দর্শনার্থী আসেন।', 'bn' => 'মাগুরা', 'division' => 'Khulna', 'lat' => 23.4855, 'lon' => 89.4198,
             'area' => 1048.6, 'population' => 1000000,
             'famous' => 'Siddheshwari temple, Nabaganga river',
             'history' => 'Known for the ancient Sri Sri Siddheshwari Kali Temple, and for its role as a small but historic river-trading town along the Nabaganga during the colonial period.',
@@ -417,7 +495,9 @@ return [
             'upazilas' => 4,
         ],
         [
-            'name' => 'Meherpur', 'bn' => 'মেহেরপুর', 'division' => 'Khulna', 'lat' => 23.7622, 'lon' => 88.6318,
+            'name' => 'Meherpur',
+            'famous_bn' => 'মুজিবনগর - ১৯৭১ সালে বাংলাদেশের প্রথম সরকার', 'economy_bn' => 'আম ও লিচুর বাগান, সঙ্গে তামাক চাষ।',
+            'culture_bn' => '১৭ এপ্রিল বার্ষিক মুজিবনগর দিবস পালন স্থানীয় পরিচয়ের কেন্দ্রে।', 'bn' => 'মেহেরপুর', 'division' => 'Khulna', 'lat' => 23.7622, 'lon' => 88.6318,
             'area' => 716.1, 'population' => 700000,
             'famous' => 'Mujibnagar - first government of Bangladesh, 1971',
             'history' => 'Site of Baidyanathtala, renamed Mujibnagar, where the provisional government of Bangladesh was sworn in on 17 April 1971 - one of the most historically significant sites of the Liberation War.',
@@ -427,7 +507,9 @@ return [
             'upazilas' => 3,
         ],
         [
-            'name' => 'Narail', 'bn' => 'নড়াইল', 'division' => 'Khulna', 'lat' => 23.1728, 'lon' => 89.5127,
+            'name' => 'Narail',
+            'famous_bn' => 'এস এম সুলতান আর্ট গ্যালারি ও চিত্রা নদী', 'economy_bn' => 'চিত্রা ও নবগঙ্গা নদীর তীরে পাট ও ধান চাষ।',
+            'culture_bn' => 'বার্ষিক এস এম সুলতান লোকশিল্প ও নৌকাবাইচ উৎসব জেলার শৈল্পিক ঐতিহ্য উদযাপন করে।', 'bn' => 'নড়াইল', 'division' => 'Khulna', 'lat' => 23.1728, 'lon' => 89.5127,
             'area' => 990.2, 'population' => 750000,
             'famous' => 'S. M. Sultan art gallery, Chitra river',
             'history' => 'Birthplace of celebrated modernist painter S. M. Sultan, whose folk-inspired canvases are showcased at a dedicated gallery in the town, and long a riverside settlement on the Chitra.',
@@ -437,7 +519,9 @@ return [
             'upazilas' => 3,
         ],
         [
-            'name' => 'Satkhira', 'bn' => 'সাতক্ষীরা', 'division' => 'Khulna', 'lat' => 22.7185, 'lon' => 89.0705,
+            'name' => 'Satkhira',
+            'famous_bn' => 'সুন্দরবনের পশ্চিমাংশ, মোজাফফর আম ও চিংড়ি খামার', 'economy_bn' => 'চিংড়ি (বাগদা) চাষ প্রধান রপ্তানি শিল্প, সঙ্গে সুন্দরবনভিত্তিক মাছ ধরা ও মধু সংগ্রহ।',
+            'culture_bn' => 'মোজাফফর জাতের আম ও চিংড়িভিত্তিক খাবার এবং সুন্দরবনের মধু সংগ্রহের (মৌয়ালি) ঐতিহ্যের জন্য পরিচিত।', 'bn' => 'সাতক্ষীরা', 'division' => 'Khulna', 'lat' => 22.7185, 'lon' => 89.0705,
             'area' => 3858.3, 'population' => 2200000,
             'famous' => 'Sundarbans west, Mozaffar mango, shrimp farms',
             'history' => 'Borders the western Sundarbans and has a history of resistance to Portuguese and Mughal-era pirate raids along its coast, alongside early Muslim shrines dating to the Sultanate period.',
@@ -449,7 +533,9 @@ return [
 
         // ------------------------------------------------------- Barishal
         [
-            'name' => 'Barishal', 'bn' => 'বরিশাল', 'division' => 'Barishal', 'lat' => 22.7010, 'lon' => 90.3535,
+            'name' => 'Barishal',
+            'famous_bn' => 'বাংলার ভেনিস ও ভাসমান পেয়ারা বাজার', 'economy_bn' => 'ধানের ব্যবসা ও নদী পরিবহন, সঙ্গে মৌসুমি ভাসমান পেয়ারা ও সবজির বাজার।',
+            'culture_bn' => 'কীর্তনখোলা শাখানদীতে ভাসমান পেয়ারা বাজার এবং ভাটিয়ালি নৌকার গানের ঐতিহ্য।', 'bn' => 'বরিশাল', 'division' => 'Barishal', 'lat' => 22.7010, 'lon' => 90.3535,
             'area' => 2790.5, 'population' => 2500000,
             'famous' => 'Venice of Bengal, floating guava market',
             'history' => 'Known historically as the "Venice of Bengal" for its dense network of rivers and canals used for trade since the Mughal period, and it grew as a major river port and rice-trading centre under British rule.',
@@ -459,7 +545,9 @@ return [
             'upazilas' => 10,
         ],
         [
-            'name' => 'Barguna', 'bn' => 'বরগুনা', 'division' => 'Barishal', 'lat' => 22.1596, 'lon' => 90.1264,
+            'name' => 'Barguna',
+            'famous_bn' => 'তালতলী সমুদ্রসৈকত ও হরিণঘাটা বন', 'economy_bn' => 'সামুদ্রিক ও অভ্যন্তরীণ মাছ ধরা, ধান চাষ এবং বনজ সম্পদ সংগ্রহ।',
+            'culture_bn' => 'মৌসুমি ইলিশ ধরাকে ঘিরে উপকূলীয় জেলে সম্প্রদায়ের উৎসব।', 'bn' => 'বরগুনা', 'division' => 'Barishal', 'lat' => 22.1596, 'lon' => 90.1264,
             'area' => 1831.3, 'population' => 950000,
             'famous' => 'Taltoli sea beach, Haringhata forest',
             'history' => 'A relatively young coastal district, established in 1984, historically settled by migrant farmers reclaiming land from the Sundarbans mangrove fringe.',
@@ -469,7 +557,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Bhola', 'bn' => 'ভোলা', 'division' => 'Barishal', 'lat' => 22.6859, 'lon' => 90.6482,
+            'name' => 'Bhola',
+            'famous_bn' => 'বৃহত্তম দ্বীপ জেলা, মনপুরা ও প্রাকৃতিক গ্যাস', 'economy_bn' => 'জাতীয় গ্রিডে গ্যাস সরবরাহকারী গ্যাসক্ষেত্র, সঙ্গে ইলিশ ধরা ও নারকেল চাষ।',
+            'culture_bn' => 'নদী ও উপকূলকেন্দ্রিক জেলে সংস্কৃতি, ইলিশ মৌসুমে মৌসুমি আনন্দ-উৎসব।', 'bn' => 'ভোলা', 'division' => 'Barishal', 'lat' => 22.6859, 'lon' => 90.6482,
             'area' => 3403.5, 'population' => 1900000,
             'famous' => 'Largest island district, Monpura, natural gas',
             'history' => 'Bangladesh\'s largest island district, continually reshaped by Meghna estuary sedimentation. A catastrophic cyclone struck the district in 1970, a precursor to the political upheaval that led to the 1971 war.',
@@ -479,7 +569,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Jhalokati', 'bn' => 'ঝালকাঠি', 'division' => 'Barishal', 'lat' => 22.6406, 'lon' => 90.1987,
+            'name' => 'Jhalokati',
+            'famous_bn' => 'ভীমরুলীর ভাসমান পেয়ারা বাজার', 'economy_bn' => 'পেয়ারা ও অন্যান্য ফলের চাষ, ভাসমান বাজারের মাধ্যমে বিক্রি; সঙ্গে ছোবড়া ও বেতের কুটির শিল্প।',
+            'culture_bn' => 'জুলাই-আগস্ট মৌসুমে ভীমরুলীর ভাসমান পেয়ারা বাজার সংস্কৃতি ও পর্যটনের বড় আকর্ষণ।', 'bn' => 'ঝালকাঠি', 'division' => 'Barishal', 'lat' => 22.6406, 'lon' => 90.1987,
             'area' => 749.0, 'population' => 700000,
             'famous' => 'Floating guava market of Bhimruli',
             'history' => 'A compact riverside district long known for its floating fruit and vegetable markets along the canals near Bhimruli, a tradition passed down among generations of orchard farmers.',
@@ -489,7 +581,9 @@ return [
             'upazilas' => 4,
         ],
         [
-            'name' => 'Patuakhali', 'bn' => 'পটুয়াখালী', 'division' => 'Barishal', 'lat' => 22.3596, 'lon' => 90.3298,
+            'name' => 'Patuakhali',
+            'famous_bn' => 'কুয়াকাটা - এক সৈকত থেকে সূর্যোদয় ও সূর্যাস্ত', 'economy_bn' => 'বঙ্গোপসাগর উপকূলে ধান চাষ ও সামুদ্রিক মাছ ধরা।',
+            'culture_bn' => 'কুয়াকাটার মিশ্র রাখাইন-বাঙালি উপকূলীয় সংস্কৃতি এবং ঐতিহ্যবাহী জেলে সম্প্রদায়ের উৎসব।', 'bn' => 'পটুয়াখালী', 'division' => 'Barishal', 'lat' => 22.3596, 'lon' => 90.3298,
             'area' => 3220.2, 'population' => 1750000,
             'famous' => 'Kuakata - sunrise and sunset from one beach',
             'history' => 'A coastal district historically vulnerable to cyclones, including the devastating 1970 Bhola cyclone, which spurred major post-independence embankment and shelter construction along its coast.',
@@ -499,7 +593,9 @@ return [
             'upazilas' => 8,
         ],
         [
-            'name' => 'Pirojpur', 'bn' => 'পিরোজপুর', 'division' => 'Barishal', 'lat' => 22.5791, 'lon' => 89.9759,
+            'name' => 'Pirojpur',
+            'famous_bn' => 'ভাসমান চারা বাজার ও ভান্ডারিয়া', 'economy_bn' => 'পেয়ারা, সুপারি ও নারকেলের বাগান, স্বরূপকাঠি ও আটঘরের মৌসুমি ভাসমান চারা ও পণ্যের বাজার দ্বারা সমর্থিত।',
+            'culture_bn' => 'ভাসমান চারা নার্সারি ও নৌকাভিত্তিক বাণিজ্য স্থানীয় জীবিকার কেন্দ্রে রয়ে গেছে।', 'bn' => 'পিরোজপুর', 'division' => 'Barishal', 'lat' => 22.5791, 'lon' => 89.9759,
             'area' => 1307.6, 'population' => 1150000,
             'famous' => 'Floating seedling market, Bhandaria',
             'history' => 'A low-lying riverine district historically known for its canal-based orchard economy, with floating-market traditions that predate British rule.',
@@ -511,7 +607,9 @@ return [
 
         // --------------------------------------------------------- Sylhet
         [
-            'name' => 'Sylhet', 'bn' => 'সিলেট', 'division' => 'Sylhet', 'lat' => 24.8949, 'lon' => 91.8687,
+            'name' => 'Sylhet',
+            'famous_bn' => 'চা-বাগান, রাতারগুল জলাবন, জাফলং ও শাহ জালালের মাজার', 'economy_bn' => 'চা-বাগান চাষ, প্রাকৃতিক গ্যাস উত্তোলন এবং যুক্তরাজ্যের প্রবাসী সম্প্রদায়ের সঙ্গে নিবিড় সম্পর্কে গড়া বিশাল প্রবাসী/রেমিট্যান্সনির্ভর অর্থনীতি।',
+            'culture_bn' => 'স্বতন্ত্র সিলেটি উপভাষা, শাহ জালালের ওরস এবং মণিপুরী ও চা-শ্রমিক সম্প্রদায়ের সাংস্কৃতিক ঐতিহ্য।', 'bn' => 'সিলেট', 'division' => 'Sylhet', 'lat' => 24.8949, 'lon' => 91.8687,
             'area' => 3452.1, 'population' => 3900000,
             'famous' => 'Tea gardens, Ratargul swamp, Jaflong, Shah Jalal shrine',
             'history' => 'Historically known as Srihatta, the region converted to Islam in the 14th century under Sufi saint Shah Jalal, whose shrine remains a major pilgrimage site. It became a centre of British-era tea plantation development in the 19th century.',
@@ -521,7 +619,9 @@ return [
             'upazilas' => 13,
         ],
         [
-            'name' => 'Habiganj', 'bn' => 'হবিগঞ্জ', 'division' => 'Sylhet', 'lat' => 24.3745, 'lon' => 91.4155,
+            'name' => 'Habiganj',
+            'famous_bn' => 'সাতছড়ি জাতীয় উদ্যান ও গ্যাসক্ষেত্র', 'economy_bn' => 'চা চাষ, প্রাকৃতিক গ্যাসক্ষেত্র (হবিগঞ্জ ও বিবিয়ানা) এবং ধান চাষ।',
+            'culture_bn' => 'চা-শ্রমিক সম্প্রদায়গুলো স্বতন্ত্র সাংস্কৃতিক ঐতিহ্য ধরে রেখেছে, সঙ্গে বিশ্বনাথ এলাকার স্থানীয় লোকসংগীত।', 'bn' => 'হবিগঞ্জ', 'division' => 'Sylhet', 'lat' => 24.3745, 'lon' => 91.4155,
             'area' => 2636.6, 'population' => 2350000,
             'famous' => 'Satchari National Park, gas fields',
             'history' => 'Developed around British-era tea estates founded in the 19th century, and later became home to major natural gas fields discovered in the mid-20th century that remain central to national gas supply.',
@@ -531,7 +631,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Moulvibazar', 'bn' => 'মৌলভীবাজার', 'division' => 'Sylhet', 'lat' => 24.4829, 'lon' => 91.7774,
+            'name' => 'Moulvibazar',
+            'famous_bn' => 'শ্রীমঙ্গল - চায়ের রাজধানী, লাউয়াছড়া বৃষ্টিবন ও মাধবকুণ্ড', 'economy_bn' => 'চা-বাগান অর্থনীতিতে প্রধান, সঙ্গে আনারস ও লেবুর বাগান।',
+            'culture_bn' => 'সাত রঙের চায়ের জন্মস্থান; মণিপুরী ও খাসি সম্প্রদায় স্বতন্ত্র বয়ন ও নৃত্যের ঐতিহ্য ধরে রেখেছে।', 'bn' => 'মৌলভীবাজার', 'division' => 'Sylhet', 'lat' => 24.4829, 'lon' => 91.7774,
             'area' => 2799.4, 'population' => 2100000,
             'famous' => 'Sreemangal - tea capital, Lawachara rainforest, Madhabkunda',
             'history' => 'Sreemangal emerged as the centre of Bangladesh\'s tea industry under British planters in the 19th century, and the district\'s forests once formed part of the historic Kachar-Sylhet frontier.',
@@ -541,7 +643,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Sunamganj', 'bn' => 'সুনামগঞ্জ', 'division' => 'Sylhet', 'lat' => 25.0658, 'lon' => 91.3950,
+            'name' => 'Sunamganj',
+            'famous_bn' => 'টাঙ্গুয়ার হাওর (রামসার সাইট), নীলাদ্রি লেক ও বারিক্কা টিলা', 'economy_bn' => 'হাওরের জমিতে বোরো ধান চাষ, স্বাদুপানির মাছ ধরা এবং মেঘালয় সীমান্তের কাছে পাথর উত্তোলন।',
+            'culture_bn' => 'হাওরকেন্দ্রিক ভাটিয়ালি ও বাউল লোকগান, সঙ্গে টাঙ্গুয়ার হাওরকে ঘিরে বাড়ছে হাউসবোট পর্যটন।', 'bn' => 'সুনামগঞ্জ', 'division' => 'Sylhet', 'lat' => 25.0658, 'lon' => 91.3950,
             'area' => 3747.2, 'population' => 2700000,
             'famous' => 'Tanguar Haor (Ramsar site), Niladri Lake, Barikka Tila',
             'history' => 'Its vast haor wetland basin has shaped settlement and seasonal migration patterns for centuries, and the district has long served as an important boro-rice and freshwater fishery zone for greater Sylhet.',
@@ -553,7 +657,9 @@ return [
 
         // -------------------------------------------------------- Rangpur
         [
-            'name' => 'Rangpur', 'bn' => 'রংপুর', 'division' => 'Rangpur', 'lat' => 25.7439, 'lon' => 89.2752,
+            'name' => 'Rangpur',
+            'famous_bn' => 'তাজহাট প্রাসাদ, হারিয়াল ও তামাকের বলয়', 'economy_bn' => 'তামাক চাষ এবং ক্রমশ বহুমুখী কৃষি ও ক্ষুদ্র শিল্প।',
+            'culture_bn' => 'বৃহত্তর রংপুর অঞ্চলের নিজস্ব ঐতিহ্যবাহী ভাওয়াইয়া লোকগান।', 'bn' => 'রংপুর', 'division' => 'Rangpur', 'lat' => 25.7439, 'lon' => 89.2752,
             'area' => 2400.6, 'population' => 3200000,
             'famous' => 'Tajhat Palace, hariwal, tobacco belt',
             'history' => 'Seat of a former zamindari estate whose palace, Tajhat, was built in the early 20th century in Rajasthani style. The district historically had a reputation for seasonal "monga" hunger before recent agricultural improvements.',
@@ -563,7 +669,9 @@ return [
             'upazilas' => 8,
         ],
         [
-            'name' => 'Dinajpur', 'bn' => 'দিনাজপুর', 'division' => 'Rangpur', 'lat' => 25.6217, 'lon' => 88.6354,
+            'name' => 'Dinajpur',
+            'famous_bn' => 'কান্তজীউ মন্দির, রামসাগর দিঘি ও লিচু', 'economy_bn' => 'লিচু ও ধান চাষ - দেশের শীর্ষ ধান উৎপাদক জেলাগুলোর একটি - সঙ্গে কৃষি-প্রক্রিয়াকরণ শিল্প।',
+            'culture_bn' => 'লিচুর বাগান এবং মন্দির স্থাপত্যে প্রতিফলিত ঐতিহ্যবাহী টেরাকোটা কারুশিল্পের জন্য বিখ্যাত।', 'bn' => 'দিনাজপুর', 'division' => 'Rangpur', 'lat' => 25.6217, 'lon' => 88.6354,
             'area' => 3437.9, 'population' => 3200000,
             'famous' => 'Kantajew Temple, Ramsagar Lake, litchi',
             'history' => 'Home to the Kantajew Temple, an 18th-century terracotta Hindu temple renowned for its intricate carvings, built during the era of the powerful Dinajpur Raj zamindari family under British rule.',
@@ -573,7 +681,9 @@ return [
             'upazilas' => 13,
         ],
         [
-            'name' => 'Gaibandha', 'bn' => 'গাইবান্ধা', 'division' => 'Rangpur', 'lat' => 25.3288, 'lon' => 89.5281,
+            'name' => 'Gaibandha',
+            'famous_bn' => 'ফ্রেন্ডশিপ সেন্টার ও ব্রহ্মপুত্রের চর', 'economy_bn' => 'চরে কৃষি ও পাট চাষ, সঙ্গে ব্রহ্মপুত্রের চরে এনজিও সহায়তায় জনস্বাস্থ্য ও ফেরি সেবা।',
+            'culture_bn' => 'চরবাসী সম্প্রদায় স্বতন্ত্র নৌকাভিত্তিক জীবিকা ও মৌসুমি অভিবাসনের ধরন ধরে রেখেছে।', 'bn' => 'গাইবান্ধা', 'division' => 'Rangpur', 'lat' => 25.3288, 'lon' => 89.5281,
             'area' => 2179.3, 'population' => 2600000,
             'famous' => 'Friendship Centre, Brahmaputra chars',
             'history' => 'Historically shaped by shifting courses of the Brahmaputra and Teesta rivers, leading to frequent char (riverine island) formation and displacement of riverside communities.',
@@ -583,7 +693,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Kurigram', 'bn' => 'কুড়িগ্রাম', 'division' => 'Rangpur', 'lat' => 25.8072, 'lon' => 89.6362,
+            'name' => 'Kurigram',
+            'famous_bn' => 'চিলমারী বন্দর, নদীর চর ও ধরলা নদী', 'economy_bn' => 'চরে কৃষি, চিলমারী বন্দরের মাধ্যমে নদীবাণিজ্য এবং তামাক চাষ।',
+            'culture_bn' => 'নদীঘেঁষা চরের সম্প্রদায় মৌসুমি বন্যার সঙ্গে খাপ খাওয়ানো স্বতন্ত্র লোকঐতিহ্য ধরে রেখেছে।', 'bn' => 'কুড়িগ্রাম', 'division' => 'Rangpur', 'lat' => 25.8072, 'lon' => 89.6362,
             'area' => 2245.0, 'population' => 2200000,
             'famous' => 'Chilmari port, river chars, Dharla river',
             'history' => 'One of the most flood- and erosion-prone districts, sitting at the confluence of the Brahmaputra, Dharla and Teesta rivers, historically among the poorest districts due to seasonal monga hunger.',
@@ -593,7 +705,9 @@ return [
             'upazilas' => 9,
         ],
         [
-            'name' => 'Lalmonirhat', 'bn' => 'লালমনিরহাট', 'division' => 'Rangpur', 'lat' => 25.9923, 'lon' => 89.2847,
+            'name' => 'Lalmonirhat',
+            'famous_bn' => 'বুড়িমারী স্থলবন্দর ও তিনবিঘা করিডর', 'economy_bn' => 'বুড়িমারী স্থলবন্দরের মাধ্যমে সীমান্ত বাণিজ্য, তামাক ও ধান চাষ।',
+            'culture_bn' => '২০১৫ সালের সীমানা বিনিময়ের আগে কয়েক দশকের ছিটমহল জীবনে গড়া সীমান্তবর্তী সম্প্রদায়ের ঐতিহ্য।', 'bn' => 'লালমনিরহাট', 'division' => 'Rangpur', 'lat' => 25.9923, 'lon' => 89.2847,
             'area' => 1247.4, 'population' => 1450000,
             'famous' => 'Burimari land port, Tin Bigha corridor',
             'history' => 'Site of the Tin Bigha Corridor, a narrow strip of land leased to India in 1992 to connect the Bangladeshi enclave of Dahagram-Angarpota, a legacy of the Partition-era border enclaves that was fully resolved only in 2015.',
@@ -603,7 +717,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Nilphamari', 'bn' => 'নীলফামারী', 'division' => 'Rangpur', 'lat' => 25.9310, 'lon' => 88.8560,
+            'name' => 'Nilphamari',
+            'famous_bn' => 'সৈয়দপুর রেলওয়ে কারখানা ও নীলসাগর', 'economy_bn' => 'সৈয়দপুর কারখানায় রেল প্রকৌশল, ধান চাষ এবং তিস্তার পানিতে সেচ।',
+            'culture_bn' => 'সৈয়দপুরকেন্দ্রিক রেলশহরের ঔপনিবেশিক ইঙ্গ-বাঙালি স্থাপত্য ও ঐতিহ্য।', 'bn' => 'নীলফামারী', 'division' => 'Rangpur', 'lat' => 25.9310, 'lon' => 88.8560,
             'area' => 1546.6, 'population' => 2000000,
             'famous' => 'Saidpur railway workshop, Nilsagar',
             'history' => 'Saidpur developed into a major railway workshop town under British colonial rule in the 19th century, remaining one of the largest railway repair facilities in the subcontinent.',
@@ -613,7 +729,9 @@ return [
             'upazilas' => 6,
         ],
         [
-            'name' => 'Panchagarh', 'bn' => 'পঞ্চগড়', 'division' => 'Rangpur', 'lat' => 26.3411, 'lon' => 88.5542,
+            'name' => 'Panchagarh',
+            'famous_bn' => 'সর্ব-উত্তরের বিন্দু, কাঞ্চনজঙ্ঘার দৃশ্য ও তেঁতুলিয়ার চা', 'economy_bn' => 'তেঁতুলিয়ায় চা চাষ এবং হিমালয়ের পাদদেশের কাছে নদীর তলদেশ থেকে পাথর সংগ্রহ।',
+            'culture_bn' => 'শীতের পরিষ্কার দিনে কাঞ্চনজঙ্ঘা পর্বতের দৃশ্য এক অনন্য স্থানীয় ঘটনা, যা জেলায় উদযাপিত হয়।', 'bn' => 'পঞ্চগড়', 'division' => 'Rangpur', 'lat' => 26.3411, 'lon' => 88.5542,
             'area' => 1404.6, 'population' => 1100000,
             'famous' => 'Northernmost point, Kanchenjunga view, Tetulia tea',
             'history' => 'Bangladesh\'s northernmost district, historically a frontier trading corridor linking Bengal, Assam and the Himalayan foothill kingdoms. The Tetulia tea industry has developed in recent decades on land once used for tobacco.',
@@ -623,7 +741,9 @@ return [
             'upazilas' => 5,
         ],
         [
-            'name' => 'Thakurgaon', 'bn' => 'ঠাকুরগাঁও', 'division' => 'Rangpur', 'lat' => 26.0337, 'lon' => 88.4616,
+            'name' => 'Thakurgaon',
+            'famous_bn' => 'জমিদারদের জামালপুর মসজিদ ও বালিয়াডাঙ্গীর আমগাছ', 'economy_bn' => 'দেশের সর্বোচ্চ ফলনশীল ধান উৎপাদক জেলাগুলোর একটি, সঙ্গে আমবাগান।',
+            'culture_bn' => 'গ্রামীণ এলাকায় সাঁওতাল ও অন্যান্য আদিবাসী সংখ্যালঘু সম্প্রদায় বাস করে, তাদের স্বতন্ত্র ফসল তোলার উৎসব আছে।', 'bn' => 'ঠাকুরগাঁও', 'division' => 'Rangpur', 'lat' => 26.0337, 'lon' => 88.4616,
             'area' => 1809.5, 'population' => 1500000,
             'famous' => 'Jamalpur Zamindar mosque, Baliadangi mango tree',
             'history' => 'Historically part of the ancient Kamata-Koch kingdom\'s periphery, the district retains 19th-century zamindari mosque and palace architecture from the British colonial period.',
@@ -635,7 +755,9 @@ return [
 
         // ----------------------------------------------------- Mymensingh
         [
-            'name' => 'Mymensingh', 'bn' => 'ময়মনসিংহ', 'division' => 'Mymensingh', 'lat' => 24.7471, 'lon' => 90.4203,
+            'name' => 'Mymensingh',
+            'famous_bn' => 'ব্রহ্মপুত্রের তীর, শশী লজ ও কৃষি বিশ্ববিদ্যালয়', 'economy_bn' => 'কৃষি গবেষণা ও শিক্ষার কেন্দ্র, সঙ্গে ব্রহ্মপুত্র বরাবর মাছ ধরা ও ধানের বাণিজ্য।',
+            'culture_bn' => 'ময়মনসিংহ গীতিকার আবাস - এ অঞ্চল থেকে সংগৃহীত মধ্যযুগীয় বাংলা লোকগাথার সংকলন।', 'bn' => 'ময়মনসিংহ', 'division' => 'Mymensingh', 'lat' => 24.7471, 'lon' => 90.4203,
             'area' => 4363.5, 'population' => 5700000,
             'famous' => 'Brahmaputra bank, Shashi Lodge, agricultural university',
             'history' => 'Developed as a major administrative and river-port town on the old Brahmaputra under British rule; home to the country\'s oldest agricultural university, established in 1961, and the historic Shashi Lodge zamindar palace.',
@@ -645,7 +767,9 @@ return [
             'upazilas' => 13,
         ],
         [
-            'name' => 'Jamalpur', 'bn' => 'জামালপুর', 'division' => 'Mymensingh', 'lat' => 24.9375, 'lon' => 89.9372,
+            'name' => 'Jamalpur',
+            'famous_bn' => 'নকশিকাঁথা সেলাই ও দয়াময়ী মন্দির', 'economy_bn' => 'ব্রহ্মপুত্র-যমুনা প্লাবনভূমিতে কৃষি (পাট ও ধান) এবং নকশিকাঁথা হস্তশিল্প বাণিজ্য।',
+            'culture_bn' => 'নকশিকাঁথা সেলাই জেলার স্বাক্ষরযুক্ত শিল্প।', 'bn' => 'জামালপুর', 'division' => 'Mymensingh', 'lat' => 24.9375, 'lon' => 89.9372,
             'area' => 2031.9, 'population' => 2500000,
             'famous' => 'Nakshi kantha embroidery, Doyamoyee temple',
             'history' => 'Historically part of greater Mymensingh, Jamalpur was separated into its own district in 1978 and is known for centuries-old nakshi kantha embroidery traditions among rural women.',
@@ -655,7 +779,9 @@ return [
             'upazilas' => 7,
         ],
         [
-            'name' => 'Netrokona', 'bn' => 'নেত্রকোণা', 'division' => 'Mymensingh', 'lat' => 24.8703, 'lon' => 90.7279,
+            'name' => 'Netrokona',
+            'famous_bn' => 'বিরিশিরির চীনামাটির পাহাড় ও সোমেশ্বরী নদী', 'economy_bn' => 'হাওর অববাহিকায় ধান চাষ, বিরিশিরির কাছে চীনামাটি (কাওলিন) উত্তোলন এবং মাছ ধরা।',
+            'culture_bn' => 'গারোদের ওয়ানগালা ফসল উৎসব এবং হাজং সম্প্রদায়ের ঐতিহ্য জেলার বিশেষত্ব।', 'bn' => 'নেত্রকোণা', 'division' => 'Mymensingh', 'lat' => 24.8703, 'lon' => 90.7279,
             'area' => 2794.3, 'population' => 2400000,
             'famous' => 'Birishiri china-clay hills, Somesshwari river',
             'history' => 'Home to Garo and Hajong indigenous communities in its haor and hill-adjoining areas; the Birishiri china-clay hills reflect a distinct mining history dating to the mid-20th century.',
@@ -665,7 +791,9 @@ return [
             'upazilas' => 10,
         ],
         [
-            'name' => 'Sherpur', 'bn' => 'শেরপুর', 'division' => 'Mymensingh', 'lat' => 25.0205, 'lon' => 90.0153,
+            'name' => 'Sherpur',
+            'famous_bn' => 'গজনী পাহাড়, মধুটিলা ইকো-পার্ক ও গারো সংস্কৃতি', 'economy_bn' => 'তুলা ও ধান চাষ, সঙ্গে গারো পাহাড়ের পাদদেশে বাড়তে থাকা ইকো-ট্যুরিজম।',
+            'culture_bn' => 'গারো জাতিগত সংস্কৃতি, ওয়ানগালা ফসল তোলার নৃত্য-উৎসবসহ, জেলার পাহাড়ি এলাকায় প্রধান।', 'bn' => 'শেরপুর', 'division' => 'Mymensingh', 'lat' => 25.0205, 'lon' => 90.0153,
             'area' => 1359.7, 'population' => 1500000,
             'famous' => 'Gajni hills, Madhutila eco-park, Garo culture',
             'history' => 'A hill-adjoining district bordering the Garo Hills of India, historically home to Garo and other indigenous communities under a semi-autonomous local governance structure before and after Partition.',
