@@ -224,6 +224,6 @@ $modified = bd_content_modified();
 </div>
 
 <main id="main" class="main">
-<?php if (bd_lang() === 'bn' && !in_array($current, ['home', 'news', 'news-detail', '404', 'travel', 'travel-detail'], true)): ?>
+<?php if (bd_lang() === 'bn' && !in_array($current, ['home', 'news', 'news-detail', '404', 'travel', 'travel-detail', 'gold', 'currency', 'time', 'sun'], true)): ?>
   <p class="langnote" role="note">এই পৃষ্ঠার বিস্তারিত তথ্য আপাতত ইংরেজিতে রয়েছে। মেনু, শিরোনাম ও সংবাদ বাংলায় পড়া যাবে; বাকি অংশ ধাপে ধাপে বাংলায় আনা হচ্ছে।</p>
 <?php endif; ?>

@@ -7,8 +7,8 @@ $countdowns = bd_countdowns();
 
 $seo = bd_seo(bd_page_seo('time') + [
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Time'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Time')],
     ],
     'jsonld' => [
         bd_jsonld_web_app(
@@ -23,11 +23,10 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🕰️ Time in Bangladesh</span>
-  <h1>What time is it in Bangladesh?</h1>
+  <span class="pagehead__eyebrow">🕰️ <?= e(t('Time in Bangladesh')) ?></span>
+  <h1><?= e(t('What time is it in Bangladesh?')) ?></h1>
   <p>
-    Bangladesh Standard Time (BST) is <strong>UTC+06:00</strong> across the whole country, all year
-    round. There is no daylight saving, so the offset from your own city never changes with the seasons.
+    <?= t('Bangladesh Standard Time (BST) is <strong>UTC+06:00</strong> across the whole country, all year round. There is no daylight saving, so the offset from your own city never changes with the seasons.') ?>
   </p>
 </div>
 
@@ -61,20 +60,20 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------- converter -->
 <section class="section">
   <div class="section__head">
-    <h2>Time converter</h2>
-    <p>Pick a moment in one city and read it in another.</p>
+    <h2><?= e(t('Time converter')) ?></h2>
+    <p><?= t('Pick a moment in one city and read it in another.') ?></p>
   </div>
 
   <div class="card" data-reveal>
     <form class="converter" id="time-tool" onsubmit="return false">
       <div class="field">
-        <label for="tc-datetime">Date and time</label>
+        <label for="tc-datetime"><?= e(t('Date and time')) ?></label>
         <input type="datetime-local" class="input" id="tc-datetime">
       </div>
 
       <div class="converter__row">
         <div class="field">
-          <label for="tc-from">From</label>
+          <label for="tc-from"><?= e(t('From')) ?></label>
           <select class="input" id="tc-from">
             <?php foreach ($clocks as $clock): ?>
               <option value="<?= e($clock['zone']) ?>"<?= $clock['zone'] === 'Asia/Dhaka' ? ' selected' : '' ?>>
@@ -87,7 +86,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <button type="button" class="swapbtn" id="tc-swap" aria-label="Swap the two cities">⇄</button>
 
         <div class="field">
-          <label for="tc-to">To</label>
+          <label for="tc-to"><?= e(t('To')) ?></label>
           <select class="input" id="tc-to">
             <?php foreach ($clocks as $clock): ?>
               <option value="<?= e($clock['zone']) ?>"<?= $clock['zone'] === 'America/New_York' ? ' selected' : '' ?>>
@@ -109,8 +108,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ---------------------------------------------------------- world clocks -->
 <section class="section">
   <div class="section__head">
-    <h2>World clocks</h2>
-    <p>Live, and correct for daylight saving wherever it applies.</p>
+    <h2><?= e(t('World clocks')) ?></h2>
+    <p><?= t('Live, and correct for daylight saving wherever it applies.') ?></p>
   </div>
 
   <div class="grid grid--5">
@@ -129,8 +128,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------ countdowns -->
 <section class="section">
   <div class="section__head">
-    <h2>Counting down</h2>
-    <p>Live timers to the next national days.</p>
+    <h2><?= e(t('Counting down')) ?></h2>
+    <p><?= t('Live timers to the next national days.') ?></p>
   </div>
 
   <div class="grid grid--2">
@@ -154,37 +153,26 @@ require APP_ROOT . '/includes/layout/header.php';
 <div class="notice" data-reveal>
   <span>🌍</span>
   <p style="margin:0">
-    Working with Bangladesh from abroad? Dhaka is 6 hours ahead of UTC, 1 hour ahead of Dubai,
-    2 hours behind Tokyo, and 10 or 11 hours ahead of New York depending on US daylight saving.
+    <?= t('Working with Bangladesh from abroad? Dhaka is 6 hours ahead of UTC, 1 hour ahead of Dubai, 2 hours behind Tokyo, and 10 or 11 hours ahead of New York depending on US daylight saving.') ?>
   </p>
 </div>
 
 <!-- ------------------------------------------------------------- explainer -->
 <section class="section">
   <div class="section__head">
-    <h2>Why Bangladesh keeps a single, fixed time zone</h2>
+    <h2><?= e(t('Why Bangladesh keeps a single, fixed time zone')) ?></h2>
   </div>
   <div class="grid grid--2">
     <div class="card" data-reveal>
-      <h3>🕕 UTC+06:00, all year round</h3>
+      <h3><?= e(t('🕕 UTC+06:00, all year round')) ?></h3>
       <p>
-        Bangladesh Standard Time has stood at a fixed UTC+06:00 offset since it briefly experimented
-        with daylight saving. In 2009 the government moved the clock forward by one hour for several
-        months to reduce electricity demand for lighting during peak evening hours, but the change
-        proved unpopular and confusing and was reversed the same year. Since then the country has
-        kept a single, unchanging offset year-round, with no clock changes to track and no daylight
-        saving to remember.
+        <?= t('Bangladesh Standard Time has stood at a fixed UTC+06:00 offset since it briefly experimented with daylight saving. In 2009 the government moved the clock forward by one hour for several months to reduce electricity demand for lighting during peak evening hours, but the change proved unpopular and confusing and was reversed the same year. Since then the country has kept a single, unchanging offset year-round, with no clock changes to track and no daylight saving to remember.') ?>
       </p>
     </div>
     <div class="card" data-reveal="80">
-      <h3>🧮 Converting time zones by hand</h3>
+      <h3><?= e(t('🧮 Converting time zones by hand')) ?></h3>
       <p>
-        Because Bangladesh never shifts its clock, converting to or from BST only requires knowing
-        whether the other city currently observes daylight saving. Most of Europe, North America
-        and Australia move their clocks twice a year, which is why Dhaka's gap to London, New York
-        or Sydney changes by an hour at different points in the year even though Dhaka itself never
-        moves - the tool above accounts for this automatically for any date you pick, not just the
-        current moment.
+        <?= t('Because Bangladesh never shifts its clock, converting to or from BST only requires knowing whether the other city currently observes daylight saving. Most of Europe, North America and Australia move their clocks twice a year, which is why Dhaka\'s gap to London, New York or Sydney changes by an hour at different points in the year even though Dhaka itself never moves - the tool above accounts for this automatically for any date you pick, not just the current moment.') ?>
       </p>
     </div>
   </div>

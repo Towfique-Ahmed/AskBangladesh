@@ -71,8 +71,8 @@ if ($isDistrictPage) {
             . $selected['name'] . ' day length, golden hour ' . $selected['name'],
         'path'        => 'sunrise-sunset/' . bd_slug($selected['name']),
         'breadcrumbs' => [
-            ['name' => 'Home',              'url' => bd_url()],
-            ['name' => 'Sunrise & Sunset',  'url' => bd_url('sunrise-sunset')],
+            ['name' => t('Home'),              'url' => bd_url()],
+            ['name' => t('Sunrise & Sunset'),  'url' => bd_url('sunrise-sunset')],
             ['name' => $selected['name']],
         ],
         'jsonld' => [bd_jsonld_faq($faqs)],
@@ -81,7 +81,7 @@ if ($isDistrictPage) {
     $seo = bd_seo(bd_page_seo('sun') + [
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => bd_url()],
-            ['name' => 'Sunrise & Sunset'],
+            ['name' => t('Sunrise & Sunset')],
         ],
         'jsonld' => [bd_jsonld_faq($faqs)],
     ]);
@@ -91,13 +91,10 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🌅 Sunrise &amp; sunset</span>
-  <h1>Sunrise and sunset in <?= e($selected['name']) ?></h1>
+  <span class="pagehead__eyebrow">🌅 <?= e(t('Sunrise & sunset')) ?></span>
+  <h1><?= e(tf('Sunrise and sunset in %s', bd_name($selected))) ?></h1>
   <p>
-    Calculated for <?= e($selected['name']) ?> (<?= number_format((float) $selected['lat'], 3) ?>°N,
-    <?= number_format((float) $selected['lon'], 3) ?>°E) from the sun's position, in Bangladesh
-    Standard Time. Bangladesh keeps a single time zone, so times shift by up to half an hour
-    between the eastern hills and the western border.
+    <?= e(tf('Calculated for %s (%s°N, %s°E) from the sun\'s position, in Bangladesh Standard Time. Bangladesh keeps a single time zone, so times shift by up to half an hour between the eastern hills and the western border.', bd_name($selected), number_format((float) $selected['lat'], 3), number_format((float) $selected['lon'], 3))) ?>
   </p>
 </div>
 
@@ -105,7 +102,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <form class="card" data-reveal method="get" action="<?= e(bd_url('sunrise-sunset')) ?>" style="margin-bottom:1.6rem">
   <div class="converter__row" style="grid-template-columns:1fr auto">
     <div class="field">
-      <label for="sun-district">District</label>
+      <label for="sun-district"><?= e(t('District')) ?></label>
       <select class="input" id="sun-district" name="district">
         <?php foreach ($districts as $district): ?>
           <option value="<?= e(bd_slug($district['name'])) ?>"<?= $district['name'] === $selected['name'] ? ' selected' : '' ?>>
@@ -115,8 +112,8 @@ require APP_ROOT . '/includes/layout/header.php';
       </select>
     </div>
     <div class="field">
-      <label>&nbsp;</label>
-      <button type="submit" class="btn btn--primary">Show times</button>
+      <label><?= e(t(' ')) ?></label>
+      <button type="submit" class="btn btn--primary"><?= e(t('Show times')) ?></button>
     </div>
   </div>
 </form>
@@ -136,7 +133,7 @@ require APP_ROOT . '/includes/layout/header.php';
       🌇 Sunset
     </div>
     <div class="result__value" style="color:var(--gold-500)"><?= e($today['Sunset']) ?></div>
-    <div class="result__meta"><?= e($today['Day length']) ?> of daylight today</div>
+    <div class="result__meta"><?= e(tf('%s of daylight today', $today['Day length'])) ?></div>
   </div>
 </div>
 
@@ -160,20 +157,20 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- --------------------------------------------------------------- tomorrow -->
 <section class="section">
   <div class="section__head">
-    <h2>Tomorrow</h2>
+    <h2><?= e(t('Tomorrow')) ?></h2>
     <p><?= e((new DateTimeImmutable('+1 day'))->format('l, j F Y')) ?></p>
   </div>
   <div class="grid grid--3">
     <div class="card" data-reveal>
-      <h3>🌅 Sunrise</h3>
+      <h3><?= e(t('🌅 Sunrise')) ?></h3>
       <div style="font:700 1.8rem/1.2 var(--mono);color:var(--green-300)"><?= e($tomorrow['Sunrise']) ?></div>
     </div>
     <div class="card" data-reveal="60">
-      <h3>🌇 Sunset</h3>
+      <h3><?= e(t('🌇 Sunset')) ?></h3>
       <div style="font:700 1.8rem/1.2 var(--mono);color:var(--gold-500)"><?= e($tomorrow['Sunset']) ?></div>
     </div>
     <div class="card" data-reveal="120">
-      <h3>⏳ Daylight</h3>
+      <h3><?= e(t('⏳ Daylight')) ?></h3>
       <div style="font:700 1.8rem/1.2 var(--mono);color:var(--teal-500)"><?= e($tomorrow['Day length']) ?></div>
       <?php if ($deltaText !== ''): ?>
         <p style="margin-top:.4rem"><?= e(ucfirst($deltaText)) ?>.</p>
@@ -185,14 +182,14 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- --------------------------------------------------------- divisional -->
 <section class="section">
   <div class="section__head">
-    <h2>Divisional cities today</h2>
-    <p>The sun rises in Sylhet before it reaches the western border.</p>
+    <h2><?= e(t('Divisional cities today')) ?></h2>
+    <p><?= t('The sun rises in Sylhet before it reaches the western border.') ?></p>
   </div>
 
   <div class="tablewrap" data-reveal>
     <table>
       <thead>
-        <tr><th>City</th><th>First light</th><th>Sunrise</th><th>Solar noon</th><th>Sunset</th><th>Last light</th><th>Daylight</th></tr>
+        <tr><th><?= e(t('City')) ?></th><th><?= e(t('First light')) ?></th><th><?= e(t('Sunrise')) ?></th><th><?= e(t('Solar noon')) ?></th><th><?= e(t('Sunset')) ?></th><th><?= e(t('Last light')) ?></th><th><?= e(t('Daylight')) ?></th></tr>
       </thead>
       <tbody>
         <?php foreach (array_keys(bd_divisions()) as $divisionName):
@@ -217,8 +214,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------- every district page -->
 <section class="section">
   <div class="section__head">
-    <h2>Sunrise and sunset by district</h2>
-    <p>All 64 districts, each with its own daily figures.</p>
+    <h2><?= e(t('Sunrise and sunset by district')) ?></h2>
+    <p><?= t('All 64 districts, each with its own daily figures.') ?></p>
   </div>
   <div class="chips">
     <?php foreach ($districts as $district): ?>
@@ -233,40 +230,26 @@ require APP_ROOT . '/includes/layout/header.php';
 <div class="notice" data-reveal>
   <span>ℹ️</span>
   <p style="margin:0">
-    Times are computed from each district's coordinates and account for atmospheric refraction
-    and the width of the solar disc. Local terrain - a ridge in the Chittagong Hill Tracts, for
-    instance - can hide the sun for several minutes either side of these figures.
+    <?= t('Times are computed from each district\'s coordinates and account for atmospheric refraction and the width of the solar disc. Local terrain - a ridge in the Chittagong Hill Tracts, for instance - can hide the sun for several minutes either side of these figures.') ?>
   </p>
 </div>
 
 <!-- ------------------------------------------------------------- explainer -->
 <section class="section">
   <div class="section__head">
-    <h2>Why sunrise time differs across Bangladesh</h2>
+    <h2><?= e(t('Why sunrise time differs across Bangladesh')) ?></h2>
   </div>
   <div class="grid grid--2">
     <div class="card" data-reveal>
-      <h3>🧭 One time zone, a country wide enough to matter</h3>
+      <h3><?= e(t('🧭 One time zone, a country wide enough to matter')) ?></h3>
       <p>
-        Bangladesh spans roughly 6 degrees of longitude from Panchagarh in the far northwest to
-        Teknaf in the southeast, and the whole country keeps a single clock, Bangladesh Standard
-        Time (UTC+06:00). The sun, however, does not respect a single time zone: it rises and sets
-        earlier the further east a place sits. That gap between true solar time and the clock is
-        why sunrise and sunset in Sylhet or Bandarban, near the eastern border, run noticeably
-        earlier than in Rajshahi or Kushtia on the western side, even though every district shows
-        the same clock time.
+        <?= t('Bangladesh spans roughly 6 degrees of longitude from Panchagarh in the far northwest to Teknaf in the southeast, and the whole country keeps a single clock, Bangladesh Standard Time (UTC+06:00). The sun, however, does not respect a single time zone: it rises and sets earlier the further east a place sits. That gap between true solar time and the clock is why sunrise and sunset in Sylhet or Bandarban, near the eastern border, run noticeably earlier than in Rajshahi or Kushtia on the western side, even though every district shows the same clock time.') ?>
       </p>
     </div>
     <div class="card" data-reveal="80">
-      <h3>🌇 Golden hour and the practical uses of this page</h3>
+      <h3><?= e(t('🌇 Golden hour and the practical uses of this page')) ?></h3>
       <p>
-        Day length also changes with the season: Bangladesh's mid-latitude position means summer
-        days run noticeably longer than winter ones, with the difference most visible around the
-        June and December solstices. The golden hour windows shown for each district - the soft,
-        warm light shortly after sunrise and before sunset - are commonly used for photography,
-        and the sunrise and sunset times themselves are widely used to time Islamic prayers (Fajr
-        and Maghrib in particular) and the daily fast during Ramadan, alongside farming and fishing
-        schedules along the coast and the river systems.
+        <?= t('Day length also changes with the season: Bangladesh\'s mid-latitude position means summer days run noticeably longer than winter ones, with the difference most visible around the June and December solstices. The golden hour windows shown for each district - the soft, warm light shortly after sunrise and before sunset - are commonly used for photography, and the sunrise and sunset times themselves are widely used to time Islamic prayers (Fajr and Maghrib in particular) and the daily fast during Ramadan, alongside farming and fishing schedules along the coast and the river systems.') ?>
       </p>
     </div>
   </div>

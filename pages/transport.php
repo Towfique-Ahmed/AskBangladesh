@@ -11,8 +11,8 @@ $projects  = bd_places('megaprojects');
 $seo = bd_seo(bd_page_seo('transport') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Transport'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Transport')],
     ],
     'jsonld' => [
         bd_jsonld_item_list(
@@ -44,20 +44,18 @@ $longestRoad = max(array_column($roads, 'length'));
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🛣️ Getting around</span>
-  <h1>Roads, rails and rivers</h1>
+  <span class="pagehead__eyebrow">🛣️ <?= e(t('Getting around')) ?></span>
+  <h1><?= e(t('Roads, rails and rivers')) ?></h1>
   <p>
-    Bangladesh moves by every means at once - rickshaws and metro trains, overnight launches down
-    the Meghna and eight-lane expressways over the capital. Here is how it all fits together, and
-    what it costs.
+    <?= t('Bangladesh moves by every means at once - rickshaws and metro trains, overnight launches down the Meghna and eight-lane expressways over the capital. Here is how it all fits together, and what it costs.') ?>
   </p>
 </div>
 
 <!-- ------------------------------------------------------------- how to move -->
 <section class="section">
   <div class="section__head">
-    <h2>How people travel</h2>
-    <p>Typical fares, and what to know before you get in.</p>
+    <h2><?= e(t('How people travel')) ?></h2>
+    <p><?= t('Typical fares, and what to know before you get in.') ?></p>
   </div>
 
   <div class="grid grid--3">
@@ -79,8 +77,8 @@ $longestRoad = max(array_column($roads, 'length'));
 <!-- --------------------------------------------------------------- highways -->
 <section class="section">
   <div class="section__head">
-    <h2>National highways</h2>
-    <p>The N-numbered corridors that hold the country together.</p>
+    <h2><?= e(t('National highways')) ?></h2>
+    <p><?= t('The N-numbered corridors that hold the country together.') ?></p>
   </div>
 
   <div class="grid grid--2">
@@ -103,12 +101,12 @@ $longestRoad = max(array_column($roads, 'length'));
 <!-- ---------------------------------------------------------- megaprojects -->
 <section class="section">
   <div class="section__head">
-    <h2>The projects that changed the map</h2>
+    <h2><?= e(t('The projects that changed the map')) ?></h2>
   </div>
   <div class="grid grid--3">
     <?php foreach ($projects as $i => $project): ?>
       <div class="card" data-reveal="<?= $i * 50 ?>">
-        <span class="badge badge--gold">Opened <?= e((string) $project['opened']) ?></span>
+        <span class="badge badge--gold"><?= e(t('Opened')) ?> <?= e(bd_lang() === 'bn' ? bd_bn_digits((string) $project['opened']) : (string) $project['opened']) ?></span>
         <h3 style="margin-top:.6rem">🏗️ <?= e($project['name']) ?></h3>
         <div style="font:700 1.35rem/1.2 var(--mono);color:var(--green-300);margin:.3rem 0 .5rem"><?= e($project['stat']) ?></div>
         <p><?= e($project['note']) ?></p>
@@ -119,10 +117,10 @@ $longestRoad = max(array_column($roads, 'length'));
 
 <!-- -------------------------------------------------------------- airports -->
 <section class="section">
-  <div class="section__head"><h2>Airports</h2></div>
+  <div class="section__head"><h2><?= e(t('Airports')) ?></h2></div>
   <div class="tablewrap" data-reveal>
     <table>
-      <thead><tr><th>Airport</th><th>Code</th><th>City</th><th>Type</th><th class="num">Coordinates</th></tr></thead>
+      <thead><tr><th><?= e(t('Airport')) ?></th><th><?= e(t('Code')) ?></th><th><?= e(t('City')) ?></th><th><?= e(t('Type')) ?></th><th class="num"><?= e(t('Coordinates')) ?></th></tr></thead>
       <tbody>
         <?php foreach ($airports as $a): ?>
           <tr>
@@ -140,7 +138,7 @@ $longestRoad = max(array_column($roads, 'length'));
 
 <!-- ----------------------------------------------------------------- ports -->
 <section class="section">
-  <div class="section__head"><h2>Sea and land ports</h2></div>
+  <div class="section__head"><h2><?= e(t('Sea and land ports')) ?></h2></div>
   <div class="grid grid--3">
     <?php foreach ($ports as $i => $port): ?>
       <div class="card" data-reveal="<?= $i * 55 ?>">
@@ -155,9 +153,7 @@ $longestRoad = max(array_column($roads, 'length'));
 <div class="notice" data-reveal>
   <span>🎫</span>
   <p style="margin:0">
-    Train tickets go on sale exactly ten days before travel at
-    <strong>eticket.railway.gov.bd</strong> and sell out within minutes on Eid weeks. Intercity bus
-    and launch tickets are easiest through Shohoz, BusBD or the operator’s own counter.
+    <?= t('Train tickets go on sale exactly ten days before travel at <strong>eticket.railway.gov.bd</strong> and sell out within minutes on Eid weeks. Intercity bus and launch tickets are easiest through Shohoz, BusBD or the operator’s own counter.') ?>
   </p>
 </div>
 
