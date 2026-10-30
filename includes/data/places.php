@@ -113,7 +113,7 @@ return [
     // ---------------------------------------------------------- destinations
     'travel' => [
         [
-            'name' => 'Cox’s Bazar Sea Beach', 'district' => "Cox's Bazar", 'type' => 'Beach',
+            'name' => 'Cox’s Bazar Sea Beach', 'name_bn' => 'কক্সবাজার সমুদ্রসৈকত', 'desc_bn' => 'কক্সবাজার থেকে টেকনাফ পর্যন্ত প্রায় ১২০ কিলোমিটার বিস্তৃত বিশ্বের দীর্ঘতম অবিচ্ছিন্ন প্রাকৃতিক সমুদ্রসৈকত।', 'district' => "Cox's Bazar", 'type' => 'Beach',
             'lat' => 21.4272, 'lon' => 92.0058, 'best' => 'Nov – Mar', 'emoji' => '🏖️',
             'desc' => 'The longest uninterrupted natural sea beach in the world, running about 120 km from Cox’s Bazar to Teknaf.',
             'history' => 'Once a small Arakanese fishing settlement called Panowa, the town was renamed after Captain Hiram Cox, a British East India Company officer who resettled Rakhine refugees here in the 1790s. It grew into Bangladesh’s flagship beach resort from the 1960s onward as roads and hotels reached the coast.',
@@ -127,7 +127,7 @@ return [
             'nearby' => ['Himchari National Park', 'St. Martin’s Island (via Teknaf ferry)', 'Inani Beach', 'Ramu Buddhist temple village'],
         ],
         [
-            'name' => 'The Sundarbans', 'district' => 'Khulna', 'type' => 'Forest',
+            'name' => 'The Sundarbans', 'name_bn' => 'সুন্দরবন', 'desc_bn' => 'পৃথিবীর বৃহত্তম ম্যানগ্রোভ বন ও ইউনেস্কো বিশ্ব ঐতিহ্যস্থান - রয়েল বেঙ্গল টাইগারের আবাস।', 'district' => 'Khulna', 'type' => 'Forest',
             'lat' => 21.9497, 'lon' => 89.1833, 'best' => 'Dec – Feb', 'emoji' => '🐅',
             'desc' => 'Largest mangrove forest on Earth and a UNESCO World Heritage Site - home of the Royal Bengal Tiger.',
             'history' => 'Named after the sundari trees that dominate the canopy, the forest was declared a Reserve Forest by the British in 1875 and its Bangladesh portion was inscribed as a UNESCO World Heritage Site in 1997. Honey collectors (mawalis) and fishermen have shared these tidal channels with the Royal Bengal Tiger for centuries.',
@@ -141,7 +141,7 @@ return [
             'nearby' => ['Karamjal wildlife and crocodile centre', 'Kotka beach and watchtower', 'Mongla Port', 'Sixty Dome Mosque, Bagerhat'],
         ],
         [
-            'name' => 'Sajek Valley', 'district' => 'Rangamati', 'type' => 'Hills',
+            'name' => 'Sajek Valley', 'name_bn' => 'সাজেক ভ্যালি', 'desc_bn' => '‘পাহাড়ের রানি’ - সমুদ্রপৃষ্ঠ থেকে ১,৮০০ ফুট উচ্চতায় ভোরে রিসোর্টের কুটিরের ভেতর দিয়ে মেঘ ভেসে যায়।', 'district' => 'Rangamati', 'type' => 'Hills',
             'lat' => 23.3833, 'lon' => 92.2917, 'best' => 'Jul – Oct', 'emoji' => '⛰️',
             'desc' => 'The "queen of hills" - clouds roll through the resort huts at dawn, 1,800 ft above sea level.',
             'history' => 'Once accessible only to the Lushai and Tripura communities of remote Baghaichari upazila, Sajek opened up once the Khagrachhari–Dighinala–Sajek road was paved in the 2010s. It quickly became one of the most photographed hill destinations in the country, though it remains inside the Chittagong Hill Tracts’ security zone.',
@@ -155,7 +155,7 @@ return [
             'nearby' => ['Konglak Para viewpoint', 'Alutila Cave, Khagrachhari (en route)', 'Ruilui Para', 'Kaptai Lake'],
         ],
         [
-            'name' => 'Sreemangal Tea Gardens', 'district' => 'Moulvibazar', 'type' => 'Nature',
+            'name' => 'Sreemangal Tea Gardens', 'name_bn' => 'শ্রীমঙ্গলের চা-বাগান', 'desc_bn' => 'বাংলাদেশের চা-রাজধানী - সবুজ চা-বাগানের ঢেউ, সাত রঙের চা ও লাউয়াছড়ার বৃষ্টিবন।', 'district' => 'Moulvibazar', 'type' => 'Nature',
             'lat' => 24.3065, 'lon' => 91.7296, 'best' => 'Oct – Mar', 'emoji' => '🍃',
             'desc' => 'Tea capital of Bangladesh - endless green terraces, the seven-layer tea and Lawachara rainforest.',
             'history' => 'British planters established the first tea estates around Sreemangal in the 1850s–60s, and the district grew into one of the world’s densest tea-growing areas by number of gardens. The town earned its nickname "tea capital of Bangladesh" as processing factories and tourism grew up alongside the plantations.',
@@ -169,7 +169,7 @@ return [
             'nearby' => ['Lawachara National Park', 'Madhabpur Lake', 'Nilkantha seven-layer tea stall', 'Baikka Beel wetland sanctuary'],
         ],
         [
-            'name' => "St. Martin's Island", 'district' => "Cox's Bazar", 'type' => 'Island',
+            'name' => "St. Martin's Island", 'name_bn' => 'সেন্ট মার্টিন দ্বীপ', 'desc_bn' => 'বাংলাদেশের একমাত্র প্রবাল দ্বীপ, স্থানীয়ভাবে নারকেল জিঞ্জিরা - নারকেল, প্রবাল ও ফিরোজা নীল পানি।', 'district' => "Cox's Bazar", 'type' => 'Island',
             'lat' => 20.6270, 'lon' => 92.3230, 'best' => 'Nov – Feb', 'emoji' => '🏝️',
             'desc' => 'The only coral island of Bangladesh, locally called Narikel Jinjira - coconut, coral and turquoise water.',
             'history' => 'Originally called Narikel Jinjira ("coconut island"), it was settled by fishermen from Arakan generations ago and later renamed after a colonial-era administrator. As the country’s only coral-bearing island it was declared an Ecologically Critical Area in 1999 to protect its reef from overtourism.',
@@ -184,7 +184,7 @@ return [
             'nearby' => ['Chera Dwip (detached at low tide)', 'Teknaf coast and Nafa Kum viewpoint', 'Cox’s Bazar Sea Beach', 'Himchari National Park'],
         ],
         [
-            'name' => 'Kuakata Sea Beach', 'district' => 'Patuakhali', 'type' => 'Beach',
+            'name' => 'Kuakata Sea Beach', 'name_bn' => 'কুয়াকাটা সমুদ্রসৈকত', 'desc_bn' => '‘সাগরকন্যা’ - যে অল্প কয়েকটি সৈকত থেকে সাগরের বুকে সূর্যোদয় ও সূর্যাস্ত দুটোই দেখা যায়।', 'district' => 'Patuakhali', 'type' => 'Beach',
             'lat' => 21.8167, 'lon' => 90.1200, 'best' => 'Oct – Mar', 'emoji' => '🌅',
             'desc' => 'The "daughter of the sea" - one of very few beaches where both sunrise and sunset fall over the water.',
             'history' => 'Rakhine Buddhist refugees fleeing Arakan settled here in the late 18th century and built the Kuakata Rakhine temple that still stands today. The beach’s rare east–west orientation, letting visitors watch both sunrise and sunset from the same spot, turned it into a tourist destination from the 1990s onward.',
@@ -198,7 +198,7 @@ return [
             'nearby' => ['Kuakata Rakhine Buddhist temple', 'Fatrar Char mangrove island', 'Gangamati forest', 'Lebur Char'],
         ],
         [
-            'name' => 'Ratargul Swamp Forest', 'district' => 'Sylhet', 'type' => 'Forest',
+            'name' => 'Ratargul Swamp Forest', 'name_bn' => 'রাতারগুল জলাবন', 'desc_bn' => 'দেশের একমাত্র স্বাদুপানির জলাবন - ডুবে থাকা গাছের গুঁড়ির ফাঁক দিয়ে নৌকায় ভেসে চলুন।', 'district' => 'Sylhet', 'type' => 'Forest',
             'lat' => 25.0067, 'lon' => 91.9522, 'best' => 'Jun – Sep', 'emoji' => '🛶',
             'desc' => 'The only freshwater swamp forest of the country - paddle a boat between submerged tree trunks.',
             'history' => 'A naturally regenerating freshwater swamp forest that floods every monsoon, Ratargul was long known only to local fishermen before small boat tours discovered it in the 2010s. Comparisons to the Amazon’s flooded forests helped turn it into one of Sylhet’s signature attractions.',
@@ -212,7 +212,7 @@ return [
             'nearby' => ['Jaflong & Bichanakandi', 'Lalakhal blue-water canal', 'Shah Jalal’s shrine, Sylhet city'],
         ],
         [
-            'name' => 'Tanguar Haor', 'district' => 'Sunamganj', 'type' => 'Wetland',
+            'name' => 'Tanguar Haor', 'name_bn' => 'টাঙ্গুয়ার হাওর', 'desc_bn' => 'রামসার স্বীকৃত জলাভূমি; শতাধিক পরস্পর যুক্ত বিলে প্রতি শীতে হাজার হাজার পরিযায়ী পাখি আসে।', 'district' => 'Sunamganj', 'type' => 'Wetland',
             'lat' => 25.1167, 'lon' => 91.1000, 'best' => 'Jun – Sep', 'emoji' => '🦆',
             'desc' => 'A Ramsar wetland of 100+ interconnected beels hosting tens of thousands of migratory birds each winter.',
             'history' => 'Tanguar Haor was declared a Ramsar Wetland of International Importance in 2000 in recognition of its role as a breeding and wintering ground for waterfowl and fish. Its network of beels has supported fishing communities for generations and later drew birdwatchers and houseboat tourism.',
@@ -226,7 +226,7 @@ return [
             'nearby' => ['Watchtower at Tahirpur', 'Barek Tila viewpoint', 'Jadukata River', 'Shimul Bagan (in bloom season)'],
         ],
         [
-            'name' => 'Somapura Mahavihara, Paharpur', 'district' => 'Naogaon', 'type' => 'Heritage',
+            'name' => 'Somapura Mahavihara, Paharpur', 'name_bn' => 'সোমপুর মহাবিহার, পাহাড়পুর', 'desc_bn' => 'ইউনেস্কো স্বীকৃত স্থান - অষ্টম শতকের বৌদ্ধ বিহার, একসময় হিমালয়ের দক্ষিণে সবচেয়ে বড়।', 'district' => 'Naogaon', 'type' => 'Heritage',
             'lat' => 25.0311, 'lon' => 88.9772, 'best' => 'Nov – Mar', 'emoji' => '🛕',
             'desc' => 'UNESCO site - an 8th-century Buddhist monastery, once the largest south of the Himalayas.',
             'history' => 'Built by the Pala king Dharmapala in the late 8th century, Somapura Mahavihara was once the largest Buddhist monastery south of the Himalayas and a centre of learning that drew monks from as far as Tibet and Southeast Asia. Systematic excavation began in the 1920s, and the site was inscribed as a UNESCO World Heritage Site in 1985.',
@@ -240,7 +240,7 @@ return [
             'nearby' => ['Mahasthangarh', 'Kantajew Temple', 'Somapura site museum'],
         ],
         [
-            'name' => 'Sixty Dome Mosque (Shat Gambuj)', 'district' => 'Bagerhat', 'type' => 'Heritage',
+            'name' => 'Sixty Dome Mosque (Shat Gambuj)', 'name_bn' => 'ষাট গম্বুজ মসজিদ', 'desc_bn' => 'পঞ্চদশ শতকে খান জাহান আলীর নির্মিত ইউনেস্কো স্বীকৃত স্থান - ৬০টি স্তম্ভ, ৭৭টি গম্বুজ ও অতুলনীয় ইটের কাজ।', 'district' => 'Bagerhat', 'type' => 'Heritage',
             'lat' => 22.6742, 'lon' => 89.7411, 'best' => 'Nov – Mar', 'emoji' => '🕌',
             'desc' => 'UNESCO site built by Khan Jahan Ali in the 15th century - 60 pillars, 77 domes, unmatched brickwork.',
             'history' => 'Built in the mid-15th century by Khan Jahan Ali, the Turkic general-saint who founded the city of Khalifatabad (present-day Bagerhat), the mosque takes its name from its 60 stone pillars even though it actually has 77 domes. It survives as the largest sultanate-era mosque in Bangladesh and was inscribed as a UNESCO World Heritage Site in 1985.',
@@ -254,7 +254,7 @@ return [
             'nearby' => ['Khan Jahan Ali’s mausoleum and tank', 'Nine-Dome Mosque', 'Mongla Port and Sundarbans gateway'],
         ],
         [
-            'name' => 'Mahasthangarh', 'district' => 'Bogura', 'type' => 'Heritage',
+            'name' => 'Mahasthangarh', 'name_bn' => 'মহাস্থানগড়', 'desc_bn' => 'বাংলাদেশের প্রাচীনতম নগর-প্রত্নস্থল - খ্রিষ্টপূর্ব তৃতীয় শতকের প্রাচীন নগর পুণ্ড্রনগর।', 'district' => 'Bogura', 'type' => 'Heritage',
             'lat' => 24.9667, 'lon' => 89.3417, 'best' => 'Nov – Mar', 'emoji' => '🏺',
             'desc' => 'The oldest urban archaeological site of Bangladesh - the ancient city of Pundranagara, 3rd century BCE.',
             'history' => 'Identified with the ancient city of Pundranagara, Mahasthangarh is referenced in a Brahmi inscription from the Mauryan era around the 3rd century BCE, making it the oldest known urban site in Bangladesh. The citadel was occupied continuously through the Gupta, Pala and Sultanate periods, leaving layers of ruins still being excavated today.',
@@ -268,7 +268,7 @@ return [
             'nearby' => ['Mahasthangarh Museum', 'Gokul Medh (Lakhindarer Medh)', 'Bhasu Vihara', 'Somapura Mahavihara, Paharpur'],
         ],
         [
-            'name' => 'Lalbagh Fort', 'district' => 'Dhaka', 'type' => 'Heritage',
+            'name' => 'Lalbagh Fort', 'name_bn' => 'লালবাগ কেল্লা', 'desc_bn' => 'সতেরো শতকের অসমাপ্ত মোগল দুর্গ-চত্বর, কেন্দ্রে পরী বিবির সমাধি।', 'district' => 'Dhaka', 'type' => 'Heritage',
             'lat' => 23.7188, 'lon' => 90.3880, 'best' => 'All year', 'emoji' => '🏰',
             'desc' => 'An unfinished 17th-century Mughal fort complex with the tomb of Pari Bibi at its heart.',
             'history' => 'Construction began in 1678 under Mughal prince Muhammad Azam Shah and continued under Subedar Shaista Khan, but work stopped for good after the 1684 death of Shaista Khan’s daughter Pari Bibi, whose tomb sits at the centre of the complex - leaving the fort permanently unfinished.',
@@ -282,7 +282,7 @@ return [
             'nearby' => ['Ahsan Manzil', 'Star Mosque (Tara Masjid)', 'Old Dhaka’s Shakhari Bazar', 'Dhakeshwari Temple'],
         ],
         [
-            'name' => 'Ahsan Manzil', 'district' => 'Dhaka', 'type' => 'Heritage',
+            'name' => 'Ahsan Manzil', 'name_bn' => 'আহসান মঞ্জিল', 'desc_bn' => 'বুড়িগঙ্গার তীরে গোলাপি প্রাসাদ - ঢাকার নবাবদের বাসভবন, এখন জাদুঘর।', 'district' => 'Dhaka', 'type' => 'Heritage',
             'lat' => 23.7086, 'lon' => 90.4058, 'best' => 'All year', 'emoji' => '🏛️',
             'desc' => 'The pink palace on the Buriganga - residence of the Nawabs of Dhaka, now a museum.',
             'history' => 'Built in the 1870s by Nawab Abdul Ghani on the site of an earlier riverside estate, Ahsan Manzil served as the residence and seat of the Nawabs of Dhaka. Badly damaged by a tornado in 1888, it was rebuilt soon after and later restored as a national museum that opened to the public in 1992.',
@@ -296,7 +296,7 @@ return [
             'nearby' => ['Sadarghat river terminal', 'Lalbagh Fort', 'Star Mosque (Tara Masjid)', 'Buriganga river boat rides'],
         ],
         [
-            'name' => 'Jatiya Sangsad Bhaban', 'district' => 'Dhaka', 'type' => 'Architecture',
+            'name' => 'Jatiya Sangsad Bhaban', 'name_bn' => 'জাতীয় সংসদ ভবন', 'desc_bn' => 'লুই কানের নকশায় জাতীয় সংসদ ভবন - বিশ্বের অন্যতম বৃহৎ ও প্রশংসিত আইনসভা ভবন।', 'district' => 'Dhaka', 'type' => 'Architecture',
             'lat' => 23.7625, 'lon' => 90.3784, 'best' => 'All year', 'emoji' => '🏢',
             'desc' => 'Louis Kahn’s National Parliament House - one of the largest and most admired legislative complexes in the world.',
             'history' => 'Designed by American architect Louis Kahn, construction began in 1961 for what was then meant to be a provincial assembly building, and was completed only in 1982 - over a decade after Bangladesh’s 1971 independence had already redefined its purpose as a national parliament. It is now regarded as one of the 20th century’s masterpieces of modern architecture.',
@@ -310,7 +310,7 @@ return [
             'nearby' => ['Crescent Lake', 'National Parade Ground', 'Dhaka Zoo', 'Bangabandhu Novo Theatre / Botanical Garden, Mirpur'],
         ],
         [
-            'name' => 'Kantajew Temple', 'district' => 'Dinajpur', 'type' => 'Heritage',
+            'name' => 'Kantajew Temple', 'name_bn' => 'কান্তজীউ মন্দির', 'desc_bn' => 'আঠারো শতকের টেরাকোটার হিন্দু মন্দির, গায়ে ১৫ হাজারেরও বেশি খোদাই করা ফলক।', 'district' => 'Dinajpur', 'type' => 'Heritage',
             'lat' => 25.6836, 'lon' => 88.6656, 'best' => 'Nov – Mar', 'emoji' => '🛕',
             'desc' => 'An 18th-century terracotta Hindu temple covered with more than 15,000 sculpted plaques.',
             'history' => 'Built between 1704 and 1752 under Maharaja Pran Nath and his adopted son Ramnath of Dinajpur, the temple is famed for terracotta plaques covering every surface, depicting scenes from the Ramayana, Mahabharata and everyday Bengali life. Its top storey collapsed in the great earthquake of 1897 and was never rebuilt.',
@@ -324,7 +324,7 @@ return [
             'nearby' => ['Dinajpur Rajbari', 'Ramsagar National Park', 'Nayabad Mosque'],
         ],
         [
-            'name' => 'Nilgiri & Chimbuk', 'district' => 'Bandarban', 'type' => 'Hills',
+            'name' => 'Nilgiri & Chimbuk', 'name_bn' => 'নীলগিরি ও চিম্বুক', 'desc_bn' => 'মেঘের ওপরে অবস্থিত রিসোর্ট, যেখানে সূর্যোদয়ের সময় ব্যালকনির নিচে কুয়াশা জমে থাকে।', 'district' => 'Bandarban', 'type' => 'Hills',
             'lat' => 21.9560, 'lon' => 92.3020, 'best' => 'Jul – Feb', 'emoji' => '☁️',
             'desc' => 'Resorts perched above the cloudline where the fog sits below your balcony at sunrise.',
             'history' => 'Chimbuk became a road-trip landmark once the Bandarban–Thanchi road was paved through the hills, while Nilgiri was later developed as an army-run resort above the cloud line. Together they opened this stretch of the Chittagong Hill Tracts to sunrise-seekers from the 2000s onward.',
@@ -338,7 +338,7 @@ return [
             'nearby' => ['Nafakhum Waterfall', 'Boga Lake (Bogakain)', 'Chimbuk viewpoint market', 'Shoilo Propat waterfall'],
         ],
         [
-            'name' => 'Nafakhum Waterfall', 'district' => 'Bandarban', 'type' => 'Waterfall',
+            'name' => 'Nafakhum Waterfall', 'name_bn' => 'নাফাখুম জলপ্রপাত', 'desc_bn' => 'পানির পরিমাণে বাংলাদেশের বৃহত্তম জলপ্রপাত, সাঙ্গু নদী ধরে নৌকা ও হাঁটাপথে যেতে হয়।', 'district' => 'Bandarban', 'type' => 'Waterfall',
             'lat' => 21.8667, 'lon' => 92.5833, 'best' => 'Aug – Oct', 'emoji' => '💦',
             'desc' => 'The largest waterfall by volume in Bangladesh, reached by boat and trek along the Sangu river.',
             'history' => 'Long known to the Marma and Tripura communities of the Sangu valley, Nafakhum earned the nickname "Niagara of Bangladesh" among trekkers for its width and volume. It became a mainstream trekking destination only after the river village of Remakri grew accessible by boat.',
@@ -352,7 +352,7 @@ return [
             'nearby' => ['Remakri Falls', 'Tindu village', 'Amiakhum Waterfall (further trek)', 'Boga Lake'],
         ],
         [
-            'name' => 'Jaflong & Bichanakandi', 'district' => 'Sylhet', 'type' => 'Nature',
+            'name' => 'Jaflong & Bichanakandi', 'name_bn' => 'জাফলং ও বিছনাকান্দি', 'desc_bn' => 'গড়িয়ে চলা পাথরে ভরা স্বচ্ছ ঝরনা, পটভূমিতে মেঘালয়ের পাহাড় ও জলপ্রপাত।', 'district' => 'Sylhet', 'type' => 'Nature',
             'lat' => 25.1667, 'lon' => 92.0167, 'best' => 'Jun – Oct', 'emoji' => '🪨',
             'desc' => 'Crystal streams full of rolling stones with the Meghalaya hills and waterfalls as a backdrop.',
             'history' => 'Jaflong has been a stone-collection zone on the Piyain river since colonial times, where boulders rolled down from the Khasi Hills of Meghalaya are gathered by local labourers. Tourism grew from the 1990s around the scenic "zero point" view of the hills and border waterfalls just across the frontier.',
@@ -366,7 +366,7 @@ return [
             'nearby' => ['Lalakhal blue-water canal', 'Ratargul Swamp Forest', 'Tamabil land port', 'Shah Paran shrine'],
         ],
         [
-            'name' => 'Kaptai Lake', 'district' => 'Rangamati', 'type' => 'Lake',
+            'name' => 'Kaptai Lake', 'name_bn' => 'কাপ্তাই হ্রদ', 'desc_bn' => 'দেশের বৃহত্তম মানবসৃষ্ট হ্রদ, ছড়িয়ে আছে দ্বীপ, ঝুলন্ত সেতু ও পাহাড়ি গ্রাম।', 'district' => 'Rangamati', 'type' => 'Lake',
             'lat' => 22.4956, 'lon' => 92.2200, 'best' => 'Oct – Mar', 'emoji' => '🚤',
             'desc' => 'The largest man-made lake of the country, dotted with islands, hanging bridges and hill villages.',
             'history' => 'The lake was created between 1958 and 1962 when the Karnaphuli Hydroelectric Project dammed the Karnaphuli river, flooding a huge area of the Chittagong Hill Tracts and displacing tens of thousands of Chakma and other Indigenous people - an event still remembered in Hill Tracts history as "the Great Flood". It remains the country’s main source of hydroelectric power.',
@@ -380,7 +380,7 @@ return [
             'nearby' => ['Rangamati hanging bridge', 'Rajban Vihar', 'Peda Ting Ting floating restaurant', 'Shuvolong Waterfall'],
         ],
         [
-            'name' => 'Nijhum Dwip', 'district' => 'Noakhali', 'type' => 'Island',
+            'name' => 'Nijhum Dwip', 'name_bn' => 'নিঝুম দ্বীপ', 'desc_bn' => 'শান্ত দ্বীপ-জাতীয় উদ্যান, সন্ধ্যায় কেওড়া বনে চিত্রা হরিণের পাল ঘুরে বেড়ায়।', 'district' => 'Noakhali', 'type' => 'Island',
             'lat' => 22.0500, 'lon' => 91.0333, 'best' => 'Nov – Feb', 'emoji' => '🦌',
             'desc' => 'A quiet island national park where herds of spotted deer roam the keora forest at dusk.',
             'history' => 'The island formed from silt accretion in the Bay of Bengal in the 1950s and was originally known as Char Osman. It was renamed Nijhum Dwip ("silent island") and declared a national park in 2001 to protect its spotted deer, which had been introduced from the Sundarbans in the 1970s.',
@@ -394,7 +394,7 @@ return [
             'nearby' => ['Kamalar Char', 'Hatiya Island', 'Char Osman keora forest walk'],
         ],
         [
-            'name' => 'Panam City', 'district' => 'Narayanganj', 'type' => 'Heritage',
+            'name' => 'Panam City', 'name_bn' => 'পানাম নগর', 'desc_bn' => 'সোনারগাঁয়ের পরিত্যক্ত বণিকপাড়া - ঔপনিবেশিক আমলের অট্টালিকার হারিয়ে যাওয়া শহর।', 'district' => 'Narayanganj', 'type' => 'Heritage',
             'lat' => 23.6450, 'lon' => 90.5980, 'best' => 'Nov – Mar', 'emoji' => '🏚️',
             'desc' => 'The abandoned merchant street of Sonargaon - a lost city of colonial-era mansions.',
             'history' => 'Wealthy merchant families built these ornate mansions in Sonargaon - once the medieval capital of Bengal - from the late 19th into the early 20th century. Most families fled during the 1947 Partition, leaving the street of houses abandoned and slowly decaying; it is now protected as an archaeological heritage site.',
@@ -408,7 +408,7 @@ return [
             'nearby' => ['Folk Art and Craft Museum, Sonargaon', 'Goaldi Mosque', 'Baro Sardar Bari'],
         ],
         [
-            'name' => 'Mahamaya & Foy’s Lake', 'district' => 'Chattogram', 'type' => 'Lake',
+            'name' => 'Mahamaya & Foy’s Lake', 'name_bn' => 'মহামায়া ও ফয়’স লেক', 'desc_bn' => 'মহামায়ায় বনঘেরা পাহাড়ের মাঝে কায়াকিং আর ফয়’স লেকে থিম পার্কে ঘুরে বেড়ান।', 'district' => 'Chattogram', 'type' => 'Lake',
             'lat' => 22.3667, 'lon' => 91.7900, 'best' => 'Oct – Mar', 'emoji' => '🛶',
             'desc' => 'Kayak between forested hills at Mahamaya and ride the theme park at Foy’s Lake.',
             'history' => 'Foy’s Lake was created in 1924 by the Assam Bengal Railway - named for a railway engineer surnamed Foy - to supply water to the rail yards, and was later developed into an amusement park. Mahamaya Lake, further north in Mirsharai, was formed more recently by a small irrigation dam and has become popular for kayaking amid forested hills.',
@@ -422,7 +422,7 @@ return [
             'nearby' => ['Chattogram War Cemetery', 'Patenga Beach', 'Sitakunda Eco Park', 'Chandranath Hill'],
         ],
         [
-            'name' => 'Birishiri & Somesshwari', 'district' => 'Netrokona', 'type' => 'Nature',
+            'name' => 'Birishiri & Somesshwari', 'name_bn' => 'বিরিশিরি ও সোমেশ্বরী', 'desc_bn' => 'নীল পানির চীনামাটির হ্রদ, সাদা বালুর নদীতীর ও গারো পাহাড়ি সংস্কৃতি।', 'district' => 'Netrokona', 'type' => 'Nature',
             'lat' => 25.1200, 'lon' => 90.6300, 'best' => 'Oct – Mar', 'emoji' => '💠',
             'desc' => 'Blue-water china-clay lakes, white sand riverbeds and Garo hill culture.',
             'history' => 'The china-clay quarries around Birishiri were mined through the mid-20th century, leaving behind the turquoise flooded pits now used as scenic lakes. The area is also home to Garo (Mandi) and Hajong Indigenous communities, whose culture is showcased at the local Cultural Academy.',
@@ -436,7 +436,7 @@ return [
             'nearby' => ['Someshwari river white sand beds', 'Ranikhong Church', 'Garo Cultural Academy'],
         ],
         [
-            'name' => 'National Martyrs’ Memorial, Savar', 'district' => 'Dhaka', 'type' => 'Monument',
+            'name' => 'National Martyrs’ Memorial, Savar', 'name_bn' => 'জাতীয় স্মৃতিসৌধ, সাভার', 'desc_bn' => 'জাতীয় স্মৃতিসৌধ - ১৯৭১ সালের মুক্তিযুদ্ধের শহীদদের স্মরণে সাত আকাশছোঁয়া ফলক।', 'district' => 'Dhaka', 'type' => 'Monument',
             'lat' => 23.9086, 'lon' => 90.2549, 'best' => 'All year', 'emoji' => '🕯️',
             'desc' => 'Jatiyo Smriti Soudho - seven soaring planes honouring the martyrs of the 1971 Liberation War.',
             'history' => 'Designed by architect Syed Mainul Hossain and completed in 1982 after a national design competition, the monument’s seven isosceles triangular planes of rising height symbolise the successive sacrifices of Bengali history, culminating in the 1971 Liberation War. It stands over mass graves of martyrs from the war.',
@@ -450,7 +450,7 @@ return [
             'nearby' => ['Jahangirnagar University campus', 'Bhawal National Park', 'Nabinagar'],
         ],
         [
-            'name' => 'Himchari National Park', 'district' => "Cox's Bazar", 'type' => 'Nature',
+            'name' => 'Himchari National Park', 'name_bn' => 'হিমছড়ি জাতীয় উদ্যান', 'desc_bn' => 'নিচু পাহাড় সরাসরি বঙ্গোপসাগরে নেমেছে - মৌসুমি ঝরনা ও বিশ্বের দীর্ঘতম সৈকত দেখার ভিউপয়েন্ট।', 'district' => "Cox's Bazar", 'type' => 'Nature',
             'lat' => 21.3500, 'lon' => 92.0333, 'best' => 'Nov – Mar', 'emoji' => '🌴',
             'desc' => 'Low hills tumbling straight into the Bay of Bengal - seasonal waterfalls and a lookout over the world’s longest beach.',
             'history' => 'Himchari was declared a national park in 1980 to protect the hill forest that meets the sea just south of Cox’s Bazar. Its seasonal waterfalls and cliff-top viewpoint have made it a standard half-day trip from the beach town for decades.',
@@ -464,7 +464,7 @@ return [
             'nearby' => ['Cox’s Bazar Sea Beach', 'Inani Beach', 'Marine Drive viewpoints'],
         ],
         [
-            'name' => 'Madhabkunda Waterfall', 'district' => 'Moulvibazar', 'type' => 'Waterfall',
+            'name' => 'Madhabkunda Waterfall', 'name_bn' => 'মাধবকুণ্ড জলপ্রপাত', 'desc_bn' => 'সিলেট অঞ্চলের সবচেয়ে উঁচু জলপ্রপাত, পাথারিয়া পাহাড় বেয়ে নিচের প্রাকৃতিক কুণ্ডে আছড়ে পড়ে।', 'district' => 'Moulvibazar', 'type' => 'Waterfall',
             'lat' => 24.6244, 'lon' => 92.2081, 'best' => 'Jun – Sep', 'emoji' => '💧',
             'desc' => 'The tallest waterfall in the Sylhet region, crashing through the Patharia hills into a natural pool below.',
             'history' => 'Fed by streams off the Patharia Hills near the India border, Madhabkunda has long been a scenic and locally sacred site for the tea-growing districts of Sylhet. In more recent decades it was developed into an eco-park with walkways and viewpoints for visitors.',
@@ -478,7 +478,7 @@ return [
             'nearby' => ['Madhabpur Lake', 'Sreemangal tea gardens', 'Lawachara National Park'],
         ],
         [
-            'name' => 'Lawachara National Park', 'district' => 'Moulvibazar', 'type' => 'Forest',
+            'name' => 'Lawachara National Park', 'name_bn' => 'লাউয়াছড়া জাতীয় উদ্যান', 'desc_bn' => 'চা-বলয়ের মাঝে ক্রান্তীয় বৃষ্টিবনের একটি টুকরো - বাংলাদেশের একমাত্র বন্য হুলুক গিবনের আবাস।', 'district' => 'Moulvibazar', 'type' => 'Forest',
             'lat' => 24.3225, 'lon' => 91.7810, 'best' => 'Oct – Mar', 'emoji' => '🐒',
             'desc' => 'A pocket of tropical rainforest inside the tea belt - home to Bangladesh’s only wild population of hoolock gibbons.',
             'history' => 'Declared a national park in 1996 to protect a remnant patch of tropical semi-evergreen rainforest inside the surrounding tea estates, Lawachara holds the country’s only wild population of western hoolock gibbons, alongside several Khasi Indigenous punji (villages) inside its boundary.',
@@ -492,7 +492,7 @@ return [
             'nearby' => ['Sreemangal tea gardens', 'Madhabpur Lake', 'Magurchara gas field site'],
         ],
         [
-            'name' => 'Boga Lake (Bogakain)', 'district' => 'Bandarban', 'type' => 'Lake',
+            'name' => 'Boga Lake (Bogakain)', 'name_bn' => 'বগা লেক (বগাকাইন)', 'desc_bn' => '২,৪০০ ফুট উচ্চতায় কিংবদন্তির গর্তাকার হ্রদ, বম পাহাড়ি গ্রামে ঘেরা, শুধু হেঁটে পৌঁছানো যায়।', 'district' => 'Bandarban', 'type' => 'Lake',
             'lat' => 21.7186, 'lon' => 92.5290, 'best' => 'Oct – Feb', 'emoji' => '🏞️',
             'desc' => 'A legendary crater-shaped lake at 2,400 feet, ringed by Bawm hill villages and reached only on foot.',
             'history' => 'Local legend holds the lake formed when a curse flooded a Bawm village, while geologists suggest a landslide-dammed crater is the more likely origin. Either way, it remains sacred to the surrounding Bawm community and is reachable only by trekking in.',
@@ -506,7 +506,7 @@ return [
             'nearby' => ['Keokradong peak', 'Ruma bazar', 'Nilgiri & Chimbuk'],
         ],
         [
-            'name' => 'Puthia Temple Complex', 'district' => 'Rajshahi', 'type' => 'Heritage',
+            'name' => 'Puthia Temple Complex', 'name_bn' => 'পুঠিয়া মন্দির কমপ্লেক্স', 'desc_bn' => 'বাংলাদেশের সর্বোচ্চ সংখ্যক হিন্দু মন্দিরের সমাহার, দুই শতাব্দী ধরে পুঠিয়ার জমিদারদের গড়া।', 'district' => 'Rajshahi', 'type' => 'Heritage',
             'lat' => 24.3833, 'lon' => 88.9833, 'best' => 'Nov – Mar', 'emoji' => '🛕',
             'desc' => 'The largest cluster of Hindu temples in Bangladesh, raised by the Puthia zamindars over two centuries.',
             'history' => 'Raised over the 18th and 19th centuries by the Puthia zamindars, once among the largest landholding families of Bengal, the complex includes the Govinda Temple and the Shiva Temple, blending Bengal terracotta and stone architectural styles into the country’s largest cluster of Hindu temples.',
@@ -520,7 +520,7 @@ return [
             'nearby' => ['Rajshahi’s Padma riverfront', 'Varendra Research Museum', 'Bagha Mosque'],
         ],
         [
-            'name' => 'Shalbon Vihara', 'district' => 'Comilla', 'type' => 'Heritage',
+            'name' => 'Shalbon Vihara', 'name_bn' => 'শালবন বিহার', 'desc_bn' => 'ময়নামতি ধ্বংসাবশেষের কেন্দ্রে অষ্টম শতকের বৌদ্ধ বিহারের ঢিবি, লালমাই পাহাড় থেকে খননকৃত।', 'district' => 'Comilla', 'type' => 'Heritage',
             'lat' => 23.4372, 'lon' => 91.1198, 'best' => 'Nov – Mar', 'emoji' => '🏛️',
             'desc' => 'An 8th-century Buddhist monastery mound at the heart of the Mainamati ruins, excavated from the Lalmai hills.',
             'history' => 'Built by early kings of the Deva dynasty of south-east Bengal in the 8th century, Shalbon Vihara was discovered amid the Lalmai-Mainamati hill range and excavated from the 1950s onward. It forms the centrepiece of the wider Mainamati archaeological zone.',
@@ -534,7 +534,7 @@ return [
             'nearby' => ['Mainamati War Cemetery', 'Mainamati Museum', 'Kotila Mura'],
         ],
         [
-            'name' => 'Star Mosque (Tara Masjid)', 'district' => 'Dhaka', 'type' => 'Heritage',
+            'name' => 'Star Mosque (Tara Masjid)', 'name_bn' => 'তারা মসজিদ', 'desc_bn' => 'আর্মানিটোলার উনিশ শতকের মসজিদ, জাপানি ও ইংরেজি চীনামাটির তারার নকশার মোজাইকে মোড়া।', 'district' => 'Dhaka', 'type' => 'Heritage',
             'lat' => 23.7203, 'lon' => 90.4033, 'best' => 'All year', 'emoji' => '⭐',
             'desc' => 'A 19th-century Armanitola mosque encrusted with star-motif Japanese and English chinaware mosaic.',
             'history' => 'Originally built in the early 19th century by local zamindar Mirza Ghulam Pir, the mosque was substantially rebuilt and decorated in the 1920s–30s by businessman Ali Jan Bepari, who covered the walls with star-motif mosaics made from broken china and Japanese tiles.',
@@ -548,7 +548,7 @@ return [
             'nearby' => ['Ahsan Manzil', 'Lalbagh Fort', 'Armenian Church', 'Shakhari Bazar'],
         ],
         [
-            'name' => 'Curzon Hall', 'district' => 'Dhaka', 'type' => 'Architecture',
+            'name' => 'Curzon Hall', 'name_bn' => 'কার্জন হল', 'desc_bn' => 'ঢাকা বিশ্ববিদ্যালয়ের লাল ইটের ইন্দো-সারাসেনিক স্থাপত্য, ১৯০৪ সালে উদ্বোধিত; নাম যে ভাইসরয়ের, তিনিই এর বিরোধিতা করেছিলেন।', 'district' => 'Dhaka', 'type' => 'Architecture',
             'lat' => 23.7267, 'lon' => 90.3958, 'best' => 'All year', 'emoji' => '🎓',
             'desc' => 'Dhaka University’s red-brick Indo-Saracenic showpiece, opened in 1904 and named for a viceroy who opposed it.',
             'history' => 'Laid as the foundation of a planned Dhaka college hall in 1904 by Viceroy Lord Curzon - the same official whose 1905 partition of Bengal it came to outlive in memory - the building was later absorbed into Dhaka University when it was established in 1921, and today houses the university’s science faculties.',
@@ -562,7 +562,7 @@ return [
             'nearby' => ['Dhaka University campus', 'Shaheed Minar', 'TSC', 'Ramna Park'],
         ],
         [
-            'name' => 'Ramsagar National Park', 'district' => 'Dinajpur', 'type' => 'Lake',
+            'name' => 'Ramsagar National Park', 'name_bn' => 'রামসাগর জাতীয় উদ্যান', 'desc_bn' => 'পঞ্চদশ শতকের বিশাল দিঘি, এখন জাতীয় উদ্যান; বনঘেরা এ স্থানে প্রতি শীতে পরিযায়ী পাখি আসে।', 'district' => 'Dinajpur', 'type' => 'Lake',
             'lat' => 25.5822, 'lon' => 88.6717, 'best' => 'Nov – Feb', 'emoji' => '🦢',
             'desc' => 'A vast 15th-century reservoir turned national park, ringed by forest and visited by migratory birds each winter.',
             'history' => 'Centred on a vast artificial reservoir excavated in the 15th century, reputedly under a Dinajpur raja to relieve a famine, Ramsagar is one of the largest dug reservoirs in Bangladesh. The surrounding forest was declared a national park in 2001.',
@@ -576,7 +576,7 @@ return [
             'nearby' => ['Kantajew Temple', 'Dinajpur Rajbari', 'Swapnapuri amusement park'],
         ],
         [
-            'name' => 'Bhawal National Park', 'district' => 'Gazipur', 'type' => 'Forest',
+            'name' => 'Bhawal National Park', 'name_bn' => 'ভাওয়াল জাতীয় উদ্যান', 'desc_bn' => 'ঢাকার ঠিক উত্তরে শালবন, একসময় ভাওয়ালের জমিদারদের শিকারভূমি।', 'district' => 'Gazipur', 'type' => 'Forest',
             'lat' => 24.0154, 'lon' => 90.3670, 'best' => 'Nov – Mar', 'emoji' => '🌳',
             'desc' => 'A sal forest just north of Dhaka, once the royal hunting ground of the Bhawal zamindars.',
             'history' => 'Once the private hunting reserve of the Bhawal zamindar estate - whose "Bhawal sannyasi case" involving a mysterious ascetic claiming to be the presumed-dead Kumar of Bhawal became one of colonial Bengal’s most famous legal dramas - the sal forest was declared a national park in 1974, one of Bangladesh’s first.',
@@ -590,7 +590,7 @@ return [
             'nearby' => ['Bhawal Rajbari', 'National Martyrs’ Memorial, Savar', 'Gazipur’s Nuhash Palli'],
         ],
         [
-            'name' => 'Inani Beach', 'district' => "Cox's Bazar", 'type' => 'Beach',
+            'name' => 'Inani Beach', 'name_bn' => 'ইনানী সমুদ্রসৈকত', 'desc_bn' => 'কক্সবাজার উপকূলের তুলনামূলক নিরিবিলি অংশ, ছড়ানো প্রবাল ও বেলেপাথরের খণ্ড এবং স্বচ্ছ পানির জন্য পরিচিত।', 'district' => "Cox's Bazar", 'type' => 'Beach',
             'lat' => 21.2250, 'lon' => 92.0290, 'best' => 'Nov – Mar', 'emoji' => '🪨',
             'desc' => 'A quieter stretch of the Cox’s Bazar coast, known for its scattering of coral and sandstone boulders and clear water.',
             'history' => 'Inani lies in Ukhiya upazila, south of Cox’s Bazar town along the Marine Drive highway. The rocks that give it its look are coral and sandstone deposits left exposed on the shore, which makes it a favourite for photography and for low-tide walks.',
@@ -604,7 +604,7 @@ return [
             'nearby' => ['Himchari National Park', 'Cox’s Bazar Sea Beach', 'Marine Drive', 'Teknaf'],
         ],
         [
-            'name' => 'Patenga Sea Beach', 'district' => 'Chattogram', 'type' => 'Beach',
+            'name' => 'Patenga Sea Beach', 'name_bn' => 'পতেঙ্গা সমুদ্রসৈকত', 'desc_bn' => 'কর্ণফুলীর মোহনায় চট্টগ্রামের শহুরে সৈকত, বন্দরের অপেক্ষায় থাকা জাহাজের সারি দেখা যায়।', 'district' => 'Chattogram', 'type' => 'Beach',
             'lat' => 22.2370, 'lon' => 91.7990, 'best' => 'Nov – Feb', 'emoji' => '🚢',
             'desc' => 'Chattogram’s city beach at the mouth of the Karnaphuli, with a view of ships queuing for the port.',
             'history' => 'Patenga sits where the Karnaphuli River meets the Bay of Bengal, next to the Karnaphuli estuary and the city’s main airport. It is the easiest beach escape for residents of Bangladesh’s port city, especially in the evening.',
@@ -618,7 +618,7 @@ return [
             'nearby' => ['Karnaphuli River mouth', 'Shah Amanat International Airport', 'Mahamaya & Foy’s Lake'],
         ],
         [
-            'name' => 'Buddha Dhatu Jadi (Golden Temple)', 'district' => 'Bandarban', 'type' => 'Heritage',
+            'name' => 'Buddha Dhatu Jadi (Golden Temple)', 'name_bn' => 'বুদ্ধ ধাতু জাদি (স্বর্ণ মন্দির)', 'desc_bn' => 'বাংলাদেশের বৃহত্তম থেরবাদ বৌদ্ধ মন্দির-চত্বর, বান্দরবানের ওপর পাহাড়চূড়ায় সোনালি বুদ্ধমূর্তি।', 'district' => 'Bandarban', 'type' => 'Heritage',
             'lat' => 22.1930, 'lon' => 92.2260, 'best' => 'Oct – Mar', 'emoji' => '🛕',
             'desc' => 'The largest Theravada Buddhist temple complex in Bangladesh, with a gilded Buddha statue on a hilltop above Bandarban.',
             'history' => 'The temple at Balaghata near Bandarban town was built by the Buddhist community of the Chittagong Hill Tracts and completed around 2000. Its golden statues and pagoda-style roof make it a place of pilgrimage as well as one of the best-known landmarks in the hill district.',
@@ -632,7 +632,7 @@ return [
             'nearby' => ['Nilgiri & Chimbuk', 'Boga Lake (Bogakain)', 'Nafakhum Waterfall', 'Bandarban town'],
         ],
         [
-            'name' => 'Rangamati Hanging Bridge', 'district' => 'Rangamati', 'type' => 'Lake',
+            'name' => 'Rangamati Hanging Bridge', 'name_bn' => 'রাঙামাটি ঝুলন্ত সেতু', 'desc_bn' => 'রাঙামাটি শহরের সবচেয়ে পরিচিত প্রতীক - কাপ্তাই হ্রদের একটি খাঁড়ির ওপর ঝুলন্ত সেতু।', 'district' => 'Rangamati', 'type' => 'Lake',
             'lat' => 22.6440, 'lon' => 92.1900, 'best' => 'Oct – Mar', 'emoji' => '🌉',
             'desc' => 'The best-known landmark of Rangamati town - a suspension bridge strung across a channel of Kaptai Lake.',
             'history' => 'Rangamati is built around the lake created by the Kaptai Dam in the early 1960s. The hanging bridge, rebuilt over the years, is the starting point for boat rides across the lake and for visits to tribal handicraft shops and viewpoints.',
@@ -646,7 +646,7 @@ return [
             'nearby' => ['Kaptai Lake', 'Shuvolong Waterfall', 'Tribal Cultural Institute Museum', 'Kaptai'],
         ],
         [
-            'name' => 'Lalakhal', 'district' => 'Sylhet', 'type' => 'Nature',
+            'name' => 'Lalakhal', 'name_bn' => 'লালাখাল', 'desc_bn' => 'সিলেটের জৈন্তাপুরে চা-বাগান ও পাহাড়ের মাঝ দিয়ে বয়ে যাওয়া নীল-সবুজ নদীতে নৌকাভ্রমণ।', 'district' => 'Sylhet', 'type' => 'Nature',
             'lat' => 25.0950, 'lon' => 92.0700, 'best' => 'Jul – Nov', 'emoji' => '🛶',
             'desc' => 'A boat journey on a blue-green river flowing between tea gardens and hills in Jaintiapur, Sylhet.',
             'history' => 'Lalakhal is a stretch of the Sari-Goyain river system in Jaintiapur upazila near the Meghalaya border. Its colour and the surrounding greenery made it one of Sylhet’s most photographed spots in the last decade.',
@@ -660,7 +660,7 @@ return [
             'nearby' => ['Jaflong & Bichanakandi', 'Ratargul Swamp Forest', 'Sylhet city'],
         ],
         [
-            'name' => 'Hakaluki Haor', 'district' => 'Moulvibazar', 'type' => 'Wetland',
+            'name' => 'Hakaluki Haor', 'name_bn' => 'হাকালুকি হাওর', 'desc_bn' => 'দক্ষিণ এশিয়ার অন্যতম বৃহৎ স্বাদুপানির জলাভূমি, শীতের পরিযায়ী পাখির জন্য বিখ্যাত।', 'district' => 'Moulvibazar', 'type' => 'Wetland',
             'lat' => 24.6400, 'lon' => 92.1600, 'best' => 'Nov – Feb', 'emoji' => '🦆',
             'desc' => 'One of the largest freshwater wetland systems in South Asia, famous for winter migratory birds.',
             'history' => 'Hakaluki is a complex of more than a hundred beels across Moulvibazar and Sylhet districts. It has been protected as an Ecologically Critical Area since 1999 because of its role as a fish nursery and as a winter refuge for migratory waterfowl.',
@@ -674,7 +674,7 @@ return [
             'nearby' => ['Lawachara National Park', 'Sreemangal tea gardens', 'Madhabkunda Waterfall'],
         ],
         [
-            'name' => 'Armenian Church (Armanitola)', 'district' => 'Dhaka', 'type' => 'Heritage',
+            'name' => 'Armenian Church (Armanitola)', 'name_bn' => 'আর্মেনীয় গির্জা (আর্মানিটোলা)', 'desc_bn' => 'পুরান ঢাকার আঠারো শতকের ছোট গির্জা, যা একসময়ের সমৃদ্ধ আর্মেনীয় বণিক সম্প্রদায়ের স্মৃতি বহন করে।', 'district' => 'Dhaka', 'type' => 'Heritage',
             'lat' => 23.7093, 'lon' => 90.4080, 'best' => 'Nov – Feb', 'emoji' => '⛪',
             'desc' => 'A small 18th-century church in Old Dhaka that recalls the city’s once-thriving Armenian merchant community.',
             'history' => 'The Armenian Church of the Holy Resurrection was built in 1781 in Armanitola by Armenian merchants who had traded in jute and leather in Bengal. Few Armenians remain in Dhaka, but the church and its graveyard are still maintained.',
@@ -688,7 +688,7 @@ return [
             'nearby' => ['Ahsan Manzil', 'Lalbagh Fort', 'Sadarghat river port', 'Star Mosque (Tara Masjid)'],
         ],
         [
-            'name' => 'Central Shaheed Minar', 'district' => 'Dhaka', 'type' => 'Monument',
+            'name' => 'Central Shaheed Minar', 'name_bn' => 'কেন্দ্রীয় শহীদ মিনার', 'desc_bn' => '১৯৫২ সালের ভাষা আন্দোলনের শহীদদের জাতীয় স্মৃতিসৌধ এবং ২১ ফেব্রুয়ারি পালনের কেন্দ্র।', 'district' => 'Dhaka', 'type' => 'Monument',
             'lat' => 23.7283, 'lon' => 90.3969, 'best' => 'Nov – Feb', 'emoji' => '🕯️',
             'desc' => 'The national monument to the martyrs of the 1952 Language Movement, and the centre of 21 February observances.',
             'history' => 'Students first raised a makeshift memorial in 1952 after police fired on a language-rights procession; it was demolished soon after. The present design, by Hamidur Rahman and Novera Ahmed, was completed in 1963, damaged in 1971 and rebuilt afterwards. UNESCO proclaimed 21 February International Mother Language Day in 1999.',
@@ -702,7 +702,7 @@ return [
             'nearby' => ['University of Dhaka campus', 'National Museum', 'Curzon Hall', 'Ramna Park'],
         ],
         [
-            'name' => 'Liberation War Museum', 'district' => 'Dhaka', 'type' => 'Monument',
+            'name' => 'Liberation War Museum', 'name_bn' => 'মুক্তিযুদ্ধ জাদুঘর', 'desc_bn' => '১৯৭১ সালের মুক্তিযুদ্ধের জাদুঘর - দলিল, আলোকচিত্র, নিদর্শন ও প্রত্যক্ষদর্শীর বর্ণনাসহ।', 'district' => 'Dhaka', 'type' => 'Monument',
             'lat' => 23.7763, 'lon' => 90.3787, 'best' => 'Nov – Feb', 'emoji' => '🏛️',
             'desc' => 'Dhaka’s museum of the 1971 Liberation War, with documents, photographs, relics and survivor testimony.',
             'history' => 'Founded in 1996 by a group of private citizens, the museum operated from a smaller building in Segunbagicha before moving to a purpose-built home in Agargaon in 2017. Its galleries trace the history of the Bengali nation from the language movement to independence in 1971.',
@@ -716,7 +716,7 @@ return [
             'nearby' => ['Jatiya Sangsad Bhaban', 'Sher-e-Bangla Nagar', 'Dhaka Zoo'],
         ],
         [
-            'name' => 'Chhota Sona Mosque', 'district' => 'Chapainawabganj', 'type' => 'Heritage',
+            'name' => 'Chhota Sona Mosque', 'name_bn' => 'ছোট সোনা মসজিদ', 'desc_bn' => 'গৌড়ের পঞ্চদশ শতকের সুলতানি আমলের মসজিদ, একসময় সোনালি কারুকাজে মোড়া, উত্তর-পশ্চিমে ভারত সীমান্তের কাছে।', 'district' => 'Chapainawabganj', 'type' => 'Heritage',
             'lat' => 24.8300, 'lon' => 88.1400, 'best' => 'Nov – Feb', 'emoji' => '🕌',
             'desc' => 'A 15th-century sultanate-era mosque of Gaur, once gilded, standing near the Indian border in the far north-west.',
             'history' => 'Built in the late 15th century in the period of the Bengal Sultanate, the mosque stood in the former capital region of Gaur-Lakhnauti. Its name, "Small Golden Mosque", comes from the gilding that once covered its domes. It is on Bangladesh’s UNESCO tentative list.',
@@ -730,7 +730,7 @@ return [
             'nearby' => ['Chapainawabganj town', 'Rajshahi city', 'Mahasthangarh'],
         ],
         [
-            'name' => 'Padma Bridge Viewpoint (Mawa)', 'district' => 'Munshiganj', 'type' => 'Architecture',
+            'name' => 'Padma Bridge Viewpoint (Mawa)', 'name_bn' => 'পদ্মা সেতু ভিউপয়েন্ট (মাওয়া)', 'desc_bn' => '২০২২ সালে চালু হওয়া ৬.১৫ কিলোমিটার দীর্ঘ পদ্মা বহুমুখী সেতু, মাওয়ায় নদীতীরের ভিউপয়েন্ট ও টাটকা মাছের রেস্তোরাঁ।', 'district' => 'Munshiganj', 'type' => 'Architecture',
             'lat' => 23.4600, 'lon' => 90.2700, 'best' => 'Oct – Mar', 'emoji' => '🌉',
             'desc' => 'The 6.15 km Padma Multipurpose Bridge, opened in 2022, with riverside viewpoints and fresh-fish restaurants at Mawa.',
             'history' => 'The Padma Bridge was inaugurated on 25 June 2022 and connects Dhaka with the south-west, replacing the old ferry crossings at Mawa and Paturia. At 6.15 km, it is the longest bridge in Bangladesh and was built without foreign loans.',
