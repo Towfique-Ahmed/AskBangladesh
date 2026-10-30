@@ -279,14 +279,6 @@ function bd_jsonld_site(): array
         'url'      => bd_abs_url(),
         'description' => APP_TAGLINE,
         'inLanguage'  => 'en',
-        'potentialAction' => [
-            '@type'  => 'SearchAction',
-            'target' => [
-                '@type'       => 'EntryPoint',
-                'urlTemplate' => bd_abs_url('search') . '?q={search_term_string}',
-            ],
-            'query-input' => 'required name=search_term_string',
-        ],
     ];
 }
 
