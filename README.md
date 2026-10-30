@@ -15,11 +15,14 @@ No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 
 | Section | What it does |
 | --- | --- |
-| 🗺️ **Interactive map** | Hand-projected SVG of Bangladesh with 116 pins - 64 districts, 11 peaks, 24 destinations, 8 airports, 5 ports and the 4 extreme points. Drag to pan, scroll to zoom, toggle layers, click any pin for a detail panel. |
+| 🗺️ **Interactive map** | Hand-projected SVG of Bangladesh with 137 pins - 64 districts, 11 peaks, 45 destinations, 8 airports, 5 ports and the 4 extreme points. Drag to pan, scroll to zoom, toggle layers, click any pin for a detail panel. |
 | 🔍 **Global search** | One index across every dataset in the app. Live dropdown with keyboard navigation, plus a full results page grouped by category. Press <kbd>/</kbd> anywhere to focus it. |
 | 📍 **Districts** | All 64 districts with Bangla names, division, area, population and what each is known for. Filter by division or free text. |
 | ⛰️ **Geography** | Continent and region, the Ganges–Brahmaputra–Meghna delta, highest peaks, major rivers, the six Bengali seasons and the country's four extreme points. |
-| 🧳 **Travel** | 24 destinations with type, district and best season - beaches, hills, mangroves, tea gardens, wetlands and UNESCO sites. |
+| 🧳 **Travel** | 45 destinations with type, district and best season - beaches, hills, mangroves, tea gardens, wetlands and UNESCO sites. |
+| 🎓 **Universities** | 72 public and private universities with founding year, location, programmes and student numbers, each with its own page. |
+| 💼 **Jobs** | 118 recurring government and private-sector role types linking to each employer's official site. |
+| 📰 **News** | Dated, sourced summaries of trending Bangladesh news in tech, tourism and the economy, filterable by topic. |
 | 🛣️ **Transport** | National highways, fares for every mode from rickshaw to metro, airports, seaports and the megaprojects that redrew the map. |
 | 🕰️ **Time** | Live Bangladesh Standard Time (digital + analogue), 34 world clocks, a two-way time-zone converter and countdowns to national days. |
 | 💱 **Currency** | The Taka against 31 currencies, with an instant converter, remittance-corridor cards and a full rate table. |
@@ -107,6 +110,9 @@ includes/
     districts.php       8 divisions, 64 districts
     places.php          geography, mountains, rivers, travel, roads, transport
     nation.php          profile, symbols, government, religions, festivals, history
+    universities.php    public and private universities
+    jobs.php            government and private job roles
+    news.php            trending news items (edit this file to refresh the News page)
   layout/               header and footer
 pages/                  one file per route, incl. sitemap.php and robots.php
 api/                    JSON endpoints
@@ -121,13 +127,14 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | Pattern | Example | Count |
 | --- | --- | --- |
 | `/` | the landing page | 1 |
-| `/{section}` | `/districts`, `/gold`, `/sunrise-sunset` | 15 |
+| `/{section}` | `/districts`, `/gold`, `/news` | 25 |
 | `/district/{slug}` | `/district/coxs-bazar` | 64 |
 | `/division/{slug}` | `/division/sylhet` | 8 |
-| `/travel/{slug}` | `/travel/sajek-valley` | 24 |
+| `/travel/{slug}` | `/travel/sajek-valley` | 45 |
+| `/universities/{slug}` | `/universities/north-south-university` | 72 |
 | `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
-175 indexable URLs in total, every one listed in `/sitemap.xml`.
+279 indexable URLs in total, every one listed in `/sitemap.xml`.
 
 Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
 `deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,

@@ -31,6 +31,7 @@ $files = [
     'universities'  => 'universities',
     'university-detail' => 'university-detail',
     'jobs'          => 'jobs',
+    'news'          => 'news',
     'transport'     => 'transport',
     'time'          => 'time',
     'currency'      => 'currency',

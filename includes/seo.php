@@ -124,9 +124,15 @@ function bd_page_seo(string $page): array
         ],
         'jobs' => [
             'title'       => 'Bangladesh Government & Private Jobs',
-            'description' => '100 government and private-sector job roles in Bangladesh - from BCS cadre posts and bank recruitment to IT, RMG, pharma and NGO openings - each linking to the employer\'s official site.',
+            'description' => '118 government and private-sector job roles in Bangladesh - from BCS cadre posts and bank recruitment to IT, RMG, pharma and NGO openings - each linking to the employer\'s official site.',
             'keywords'    => 'Bangladesh jobs, government jobs Bangladesh, BCS job circular, bank job Bangladesh, private job Bangladesh, job circular',
             'path'        => 'jobs',
+        ],
+        'news' => [
+            'title'       => 'Bangladesh News - Tech, Tourism & Economy',
+            'description' => 'Trending Bangladesh news in tech, tourism and the economy: St Martin’s reopening, the LDC graduation deferral, digital jobs and more, with sources.',
+            'keywords'    => 'Bangladesh news, Bangladesh tech news, Bangladesh tourism news, Bangladesh economy news, St Martin\'s Island reopening, LDC graduation',
+            'path'        => 'news',
         ],
         'transport' => [
             'title'       => 'Transport in Bangladesh - Roads & Fares',
@@ -578,6 +584,7 @@ function bd_sitemap_urls(): array
     $add('travel',    'monthly', '0.9');
     $add('universities', 'monthly', '0.9');
     $add('jobs',         'weekly',  '0.9');
+    $add('news',         'daily',   '0.9');
     $add('geography', 'monthly', '0.8');
     $add('mountains', 'monthly', '0.8');
     $add('rivers',    'monthly', '0.8');

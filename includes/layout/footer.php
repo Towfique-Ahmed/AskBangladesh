@@ -15,6 +15,7 @@
         <a href="<?= e(bd_url('map')) ?>">Interactive map</a>
         <a href="<?= e(bd_url('districts')) ?>">All 64 districts</a>
         <a href="<?= e(bd_url('geography')) ?>">Geography &amp; mountains</a>
+        <a href="<?= e(bd_url('news')) ?>">Trending news</a>
         <a href="<?= e(bd_url('travel')) ?>">Travel places</a>
         <a href="<?= e(bd_url('transport')) ?>">Roads &amp; transport</a>
       </div>
