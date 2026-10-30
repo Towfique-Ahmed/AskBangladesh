@@ -617,6 +617,11 @@ function bd_sitemap_urls(): array
         $add('travel/' . bd_slug($place['name']), 'monthly', '0.7');
     }
 
+    // A page per news article.
+    foreach (bd_news() as $n) {
+        $add('news/' . bd_slug($n['title']), 'weekly', '0.7');
+    }
+
     // A page per university.
     foreach (bd_all_universities() as $u) {
         $add('universities/' . bd_slug($u['name']), 'monthly', '0.7');

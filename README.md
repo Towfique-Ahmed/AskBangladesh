@@ -22,7 +22,7 @@ No framework, no build step, no database. Drop it on any PHP 8 host and it runs.
 | 🧳 **Travel** | 45 destinations with type, district and best season - beaches, hills, mangroves, tea gardens, wetlands and UNESCO sites. |
 | 🎓 **Universities** | 72 public and private universities with founding year, location, programmes and student numbers, each with its own page. |
 | 💼 **Jobs** | 118 recurring government and private-sector role types linking to each employer's official site. |
-| 📰 **News** | Dated, sourced summaries of trending Bangladesh news in tech, tourism and the economy, filterable by topic. |
+| 📰 **News** | Original articles on trending Bangladesh news in tech, tourism and the economy, published on the site with a page per story and a topic filter. |
 | 🛣️ **Transport** | National highways, fares for every mode from rickshaw to metro, airports, seaports and the megaprojects that redrew the map. |
 | 🕰️ **Time** | Live Bangladesh Standard Time (digital + analogue), 34 world clocks, a two-way time-zone converter and countdowns to national days. |
 | 💱 **Currency** | The Taka against 31 currencies, with an instant converter, remittance-corridor cards and a full rate table. |
@@ -132,9 +132,10 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | `/division/{slug}` | `/division/sylhet` | 8 |
 | `/travel/{slug}` | `/travel/sajek-valley` | 45 |
 | `/universities/{slug}` | `/universities/north-south-university` | 72 |
+| `/news/{slug}` | `/news/st-martins-island-reopens-to-tourists-on-1-november` | 9 |
 | `/sunrise-sunset/{slug}` | `/sunrise-sunset/khulna` | 64 |
 
-279 indexable URLs in total, every one listed in `/sitemap.xml`.
+288 indexable URLs in total, every one listed in `/sitemap.xml`.
 
 Rewriting is handled by `.htaccess` on Apache and LiteSpeed, and by `try_files` in
 `deploy/nginx.conf.example` on Nginx. Anything that is not a real file reaches `index.php`,

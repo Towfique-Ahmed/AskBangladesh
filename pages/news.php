@@ -8,7 +8,7 @@ $topics  = ['Tech' => '💻', 'Tourism' => '🧳', 'Economy' => '📈'];
 
 $faqs = [
     'Where does this news come from?'
-        => 'Each item is a short summary written by AskBangladesh, with a link to the original report by a named news outlet or publisher. We do not republish articles; open the source link for the full story.',
+        => 'Every story is written by the AskBangladesh news desk and published on this site. Each article names the reporting it draws on at the bottom of the page.',
     'How often is the news section updated?'
         => 'The list was last reviewed on ' . $asOf . '. Older items are removed as they go stale. Check the linked source for anything that may have changed since.',
     'Which topics are covered?'
@@ -29,9 +29,9 @@ $seo = bd_seo(bd_page_seo('news') + [
                 'headline'      => $n['title'],
                 'description'   => $n['summary'],
                 'datePublished' => $n['date'],
-                'url'           => $n['url'],
+                'url'           => bd_abs_url('news/' . bd_slug($n['title'])),
                 'articleSection' => $n['category'],
-                'publisher'     => ['@type' => 'Organization', 'name' => $n['source']],
+                'publisher'     => ['@type' => 'Organization', 'name' => APP_NAME],
             ]
         ),
         bd_jsonld_faq($faqs),
@@ -46,8 +46,8 @@ require APP_ROOT . '/includes/layout/header.php';
   <h1>Bangladesh News: Tech, Tourism &amp; Economy</h1>
   <p>
     What is moving in Bangladesh right now - digital jobs and startups, reopened islands and a new
-    tourism master plan, trade status and the taka. Short summaries, each linked to the original
-    report. Last reviewed <?= e($asOf) ?>.
+    tourism master plan, trade status and the taka. Original stories from the AskBangladesh news
+    desk, written and published here. Last reviewed <?= e($asOf) ?>.
   </p>
 </div>
 
@@ -71,7 +71,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <div class="grid grid--3">
   <?php foreach ($news as $i => $n): ?>
     <article class="tile" data-reveal="<?= ($i % 9) * 35 ?>"
-             data-filter-item="<?= e($n['title'] . ' ' . $n['summary'] . ' ' . $n['category'] . ' ' . $n['source']) ?>"
+             data-filter-item="<?= e($n['title'] . ' ' . $n['summary'] . ' ' . $n['category']) ?>"
              data-filter-group="<?= e($n['category']) ?>">
       <span class="tile__icon" aria-hidden="true"><?= $n['emoji'] ?></span>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem">
@@ -80,9 +80,7 @@ require APP_ROOT . '/includes/layout/header.php';
       </div>
       <h3><?= e($n['title']) ?></h3>
       <p style="margin-bottom:.9rem"><?= e($n['summary']) ?></p>
-      <a class="btn btn--ghost" href="<?= e($n['url']) ?>" target="_blank" rel="noopener noreferrer">
-        Read on <?= e($n['source']) ?> →
-      </a>
+      <a class="btn btn--ghost" href="<?= e(bd_news_url($n)) ?>">Read the story →</a>
     </article>
   <?php endforeach; ?>
 </div>
