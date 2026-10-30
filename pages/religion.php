@@ -43,8 +43,8 @@ require APP_ROOT . '/includes/layout/header.php';
   <?php foreach ($religions as $religion): ?>
     <div style="margin-bottom:1rem">
       <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.35rem">
-        <strong><?= $religion['emoji'] ?> <?= e($religion['name']) ?></strong>
-        <span style="font-family:var(--mono);color:var(--green-300)"><?= $religion['share'] ?>%</span>
+        <strong><?= $religion['emoji'] ?> <?= e(t($religion['name'])) ?></strong>
+        <span style="font-family:var(--mono);color:var(--green-300)"><?= e(bd_digits((string) $religion['share'])) ?>%</span>
       </div>
       <div class="bar">
         <div class="bar__fill" data-width="<?= max(0.6, $religion['share']) ?>"
@@ -66,15 +66,15 @@ require APP_ROOT . '/includes/layout/header.php';
       <article class="card" data-reveal="<?= $i * 55 ?>"
                style="border-left:3px solid <?= e($religion['color']) ?>">
         <div style="font-size:2rem"><?= $religion['emoji'] ?></div>
-        <h3 style="margin:.3rem 0 .1rem"><?= e($religion['name']) ?></h3>
-        <div style="color:var(--green-300);font-size:.95rem;margin-bottom:.7rem"><?= e($religion['bn']) ?></div>
-        <p><?= e($religion['note']) ?></p>
+        <h3 style="margin:.3rem 0 .1rem"><?= e(t($religion['name'])) ?></h3>
+        <div style="color:var(--green-300);font-size:.95rem;margin-bottom:.7rem"><?= e(bd_lang() === 'bn' ? $religion['name'] : $religion['bn']) ?></div>
+        <p><?= e(t($religion['note'])) ?></p>
         <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1rem 0 .4rem">
           <?= e(t('Notable places')) ?>
         </h4>
         <ul style="margin:0;padding-left:1.1rem;font-size:.86rem;color:var(--text-dim)">
           <?php foreach ($religion['sites'] as $site): ?>
-            <li><?= e($site) ?></li>
+            <li><?= e(t($site)) ?></li>
           <?php endforeach; ?>
         </ul>
         <?php if (!empty($religion['festivals'])): ?>
@@ -83,7 +83,7 @@ require APP_ROOT . '/includes/layout/header.php';
           </h4>
           <ul style="margin:0;padding-left:1.1rem;font-size:.86rem;color:var(--text-dim)">
             <?php foreach ($religion['festivals'] as $observance): ?>
-              <li><?= e($observance) ?></li>
+              <li><?= e(t($observance)) ?></li>
             <?php endforeach; ?>
           </ul>
         <?php endif; ?>
@@ -103,10 +103,10 @@ require APP_ROOT . '/includes/layout/header.php';
     <?php foreach ($festivals as $i => $festival): ?>
       <article class="tile" data-reveal="<?= ($i % 9) * 40 ?>">
         <span class="tile__icon" aria-hidden="true"><?= $festival['emoji'] ?></span>
-        <h3><?= e($festival['name']) ?></h3>
-        <div style="color:var(--green-300);font-size:.9rem;margin-bottom:.5rem"><?= e($festival['bn']) ?></div>
-        <p style="margin-bottom:.7rem"><?= e($festival['desc']) ?></p>
-        <span class="badge badge--gold"><?= e($festival['when']) ?></span>
+        <h3><?= e(t($festival['name'])) ?></h3>
+        <div style="color:var(--green-300);font-size:.9rem;margin-bottom:.5rem"><?= e(bd_lang() === 'bn' ? $festival['name'] : $festival['bn']) ?></div>
+        <p style="margin-bottom:.7rem"><?= e(t($festival['desc'])) ?></p>
+        <span class="badge badge--gold"><?= e(t($festival['when'])) ?></span>
       </article>
     <?php endforeach; ?>
   </div>
@@ -117,12 +117,12 @@ require APP_ROOT . '/includes/layout/header.php';
     <a class="card" href="<?= e(bd_url('sunrise-sunset')) ?>" data-reveal>
       <h3><?= e(t('🌅 Sunrise & sunset by district')) ?></h3>
       <p><?= t('Daily sunrise, sunset, day length and golden hour for any of the 64 districts, calculated from each district\'s own coordinates.') ?></p>
-      <span class="tile__arrow">Open sunrise &amp; sunset →</span>
+      <span class="tile__arrow"><?= e(t('Open sunrise & sunset →')) ?></span>
     </a>
     <a class="card" href="<?= e(bd_url('travel')) ?>" data-reveal="80">
       <h3><?= e(t('🛕 Visit the sites')) ?></h3>
       <p><?= t('Mosques, temples, monasteries and churches across the country, from the Sixty Dome Mosque to Somapura Mahavihara.') ?></p>
-      <span class="tile__arrow">Open the travel guide →</span>
+      <span class="tile__arrow"><?= e(t('Open the travel guide →')) ?></span>
     </a>
   </div>
 </section>
