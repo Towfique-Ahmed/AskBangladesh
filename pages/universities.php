@@ -60,7 +60,7 @@ require APP_ROOT . '/includes/layout/header.php';
              data-filter-group="<?= e($u['category']) ?>">
       <span class="tile__icon" aria-hidden="true">🎓</span>
       <h3><?= e(bd_name($u)) ?></h3>
-      <p style="margin-bottom:.9rem"><?= e($u['desc']) ?></p>
+      <p style="margin-bottom:.9rem"><?= e(bd_l($u, 'desc')) ?></p>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <span class="badge"><?= e($u['category'] === 'public' ? t('Public') : t('Private')) ?></span>
         <span class="badge badge--red"><?= e($u['city']) ?></span>

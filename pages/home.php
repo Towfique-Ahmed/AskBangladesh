@@ -196,10 +196,10 @@ require APP_ROOT . '/includes/layout/header.php';
     <?php foreach ($travel as $i => $place): ?>
       <a class="card" href="<?= e(bd_travel_url($place)) ?>" data-reveal="<?= $i * 50 ?>">
         <div style="font-size:2rem"><?= $place['emoji'] ?></div>
-        <h3><?= e($place['name']) ?></h3>
-        <p style="margin-bottom:.6rem"><?= e($place['desc']) ?></p>
-        <span class="badge"><?= e($place['type']) ?></span>
-        <span class="badge badge--gold"><?= e(t('Best:')) ?> <?= e($place['best']) ?></span>
+        <h3><?= e(bd_name($place)) ?></h3>
+        <p style="margin-bottom:.6rem"><?= e(bd_l($place, 'desc')) ?></p>
+        <span class="badge"><?= e(t($place['type'])) ?></span>
+        <span class="badge badge--gold"><?= e(t('Best:')) ?> <?= e(bd_season($place['best'])) ?></span>
       </a>
     <?php endforeach; ?>
   </div>
