@@ -127,7 +127,7 @@ Clean, keyword-bearing paths throughout - no query strings on content pages.
 | Pattern | Example | Count |
 | --- | --- | --- |
 | `/` | the landing page | 1 |
-| `/{section}` | `/districts`, `/gold`, `/news` | 26 |
+| `/{section}` | `/districts`, `/gold`, `/news` | 25 |
 | `/district/{slug}` | `/district/coxs-bazar` | 64 |
 | `/division/{slug}` | `/division/sylhet` | 8 |
 | `/travel/{slug}` | `/travel/sajek-valley` | 45 |
