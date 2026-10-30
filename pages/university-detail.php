@@ -43,11 +43,11 @@ $faqs = [
 ];
 
 if (!empty($uni['admission'])) {
-    $faqs[tf('How can I get admission into %s?', $uname)] = $uni['admission'];
+    $faqs[tf('How can I get admission into %s?', $uname)] = t($uni['admission']);
 }
 if (!empty($uni['programs'])) {
     $faqs[tf('What programmes does %s offer?', $uname)]
-        = tf('%s offers programmes including %s.', $uname, implode(', ', array_slice($uni['programs'], 0, 5)));
+        = tf('%s offers programmes including %s.', $uname, implode(', ', array_map('t', array_slice($uni['programs'], 0, 5))));
 }
 
 $seo = bd_seo([
@@ -128,7 +128,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <div class="mapinfo__row"><span><?= e(t('Type')) ?></span><span><?= e(t($uni['type'])) ?></span></div>
         <div class="mapinfo__row"><span><?= e(t('Established')) ?></span><span><?= e($estYear) ?></span></div>
         <?php if ($uni['motto'] !== ''): ?>
-          <div class="mapinfo__row"><span><?= e(t('Motto')) ?></span><span><?= e($uni['motto']) ?></span></div>
+          <div class="mapinfo__row"><span><?= e(t('Motto')) ?></span><span><?= e(t($uni['motto'])) ?></span></div>
         <?php endif; ?>
         <div class="mapinfo__row"><span><?= e(t('Coordinates')) ?></span><span><?= e(bd_lang() === 'bn' ? bd_bn_digits(number_format((float) $uni['lat'], 4) . '°উ, ' . number_format((float) $uni['lon'], 4) . '°পূ') : number_format((float) $uni['lat'], 4) . '°N, ' . number_format((float) $uni['lon'], 4) . '°E') ?></span></div>
       </div>
@@ -168,7 +168,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <?php if (!empty($uni['admission'])): ?>
           <div class="card" data-reveal>
             <h3>📝 <?= e(t('Admission')) ?></h3>
-            <p style="font-size:1rem"><?= e($uni['admission']) ?></p>
+            <p style="font-size:1rem"><?= e(t($uni['admission'])) ?></p>
           </div>
         <?php endif; ?>
         <?php if (!empty($uni['programs'])): ?>
@@ -176,7 +176,7 @@ require APP_ROOT . '/includes/layout/header.php';
             <h3>🎓 <?= e(t('Programs & faculties')) ?></h3>
             <div style="display:flex;gap:.4rem;flex-wrap:wrap">
               <?php foreach ($uni['programs'] as $program): ?>
-                <span class="badge"><?= e($program) ?></span>
+                <span class="badge"><?= e(t($program)) ?></span>
               <?php endforeach; ?>
             </div>
           </div>
