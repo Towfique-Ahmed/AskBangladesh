@@ -161,7 +161,7 @@ require APP_ROOT . '/includes/layout/header.php';
 
   <div class="grid grid--3">
     <?php foreach ($news as $i => $n): ?>
-      <a class="card" href="<?= e(bd_url('news')) ?>" data-reveal="<?= $i * 50 ?>">
+      <a class="card" href="<?= e(bd_news_url($n)) ?>" data-reveal="<?= $i * 50 ?>">
         <div style="font-size:2rem"><?= $n['emoji'] ?></div>
         <h3><?= e($n['title']) ?></h3>
         <span class="badge"><?= e($n['category']) ?></span>

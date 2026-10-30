@@ -41,6 +41,16 @@ function bd_leaders(string $key): array { return bd_data('leaders')[$key] ?? [];
 function bd_jobs(string $key): array { return bd_data('jobs')[$key] ?? []; }
 /** News items, newest first. */
 function bd_news(): array { return bd_data('news')['items'] ?? []; }
+function bd_news_url(array $n): string { return bd_url('news/' . bd_slug($n['title'])); }
+function bd_find_news(string $slug): ?array
+{
+    foreach (bd_news() as $n) {
+        if (bd_slug($n['title']) === $slug) {
+            return $n;
+        }
+    }
+    return null;
+}
 /** Human date for a news item - 'YYYY-MM-DD' or 'YYYY-MM'. */
 function bd_news_date(string $date): string
 {
@@ -202,6 +212,7 @@ function bd_route(): array
         'division'       => 'division',
         'travel'         => 'travel-detail',
         'universities'   => 'university-detail',
+        'news'           => 'news-detail',
         'sunrise-sunset' => 'sun',
     ];
 
@@ -229,6 +240,7 @@ function bd_active(string $page): string
         'districts' => ['districts', 'district', 'division'],
         'travel'    => ['travel', 'travel-detail'],
         'universities' => ['universities', 'university-detail'],
+        'news'      => ['news', 'news-detail'],
         'geography' => ['geography', 'mountains', 'rivers'],
         'sun'       => ['sun'],
     ];
@@ -576,7 +588,7 @@ function bd_search_index(): array
             'body'     => $n['summary'],
             'category' => 'News',
             'icon'     => $n['emoji'],
-            'url'      => bd_url('news'),
+            'url'      => bd_news_url($n),
         ]);
     }
 
