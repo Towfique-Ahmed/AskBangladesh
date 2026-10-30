@@ -22,7 +22,7 @@ $seo = bd_seo(bd_page_seo('rivers') + [
     'breadcrumbs' => [
         ['name' => 'Home',      'url' => bd_url()],
         ['name' => 'Geography', 'url' => bd_url('geography')],
-        ['name' => 'Rivers'],
+        ['name' => t('Rivers')],
     ],
 ]);
 $seo['jsonld'] = [
@@ -33,8 +33,8 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🌊 Waters</span>
-  <h1>Rivers of Bangladesh</h1>
+  <span class="pagehead__eyebrow">🌊 <?= e(t('Waters')) ?></span>
+  <h1><?= e(t('Rivers of Bangladesh')) ?></h1>
   <p>
     About <?= bd_num($geo['rivers_count']) ?> rivers thread through Bangladesh, which is built
     almost entirely on the <?= e($geo['delta']) ?> The Padma, Jamuna and Meghna carry the
@@ -76,13 +76,13 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="grid grid--2">
     <a class="card" href="<?= e(bd_url('geography')) ?>" data-reveal>
-      <h3>🌏 Geography of Bangladesh</h3>
-      <p>The delta, the climate, the six seasons and the extreme points of the country.</p>
+      <h3><?= e(t('🌏 Geography of Bangladesh')) ?></h3>
+      <p><?= t('The delta, the climate, the six seasons and the extreme points of the country.') ?></p>
       <span class="tile__arrow">Open geography →</span>
     </a>
     <a class="card" href="<?= e(bd_url('mountains')) ?>" data-reveal="80">
-      <h3>⛰️ Mountains of Bangladesh</h3>
-      <p>Saka Haphong, Keokradong, Tazing Dong and every other peak, ranked by height.</p>
+      <h3><?= e(t('⛰️ Mountains of Bangladesh')) ?></h3>
+      <p><?= t('Saka Haphong, Keokradong, Tazing Dong and every other peak, ranked by height.') ?></p>
       <span class="tile__arrow">Open mountains →</span>
     </a>
   </div>

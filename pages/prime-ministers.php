@@ -8,8 +8,8 @@ $leader  = bd_current_leader('prime_ministers');
 $seo = bd_seo(bd_page_seo('prime-ministers') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Prime Ministers'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Prime Ministers')],
     ],
     'jsonld' => [
         bd_jsonld_person_list('Prime Ministers of Bangladesh', $pms),
@@ -20,19 +20,17 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🏛️ Head of government</span>
-  <h1>Prime Ministers of Bangladesh</h1>
+  <span class="pagehead__eyebrow">🏛️ <?= e(t('Head of government')) ?></span>
+  <h1><?= e(t('Prime Ministers of Bangladesh')) ?></h1>
   <p>
-    Every Prime Minister of Bangladesh since 1971, including the Chief Advisers who have headed
-    non-partisan caretaker and interim governments between elected terms. The Prime Minister (or
-    Chief Adviser) is the chief executive, leading the council of ministers.
+    <?= t('Every Prime Minister of Bangladesh since 1971, including the Chief Advisers who have headed non-partisan caretaker and interim governments between elected terms. The Prime Minister (or Chief Adviser) is the chief executive, leading the council of ministers.') ?>
   </p>
 </div>
 
 <?php if ($leader): ?>
 <section class="section" style="margin-top:0">
   <div class="section__head">
-    <h2>Current Prime Minister</h2>
+    <h2><?= e(t('Current Prime Minister')) ?></h2>
   </div>
   <article class="card" data-reveal>
     <span class="badge">In office</span>
@@ -50,7 +48,7 @@ require APP_ROOT . '/includes/layout/header.php';
 
 <section class="section">
   <div class="section__head">
-    <h2>Full list, 1971 – present</h2>
+    <h2><?= e(t('Full list, 1971 – present')) ?></h2>
     <p><?= count($pms) ?> entries, including caretaker and interim Chief Advisers.</p>
   </div>
 
@@ -58,10 +56,10 @@ require APP_ROOT . '/includes/layout/header.php';
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Term</th>
-          <th>Notes</th>
+          <th><?= e(t('Name')) ?></th>
+          <th><?= e(t('Role')) ?></th>
+          <th><?= e(t('Term')) ?></th>
+          <th><?= e(t('Notes')) ?></th>
         </tr>
       </thead>
       <tbody>

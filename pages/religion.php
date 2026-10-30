@@ -9,8 +9,8 @@ $festivalSchemas = bd_jsonld_festivals($festivals);
 $seo = bd_seo(bd_page_seo('religion') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Religions'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Religions')],
     ],
     'jsonld' => [
         bd_jsonld_item_list(
@@ -30,18 +30,16 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🕊️ Faith &amp; festivals</span>
-  <h1>Religions of Bangladesh</h1>
+  <span class="pagehead__eyebrow">🕊️ <?= e(t('Faith & festivals')) ?></span>
+  <h1><?= e(t('Religions of Bangladesh')) ?></h1>
   <p>
-    Bangladesh is a Muslim-majority country whose constitution guarantees the right of every citizen
-    to practise their own faith. Eid, Durga Puja, Buddha Purnima and Christmas are all national
-    public holidays, and Pohela Boishakh belongs to everyone.
+    <?= t('Bangladesh is a Muslim-majority country whose constitution guarantees the right of every citizen to practise their own faith. Eid, Durga Puja, Buddha Purnima and Christmas are all national public holidays, and Pohela Boishakh belongs to everyone.') ?>
   </p>
 </div>
 
 <!-- ------------------------------------------------------------ breakdown -->
 <div class="card" data-reveal>
-  <h3>Population by religion</h3>
+  <h3><?= e(t('Population by religion')) ?></h3>
   <?php foreach ($religions as $religion): ?>
     <div style="margin-bottom:1rem">
       <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.35rem">
@@ -55,13 +53,13 @@ require APP_ROOT . '/includes/layout/header.php';
     </div>
   <?php endforeach; ?>
   <p style="font-size:.8rem;color:var(--text-mute);margin:0">
-    Shares follow the most recent national population and housing census.
+    <?= t('Shares follow the most recent national population and housing census.') ?>
   </p>
 </div>
 
 <!-- ------------------------------------------------------------- faiths -->
 <section class="section">
-  <div class="section__head"><h2>Each faith, and where to find it</h2></div>
+  <div class="section__head"><h2><?= e(t('Each faith, and where to find it')) ?></h2></div>
 
   <div class="grid grid--2">
     <?php foreach ($religions as $i => $religion): ?>
@@ -72,7 +70,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <div style="color:var(--green-300);font-size:.95rem;margin-bottom:.7rem"><?= e($religion['bn']) ?></div>
         <p><?= e($religion['note']) ?></p>
         <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1rem 0 .4rem">
-          Notable places
+          <?= e(t('Notable places')) ?>
         </h4>
         <ul style="margin:0;padding-left:1.1rem;font-size:.86rem;color:var(--text-dim)">
           <?php foreach ($religion['sites'] as $site): ?>
@@ -81,7 +79,7 @@ require APP_ROOT . '/includes/layout/header.php';
         </ul>
         <?php if (!empty($religion['festivals'])): ?>
           <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1rem 0 .4rem">
-            Faith-specific observances
+            <?= e(t('Faith-specific observances')) ?>
           </h4>
           <ul style="margin:0;padding-left:1.1rem;font-size:.86rem;color:var(--text-dim)">
             <?php foreach ($religion['festivals'] as $observance): ?>
@@ -97,8 +95,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ---------------------------------------------------------- festivals -->
 <section class="section">
   <div class="section__head">
-    <h2>The festival calendar</h2>
-    <p>Religious, seasonal and national - the days the whole country stops for.</p>
+    <h2><?= e(t('The festival calendar')) ?></h2>
+    <p><?= t('Religious, seasonal and national - the days the whole country stops for.') ?></p>
   </div>
 
   <div class="grid grid--3">
@@ -117,15 +115,13 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="grid grid--2">
     <a class="card" href="<?= e(bd_url('sunrise-sunset')) ?>" data-reveal>
-      <h3>🌅 Sunrise &amp; sunset by district</h3>
-      <p>Daily sunrise, sunset, day length and golden hour for any of the 64 districts, calculated
-      from each district's own coordinates.</p>
+      <h3><?= e(t('🌅 Sunrise & sunset by district')) ?></h3>
+      <p><?= t('Daily sunrise, sunset, day length and golden hour for any of the 64 districts, calculated from each district\'s own coordinates.') ?></p>
       <span class="tile__arrow">Open sunrise &amp; sunset →</span>
     </a>
     <a class="card" href="<?= e(bd_url('travel')) ?>" data-reveal="80">
-      <h3>🛕 Visit the sites</h3>
-      <p>Mosques, temples, monasteries and churches across the country, from the Sixty Dome Mosque
-      to Somapura Mahavihara.</p>
+      <h3><?= e(t('🛕 Visit the sites')) ?></h3>
+      <p><?= t('Mosques, temples, monasteries and churches across the country, from the Sixty Dome Mosque to Somapura Mahavihara.') ?></p>
       <span class="tile__arrow">Open the travel guide →</span>
     </a>
   </div>

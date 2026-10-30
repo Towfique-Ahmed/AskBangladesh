@@ -22,7 +22,7 @@ $seo = bd_seo(bd_page_seo('mountains') + [
     'breadcrumbs' => [
         ['name' => 'Home',      'url' => bd_url()],
         ['name' => 'Geography', 'url' => bd_url('geography')],
-        ['name' => 'Mountains'],
+        ['name' => t('Mountains')],
     ],
 ]);
 $seo['jsonld'] = [
@@ -54,8 +54,8 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">⛰️ Peaks</span>
-  <h1>Mountains of Bangladesh</h1>
+  <span class="pagehead__eyebrow">⛰️ <?= e(t('Peaks')) ?></span>
+  <h1><?= e(t('Mountains of Bangladesh')) ?></h1>
   <p>
     Bangladesh is overwhelmingly flat delta, but its south-eastern corner rises into the
     Chittagong Hill Tracts. Every significant peak in the country stands there, and the
@@ -103,13 +103,13 @@ require APP_ROOT . '/includes/layout/header.php';
 <section class="section">
   <div class="grid grid--2">
     <a class="card" href="<?= e(bd_url('geography')) ?>" data-reveal>
-      <h3>🌏 Geography of Bangladesh</h3>
-      <p>The delta, the climate, the six seasons and the four extreme points of the country.</p>
+      <h3><?= e(t('🌏 Geography of Bangladesh')) ?></h3>
+      <p><?= t('The delta, the climate, the six seasons and the four extreme points of the country.') ?></p>
       <span class="tile__arrow">Open geography →</span>
     </a>
     <a class="card" href="<?= e(bd_url('rivers')) ?>" data-reveal="80">
-      <h3>🌊 Rivers of Bangladesh</h3>
-      <p>The Padma, Jamuna and Meghna, and the 900 other rivers that shape the country.</p>
+      <h3><?= e(t('🌊 Rivers of Bangladesh')) ?></h3>
+      <p><?= t('The Padma, Jamuna and Meghna, and the 900 other rivers that shape the country.') ?></p>
       <span class="tile__arrow">Open rivers →</span>
     </a>
   </div>
