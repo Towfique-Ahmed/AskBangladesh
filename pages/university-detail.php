@@ -107,10 +107,10 @@ require APP_ROOT . '/includes/layout/header.php';
   <?php if (!empty($uni['history'])): ?>
     <section class="section">
       <div class="section__head"><h2><?= e(t('History')) ?></h2></div>
-      <p style="font-size:1rem"><?= e($uni['history']) ?></p>
+      <p style="font-size:1rem"><?= e(bd_l($uni, 'history')) ?></p>
       <?php if (!empty($uni['campus'])): ?>
         <h3 style="margin-top:1.2rem">🏫 <?= e(t('Campus')) ?></h3>
-        <p style="font-size:1rem"><?= e($uni['campus']) ?></p>
+        <p style="font-size:1rem"><?= e(bd_l($uni, 'campus')) ?></p>
       <?php endif; ?>
     </section>
   <?php endif; ?>
@@ -190,7 +190,7 @@ require APP_ROOT . '/includes/layout/header.php';
       <div class="section__head"><h2><?= e(t('Notable alumni')) ?></h2></div>
       <div class="card" data-reveal>
         <ul style="margin:0;padding-left:1.1rem;font-size:.95rem;line-height:1.7">
-          <?php foreach ($uni['notable_alumni'] as $alum): ?>
+          <?php foreach ((bd_lang() === 'bn' && !empty($uni['alumni_bn'])) ? $uni['alumni_bn'] : $uni['notable_alumni'] as $alum): ?>
             <li><?= e($alum) ?></li>
           <?php endforeach; ?>
         </ul>
