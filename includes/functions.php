@@ -235,6 +235,12 @@ function bd_today_long(): string
     return $days[(int) date('w')] . ', ' . bd_bn_digits(date('j')) . ' ' . $months[(int) date('n')] . ' ' . bd_bn_digits(date('Y'));
 }
 
+/** Any string with its digits converted to Bengali under /bn. */
+function bd_digits(string $s): string
+{
+    return bd_lang() === 'bn' ? bd_bn_digits($s) : $s;
+}
+
 /** A formatted number, in Bengali digits under /bn. */
 function bd_n(float|int $n, int $decimals = 0): string
 {

@@ -62,12 +62,12 @@ $longestRoad = max(array_column($roads, 'length'));
     <?php foreach ($transport as $i => $mode): ?>
       <article class="tile" data-reveal="<?= ($i % 9) * 40 ?>">
         <span class="tile__icon" aria-hidden="true"><?= $mode['emoji'] ?></span>
-        <h3><?= e($mode['mode']) ?></h3>
-        <div style="color:var(--green-300);font-size:.9rem;margin-bottom:.5rem"><?= e($mode['bn']) ?></div>
-        <p style="margin-bottom:.8rem"><?= e($mode['tip']) ?></p>
+        <h3><?= e(t($mode['mode'])) ?></h3>
+        <div style="color:var(--green-300);font-size:.9rem;margin-bottom:.5rem"><?= e(bd_lang() === 'bn' ? $mode['mode'] : $mode['bn']) ?></div>
+        <p style="margin-bottom:.8rem"><?= e(t($mode['tip'])) ?></p>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap">
-          <span class="badge badge--gold"><?= e($mode['fare']) ?></span>
-          <span class="badge"><?= e($mode['where']) ?></span>
+          <span class="badge badge--gold"><?= e(bd_digits($mode['fare'])) ?></span>
+          <span class="badge"><?= e(bd_digits(t($mode['where']))) ?></span>
         </div>
       </article>
     <?php endforeach; ?>
@@ -85,14 +85,14 @@ $longestRoad = max(array_column($roads, 'length'));
     <?php foreach ($roads as $i => $road): ?>
       <article class="card" data-reveal="<?= ($i % 6) * 45 ?>">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem">
-          <h3 style="margin:0"><span class="badge badge--red"><?= e($road['code']) ?></span> <?= e($road['name']) ?></h3>
-          <strong style="font-family:var(--mono);color:var(--green-300)"><?= bd_num($road['length']) ?> km</strong>
+          <h3 style="margin:0"><span class="badge badge--red"><?= e($road['code']) ?></span> <?= e(t($road['name'])) ?></h3>
+          <strong style="font-family:var(--mono);color:var(--green-300)"><?= bd_n($road['length']) ?> <?= e(t('km')) ?></strong>
         </div>
         <div class="bar" style="margin:.7rem 0">
           <div class="bar__fill" data-width="<?= round($road['length'] / $longestRoad * 100) ?>"
                style="background:linear-gradient(90deg,var(--green-300),var(--teal-500))"></div>
         </div>
-        <p><?= e($road['note']) ?></p>
+        <p><?= e(t($road['note'])) ?></p>
       </article>
     <?php endforeach; ?>
   </div>
@@ -107,9 +107,9 @@ $longestRoad = max(array_column($roads, 'length'));
     <?php foreach ($projects as $i => $project): ?>
       <div class="card" data-reveal="<?= $i * 50 ?>">
         <span class="badge badge--gold"><?= e(t('Opened')) ?> <?= e(bd_lang() === 'bn' ? bd_bn_digits((string) $project['opened']) : (string) $project['opened']) ?></span>
-        <h3 style="margin-top:.6rem">🏗️ <?= e($project['name']) ?></h3>
-        <div style="font:700 1.35rem/1.2 var(--mono);color:var(--green-300);margin:.3rem 0 .5rem"><?= e($project['stat']) ?></div>
-        <p><?= e($project['note']) ?></p>
+        <h3 style="margin-top:.6rem">🏗️ <?= e(t($project['name'])) ?></h3>
+        <div style="font:700 1.35rem/1.2 var(--mono);color:var(--green-300);margin:.3rem 0 .5rem"><?= e(bd_digits(t($project['stat']))) ?></div>
+        <p><?= e(t($project['note'])) ?></p>
       </div>
     <?php endforeach; ?>
   </div>
@@ -124,11 +124,11 @@ $longestRoad = max(array_column($roads, 'length'));
       <tbody>
         <?php foreach ($airports as $a): ?>
           <tr>
-            <td><strong>✈️ <?= e($a['name']) ?></strong></td>
+            <td><strong>✈️ <?= e(t($a['name'])) ?></strong></td>
             <td><span class="badge"><?= e($a['code']) ?></span></td>
-            <td><?= e($a['city']) ?></td>
-            <td><?= e($a['type']) ?></td>
-            <td class="num"><?= number_format($a['lat'], 3) ?>°N, <?= number_format($a['lon'], 3) ?>°E</td>
+            <td><?= e(bd_district_name($a['city'])) ?></td>
+            <td><?= e(t($a['type'])) ?></td>
+            <td class="num"><?= e(bd_lang() === 'bn' ? bd_bn_digits(number_format($a['lat'], 3) . '°উ, ' . number_format($a['lon'], 3) . '°পূ') : number_format($a['lat'], 3) . '°N, ' . number_format($a['lon'], 3) . '°E') ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
@@ -142,9 +142,9 @@ $longestRoad = max(array_column($roads, 'length'));
   <div class="grid grid--3">
     <?php foreach ($ports as $i => $port): ?>
       <div class="card" data-reveal="<?= $i * 55 ?>">
-        <span class="badge badge--red"><?= e($port['type']) ?></span>
-        <h3 style="margin-top:.6rem">⚓ <?= e($port['name']) ?></h3>
-        <p><?= e($port['note']) ?></p>
+        <span class="badge badge--red"><?= e(t($port['type'])) ?></span>
+        <h3 style="margin-top:.6rem">⚓ <?= e(t($port['name'])) ?></h3>
+        <p><?= e(t($port['note'])) ?></p>
       </div>
     <?php endforeach; ?>
   </div>
