@@ -57,8 +57,12 @@
     h: $('[data-hand="h"]'), m: $('[data-hand="m"]'), s: $('[data-hand="s"]')
   };
 
-  const DAYS   = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+  const IS_BN  = !!(document.body && document.body.dataset.lang === 'bn');
+  const toBn   = function (v) { return String(v).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[d]; }); };
+  const DAYS   = IS_BN ? ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার']
+                       : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const MONTHS = IS_BN ? ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর']
+                       : ['January', 'February', 'March', 'April', 'May', 'June',
                   'July', 'August', 'September', 'October', 'November', 'December'];
 
   function tickClock() {
@@ -67,8 +71,9 @@
     clockTargets.forEach(function (el) { el.textContent = txt; });
 
     if (clockDate) {
-      clockDate.textContent = DAYS[now.getDay()] + ', ' + now.getDate() + ' ' +
+      const dtxt = DAYS[now.getDay()] + ', ' + now.getDate() + ' ' +
                               MONTHS[now.getMonth()] + ' ' + now.getFullYear();
+      clockDate.textContent = IS_BN ? toBn(dtxt) : dtxt;
     }
 
     if (analogHands.h) {

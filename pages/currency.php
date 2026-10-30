@@ -8,8 +8,8 @@ $currencies = bd_currencies();
 
 $seo = bd_seo(bd_page_seo('currency') + [
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Currency Converter'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Currency Converter')],
     ],
     'jsonld' => [
         bd_jsonld_web_app(
@@ -27,14 +27,14 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">💱 Money</span>
-  <h1>Taka currency converter</h1>
+  <span class="pagehead__eyebrow">💱 <?= e(t('Money')) ?></span>
+  <h1><?= e(t('Taka currency converter')) ?></h1>
   <p>
-    The Bangladeshi Taka (BDT, ৳) against <?= count($currencies) - 1 ?> world currencies.
+    <?= e(tf('The Bangladeshi Taka (BDT, ৳) against %s world currencies.', bd_n(count($currencies) - 1))) ?>
     <?php if ($data['live']): ?>
-      Rates are live from <?= e($data['source']) ?>, refreshed hourly.
+      <?= e(tf('Rates are live from %s, refreshed hourly.', $data['source'])) ?>
     <?php else: ?>
-      Live rates are unreachable right now, so these are bundled indicative figures.
+      <?= e(t('Live rates are unreachable right now, so these are bundled indicative figures.')) ?>
     <?php endif; ?>
   </p>
 </div>
@@ -42,7 +42,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 <div class="card" data-reveal>
   <form class="converter" id="currency-tool" onsubmit="return false">
     <div class="field">
-      <label for="cur-amount">Amount</label>
+      <label for="cur-amount"><?= e(t('Amount')) ?></label>
       <input type="number" class="input" id="cur-amount" value="1000" min="0" step="any" inputmode="decimal">
     </div>
 
@@ -54,7 +54,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 
     <div class="converter__row">
       <div class="field">
-        <label for="cur-from">From</label>
+        <label for="cur-from"><?= e(t('From')) ?></label>
         <select class="input" id="cur-from">
           <?php foreach ($currencies as $code => $meta): ?>
             <option value="<?= e($code) ?>"<?= $code === 'BDT' ? ' selected' : '' ?>>
@@ -67,7 +67,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
       <button type="button" class="swapbtn" id="cur-swap" aria-label="Swap the two currencies">⇄</button>
 
       <div class="field">
-        <label for="cur-to">To</label>
+        <label for="cur-to"><?= e(t('To')) ?></label>
         <select class="input" id="cur-to">
           <?php foreach ($currencies as $code => $meta): ?>
             <option value="<?= e($code) ?>"<?= $code === 'USD' ? ' selected' : '' ?>>
@@ -90,8 +90,8 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 <!-- ------------------------------------------------------------ corridors -->
 <section class="section">
   <div class="section__head">
-    <h2>Remittance corridors</h2>
-    <p>What one unit is worth in Taka - the currencies Bangladeshis abroad send home most.</p>
+    <h2><?= e(t('Remittance corridors')) ?></h2>
+    <p><?= t('What one unit is worth in Taka - the currencies Bangladeshis abroad send home most.') ?></p>
   </div>
 
   <div class="grid grid--4">
@@ -114,13 +114,13 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 <!-- ----------------------------------------------------------- rate table -->
 <section class="section">
   <div class="section__head">
-    <h2>Full rate table</h2>
-    <p>Updated <?= e((new DateTimeImmutable($data['updated']))->setTimezone(new DateTimeZone(BD_TIMEZONE))->format('j M Y, H:i')) ?> BST.</p>
+    <h2><?= e(t('Full rate table')) ?></h2>
+    <p><?= e(t('Updated')) ?> <?= e((new DateTimeImmutable($data['updated']))->setTimezone(new DateTimeZone(BD_TIMEZONE))->format('j M Y, H:i')) ?> <?= e(t('BST')) ?>.</p>
   </div>
 
   <div class="card" data-reveal style="margin-bottom:1rem">
     <div class="field">
-      <label for="rate-filter">Filter currencies</label>
+      <label for="rate-filter"><?= e(t('Filter currencies')) ?></label>
       <input type="search" class="input" id="rate-filter" data-filter-input placeholder="Try “dirham”, “EUR”, “rupee”…">
     </div>
   </div>
@@ -128,7 +128,7 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
   <div class="tablewrap" data-reveal>
     <table>
       <thead>
-        <tr><th>Currency</th><th>Code</th><th class="num">1 unit in ৳</th><th class="num">৳1 in units</th></tr>
+        <tr><th><?= e(t('Currency')) ?></th><th><?= e(t('Code')) ?></th><th class="num"><?= e(t('1 unit in ৳')) ?></th><th class="num"><?= e(t('৳1 in units')) ?></th></tr>
       </thead>
       <tbody>
         <?php foreach ($currencies as $code => $meta):
@@ -149,38 +149,26 @@ $corridors = ['USD', 'SAR', 'AED', 'MYR', 'GBP', 'KWD', 'EUR', 'QAR', 'OMR', 'SG
 <div class="notice" data-reveal>
   <span>⚠️</span>
   <p style="margin:0">
-    These are mid-market reference rates. Banks, exchange houses and remittance operators apply
-    their own spread and fees, and Bangladesh Bank sets the official interbank rate. Check with your
-    bank before making a transfer.
+    <?= t('These are mid-market reference rates. Banks, exchange houses and remittance operators apply their own spread and fees, and Bangladesh Bank sets the official interbank rate. Check with your bank before making a transfer.') ?>
   </p>
 </div>
 
 <!-- ---------------------------------------------------------------- notes -->
 <section class="section">
   <div class="section__head">
-    <h2>Using this converter well</h2>
+    <h2><?= e(t('Using this converter well')) ?></h2>
   </div>
   <div class="grid grid--2">
     <div class="card" data-reveal>
-      <h3>💡 Mid-market vs. what you actually get</h3>
+      <h3><?= e(t('💡 Mid-market vs. what you actually get')) ?></h3>
       <p>
-        The rate shown here is the mid-market rate - the midpoint between the buy and sell price
-        on the wholesale currency market, with no markup added. A bank, exchange house or mobile
-        remittance service always applies its own spread on top, and sometimes a flat fee as well,
-        so the amount that lands in a beneficiary's account is a little less than a simple
-        mid-market calculation suggests. Comparing the effective rate an operator actually offers
-        against the mid-market rate here is the easiest way to see how competitive it is.
+        <?= t('The rate shown here is the mid-market rate - the midpoint between the buy and sell price on the wholesale currency market, with no markup added. A bank, exchange house or mobile remittance service always applies its own spread on top, and sometimes a flat fee as well, so the amount that lands in a beneficiary\'s account is a little less than a simple mid-market calculation suggests. Comparing the effective rate an operator actually offers against the mid-market rate here is the easiest way to see how competitive it is.') ?>
       </p>
     </div>
     <div class="card" data-reveal="80">
-      <h3>🏦 Why the Taka is managed, not freely floating</h3>
+      <h3><?= e(t('🏦 Why the Taka is managed, not freely floating')) ?></h3>
       <p>
-        Bangladesh Bank, the central bank, oversees the exchange rate regime rather than leaving the
-        Taka to float entirely freely, intervening from time to time to smooth large swings and to
-        manage the country's foreign exchange reserves. This matters most for remittances and
-        import bills, which is why the rate quoted by a bank or a mobile money service can differ
-        slightly from both the mid-market rate and from what a rival operator quotes on the same
-        day.
+        <?= t('Bangladesh Bank, the central bank, oversees the exchange rate regime rather than leaving the Taka to float entirely freely, intervening from time to time to smooth large swings and to manage the country\'s foreign exchange reserves. This matters most for remittances and import bills, which is why the rate quoted by a bank or a mobile money service can differ slightly from both the mid-market rate and from what a rival operator quotes on the same day.') ?>
       </p>
     </div>
   </div>
