@@ -168,7 +168,7 @@ require APP_ROOT . '/includes/layout/header.php';
         <?php if (!empty($district['attractions'])): ?>
           <h4 style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);margin:1.2rem 0 .4rem"><?= e(t('Top attractions')) ?></h4>
           <div style="display:flex;gap:.4rem;flex-wrap:wrap">
-            <?php foreach ($district['attractions'] as $attraction): ?>
+            <?php foreach ((bd_lang() === 'bn' && !empty($district['attractions_bn'])) ? $district['attractions_bn'] : $district['attractions'] as $attraction): ?>
               <span class="badge"><?= e($attraction) ?></span>
             <?php endforeach; ?>
           </div>
