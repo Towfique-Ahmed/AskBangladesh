@@ -198,6 +198,24 @@ function bd_l(array $item, string $key): string
     return (string) ($item[$key] ?? '');
 }
 
+/** A news article's source line, with the standard phrases and dates in Bengali under /bn (outlet names stay as written). */
+function bd_source(string $src): string
+{
+    if (bd_lang() !== 'bn') {
+        return $src;
+    }
+    $map = [
+        'reporting by ' => 'প্রতিবেদন: ', 'reports from ' => 'প্রতিবেদন: ', 'market data from ' => 'বাজার তথ্য: ',
+        ' and other Bangladeshi outlets' => ' ও অন্যান্য বাংলাদেশি সংবাদমাধ্যম', ' and wire services' => ' ও সংবাদ সংস্থা',
+        ' and other outlets' => ' ও অন্যান্য সংবাদমাধ্যম', 'Bangladeshi and international outlets' => 'বাংলাদেশি ও আন্তর্জাতিক সংবাদমাধ্যম',
+        ' and a research-tracking site' => ' ও একটি গবেষণা-ট্র্যাকিং সাইট', 'a mid-year 2026 startup investment report' => '২০২৬ সালের অর্ধবার্ষিক স্টার্টআপ বিনিয়োগ প্রতিবেদন',
+        ' and ' => ' ও ', ' to ' => ' থেকে ',
+        'January' => 'জানুয়ারি', 'February' => 'ফেব্রুয়ারি', 'March' => 'মার্চ', 'April' => 'এপ্রিল', 'May' => 'মে', 'June' => 'জুন',
+        'July' => 'জুলাই', 'August' => 'আগস্ট', 'September' => 'সেপ্টেম্বর', 'October' => 'অক্টোবর', 'November' => 'নভেম্বর', 'December' => 'ডিসেম্বর',
+    ];
+    return bd_bn_digits(strtr($src, $map));
+}
+
 /** Western digits to Bengali digits. */
 function bd_bn_digits(string $s): string
 {
