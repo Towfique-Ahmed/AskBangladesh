@@ -4,7 +4,11 @@ defined('APP_ROOT') || exit('Direct access is not permitted.');
 
 $news    = bd_news();
 $asOf    = bd_news_date((string) (bd_data('news')['as_of'] ?? date('Y-m-d')));
-$topics  = ['Tech' => '💻', 'Tourism' => '🧳', 'Economy' => '📈'];
+$icons   = ['Tech' => '💻', 'Tourism' => '🧳', 'Economy' => '📈', 'Environment' => '🌿', 'Education' => '🎓'];
+$topics  = [];
+foreach ($news as $n) {
+    $topics[$n['category']] = $icons[$n['category']] ?? '📰';
+}
 
 $faqs = [
     'Where does this news come from?'
@@ -12,7 +16,7 @@ $faqs = [
     'How often is the news section updated?'
         => 'The list was last reviewed on ' . $asOf . '. Older items are removed as they go stale. Check the linked source for anything that may have changed since.',
     'Which topics are covered?'
-        => 'Technology and the digital economy, tourism and travel, and economy and trade, with a focus on stories that affect people living in, visiting or doing business with Bangladesh.',
+        => 'Technology, tourism and travel, economy and trade, environment and climate, and education, with a focus on stories that affect people living in, visiting or doing business with Bangladesh.',
 ];
 
 $seo = bd_seo(bd_page_seo('news') + [
@@ -45,8 +49,8 @@ require APP_ROOT . '/includes/layout/header.php';
   <span class="pagehead__eyebrow">📰 Trending now</span>
   <h1>Bangladesh News: Tech, Tourism &amp; Economy</h1>
   <p>
-    What is moving in Bangladesh right now - digital jobs and startups, reopened islands and a new
-    tourism master plan, trade status and the taka. Original stories from the AskBangladesh news
+    What is moving in Bangladesh right now - trade talks and investment, digital jobs, reopened
+    islands, the taka, climate and wildlife. Original stories from the AskBangladesh news
     desk, written and published here. Last reviewed <?= e($asOf) ?>.
   </p>
 </div>
