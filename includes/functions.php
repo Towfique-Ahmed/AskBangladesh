@@ -66,6 +66,11 @@ function bd_news_date(string $date): string
     if ($t === false) {
         return $date;
     }
+    if (bd_lang() === 'bn') {
+        $months = ['', 'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+        $m = $months[(int) date('n', $t)];
+        return bd_bn_digits(strlen($date) === 7 ? $m . ' ' . date('Y', $t) : date('j', $t) . ' ' . $m . ' ' . date('Y', $t));
+    }
     return strlen($date) === 7 ? date('F Y', $t) : date('j F Y', $t);
 }
 /** All jobs, government then private, each tagged with its category. */
@@ -130,12 +135,82 @@ function bd_slug(string $text): string
  */
 function bd_url(string $path = '', array $query = []): string
 {
-    $path = trim($path, '/');
-    $url  = BASE_PATH . '/' . $path;
+    $path   = trim($path, '/');
+    $prefix = (bd_lang() === 'bn' && !bd_is_static_path($path)) ? '/bn' : '';
+    $url    = ($path === '' && $prefix !== '') ? BASE_PATH . $prefix : BASE_PATH . $prefix . '/' . $path;
     if ($query !== []) {
         $url .= '?' . http_build_query($query);
     }
     return $url;
+}
+
+/* ------------------------------------------------------------- language */
+
+/** Files and endpoints that are the same in every language and never get the /bn prefix. */
+function bd_is_static_path(string $path): bool
+{
+    return str_starts_with($path, 'assets/') || str_starts_with($path, 'api/')
+        || $path === 'sitemap.xml' || $path === 'robots.txt';
+}
+
+/** Active language: 'bn' under /bn/..., or on API calls made with ?lang=bn; otherwise 'en'. */
+function bd_lang(): string
+{
+    static $lang = null;
+    if ($lang !== null) {
+        return $lang;
+    }
+
+    $uri = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH);
+    $uri = is_string($uri) ? rawurldecode($uri) : '/';
+    if (BASE_PATH !== '' && str_starts_with($uri, BASE_PATH)) {
+        $uri = substr($uri, strlen(BASE_PATH));
+    }
+    $first = strtolower(explode('/', trim($uri, '/'))[0]);
+
+    $lang = ($first === 'bn' || ($first === 'api' && ($_GET['lang'] ?? '') === 'bn')) ? 'bn' : 'en';
+    return $lang;
+}
+
+/** Translate a UI string; falls back to the English text when no translation exists. */
+function t(string $en): string
+{
+    if (bd_lang() !== 'bn') {
+        return $en;
+    }
+    static $dict = null;
+    $dict ??= require APP_ROOT . '/includes/lang/bn.php';
+    return $dict[$en] ?? $en;
+}
+
+/** sprintf over a translated format string. */
+function tf(string $en, mixed ...$args): string
+{
+    return sprintf(t($en), ...$args);
+}
+
+/** A data field in the active language: uses "<key>_bn" in Bengali mode when present. */
+function bd_l(array $item, string $key): string
+{
+    if (bd_lang() === 'bn' && isset($item[$key . '_bn']) && $item[$key . '_bn'] !== '') {
+        return (string) $item[$key . '_bn'];
+    }
+    return (string) ($item[$key] ?? '');
+}
+
+/** Western digits to Bengali digits. */
+function bd_bn_digits(string $s): string
+{
+    return strtr($s, ['0' => '০', '1' => '১', '2' => '২', '3' => '৩', '4' => '৪', '5' => '৫', '6' => '৬', '7' => '৭', '8' => '৮', '9' => '৯']);
+}
+
+/** URL of the current page in another language, keeping any query string. */
+function bd_lang_url(string $lang): string
+{
+    $path = bd_request_path();
+    $url  = BASE_PATH . ($lang === 'bn' ? '/bn' : '') . ($path === '' ? ($lang === 'bn' ? '' : '/') : '/' . $path);
+    $qs   = (string) ($_SERVER['QUERY_STRING'] ?? '');
+    return $qs === '' ? $url : $url . '?' . $qs;
 }
 
 /** Absolute URL, for canonical tags, Open Graph and the sitemap. */
@@ -161,7 +236,11 @@ function bd_request_path(): string
     if ($base !== '' && str_starts_with($uri, $base)) {
         $uri = substr($uri, strlen($base));
     }
-    return trim($uri, '/');
+    $uri = trim($uri, '/');
+    if ($uri === 'bn' || str_starts_with($uri, 'bn/')) {
+        $uri = trim(substr($uri, 2), '/');
+    }
+    return $uri;
 }
 
 /**
@@ -591,9 +670,9 @@ function bd_search_index(): array
 
     foreach (bd_news() as $n) {
         $add([
-            'title'    => $n['title'],
-            'subtitle' => $n['category'] . ' news · ' . bd_news_date($n['date']),
-            'body'     => $n['summary'],
+            'title'    => bd_l($n, 'title'),
+            'subtitle' => t($n['category']) . ' · ' . t('News') . ' · ' . bd_news_date($n['date']),
+            'body'     => bd_l($n, 'summary') . ' ' . $n['title'] . ' ' . $n['summary'],
             'category' => 'News',
             'icon'     => $n['emoji'],
             'url'      => bd_news_url($n),
@@ -672,7 +751,7 @@ function bd_search_index(): array
 
 function bd_tools(): array
 {
-    return [
+    $tools = [
         ['name' => 'Interactive Bangladesh Map', 'emoji' => '🗺️', 'url' => bd_url('map'), 'desc' => 'Explore all 64 districts, peaks, beaches, airports and ports on a live vector map.', 'keywords' => ['map', 'district map', 'location', 'where']],
         ['name' => 'Live Clock & World Time Converter', 'emoji' => '🕰️', 'url' => bd_url('time'), 'desc' => 'Bangladesh Standard Time with a converter for 34 world cities, plus countdowns.', 'keywords' => ['time', 'clock', 'timezone', 'BST', 'converter', 'timer', 'countdown']],
         ['name' => 'Currency Converter', 'emoji' => '💱', 'url' => bd_url('currency'), 'desc' => 'Convert the Bangladeshi Taka against 30+ world currencies with live rates.', 'keywords' => ['currency', 'taka', 'BDT', 'dollar', 'exchange rate', 'remittance', 'convert money']],
@@ -682,13 +761,19 @@ function bd_tools(): array
         ['name' => 'Government Directory', 'emoji' => '🏛️', 'url' => bd_url('government'), 'desc' => 'Ministries, e-services, emergency hotlines and national institutions.', 'keywords' => ['government', 'NID', 'passport', 'tax', 'e-service', 'hotline', '999']],
         ['name' => 'Presidents of Bangladesh', 'emoji' => '🎖️', 'url' => bd_url('presidents'), 'desc' => 'Every President of Bangladesh since 1971, in order, with terms in office.', 'keywords' => ['president', 'head of state', 'Mirza Fakhrul Islam Alamgir', 'Shahabuddin', 'Abdul Hamid', 'Bangabhaban']],
         ['name' => 'Prime Ministers of Bangladesh', 'emoji' => '🧑‍💼', 'url' => bd_url('prime-ministers'), 'desc' => 'Every Prime Minister and caretaker Chief Adviser of Bangladesh since 1971.', 'keywords' => ['prime minister', 'head of government', 'chief adviser', 'Tarique Rahman', 'Sheikh Hasina', 'Yunus', 'Khaleda Zia']],
-        ['name' => 'Trending News', 'emoji' => '📰', 'url' => bd_url('news'), 'desc' => 'Dated, sourced headlines on Bangladesh tech, tourism and the economy.', 'keywords' => ['news', 'trending', 'headlines', 'tech news', 'tourism news', 'economy', 'latest']],
+        ['name' => 'Trending News', 'emoji' => '📰', 'url' => bd_url('news'), 'desc' => 'Original news on Bangladesh’s economy, tech, tourism and environment.', 'keywords' => ['news', 'trending', 'headlines', 'tech news', 'tourism news', 'economy', 'latest']],
         ['name' => 'Travel Guide', 'emoji' => '🧳', 'url' => bd_url('travel'), 'desc' => 'The best places to visit across the country with seasons and districts.', 'keywords' => ['travel', 'tourism', 'places', 'visit', 'beach', 'hills']],
         ['name' => 'Transport & Roads', 'emoji' => '🛣️', 'url' => bd_url('transport'), 'desc' => 'Highways, fares, airports, ports and the big infrastructure projects.', 'keywords' => ['transport', 'road', 'highway', 'bus', 'train', 'launch', 'metro', 'fare']],
         ['name' => 'Geography & Mountains', 'emoji' => '⛰️', 'url' => bd_url('geography'), 'desc' => 'Continent, delta, rivers, peaks, climate and the extreme points of the country.', 'keywords' => ['geography', 'continent', 'asia', 'mountain', 'peak', 'river', 'climate', 'delta']],
         ['name' => 'Religions & Festivals', 'emoji' => '🕊️', 'url' => bd_url('religion'), 'desc' => 'Faiths of Bangladesh, their major sites and the festival calendar.', 'keywords' => ['religion', 'islam', 'hindu', 'buddhist', 'christian', 'festival', 'puja', 'eid']],
         ['name' => 'About Bangladesh', 'emoji' => '🇧🇩', 'url' => bd_url('about'), 'desc' => 'National profile, symbols, history timeline, food and surprising facts.', 'keywords' => ['about', 'facts', 'history', 'symbol', 'flag', 'anthem', 'food']],
     ];
+
+    return array_map(static function (array $tool): array {
+        $tool['name'] = t($tool['name']);
+        $tool['desc'] = t($tool['desc']);
+        return $tool;
+    }, $tools);
 }
 
 /**
