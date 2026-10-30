@@ -10,8 +10,8 @@ $emergency = bd_nation('emergency');
 $seo = bd_seo(bd_page_seo('government') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Government'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Government')],
     ],
     'jsonld' => [bd_jsonld_government_services($services)],
 ]);
@@ -20,8 +20,8 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🏛️ The state</span>
-  <h1>Government &amp; public services</h1>
+  <span class="pagehead__eyebrow">🏛️ <?= e(t('The state')) ?></span>
+  <h1><?= e(t('Government & public services')) ?></h1>
   <p>
     <?= e($profile['official_name']) ?> is a <?= e(strtolower($profile['government'])) ?>.
     Below: how the state is organised, the online services citizens use most, and the numbers to
@@ -32,8 +32,8 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------ emergency -->
 <section class="section" style="margin-top:0">
   <div class="section__head">
-    <h2>Emergency numbers</h2>
-    <p>Free to call from any Bangladeshi number, 24 hours a day.</p>
+    <h2><?= e(t('Emergency numbers')) ?></h2>
+    <p><?= t('Free to call from any Bangladeshi number, 24 hours a day.') ?></p>
   </div>
 
   <div class="grid grid--3">
@@ -51,7 +51,7 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------- structure -->
 <section class="section">
   <div class="section__head">
-    <h2>How the state is organised</h2>
+    <h2><?= e(t('How the state is organised')) ?></h2>
   </div>
 
   <div class="grid grid--2">
@@ -79,7 +79,7 @@ require APP_ROOT . '/includes/layout/header.php';
   <div class="grid grid--2" style="margin-top:1.2rem">
     <a class="tile" href="<?= e(bd_url('presidents')) ?>">
       <span class="tile__icon" aria-hidden="true">🎖️</span>
-      <h3>Presidents of Bangladesh</h3>
+      <h3><?= e(t('Presidents of Bangladesh')) ?></h3>
       <?php if ($curPresident): ?>
         <p style="margin-bottom:.7rem">
           Current head of state: <strong><?= e($curPresident['name']) ?></strong>,
@@ -90,7 +90,7 @@ require APP_ROOT . '/includes/layout/header.php';
     </a>
     <a class="tile" href="<?= e(bd_url('prime-ministers')) ?>">
       <span class="tile__icon" aria-hidden="true">🧑‍💼</span>
-      <h3>Prime Ministers of Bangladesh</h3>
+      <h3><?= e(t('Prime Ministers of Bangladesh')) ?></h3>
       <?php if ($curPm): ?>
         <p style="margin-bottom:.7rem">
           Current head of government: <strong><?= e($curPm['name']) ?></strong>,
@@ -105,13 +105,13 @@ require APP_ROOT . '/includes/layout/header.php';
 <!-- ------------------------------------------------------------- services -->
 <section class="section">
   <div class="section__head">
-    <h2>Online services</h2>
-    <p>The e-government portals citizens use most.</p>
+    <h2><?= e(t('Online services')) ?></h2>
+    <p><?= t('The e-government portals citizens use most.') ?></p>
   </div>
 
   <div class="card" data-reveal style="margin-bottom:1.2rem">
     <div class="field">
-      <label for="service-filter">Find a service</label>
+      <label for="service-filter"><?= e(t('Find a service')) ?></label>
       <input type="search" class="input" id="service-filter" data-filter-input
              placeholder="Try “passport”, “NID”, “tax”, “licence”, “land”…">
     </div>
@@ -131,15 +131,15 @@ require APP_ROOT . '/includes/layout/header.php';
   </div>
 
   <p data-filter-empty style="display:none;text-align:center;color:var(--text-mute);padding:2.5rem 1rem">
-    No service matches that. Try “passport”, “birth”, “tax” or “police”.
+    <?= t('No service matches that. Try “passport”, “birth”, “tax” or “police”.') ?>
   </p>
 </section>
 
 <!-- --------------------------------------------------------- admin layers -->
 <section class="section">
   <div class="section__head">
-    <h2>Administrative layers</h2>
-    <p>From the capital down to the union council.</p>
+    <h2><?= e(t('Administrative layers')) ?></h2>
+    <p><?= t('From the capital down to the union council.') ?></p>
   </div>
 
   <div class="statgrid" data-reveal>

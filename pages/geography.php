@@ -9,8 +9,8 @@ $rivers    = bd_places('rivers');
 $seo = bd_seo(bd_page_seo('geography') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Geography'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Geography')],
     ],
     'jsonld' => [bd_jsonld_country()],
 ]);
@@ -22,8 +22,8 @@ $longest = max(array_column($rivers, 'length'));
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">⛰️ Land &amp; landscape</span>
-  <h1>The land of rivers</h1>
+  <span class="pagehead__eyebrow">⛰️ <?= e(t('Land & landscape')) ?></span>
+  <h1><?= e(t('The land of rivers')) ?></h1>
   <p>
     Bangladesh sits in <strong><?= e($geo['continent']) ?></strong>, in <?= e($geo['subregion']) ?>,
     on the <?= e($geo['delta']) ?> It is mostly flat and green, until the south-east rises into the
@@ -42,10 +42,10 @@ $longest = max(array_column($rivers, 'length'));
 
 <!-- ------------------------------------------------------------ location -->
 <section class="section">
-  <div class="section__head"><h2>Where exactly is it?</h2></div>
+  <div class="section__head"><h2><?= e(t('Where exactly is it?')) ?></h2></div>
   <div class="grid grid--2">
     <div class="card" data-reveal>
-      <h3>🌏 Position on Earth</h3>
+      <h3><?= e(t('🌏 Position on Earth')) ?></h3>
       <div class="mapinfo__rows">
         <div class="mapinfo__row"><span>Continent</span><span><?= e($geo['continent']) ?></span></div>
         <div class="mapinfo__row"><span>Sub-region</span><span><?= e($geo['subregion']) ?></span></div>
@@ -57,7 +57,7 @@ $longest = max(array_column($rivers, 'length'));
     </div>
 
     <div class="card" data-reveal="80">
-      <h3>🧭 Neighbours &amp; borders</h3>
+      <h3><?= e(t('🧭 Neighbours & borders')) ?></h3>
       <?php foreach ($geo['borders'] as $country => $km): ?>
         <div style="margin-bottom:.9rem">
           <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.3rem">
@@ -68,8 +68,7 @@ $longest = max(array_column($rivers, 'length'));
         </div>
       <?php endforeach; ?>
       <p style="margin-top:1rem;font-size:.85rem;color:var(--text-mute)">
-        Bangladesh is bordered by India on the west, north and east, by Myanmar in the south-east,
-        and by the Bay of Bengal to the south.
+        <?= t('Bangladesh is bordered by India on the west, north and east, by Myanmar in the south-east, and by the Bay of Bengal to the south.') ?>
       </p>
     </div>
   </div>
@@ -78,8 +77,8 @@ $longest = max(array_column($rivers, 'length'));
 <!-- ------------------------------------------------------------ extremes -->
 <section class="section">
   <div class="section__head">
-    <h2>The four corners</h2>
-    <p>The furthest points in each direction.</p>
+    <h2><?= e(t('The four corners')) ?></h2>
+    <p><?= t('The furthest points in each direction.') ?></p>
   </div>
   <div class="grid grid--4">
     <?php $i = 0; foreach ($geo['extremes'] as $direction => $point): ?>
@@ -97,8 +96,8 @@ $longest = max(array_column($rivers, 'length'));
 <!-- ----------------------------------------------------------- mountains -->
 <section class="section">
   <div class="section__head">
-    <h2>Mountains &amp; peaks</h2>
-    <p>Almost all of them stand in the Chittagong Hill Tracts.</p>
+    <h2><?= e(t('Mountains & peaks')) ?></h2>
+    <p><?= t('Almost all of them stand in the Chittagong Hill Tracts.') ?></p>
   </div>
 
   <div class="grid grid--2">
@@ -129,13 +128,13 @@ $longest = max(array_column($rivers, 'length'));
 <!-- -------------------------------------------------------------- rivers -->
 <section class="section">
   <div class="section__head">
-    <h2>Major rivers</h2>
+    <h2><?= e(t('Major rivers')) ?></h2>
     <p>About <?= bd_num($geo['rivers_count']) ?> rivers thread through the delta.</p>
   </div>
 
   <div class="tablewrap" data-reveal>
     <table>
-      <thead><tr><th>River</th><th>Bangla</th><th class="num">Length in BD (km)</th><th>Why it matters</th></tr></thead>
+      <thead><tr><th><?= e(t('River')) ?></th><th><?= e(t('Bangla')) ?></th><th class="num"><?= e(t('Length in BD (km)')) ?></th><th><?= e(t('Why it matters')) ?></th></tr></thead>
       <tbody>
         <?php foreach ($rivers as $r): ?>
           <tr>
@@ -153,8 +152,8 @@ $longest = max(array_column($rivers, 'length'));
 <!-- ------------------------------------------------------------- climate -->
 <section class="section">
   <div class="section__head">
-    <h2>Six seasons, not four</h2>
-    <p>The Bengali calendar divides the year into six distinct seasons.</p>
+    <h2><?= e(t('Six seasons, not four')) ?></h2>
+    <p><?= t('The Bengali calendar divides the year into six distinct seasons.') ?></p>
   </div>
 
   <div class="grid grid--3">

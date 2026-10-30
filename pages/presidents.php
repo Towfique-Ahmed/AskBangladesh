@@ -8,8 +8,8 @@ $leader     = bd_current_leader('presidents');
 $seo = bd_seo(bd_page_seo('presidents') + [
     'type'        => 'article',
     'breadcrumbs' => [
-        ['name' => 'Home', 'url' => bd_url()],
-        ['name' => 'Presidents'],
+        ['name' => t('Home'), 'url' => bd_url()],
+        ['name' => t('Presidents')],
     ],
     'jsonld' => [
         bd_jsonld_person_list('Presidents of Bangladesh', $presidents),
@@ -20,18 +20,17 @@ require APP_ROOT . '/includes/layout/header.php';
 ?>
 
 <div class="pagehead">
-  <span class="pagehead__eyebrow">🎖️ Head of state</span>
-  <h1>Presidents of Bangladesh</h1>
+  <span class="pagehead__eyebrow">🎖️ <?= e(t('Head of state')) ?></span>
+  <h1><?= e(t('Presidents of Bangladesh')) ?></h1>
   <p>
-    Every President of Bangladesh since the Liberation War of 1971, in order. The President is
-    the ceremonial head of state, elected by the Jatiya Sangsad (parliament) for a five-year term.
+    <?= t('Every President of Bangladesh since the Liberation War of 1971, in order. The President is the ceremonial head of state, elected by the Jatiya Sangsad (parliament) for a five-year term.') ?>
   </p>
 </div>
 
 <?php if ($leader): ?>
 <section class="section" style="margin-top:0">
   <div class="section__head">
-    <h2>Current President</h2>
+    <h2><?= e(t('Current President')) ?></h2>
   </div>
   <article class="card" data-reveal>
     <span class="badge">In office</span>
@@ -49,7 +48,7 @@ require APP_ROOT . '/includes/layout/header.php';
 
 <section class="section">
   <div class="section__head">
-    <h2>Full list, 1971 – present</h2>
+    <h2><?= e(t('Full list, 1971 – present')) ?></h2>
     <p><?= count($presidents) ?> entries, including acting heads of state.</p>
   </div>
 
@@ -57,10 +56,10 @@ require APP_ROOT . '/includes/layout/header.php';
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Term</th>
-          <th>Notes</th>
+          <th><?= e(t('Name')) ?></th>
+          <th><?= e(t('Role')) ?></th>
+          <th><?= e(t('Term')) ?></th>
+          <th><?= e(t('Notes')) ?></th>
         </tr>
       </thead>
       <tbody>
